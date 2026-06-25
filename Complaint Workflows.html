@@ -1792,6 +1792,21 @@ function setCiTab(tab){
     } else if (match(ql, ['clos', 'close ticket'])) {
       beepSay("📦 <strong>Closing a Ticket:</strong><br>🔴 <strong>Jetstream Loss</strong> — Loss under $100, partner didn't recover.<br>🟣 <strong>Pending Recovery</strong> — Loss $100+, AM attempts recovery (min 4 weeks).<br>🩷 <strong>Jetstream Win</strong> — Partner recovered fully or no compensation needed.");
 
+    } else if (match(ql, ['always need', 'do i always', 'need a ticket', 'need to create a ticket'])) {
+      beepSay("🗂️ <strong>Do I always need a HubSpot ticket?</strong><br>No — only if the complaint is valid after verification. If the complaint is not valid, no ticket or compensation is needed.");
+
+    } else if (match(ql, ['refuses', 'rejected', 'doesn\'t want', 'not happy with offer', 'guest refuses'])) {
+      beepSay("😤 <strong>Guest refuses the compensation offer:</strong><br>If the guest is still unhappy after the offer, move the ticket to the TL stage. Do not offer more than the maximum within margin at agent level.");
+
+    } else if (match(ql, ['asks for more', 'wants more', 'more than we can', 'too much', 'excessive request'])) {
+      beepSay("💬 <strong>Guest asks for more than we can offer:</strong><br>Offer the maximum compensation within our profit margin. If the guest is still unhappy after that, escalate to the TL stage — do not exceed the margin at agent level.");
+
+    } else if (match(ql, ['full refund', 'refund the full', 'refund everything', 'full amount'])) {
+      beepSay("💰 <strong>Can I offer a full refund?</strong><br>Only if it falls within our profit margin and is not excessive. You cannot offer a full refund that exceeds the margin — escalate to TL if the guest is pushing for more.");
+
+    } else if (match(ql, ['partially fixed', 'partial fix', 'fixed on site', 'still unhappy after fix'])) {
+      beepSay("🔧 <strong>Issue partially fixed but guest still unhappy:</strong><br>Treat it as unresolved. Proceed with creating a HubSpot ticket and assess compensation based on the impact to the guest's stay.");
+
     } else if (match(ql, ['hi', 'hello', 'hey', 'hiya', 'howdy'])) {
       beepSay("Hey there! 👋 I'm Beep, your complaint workflow assistant. What can I help you with?", [
         "Content issues", "Regular complaints", "Compensation rules", "Fault types", "Closing a ticket"
