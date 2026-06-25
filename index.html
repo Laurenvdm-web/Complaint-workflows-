@@ -1596,6 +1596,170 @@ function setCiTab(tab){
 
   </script>
 
+  <!-- ROBOT CHATBOT -->
+  <style>
+    #robot-btn {
+      position: fixed; bottom: 28px; right: 28px; z-index: 9999;
+      width: 64px; height: 64px; border-radius: 50%; border: none; cursor: pointer;
+      background: #2d2060; box-shadow: 0 4px 18px rgba(45,32,96,0.45);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 30px; transition: transform 0.2s, box-shadow 0.2s;
+    }
+    #robot-btn:hover { transform: scale(1.1); box-shadow: 0 6px 24px rgba(45,32,96,0.55); }
+    #robot-chat {
+      position: fixed; bottom: 104px; right: 28px; z-index: 9998;
+      width: 330px; background: #fff; border-radius: 18px;
+      box-shadow: 0 8px 40px rgba(45,32,96,0.22); display: none; flex-direction: column;
+      overflow: hidden; font-family: system-ui, sans-serif;
+    }
+    #robot-chat.open { display: flex; }
+    #robot-header {
+      background: #2d2060; color: #fff; padding: 14px 18px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    #robot-header .r-face { font-size: 26px; }
+    #robot-header .r-name { font-weight: 800; font-size: 15px; }
+    #robot-header .r-sub { font-size: 11px; opacity: 0.75; }
+    #robot-messages {
+      flex: 1; overflow-y: auto; padding: 14px; display: flex;
+      flex-direction: column; gap: 10px; max-height: 320px;
+    }
+    .r-msg { display: flex; gap: 8px; align-items: flex-start; }
+    .r-msg .r-bubble {
+      background: #f0eefa; border-radius: 12px 12px 12px 2px;
+      padding: 10px 13px; font-size: 13px; color: #2d2060; line-height: 1.5; max-width: 260px;
+    }
+    .r-msg.user { flex-direction: row-reverse; }
+    .r-msg.user .r-bubble { background: #2d2060; color: #fff; border-radius: 12px 12px 2px 12px; }
+    .r-avatar { font-size: 20px; margin-top: 2px; flex-shrink: 0; }
+    #robot-input-row {
+      display: flex; gap: 8px; padding: 12px 14px; border-top: 1px solid #e8e4f5;
+    }
+    #robot-input {
+      flex: 1; border: 1.5px solid #d0c8f0; border-radius: 20px;
+      padding: 8px 14px; font-size: 13px; font-family: inherit; outline: none;
+      color: #2d2060;
+    }
+    #robot-input:focus { border-color: #2d2060; }
+    #robot-send {
+      background: #2d2060; color: #fff; border: none; border-radius: 50%;
+      width: 36px; height: 36px; cursor: pointer; font-size: 16px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; transition: background 0.2s;
+    }
+    #robot-send:hover { background: #4a3a9e; }
+    .r-chip {
+      display: inline-block; background: #ede8ff; color: #2d2060;
+      border-radius: 20px; padding: 5px 12px; font-size: 12px; margin: 3px 2px;
+      cursor: pointer; border: 1.5px solid #c4b8f0; transition: background 0.15s;
+    }
+    .r-chip:hover { background: #d8d0f8; }
+  </style>
 
+  <button id="robot-btn" onclick="toggleRobot()" title="Ask Beep!">🤖</button>
+
+  <div id="robot-chat">
+    <div id="robot-header">
+      <div class="r-face">🤖</div>
+      <div>
+        <div class="r-name">Beep</div>
+        <div class="r-sub">Complaint Workflows Assistant</div>
+      </div>
+    </div>
+    <div id="robot-messages"></div>
+    <div id="robot-input-row">
+      <input id="robot-input" type="text" placeholder="Ask me anything..." onkeydown="if(event.key==='Enter')sendRobot()">
+      <button id="robot-send" onclick="sendRobot()">➤</button>
+    </div>
+  </div>
+
+  <script>
+  var robotOpen = false;
+  function toggleRobot() {
+    robotOpen = !robotOpen;
+    var chat = document.getElementById('robot-chat');
+    chat.classList.toggle('open', robotOpen);
+    if (robotOpen && document.getElementById('robot-messages').children.length === 0) {
+      beepSay("Hi! I'm Beep 👋 I know everything about the complaint workflows. Try asking me something, or pick a topic:", [
+        "Content issues", "Regular complaints", "Compensation rules", "Fault types", "Closing a ticket"
+      ]);
+    }
+    if (robotOpen) setTimeout(function(){ document.getElementById('robot-input').focus(); }, 100);
+  }
+
+  function beepSay(text, chips) {
+    var msgs = document.getElementById('robot-messages');
+    var div = document.createElement('div');
+    div.className = 'r-msg';
+    var html = '<div class="r-avatar">🤖</div><div class="r-bubble">' + text;
+    if (chips) {
+      html += '<div style="margin-top:8px;">';
+      chips.forEach(function(c){ html += '<span class="r-chip" onclick="chipAsk(\''+c+'\')">' + c + '</span>'; });
+      html += '</div>';
+    }
+    html += '</div>';
+    div.innerHTML = html;
+    msgs.appendChild(div);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  function userSay(text) {
+    var msgs = document.getElementById('robot-messages');
+    var div = document.createElement('div');
+    div.className = 'r-msg user';
+    div.innerHTML = '<div class="r-bubble">' + text + '</div>';
+    msgs.appendChild(div);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  function chipAsk(text) { answerRobot(text); userSay(text); }
+
+  function sendRobot() {
+    var input = document.getElementById('robot-input');
+    var q = input.value.trim();
+    if (!q) return;
+    userSay(q);
+    input.value = '';
+    answerRobot(q);
+  }
+
+  function answerRobot(q) {
+    var ql = q.toLowerCase();
+
+    if (match(ql, ['content issue', 'content complaint', 'listing', 'amenity', 'inaccurate'])) {
+      beepSay("📋 <strong>Content Issue Workflow:</strong><br>1. Agent identifies the issue and verifies the listing accuracy.<br>2. If invalid → no ticket needed.<br>3. If valid → create a HubSpot ticket and submit a content update (only if you're 100% sure of accurate info).<br>4. Run the 5-step fault verification to determine who's at fault.<br>5. Based on fault: offer compensation within margin, then escalate to TL if guest is still unhappy.");
+    } else if (match(ql, ['5 step', 'fault verification', 'verify fault', 'check listing', 'find fault'])) {
+      beepSay("🔍 <strong>5-Step Fault Verification:</strong><br>1. <strong>Check the Listing</strong> — amenity on other listings but not this one? → Jetstream fault.<br>2. <strong>Check Front</strong> — partner email saying amenity changed but listing not updated? → Jetstream fault.<br>3. <strong>Check HubSpot</strong> — already a pending content update? → Jetstream fault.<br>4. <strong>Check Guest Comms</strong> — did RAI or confirmation email give wrong info? → Jetstream fault.<br>5. <strong>Check Slack</strong> — knew about the change but didn't action it? → Jetstream fault.");
+    } else if (match(ql, ['regular complaint', 'noise', 'cleanliness', 'maintenance', 'broken', 'issue on arrival'])) {
+      beepSay("🛠️ <strong>Regular Complaints Workflow:</strong><br>1. Agent receives complaint and assesses severity.<br>2. Create a HubSpot ticket.<br>3. Contact the partner to investigate.<br>4. Based on outcome: offer compensation if within margin and absolutely necessary.<br>5. If guest remains unhappy → escalate to TL.");
+    } else if (match(ql, ['compensat', 'refund', 'money', 'reimburse', 'credit'])) {
+      beepSay("💰 <strong>Compensation Rules (Airbnb only):</strong><br>• Compensation may only be offered if <strong>absolutely necessary</strong>.<br>• Must be within our profit margin — not excessive.<br>• <strong>Partner approval is required</strong> before confirming anything to the guest.<br>• If Jetstream loss is under $100 → close as <em>Jetstream Loss</em>.<br>• If $100 or more → close as <em>Pending Recovery</em> (AM recovers from partner).");
+    } else if (match(ql, ['fault', 'who is responsible', 'jetstream fault', 'partner fault', 'not sure'])) {
+      beepSay("⚖️ <strong>Fault Types:</strong><br>🟠 <strong>Partner Fault</strong> — Partner provided incorrect/changed info. Offer refund within margin, email partner with compensation suggestion.<br>🟢 <strong>Jetstream Fault</strong> — We had the info but didn't update the listing. Offer compensation within margin, refund if guest agrees.<br>🟣 <strong>Not Sure</strong> — Can't find clear evidence. Offer compensation within margin as goodwill.");
+    } else if (match(ql, ['clos', 'close ticket', 'jetstream loss', 'jetstream win', 'pending recovery'])) {
+      beepSay("📦 <strong>Closing a Ticket:</strong><br>🔴 <strong>Jetstream Loss</strong> — We covered compensation, loss under $100, partner didn't recover cost.<br>🟣 <strong>Pending Recovery</strong> — We covered compensation, loss $100+. AM will attempt to recover from partner.<br>🩷 <strong>Jetstream Win</strong> — Partner recovered cost completely, OR no compensation was needed. Jetstream cost = $0.");
+    } else if (match(ql, ['tl', 'team lead', 'escalat', 'manager'])) {
+      beepSay("🚨 <strong>Escalating to TL:</strong><br>If the guest is still unhappy after compensation has been offered, move the ticket to the TL stage. The TL will take over and handle the next steps directly with the guest.");
+    } else if (match(ql, ['airbnb', 'channel', 'booking type', 'platform'])) {
+      beepSay("⚠️ These workflows currently apply to <strong>Airbnb bookings only</strong>. Do not use for other channels. Compensation also requires Partner approval before confirming to the guest.");
+    } else if (match(ql, ['hi', 'hello', 'hey', 'hiya', 'howdy'])) {
+      beepSay("Hey there! 👋 I'm Beep, your complaint workflow assistant. What can I help you with?", [
+        "Content issues", "Regular complaints", "Compensation rules", "Fault types", "Closing a ticket"
+      ]);
+    } else if (match(ql, ['help', 'what can you do', 'topics', 'menu'])) {
+      beepSay("Here's what I can help with:", [
+        "Content issues", "Regular complaints", "Compensation rules", "Fault types", "Closing a ticket", "Escalating to TL"
+      ]);
+    } else {
+      beepSay("Hmm, I'm not sure about that one! 🤔 Try asking about one of these:", [
+        "Content issues", "Regular complaints", "Compensation rules", "Fault types", "Closing a ticket"
+      ]);
+    }
+  }
+
+  function match(q, keywords) {
+    return keywords.some(function(k){ return q.indexOf(k.toLowerCase()) !== -1; });
+  }
+  </script>
 
 </body></html>
