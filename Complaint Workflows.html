@@ -1729,35 +1729,82 @@ function setCiTab(tab){
   function answerRobot(q) {
     var ql = q.toLowerCase();
 
-    if (match(ql, ['verify', 'valid', 'how do i check', 'how to check', 'is it valid', 'check if'])) {
-      beepSay("🔍 <strong>5-Step Fault Verification:</strong><br>1. <strong>Check the Listing</strong> — amenity on other listings but not this one? → Jetstream fault.<br>2. <strong>Check Front</strong> — partner email saying amenity changed but listing not updated? → Jetstream fault.<br>3. <strong>Check HubSpot</strong> — already a pending content update? → Jetstream fault.<br>4. <strong>Check Guest Comms</strong> — did RAI or confirmation email give wrong info? → Jetstream fault.<br>5. <strong>Check Slack</strong> — knew about the change but didn't action it? → Jetstream fault.<br><br>If none of these apply → mark as <strong>Not Sure</strong>.");
+    if (match(ql, ['is it valid', 'complaint valid', 'how do i know if', 'know if a content'])) {
+      beepSay("✅ <strong>Is the content complaint valid?</strong><br>Check the listing — if the amenity or info is incorrect or missing, it's valid. Run the 5-step fault verification to confirm before creating a ticket.");
+
+    } else if (match(ql, ['amenity missing', 'missing from the listing', 'amenity not on listing'])) {
+      beepSay("🏠 <strong>Amenity missing from listing:</strong><br>Verify it's genuinely missing, then create a HubSpot ticket and submit a content update — only if you're 100% sure of the correct information.");
+
+    } else if (match(ql, ['when do i submit', 'submit a content update', 'content update'])) {
+      beepSay("📝 <strong>When to submit a content update:</strong><br>Only after creating the HubSpot ticket, and only if you're 100% certain of the correct information.");
+
+    } else if (match(ql, ['no evidence', 'can\'t find', 'cannot find', 'no proof', 'not sure who'])) {
+      beepSay("🟣 <strong>Can't find evidence of fault?</strong><br>Mark it as <strong>Not Sure</strong>. Offer compensation within margin and refund if the guest agrees.");
+
+    } else if (match(ql, ['without partner', 'without approval', 'partner approval', 'need approval', 'wait for partner'])) {
+      beepSay("🚨 <strong>Compensation without Partner approval:</strong><br>Yes — this is a major policy update for Airbnb bookings. In extreme cases you can compensate guests directly under our T&amp;Cs without waiting for the Partner.");
+
+    } else if (match(ql, ['how much', 'amount', 'offer a guest', 'what can i offer'])) {
+      beepSay("💰 <strong>How much can I offer?</strong><br>Compensation must be within our profit margin and must not be excessive.");
+
+    } else if (match(ql, ['when do i not', 'not compensate', 'don\'t compensate', 'no compensation'])) {
+      beepSay("🚫 <strong>When NOT to compensate:</strong><br>If the complaint is not valid after verification, no ticket or compensation is needed.");
+
+    } else if (match(ql, ['jetstream fault', 'partner fault', 'whose fault', 'who is at fault', 'how do i know if it', 'jetstream or partner'])) {
+      beepSay("⚖️ <strong>Jetstream vs Partner fault (content issues):</strong><br>Run the 5-step fault verification. If none of the 5 checks point to Jetstream, it's likely Partner fault. If no evidence is found either way, mark as Not Sure.");
+
+    } else if (match(ql, ['not sure', 'unsure', 'unclear fault'])) {
+      beepSay("🟣 <strong>Not Sure fault:</strong><br>If you can't find clear evidence either way, mark as Not Sure and offer compensation within margin as goodwill.");
+
+    } else if (match(ql, ['cleanliness', 'noise', 'broken', 'maintenance', 'regular complaint', 'issue on arrival', 'something wrong'])) {
+      beepSay("🛠️ <strong>Regular Complaint steps:</strong><br>1. Ask the guest for images.<br>2. Ask if they reported the issue to the front desk for immediate assistance.<br>3. Add a blacklisted tag in Cirrus with brief notes.<br>Once the guest confirms it couldn't be resolved on site → create a HubSpot ticket.");
+
+    } else if (match(ql, ['escalat', 'when do i escalate', 'move to tl', 'tl stage'])) {
+      beepSay("🚨 <strong>When to escalate to TL:</strong><br>Only when the guest is still unhappy after the maximum compensation within profit margin has been offered. The TL will review the ticket, validate fault and compensation, and decide whether to close or escalate further to AM.");
+
+    } else if (match(ql, ['jetstream loss', 'jetstream win', 'loss vs win', 'close as'])) {
+      beepSay("📦 <strong>Jetstream Loss vs Win:</strong><br>🔴 <strong>Loss</strong> — Jetstream covered compensation, loss under $100, partner didn't recover cost.<br>🩷 <strong>Win</strong> — Partner recovered fully OR no compensation was needed. Jetstream cost = $0.");
+
+    } else if (match(ql, ['pending recovery', 'what is pending', 'recovery stage'])) {
+      beepSay("🟣 <strong>Pending Recovery:</strong><br>When Jetstream covered compensation and the loss is <strong>$100 or more</strong>. The AM will attempt to recover from the partner. Cases stay in this stage for at least <strong>4 weeks</strong> before moving to Closed.");
+
+    } else if (match(ql, ['after i create', 'after the ticket', 'what happens after', 'hubspot ticket'])) {
+      beepSay("🗂️ <strong>After creating a HubSpot ticket:</strong><br>An automatic task is assigned to you with reminders. Complete all tasks, assign fault, sort the guest issue first, then assess compensation.");
+
+    } else if (match(ql, ['all bookings', 'every booking', 'which bookings', 'what bookings', 'airbnb only', 'airbnb'])) {
+      beepSay("⚠️ <strong>Airbnb bookings only.</strong><br>These workflows apply to Airbnb bookings only. Do not use for other channels.");
+
+    } else if (match(ql, ['what do i do first', 'first step', 'where do i start', 'complaint comes in', 'just arrived'])) {
+      beepSay("🏁 <strong>First steps when a complaint comes in:</strong><br>For <strong>content issues</strong>: verify the listing accuracy first.<br>For <strong>regular complaints</strong>: ask for images, ask if they reported it on site, and add notes in Cirrus.");
+
+    } else if (match(ql, ['verify', 'valid', '5 step', 'fault verification', 'check listing', 'find fault'])) {
+      beepSay("🔍 <strong>5-Step Fault Verification:</strong><br>1. <strong>Check the Listing</strong> — amenity on other listings but not this one? → Jetstream fault.<br>2. <strong>Check Front</strong> — partner email saying amenity changed but listing not updated? → Jetstream fault.<br>3. <strong>Check HubSpot</strong> — already a pending content update? → Jetstream fault.<br>4. <strong>Check Guest Comms</strong> — did RAI or confirmation email give wrong info? → Jetstream fault.<br>5. <strong>Check Slack</strong> — knew about the change but didn't action it? → Jetstream fault.<br><br>None apply? → mark as <strong>Not Sure</strong>.");
+
     } else if (match(ql, ['content issue', 'content complaint', 'listing', 'amenity', 'inaccurate'])) {
-      beepSay("📋 <strong>Content Issue Workflow:</strong><br>1. Agent identifies the issue and verifies the listing accuracy.<br>2. If invalid → no ticket needed.<br>3. If valid → create a HubSpot ticket and submit a content update (only if you're 100% sure of accurate info).<br>4. Run the 5-step fault verification to determine who's at fault.<br>5. Based on fault: offer compensation within margin, then escalate to TL if guest is still unhappy.");
-    } else if (match(ql, ['5 step', 'fault verification', 'verify fault', 'check listing', 'find fault'])) {
-      beepSay("🔍 <strong>5-Step Fault Verification:</strong><br>1. <strong>Check the Listing</strong> — amenity on other listings but not this one? → Jetstream fault.<br>2. <strong>Check Front</strong> — partner email saying amenity changed but listing not updated? → Jetstream fault.<br>3. <strong>Check HubSpot</strong> — already a pending content update? → Jetstream fault.<br>4. <strong>Check Guest Comms</strong> — did RAI or confirmation email give wrong info? → Jetstream fault.<br>5. <strong>Check Slack</strong> — knew about the change but didn't action it? → Jetstream fault.");
-    } else if (match(ql, ['regular complaint', 'noise', 'cleanliness', 'maintenance', 'broken', 'issue on arrival'])) {
-      beepSay("🛠️ <strong>Regular Complaints Workflow:</strong><br>1. Agent receives complaint and assesses severity.<br>2. Create a HubSpot ticket.<br>3. Contact the partner to investigate.<br>4. Based on outcome: offer compensation if within margin and absolutely necessary.<br>5. If guest remains unhappy → escalate to TL.");
+      beepSay("📋 <strong>Content Issue Workflow:</strong><br>1. Identify the issue and verify listing accuracy.<br>2. If invalid → no ticket needed.<br>3. If valid → create a HubSpot ticket and submit a content update (only if 100% sure of accurate info).<br>4. Run the 5-step fault verification.<br>5. Offer compensation within margin based on fault, then escalate to TL if guest is still unhappy.");
+
     } else if (match(ql, ['compensat', 'refund', 'money', 'reimburse', 'credit'])) {
-      beepSay("💰 <strong>Compensation Rules (Airbnb only):</strong><br>• 🚨 <strong>Major update:</strong> We no longer need to wait for Partner approval before compensating a guest.<br>• In extreme cases, agents can compensate guests directly under our Terms &amp; Conditions.<br>• Compensation must be within our profit margin — not excessive.<br>• If Jetstream loss is under $100 → close as <em>Jetstream Loss</em>.<br>• If $100 or more → close as <em>Pending Recovery</em> (AM recovers from partner).");
-    } else if (match(ql, ['fault', 'who is responsible', 'jetstream fault', 'partner fault', 'not sure'])) {
-      beepSay("⚖️ <strong>Fault Types:</strong><br>🟠 <strong>Partner Fault</strong> — Partner provided incorrect/changed info. Offer refund within margin, email partner with compensation suggestion.<br>🟢 <strong>Jetstream Fault</strong> — We had the info but didn't update the listing. Offer compensation within margin, refund if guest agrees.<br>🟣 <strong>Not Sure</strong> — Can't find clear evidence. Offer compensation within margin as goodwill.");
-    } else if (match(ql, ['clos', 'close ticket', 'jetstream loss', 'jetstream win', 'pending recovery'])) {
-      beepSay("📦 <strong>Closing a Ticket:</strong><br>🔴 <strong>Jetstream Loss</strong> — We covered compensation, loss under $100, partner didn't recover cost.<br>🟣 <strong>Pending Recovery</strong> — We covered compensation, loss $100+. AM will attempt to recover from partner.<br>🩷 <strong>Jetstream Win</strong> — Partner recovered cost completely, OR no compensation was needed. Jetstream cost = $0.");
-    } else if (match(ql, ['tl', 'team lead', 'escalat', 'manager'])) {
-      beepSay("🚨 <strong>Escalating to TL:</strong><br>If the guest is still unhappy after compensation has been offered, move the ticket to the TL stage. The TL will take over and handle the next steps directly with the guest.");
-    } else if (match(ql, ['airbnb', 'channel', 'booking type', 'platform'])) {
-      beepSay("⚠️ These workflows currently apply to <strong>Airbnb bookings only</strong>. Do not use for other channels. Compensation also requires Partner approval before confirming to the guest.");
+      beepSay("💰 <strong>Compensation Rules (Airbnb only):</strong><br>• 🚨 <strong>Major update:</strong> No longer need Partner approval before compensating.<br>• In extreme cases, compensate directly under our T&amp;Cs.<br>• Must be within profit margin — not excessive.<br>• Loss under $100 → <em>Jetstream Loss</em>.<br>• Loss $100+ → <em>Pending Recovery</em> (AM recovers from partner).");
+
+    } else if (match(ql, ['fault type', 'types of fault', 'partner fault', 'who is responsible'])) {
+      beepSay("⚖️ <strong>Fault Types:</strong><br>🟠 <strong>Partner Fault</strong> — Partner provided incorrect/changed info. Offer refund within margin, email partner with compensation suggestion.<br>🟢 <strong>Jetstream Fault</strong> — We had the info but didn't update the listing. Offer compensation within margin, refund if guest agrees.<br>🟣 <strong>Not Sure</strong> — No clear evidence. Offer compensation within margin as goodwill.");
+
+    } else if (match(ql, ['clos', 'close ticket'])) {
+      beepSay("📦 <strong>Closing a Ticket:</strong><br>🔴 <strong>Jetstream Loss</strong> — Loss under $100, partner didn't recover.<br>🟣 <strong>Pending Recovery</strong> — Loss $100+, AM attempts recovery (min 4 weeks).<br>🩷 <strong>Jetstream Win</strong> — Partner recovered fully or no compensation needed.");
+
     } else if (match(ql, ['hi', 'hello', 'hey', 'hiya', 'howdy'])) {
       beepSay("Hey there! 👋 I'm Beep, your complaint workflow assistant. What can I help you with?", [
         "Content issues", "Regular complaints", "Compensation rules", "Fault types", "Closing a ticket"
       ]);
+
     } else if (match(ql, ['help', 'what can you do', 'topics', 'menu'])) {
       beepSay("Here's what I can help with:", [
         "Content issues", "Regular complaints", "Compensation rules", "Fault types", "Closing a ticket", "Escalating to TL"
       ]);
+
     } else {
       beepSay("Hmm, I'm not sure about that one! 🤔 Try asking about one of these:", [
-        "Content issues", "Regular complaints", "Compensation rules", "Fault types", "Closing a ticket"
+        "Content issues", "Regular complaints", "Compensation rules", "Fault types", "Closing a ticket", "When to escalate"
       ]);
     }
   }
