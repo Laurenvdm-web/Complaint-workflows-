@@ -90,7 +90,12 @@
 
   <h1>Complaint Workflows</h1>
 
-  <div style="max-width: 980px; margin: 0 auto 20px auto; background: #2d2060; color: #fff; border-radius: 12px; padding: 20px 24px; box-shadow: 0 4px 20px rgba(45,32,96,0.4);">
+  <div style="max-width: 980px; margin: 0 auto 20px auto; background: #2d2060; color: #fff; border-radius: 12px; padding: 20px 24px; box-shadow: 0 4px 20px rgba(45,32,96,0.4); display: flex; gap: 20px; align-items: flex-start;">
+    <a href="non-airbnb-workflow.html" style="flex-shrink: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; width: 90px; height: 90px; background: rgba(255,255,255,0.12); border: 2px solid rgba(255,255,255,0.3); border-radius: 12px; color: #fff; text-decoration: none; font-size: 11px; font-weight: 700; text-align: center; padding: 8px; transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.22)'" onmouseout="this.style.background='rgba(255,255,255,0.12)'">
+      <span style="font-size: 26px;">🔖</span>
+      Non Airbnb Workflow
+    </a>
+    <div style="flex: 1;">
     <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
       <span style="font-size: 26px;">🚨</span>
       <div style="font-size: 18px; font-weight: 900; letter-spacing: -0.3px;">Major Policy Update — Airbnb Bookings Only</div>
@@ -99,12 +104,12 @@
       We <strong>no longer need Partner approval</strong> before compensating a guest — and we no longer need to wait for the Partner to respond before acting. In extreme cases, agents can now compensate guests directly under our Terms &amp; Conditions.<br><br>
       <strong>This applies to Airbnb bookings only.</strong>
     </div>
+    </div>
   </div>
 
   <div class="tabs">
     <button class="tab-btn active" onclick="switchTab(&#39;content&#39;, this)">📋 Content Issues</button>
     <button class="tab-btn" onclick="switchTab(&#39;regular&#39;, this)">🛠️ Regular Complaints</button>
-    <button class="tab-btn" onclick="switchTab(&#39;nonairbnb&#39;, this)">🔖 Non Airbnb Workflow</button>
   </div>
 
   <div class="container">
@@ -407,32 +412,6 @@
       </div>
     </div>
 
-    <!-- NON AIRBNB WORKFLOW TAB -->
-    <div id="tab-nonairbnb" class="tab-panel">
-      <div class="accordion">
-
-        <div>
-          <button class="acc-btn" onclick="toggleAcc(this)">
-            <div class="acc-left"><span class="acc-icon">📊</span><span>Workflow Diagram</span></div>
-            <span class="acc-arrow">▶</span>
-          </button>
-          <div class="acc-body">
-            <p style="color:#e53e3e;font-weight:700;font-size:15px;padding:20px;">In progress</p>
-          </div>
-        </div>
-
-        <div>
-          <button class="acc-btn" onclick="toggleAcc(this)">
-            <div class="acc-left"><span class="acc-icon">🎫</span><span>Ticket Stages and Explanations</span></div>
-            <span class="acc-arrow">▶</span>
-          </button>
-          <div class="acc-body">
-            <p style="color:#e53e3e;font-weight:700;font-size:15px;padding:20px;">In progress</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
 
 
 
