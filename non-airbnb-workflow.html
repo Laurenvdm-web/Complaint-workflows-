@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Non Airbnb Workflow</title>
@@ -74,23 +74,26 @@
       padding: 24px;
     }
     .acc-body.open { display: block; }
+    .home-tab{padding:10px 16px;border:none;border-bottom:2px solid transparent;background:none;cursor:pointer;font-size:13px;font-weight:600;color:#718096;font-family:inherit;transition:all 0.15s;white-space:nowrap;}
+    .home-tab:hover{color:#1a1a2e;background:rgba(0,0,0,0.03);}
+    .home-tab.active{color:#1e3a5c;border-bottom-color:#4aacb8;}
   </style>
 </head>
 <body>
 
   <div style="max-width: 980px; margin: 0 auto 16px auto;">
-    <a href="index.html" class="back-link">← Back to Complaint Workflows</a>
+    <a href="index.html" class="back-link">â† Back to Complaint Workflows</a>
   </div>
 
   <h1>Non Airbnb Workflow</h1>
 
   <div style="max-width: 980px; margin: 0 auto 20px auto; background: #2d2060; color: #fff; border-radius: 12px; padding: 16px 24px; box-shadow: 0 4px 20px rgba(45,32,96,0.4); font-size: 14px; font-weight: 600; text-align: center; letter-spacing: 0.2px;">
-    🚧 &nbsp; This page is still being built — content coming soon.
+    ðŸš§ &nbsp; This page is still being built â€” content coming soon.
   </div>
 
   <div class="tabs">
-    <button class="tab-btn active" onclick="switchTab('content', this)">📋 Content Issues</button>
-    <button class="tab-btn" onclick="switchTab('regular', this)">🛠️ Regular Complaints</button>
+    <button class="tab-btn active" onclick="switchTab('content', this)">ðŸ“‹ Content Issues</button>
+    <button class="tab-btn" onclick="switchTab('regular', this)">ðŸ› ï¸ Regular Complaints</button>
   </div>
 
   <div class="container">
@@ -101,8 +104,8 @@
 
         <div>
           <button class="acc-btn" onclick="toggleAcc(this)">
-            <div class="acc-left"><span class="acc-icon">📊</span><span>Workflow Diagram</span></div>
-            <span class="acc-arrow">▶</span>
+            <div class="acc-left"><span class="acc-icon">ðŸ“Š</span><span>Workflow Diagram</span></div>
+            <span class="acc-arrow">â–¶</span>
           </button>
           <div class="acc-body">
             <svg viewBox="0 0 960 1030" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif">
@@ -115,7 +118,7 @@
 
               <!-- Title -->
               <text x="480" y="36" text-anchor="middle" font-size="19" font-weight="900" fill="#4a3080" letter-spacing="2">CONTENT ISSUE WORKFLOW</text>
-              <text x="480" y="56" text-anchor="middle" font-size="12" font-weight="700" fill="#777">AGENT  →  TL  →  AM</text>
+              <text x="480" y="56" text-anchor="middle" font-size="12" font-weight="700" fill="#777">AGENT  â†’  TL  â†’  AM</text>
 
               <!-- Agent Identifies Content Issue -->
               <rect x="330" y="68" width="300" height="40" rx="8" fill="#5b8dd9"/>
@@ -164,9 +167,9 @@
               <!-- Investigate prior communication -->
               <rect x="255" y="388" width="450" height="96" rx="8" fill="#f5e430" opacity="0.95"/>
               <text x="480" y="410" text-anchor="middle" font-size="13" font-weight="800" fill="#444">Investigate prior communication</text>
-              <text x="290" y="432" font-size="12" fill="#444">•  Review Slack history</text>
-              <text x="290" y="452" font-size="12" fill="#444">•  Check HubSpot history</text>
-              <text x="290" y="472" font-size="12" fill="#444">•  Review partner email threads</text>
+              <text x="290" y="432" font-size="12" fill="#444">â€¢  Review Slack history</text>
+              <text x="290" y="452" font-size="12" fill="#444">â€¢  Check HubSpot history</text>
+              <text x="290" y="472" font-size="12" fill="#444">â€¢  Review partner email threads</text>
 
               <!-- Three branch arrows from Investigate -->
               <line x1="255" y1="436" x2="160" y2="436" stroke="#555" stroke-width="2"/>
@@ -175,7 +178,7 @@
               <line x1="705" y1="436" x2="800" y2="436" stroke="#555" stroke-width="2"/>
               <line x1="800" y1="436" x2="800" y2="518" stroke="#555" stroke-width="2" marker-end="url(#arr)"/>
 
-              <!-- ── LEFT BRANCH (cx=160) ── -->
+              <!-- â”€â”€ LEFT BRANCH (cx=160) â”€â”€ -->
               <rect x="52" y="520" width="216" height="50" rx="8" fill="#e87c3e"/>
               <text x="160" y="541" text-anchor="middle" font-size="11.5" fill="#fff">Found information that</text>
               <text x="160" y="558" text-anchor="middle" font-size="11.5" font-weight="700" fill="#fff">clearly shows that</text>
@@ -198,7 +201,7 @@
               <line x1="160" y1="726" x2="160" y2="742" stroke="#555" stroke-width="2" marker-end="url(#arr)"/>
 
               <rect x="34" y="744" width="252" height="34" rx="8" fill="#f0a070"/>
-              <text x="160" y="766" text-anchor="middle" font-size="11.5" fill="#fff">If Partner Agrees — Refund Guest</text>
+              <text x="160" y="766" text-anchor="middle" font-size="11.5" fill="#fff">If Partner Agrees â€” Refund Guest</text>
 
               <line x1="160" y1="778" x2="160" y2="794" stroke="#555" stroke-width="2" marker-end="url(#arr)"/>
 
@@ -218,7 +221,7 @@
               <text x="160" y="944" text-anchor="middle" font-size="12" font-weight="800" fill="#fff">Guest Still Unhappy?</text>
               <text x="160" y="962" text-anchor="middle" font-size="12" font-weight="800" fill="#fff">Escalate to TL</text>
 
-              <!-- ── MIDDLE BRANCH (cx=480) ── -->
+              <!-- â”€â”€ MIDDLE BRANCH (cx=480) â”€â”€ -->
               <rect x="348" y="520" width="264" height="46" rx="8" fill="#6abf8a"/>
               <text x="480" y="540" text-anchor="middle" font-size="12" fill="#fff">Found information that shows</text>
               <text x="480" y="557" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Jetstream is at fault</text>
@@ -243,7 +246,7 @@
               <rect x="338" y="740" width="284" height="34" rx="8" fill="#2e7d52"/>
               <text x="480" y="762" text-anchor="middle" font-size="12" font-weight="800" fill="#fff">TL Moves Ticket to AM Stage</text>
 
-              <!-- ── RIGHT BRANCH (cx=800) ── -->
+              <!-- â”€â”€ RIGHT BRANCH (cx=800) â”€â”€ -->
               <rect x="648" y="520" width="304" height="52" rx="8" fill="#c8c8d8"/>
               <text x="800" y="542" text-anchor="middle" font-size="11.5" fill="#333">No partner communication found /</text>
               <text x="800" y="560" text-anchor="middle" font-size="11.5" fill="#333">not able to find this information</text>
@@ -271,20 +274,20 @@
               <!-- Key Rules -->
               <rect x="644" y="820" width="298" height="110" rx="10" fill="#d4c9f0"/>
               <text x="670" y="845" font-size="14" font-weight="800" fill="#3a1f7a">Key Rules</text>
-              <text x="662" y="868" font-size="12" fill="#3a1f7a">●  No Refunds Before TL Approval</text>
-              <text x="662" y="890" font-size="12" fill="#3a1f7a">●  Only TL / AM Decide Absorption</text>
-              <text x="662" y="912" font-size="12" fill="#3a1f7a">●  Submit Content Updates</text>
+              <text x="662" y="868" font-size="12" fill="#3a1f7a">â—  No Refunds Before TL Approval</text>
+              <text x="662" y="890" font-size="12" fill="#3a1f7a">â—  Only TL / AM Decide Absorption</text>
+              <text x="662" y="912" font-size="12" fill="#3a1f7a">â—  Submit Content Updates</text>
             </svg>
           </div>
         </div>
 
         <div>
-          <button class="acc-btn" onclick="toggleAcc(this)">
-            <div class="acc-left"><span class="acc-icon">🎫</span><span>Ticket Stages and Explanations</span></div>
-            <span class="acc-arrow">▶</span>
+          <button class="acc-btn" onclick="toggleAcc(this); renderCiStages(this)">
+            <div class="acc-left"><span class="acc-icon">ðŸŽ«</span><span>Ticket Stages and Explanations</span></div>
+            <span class="acc-arrow">â–¶</span>
           </button>
-          <div class="acc-body">
-            <p style="color:#e53e3e; font-weight:700; font-size:15px;">In progress</p>
+          <div class="acc-body" style="padding:0;">
+            <div id="na-ci-inline-render"></div>
           </div>
         </div>
 
@@ -297,8 +300,8 @@
 
         <div>
           <button class="acc-btn" onclick="toggleAcc(this)">
-            <div class="acc-left"><span class="acc-icon">📊</span><span>Workflow Diagram</span></div>
-            <span class="acc-arrow">▶</span>
+            <div class="acc-left"><span class="acc-icon">ðŸ“Š</span><span>Workflow Diagram</span></div>
+            <span class="acc-arrow">â–¶</span>
           </button>
           <div class="acc-body">
             <svg viewBox="0 0 960 780" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif">
@@ -317,16 +320,16 @@
               <rect x="16" y="56" width="390" height="42" rx="10" fill="#5b8dd9"/>
               <rect x="16" y="82" width="390" height="16" fill="#5b8dd9"/>
               <text x="210" y="83" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">Agent Identifies Regular Issue</text>
-              <text x="42" y="116" font-size="11.5" fill="#2d3748">•  Cleaning issues</text>
-              <text x="42" y="135" font-size="11.5" fill="#2d3748">•  Maintenance issues</text>
-              <text x="42" y="154" font-size="11.5" fill="#2d3748">•  Other Amenity issues</text>
-              <text x="58" y="168" font-size="10" fill="#718096">     (not missing — broken / unusable only)</text>
-              <text x="42" y="186" font-size="11.5" fill="#2d3748">•  Noise issues</text>
-              <text x="42" y="205" font-size="11.5" fill="#2d3748">•  Safety issue</text>
-              <text x="42" y="224" font-size="11.5" fill="#2d3748">•  Bedding / comfort issue</text>
-              <text x="42" y="243" font-size="11.5" fill="#2d3748">•  Bed bugs</text>
-              <text x="42" y="262" font-size="11.5" fill="#2d3748">•  Utility outage</text>
-              <text x="42" y="281" font-size="11.5" fill="#2d3748">•  Check-in issue</text>
+              <text x="42" y="116" font-size="11.5" fill="#2d3748">â€¢  Cleaning issues</text>
+              <text x="42" y="135" font-size="11.5" fill="#2d3748">â€¢  Maintenance issues</text>
+              <text x="42" y="154" font-size="11.5" fill="#2d3748">â€¢  Other Amenity issues</text>
+              <text x="58" y="168" font-size="10" fill="#718096">     (not missing â€” broken / unusable only)</text>
+              <text x="42" y="186" font-size="11.5" fill="#2d3748">â€¢  Noise issues</text>
+              <text x="42" y="205" font-size="11.5" fill="#2d3748">â€¢  Safety issue</text>
+              <text x="42" y="224" font-size="11.5" fill="#2d3748">â€¢  Bedding / comfort issue</text>
+              <text x="42" y="243" font-size="11.5" fill="#2d3748">â€¢  Bed bugs</text>
+              <text x="42" y="262" font-size="11.5" fill="#2d3748">â€¢  Utility outage</text>
+              <text x="42" y="281" font-size="11.5" fill="#2d3748">â€¢  Check-in issue</text>
               <text x="58" y="295" font-size="10" fill="#718096">     (partner not answering calls / causing issue)</text>
 
               <!-- Arrow from left box to right box -->
@@ -378,7 +381,7 @@
               <!-- If Partner Agrees -->
               <rect x="100" y="532" width="340" height="46" rx="8" fill="#f9c6d0"/>
               <text x="270" y="551" text-anchor="middle" font-size="12" font-weight="700" fill="#8b1a3a">If Partner Agrees to Compensation</text>
-              <text x="270" y="569" text-anchor="middle" font-size="12" font-weight="700" fill="#8b1a3a">— Refund Guest</text>
+              <text x="270" y="569" text-anchor="middle" font-size="12" font-weight="700" fill="#8b1a3a">â€” Refund Guest</text>
 
               <!-- Partner Does Not Agree -->
               <rect x="520" y="532" width="340" height="46" rx="8" fill="#dde0e8"/>
@@ -409,8 +412,8 @@
 
         <div>
           <button class="acc-btn" onclick="toggleAcc(this)">
-            <div class="acc-left"><span class="acc-icon">🎫</span><span>Ticket Stages and Explanations</span></div>
-            <span class="acc-arrow">▶</span>
+            <div class="acc-left"><span class="acc-icon">ðŸŽ«</span><span>Ticket Stages and Explanations</span></div>
+            <span class="acc-arrow">â–¶</span>
           </button>
           <div class="acc-body">
             <p style="color:#e53e3e; font-weight:700; font-size:15px;">In progress</p>
@@ -436,7 +439,476 @@
       body.classList.toggle('open', !isOpen);
       btn.classList.toggle('open', !isOpen);
     }
+  function renderCiStages(btn) {
+    var body = btn.nextElementSibling;
+    var el = document.getElementById('na-ci-inline-render');
+    if (el && el.innerHTML.trim() === '') {
+      body.style.padding = '0';
+      el.innerHTML = contentComplaintsPage();
+    }
+  }
+
+function contentComplaintsPage(){
+var activeTab='ci-tab1';try{activeTab=localStorage.getItem('jt-ci-tab')||'ci-tab1';}catch(e){}
+var h='';
+h+='<div style="background:linear-gradient(135deg,#2d3748 0%,#4a5568 40%,#718096 75%,#a0aec0 100%);border-radius:14px;padding:0;margin-bottom:20px;position:relative;overflow:hidden;min-height:140px;display:flex;align-items:center;justify-content:center;"><div style="position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,0.04) 1px,transparent 1px);background-size:24px 24px;"></div><div style="position:relative;z-index:1;text-align:center;"><div style="font-size:28px;font-weight:800;color:#ffffff;letter-spacing:0.5px;text-shadow:0 2px 8px rgba(0,0,0,0.25);">Content Issue Complaints</div></div></div>';
+var ciTabs=[['ci-tab1','Overview'],['ci-tab-ct','Complaint Types'],['ci-tab-create','Creating the ticket'],['ci-tab2','Guest Complaint Review Stage'],['ci-tab3','Escalate to TL / Manager'],['ci-tab4','Pending Recovery PM / AM'],['ci-tab6','Closed: Jetstream Loss'],['ci-tab7','Closed: Jetstream Win']];
+h+='<div style="background:#fff;border-radius:12px;border:1px solid #e8ecf0;margin-bottom:20px;overflow:hidden;">';
+h+='<div style="display:flex;overflow-x:auto;border-bottom:1px solid #e8ecf0;padding:0 4px;">';
+for(var i=0;i<ciTabs.length;i++){
+  var ciIsEscalate=ciTabs[i][0]==='ci-tab3';
+  var ciIsReview=ciTabs[i][0]==='ci-tab2';
+  var ciIsRecovery=ciTabs[i][0]==='ci-tab4';
+  var ciIsJsLoss=ciTabs[i][0]==='ci-tab6';
+  var ciIsJsWin=ciTabs[i][0]==='ci-tab7';
+  var ciTabLabel=ciIsEscalate?'ðŸ¤¸ '+ciTabs[i][1]:ciIsReview?'ðŸŒ  '+ciTabs[i][1]:ciIsRecovery?'ðŸ› ï¸ '+ciTabs[i][1]:ciIsJsLoss?'ðŸ“¦ '+ciTabs[i][1]:ciIsJsWin?'ðŸ“¦ '+ciTabs[i][1]:ciTabs[i][1];
+  var ciTabStyle=ciIsEscalate?' style="color:#92400e !important;"':ciIsReview?' style="color:#276749 !important;"':ciIsRecovery?' style="color:#6b21a8 !important;"':ciIsJsLoss?' style="color:#9b2235 !important;"':ciIsJsWin?' style="color:#b83280 !important;"':'';
+  h+='<button class="home-tab'+(activeTab===ciTabs[i][0]?' active':'')+'"'+ciTabStyle+' data-citab="'+ciTabs[i][0]+'" onclick="setCiTab(\''+ciTabs[i][0]+'\')">'+ciTabLabel+'</button>';
+}
+h+='</div>';
+h+='<div style="padding:24px 26px;">';
+h+='<div id="ci-sec-ci-tab1" style="display:'+(activeTab==='ci-tab1'?'block':'none')+'">';
+h+='<h2 style="font-size:20px;font-weight:800;color:#1a1a2e;margin-bottom:18px;">Overview</h2>';
+h+='<div style="background:#f7fafc;border:1px solid #e2e8f0;border-radius:12px;padding:18px 20px;margin-bottom:16px;">';
+h+='<div style="font-size:15px;font-weight:700;color:#1e3a5c;margin-bottom:10px;">ðŸ“‹ Content Issues Overview</div>';
+h+='<p style="font-size:13px;color:#4a5568;line-height:1.8;margin-bottom:10px;">Content issues work a little differently from regular guest issues because the verification process is different. We\'ll cover the content issue verification process in detail throughout this training.</p>';
+h+='<p style="font-size:13px;color:#4a5568;line-height:1.8;">Other than the verification requirements, the process remains largely the same. Compensation guidelines, escalation rules, and resolution options all follow the same principles as regular guest issues. There are simply a few additional steps and considerations that need to be followed when handling content-related complaints.</p>';
+h+='</div>';
+h+='</div>';
+h+='<div id="ci-sec-ci-tab-ct" style="display:'+(activeTab==='ci-tab-ct'?'block':'none')+'">';
+h+='<h2 style="font-size:20px;font-weight:800;color:#1a1a2e;margin-bottom:18px;">Complaint Types</h2>';
+h+='<p style="font-size:13px;color:#4a5568;line-height:1.8;margin-bottom:18px;">Content issue complaints fall under the following categories:</p>';
+h+='<div style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px;">';
+var ciTypes=[['ðŸŠ','Missing / Misleading Amenities','The listing advertises something that is inaccurate, unavailable, or has changed without the listing being updated.'],['ðŸ“','Mapping Issue','The property location pin or address on the listing is incorrect.'],['ðŸ“‹','Cancellation Policy Discrepancy','The cancellation policy shown on the listing does not match what the property enforces.'],['ðŸ”‘','Check-In Issue','Only applicable when the check-in problem is caused by incorrect content on the listing â€” for example, wrong check-in time, wrong access instructions, or wrong entry codes.']];
+for(var ct=0;ct<ciTypes.length;ct++){h+='<div style="display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:#fff;border:1px solid #e2e8f0;border-radius:10px;"><div style="font-size:20px;min-width:28px;">'+ciTypes[ct][0]+'</div><div><div style="font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:3px;">'+ciTypes[ct][1]+'</div><div style="font-size:12px;color:#4a5568;line-height:1.7;">'+ciTypes[ct][2]+'</div></div></div>';}
+h+='</div>';
+var ciExamplesId='ciex-'+Math.random().toString(36).substr(2,6);
+var ciExamplesArrId='ciex-arr-'+Math.random().toString(36).substr(2,6);
+h+='<button onclick="var el=document.getElementById(\''+ciExamplesId+'\');var arr=document.getElementById(\''+ciExamplesArrId+'\');var open=el.style.display!==\'none\';el.style.display=open?\'none\':\'block\';arr.style.transform=open?\'rotate(0deg)\':\'rotate(180deg)\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;background:#1e3a5c;color:#fff;border:none;border-radius:9px;padding:11px 16px;font-size:13px;font-weight:800;cursor:pointer;margin-bottom:8px;text-align:left;">';
+h+='<span>ðŸ“Œ Real Examples from Our Tickets</span>';
+h+='<span id="'+ciExamplesArrId+'" style="font-size:16px;display:inline-block;transition:transform 0.3s;">â–¼</span>';
+h+='</button>';
+h+='<div id="'+ciExamplesId+'" style="display:none;">';
+h+='<div style="background:#f7fafc;border:1px solid #e2e8f0;border-radius:0 0 10px 10px;padding:16px 18px;">';
+h+='<div style="display:flex;flex-direction:column;gap:8px;">';
+var ciExamples=['Pool listed as an amenity but had been closed for almost a year â€” listing was never updated.','Aquatic park and boat slip were unavailable during the guest\'s stay with no prior notice or listing disclaimer.','Listing advertised a heated shared pool from mid-April, but the property only started heating it from May 15th.','Listing stated parking was free in summer; partner had changed to â‚¬30/week without notifying Jetstream.','Guest instructions stated 12pm checkout; reception told the guest 11am on the day.','Listing stated linens were included; guest was charged â‚¬25 at the property on arrival.','RAI told the guest linens were a certain price, but the actual price was higher and listed correctly.','Listing showed one linen price per bed; partner confirmed the actual price was different with no bed size distinction.','RAI communicated the wrong breakfast price; the listing and property both charged a higher amount.','Listing explicitly described an ocean view; partner confirmed it is not guaranteed at the property.','Listing promoted a sun terrace and garden; on arrival it was a construction zone with debris and a taped-shut door.','Active construction caused noise and hot tub closure with no disclosure on the listing at time of booking.','Property had a full renovation but the listing still showed photos from over a decade earlier.','A photo from one room type was appearing on a different room type\'s listing, causing guests to select the wrong room.','Listing stated one incidental hold amount; the actual property authorization was a completely different figure.'];
+for(var ce=0;ce<ciExamples.length;ce++){h+='<div style="display:flex;align-items:flex-start;gap:10px;padding:10px 12px;background:#fff;border:1px solid #e2e8f0;border-radius:8px;font-size:12px;color:#4a5568;line-height:1.7;"><span style="color:#3a8a9e;font-weight:700;margin-top:1px;">â€¢</span><span>'+ciExamples[ce]+'</span></div>';}
+h+='</div>';
+h+='</div>';
+h+='</div>';
+h+='</div>';
+h+='<div id="ci-sec-ci-tab-create" style="display:'+(activeTab==='ci-tab-create'?'block':'none')+'">';
+h+='<div style="margin-top:4px;">';
+h+='<h2 style="font-size:20px;font-weight:800;color:#1a1a2e;margin-bottom:18px;">Creating the Ticket</h2>';
+h+='<div>';
+h+='<button onclick="var b=document.getElementById(\'ci-ver-body\');var a=document.getElementById(\'ci-ver-arr\');var isOpen=b.style.display!==\'none\';b.style.display=isOpen?\'none\':\'block\';a.style.transform=isOpen?\'rotate(0deg)\':\'rotate(90deg)\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-radius:10px;border:1px solid #e2e8f0;cursor:pointer;background:#f7fafc;font-family:inherit;font-size:13px;font-weight:700;color:#1a1a2e;box-sizing:border-box;transition:background 0.15s;" onmouseover="this.style.background=\'#ebf4ff\';this.style.borderColor=\'#bee3f8\'" onmouseout="this.style.background=\'#f7fafc\';this.style.borderColor=\'#e2e8f0\'">';
+h+='<div style="display:flex;align-items:center;gap:10px;"><span style="font-size:18px;">ðŸ”</span><span>Step 1 â€” Verification</span></div>';
+h+='<span id="ci-ver-arr" style="font-size:12px;color:#718096;transition:transform 0.3s ease;">â–¶</span>';
+h+='</button>';
+h+='<div id="ci-ver-body" style="display:none;border:1px solid #e2e8f0;border-top:none;border-radius:0 0 10px 10px;background:#fafcff;padding:16px 18px;">';
+h+='<div style="background:#ebf4ff;border:1px solid #bee3f8;border-radius:8px;padding:12px 16px;margin-bottom:16px;">';
+h+='<p style="font-size:13px;color:#1e3a5c;line-height:1.75;margin:0;">Verification should not take longer than a few minutes. The aim is to do a quick check to see if we can <strong>determine fault</strong>. Work through the steps below in order and note what you find.</p>';
+h+='</div>';
+h+='<div style="display:flex;flex-direction:column;gap:10px;">';
+var ciVerSteps=[['1','Check the Listing','Does the amenity appear correctly on other listings for the same property, but not on this one? If yes â€” <strong style="color:#9b2235;">Jetstream fault.</strong> Our content is wrong on that specific listing.'],['2','Check Front','Search for any email from the partner confirming the amenity has changed. If the partner notified us and we haven\'t updated our listing yet â€” <strong style="color:#9b2235;">Jetstream fault.</strong>'],['3','Check HubSpot (Content Updates)','Has this exact issue been raised before on this property? If a content update ticket already exists and is pending â€” <strong style="color:#9b2235;">Jetstream fault.</strong>'],['4','Check All Guest Communications','Review the RAI, confirmation email, and any agent messages. Did B2C give the guest incorrect information that contradicts what the partner offers? If yes â€” <strong style="color:#9b2235;">Jetstream fault.</strong>'],['5','Check Slack','Look for any message about this property to see if we were informed of an amenity change. If we were told and didn\'t action it â€” <strong style="color:#9b2235;">Jetstream fault.</strong>']];
+for(var vs=0;vs<ciVerSteps.length;vs++){h+='<div style="display:flex;align-items:flex-start;gap:12px;padding:13px 15px;background:#fff;border:1px solid #e2e8f0;border-radius:9px;"><div style="background:#3a8a9e;color:#fff;border-radius:50%;width:26px;height:26px;min-width:26px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;margin-top:1px;">'+ciVerSteps[vs][0]+'</div><div><div style="font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:3px;">'+ciVerSteps[vs][1]+'</div><div style="font-size:12px;color:#4a5568;line-height:1.7;">'+ciVerSteps[vs][2]+'</div></div></div>';}
+h+='</div>';
+h+='</div>';
+h+='</div>';
+h+='<div style="margin-top:8px;">';
+h+='<button onclick="var b=document.getElementById(\'ci-ms-2-body\');var a=document.getElementById(\'ci-ms-2-arr\');var isOpen=b.style.display!==\'none\';b.style.display=isOpen?\'none\':\'block\';a.style.transform=isOpen?\'rotate(0deg)\':\'rotate(90deg)\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-radius:10px;border:1px solid #e2e8f0;cursor:pointer;background:#f7fafc;font-family:inherit;font-size:13px;font-weight:700;color:#1a1a2e;box-sizing:border-box;transition:background 0.15s;" onmouseover="this.style.background=\'#ebf4ff\';this.style.borderColor=\'#bee3f8\'" onmouseout="this.style.background=\'#f7fafc\';this.style.borderColor=\'#e2e8f0\'">';
+h+='<div style="display:flex;align-items:center;gap:10px;"><span style="font-size:18px;">ðŸ“</span><span>Step 2 â€” Create the Ticket</span></div>';
+h+='<span id="ci-ms-2-arr" style="font-size:12px;color:#718096;transition:transform 0.3s ease;">â–¶</span>';
+h+='</button>';
+h+='<div id="ci-ms-2-body" style="display:none;border:1px solid #e2e8f0;border-top:none;border-radius:0 0 10px 10px;background:#fafcff;padding:16px 18px;">';
+h+='<div style="display:flex;flex-direction:column;gap:12px;">';
+h+='<div style="background:#f7fafc;border:1px solid #e2e8f0;border-radius:10px;padding:16px 18px;">';
+h+='<div style="font-size:13px;font-weight:700;color:#1e3a5c;margin-bottom:12px;">ðŸ“ Insert the Following Properties</div>';
+h+='<div style="display:flex;flex-direction:column;gap:8px;">';
+var ctProps=[['Ticket Name','Include the Cirrus booking ID, full guest name, and title of the issue'],['Pipeline','B2C: Guest Resolution &amp; Revenue Protection'],['Ticket Status','Choose the relevant option'],['Account Manager','Choose the relevant option'],['Cirrus URL','Paste the Cirrus booking URL here'],['Complaint Type','Choose the correct category from the list above'],['Suggested Compensation Amount','Use the guide to assist you in choosing what YOU think the correct compensation amount should be for this guest issue â€” B2C to action this']];
+for(var cp=0;cp<ctProps.length;cp++){h+='<div style="display:flex;align-items:flex-start;gap:0;border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;font-size:12px;"><div style="background:#1e3a5c;color:#fff;padding:10px 14px;font-weight:700;min-width:180px;line-height:1.5;">'+ctProps[cp][0]+'</div><div style="padding:10px 14px;color:#4a5568;line-height:1.6;background:#fff;flex:1;">'+ctProps[cp][1]+'</div></div>';}
+h+='</div></div>';
+h+='</div>';
+h+='</div>';
+h+='</div>';
+h+='<div style="margin-top:8px;">';
+h+='<button onclick="var b=document.getElementById(\'ci-ms-3-body\');var a=document.getElementById(\'ci-ms-3-arr\');var isOpen=b.style.display!==\'none\';b.style.display=isOpen?\'none\':\'block\';a.style.transform=isOpen?\'rotate(0deg)\':\'rotate(90deg)\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-radius:10px;border:1px solid #e2e8f0;cursor:pointer;background:#f7fafc;font-family:inherit;font-size:13px;font-weight:700;color:#1a1a2e;box-sizing:border-box;transition:background 0.15s;" onmouseover="this.style.background=\'#ebf4ff\';this.style.borderColor=\'#bee3f8\'" onmouseout="this.style.background=\'#f7fafc\';this.style.borderColor=\'#e2e8f0\'">';
+h+='<div style="display:flex;align-items:center;gap:10px;"><span style="font-size:18px;">ðŸ“‹</span><span>Step 3 â€” Create an Overview for the Ticket</span></div>';
+h+='<span id="ci-ms-3-arr" style="font-size:12px;color:#718096;transition:transform 0.3s ease;">â–¶</span>';
+h+='</button>';
+h+='<div id="ci-ms-3-body" style="display:none;border:1px solid #e2e8f0;border-top:none;border-radius:0 0 10px 10px;background:#fafcff;padding:8px 18px;">';
+h+='<div style="display:flex;flex-direction:column;gap:8px;">';
+h+='<div style="border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;">';
+h+='<button onclick="var b=document.getElementById(\'ci3-s1-body\');var a=document.getElementById(\'ci3-s1-arr\');var o=b.style.display!==\'none\';b.style.display=o?\'none\':\'block\';a.textContent=o?\'â–¶\':\'â–¼\';" style="width:100%;display:flex;align-items:center;gap:12px;padding:12px 16px;background:#fff;border:none;cursor:pointer;font-family:inherit;text-align:left;">';
+h+='<div style="background:#1e3a5c;color:#fff;border-radius:50%;width:24px;height:24px;min-width:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;">1</div>';
+h+='<span style="font-size:13px;font-weight:700;color:#1a1a2e;flex:1;"><strong>Section 1</strong> â€” Complaint Reported</span>';
+h+='<span id="ci3-s1-arr" style="font-size:13px;color:#718096;">â–¶</span>';
+h+='</button>';
+h+='<div id="ci3-s1-body" style="display:none;padding:14px 16px 16px;background:#f7fafc;border-top:1px solid #e2e8f0;">';
+h+='<div style="background:#ebf4ff;border:1px solid #bee3f8;border-radius:9px;padding:13px 16px;margin-bottom:14px;">';
+h+='<p style="font-size:13px;color:#1e3a5c;line-height:1.75;margin:0 0 6px 0;">For Content Issues, the <strong>Complaint Reported</strong> field should be a brief 1 to 2 sentence summary of the issue reported by the guest, specifically describing the amenity, feature, or item that was missing, incorrect, or different from what was advertised on the listing.</p>';
+h+='<p style="font-size:13px;color:#1e3a5c;font-weight:700;margin:10px 0 6px 0;">Examples:</p>';
+h+='<ul style="font-size:13px;color:#1e3a5c;line-height:1.75;margin:0;padding-left:18px;">';
+h+='<li>Guest reported that the hot tub advertised on the listing was not available on site.</li>';
+h+='<li>Guest reported that bed linen was not provided despite being listed as included.</li>';
+h+='<li>Guest reported that the property did not have WiFi as advertised on the listing.</li>';
+h+='<li>Guest reported that the unit did not have a dishwasher as shown on the listing.</li>';
+h+='</ul>';
+h+='</div>';
+h+='<div style="border:1px solid #c7d9e8;border-radius:9px;overflow:hidden;margin-top:4px;">';
+h+='<button onclick="var p=document.getElementById(\'ci-s1-rte-panel\');var a=document.getElementById(\'ci-s1-rte-arrow\');var isOpen=p.style.display!==\'none\';p.style.display=isOpen?\'none\':\'block\';a.style.transform=isOpen?\'rotate(0deg)\':\'rotate(90deg)\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:#1e3a5c;border:none;cursor:pointer;font-family:inherit;" onmouseover="this.style.background=\'#162d48\'" onmouseout="this.style.background=\'#1e3a5c\'">';
+h+='<div style="display:flex;align-items:center;gap:8px;"><span style="font-size:14px;">ðŸ“‹</span><span style="font-size:13px;font-weight:700;color:#fff;">Real Ticket Examples</span><span style="font-size:11px;color:rgba(255,255,255,0.55);font-weight:400;">(16 examples)</span></div>';
+h+='<span id="ci-s1-rte-arrow" style="font-size:11px;color:rgba(255,255,255,0.65);transition:transform 0.25s;display:inline-block;">â–¶</span>';
+h+='</button>';
+h+='<div id="ci-s1-rte-panel" style="display:none;padding:12px 14px;background:#fafcff;">';
+h+='<div style="display:flex;flex-direction:column;gap:8px;">';
+var ciSec1Ex=["Guest reported that the aquatic park advertised on the listing was closed for maintenance with no prior notice or disclosure.","Guest reported a non-functioning refrigerator, inaccessible pool facilities, and Wi-Fi not working throughout their stay.","Guest reported that the patio and terrace, advertised as available, were unusable due to construction debris and a taped-shut patio door.","Guest reported that no towels or bed sheets were provided upon check-in, despite the listing advertising linens as included.","Guest reported that checkout instructions stated 12:00 PM but reception informed them checkout was 11:00 AM upon departure.","Guest was informed via confirmation message that linens and towels required an additional fee, despite the listing stating sheets and bath towels are included.","Guest reported the pool was unavailable upon arrival and declined to check in, requesting a full refund.","Guest reported the shared outdoor pool was not heated upon arrival, despite the listing advertising a heated pool available from mid-April to mid-October.","Guest reported that the listing stated parking was free during summer but was charged â‚¬30 per week per vehicle upon contacting reception.","Guest reported that the partner advised bed linen costs â‚¬16 per bed, while the listing stated â‚¬11 for a smaller bed.","Guest reported the property was advertised as a 3-minute walk to the beach on Expedia, but the actual distance felt significantly further.","Guest reported being informed via RAI that breakfast costs â‚¬12 per person, while the actual price upon arrival was â‚¬18 per person.","Guest reported ongoing construction noise, entrance blockages, and a closed hot tub throughout their stay.","Guest reported the property was advertised with an ocean view but no ocean view was available upon arrival.","Five confirmed listing integrity failures identified including a non-existent pool listed as an amenity, outdated photos, incorrect incidental hold, photo-to-room-type mismatch, and an incorrect map pin.","Guest reported multiple issues including an unusable indoor pool, a closed outdoor pool, a dirty hot tub, and cleanliness issues throughout the unit."];
+for(var i=0;i<ciSec1Ex.length;i++){h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;"><div style="background:#1e3a5c;color:#fff;font-size:11px;font-weight:700;padding:6px 12px;">Example '+(i+1)+'</div><div style="padding:10px 14px;background:#fff;font-size:12px;color:#1a1a2e;line-height:1.75;"><span style="font-weight:700;color:#1e3a5c;">Complaint Reported: </span>'+ciSec1Ex[i]+'</div></div>';}
+h+='</div>';
+h+='</div>';
+h+='</div>';
+h+='</div></div>';
+h+='<div style="border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;">';
+h+='<button onclick="var b=document.getElementById(\'ci3-s2-body\');var a=document.getElementById(\'ci3-s2-arr\');var o=b.style.display!==\'none\';b.style.display=o?\'none\':\'block\';a.textContent=o?\'â–¶\':\'â–¼\';" style="width:100%;display:flex;align-items:center;gap:12px;padding:12px 16px;background:#fff;border:none;cursor:pointer;font-family:inherit;text-align:left;">';
+h+='<div style="background:#1e3a5c;color:#fff;border-radius:50%;width:24px;height:24px;min-width:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;">2</div>';
+h+='<span style="font-size:13px;font-weight:700;color:#1a1a2e;flex:1;"><strong>Section 2</strong> â€” Verification</span>';
+h+='<span id="ci3-s2-arr" style="font-size:13px;color:#718096;">â–¶</span>';
+h+='</button>';
+h+='<div id="ci3-s2-body" style="display:none;padding:14px 16px 16px;background:#f7fafc;border-top:1px solid #e2e8f0;">';
+h+='<div style="background:#ebf4ff;border:1px solid #bee3f8;border-radius:10px;padding:14px 16px;margin-bottom:16px;">';
+h+='<div style="font-size:13px;font-weight:800;color:#1e3a5c;margin-bottom:8px;">Content Issue Verification</div>';
+h+='<p style="font-size:13px;color:#1e3a5c;line-height:1.75;margin:0 0 10px 0;">To ensure a fair and consistent assessment, the verification process should be divided into two parts:</p>';
+h+='<div style="display:flex;flex-direction:column;gap:8px;">';
+h+='<div style="display:flex;align-items:flex-start;gap:10px;"><div style="background:#1e3a5c;color:#fff;border-radius:50%;width:22px;height:22px;min-width:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;margin-top:1px;">1</div><div style="font-size:13px;color:#1e3a5c;line-height:1.7;"><strong>Guest Verification:</strong> Confirm whether the amenity or feature was advertised to the guest and was valid for their booking.</div></div>';
+h+='<div style="display:flex;align-items:flex-start;gap:10px;"><div style="background:#1e3a5c;color:#fff;border-radius:50%;width:22px;height:22px;min-width:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;margin-top:1px;">2</div><div style="font-size:13px;color:#1e3a5c;line-height:1.7;"><strong>Fault Determination:</strong> If the issue is valid, determine who is responsible for the discrepancy.</div></div>';
+h+='</div></div>';
+h+='<div style="border:1px solid #c7d9e8;border-radius:9px;overflow:hidden;margin-top:4px;">';
+h+='<button onclick="var p=document.getElementById(\'ci-s2-rte-panel\');var a=document.getElementById(\'ci-s2-rte-arr\');var isOpen=p.style.display!==\'none\';p.style.display=isOpen?\'none\':\'block\';a.style.transform=isOpen?\'rotate(0deg)\':\'rotate(90deg)\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:#1e3a5c;border:none;cursor:pointer;font-family:inherit;" onmouseover="this.style.background=\'#162d48\'" onmouseout="this.style.background=\'#1e3a5c\'">';
+h+='<div style="display:flex;align-items:center;gap:8px;"><span style="font-size:14px;">ðŸ“‹</span><span style="font-size:13px;font-weight:700;color:#fff;">Real Ticket Examples</span><span style="font-size:11px;color:rgba(255,255,255,0.55);font-weight:400;">('+15+' examples)</span></div>';
+h+='<span id="ci-s2-rte-arr" style="font-size:11px;color:rgba(255,255,255,0.65);transition:transform 0.25s;display:inline-block;">â–¶</span>';
+h+='</button>';
+h+='<div id="ci-s2-rte-panel" style="display:none;padding:12px 14px;background:#fafcff;">';
+h+='<div style="display:flex;flex-direction:column;gap:8px;">';
+var ciSec2Ex=[
+  {cr:"Guest reported that the aquatic park advertised on the listing was closed for maintenance with no prior notice or disclosure.",vr:"Listing confirmed to contain no disclosure regarding aquatic park closures or boat slip unavailability at the time of booking.",fv:"Conducted 5-step fault verification but was unable to identify a responsible party. Fault: Unclear."},
+  {cr:"Guest reported that the patio and terrace, advertised as available, were unusable due to construction debris and a taped-shut patio door.",vr:"Listing disclosed ongoing renovation but did not state the terrace was out of use, confirming the complaint as valid.",fv:"Conducted 5-step fault verification and found an email from the partner advising that the amenity was no longer available, but the listing was not updated. Fault: Jetstream."},
+  {cr:"Guest reported that no towels or bed sheets were provided upon check-in, despite the listing advertising linens as included.",vr:"Checked the listing and confirmed both bed linen and bath linen are listed as included, verifying the complaint as valid.",fv:"Conducted 5-step verification and nothing was found â€” fault unclear."},
+  {cr:"Guest reported that checkout instructions stated 12:00 PM but reception informed them checkout was 11:00 AM upon departure.",vr:"Verified internally that the listing displays checkout as 12:00 PM, confirming a discrepancy between the advertised time and the information provided on-site.",fv:"Conducted the 5-step verification and identified an email from the partner confirming the updated checkout time. Determined that the issue was due to a Jetstream fault."},
+  {cr:"Guest was informed via confirmation message that linens and towels required an additional fee, despite the listing stating sheets and bath towels are included.",vr:"Checked the listing and confirmed linens and towels are correctly advertised as included, identifying the discrepancy as a content and translation error.",fv:"No need for 5-step verification â€” this is a Jetstream fault due to the listing and RAI information being different."},
+  {cr:"Guest reported the pool was unavailable upon arrival and declined to check in, requesting a full refund.",vr:"Called the front desk, who confirmed the pool had been closed for nearly a year with no estimated reopening date. Checked the listing and confirmed the pool was advertised to the guest â€” complaint valid.",fv:"Conducted 5-step verification â€” fault unclear."},
+  {cr:"Guest reported the shared outdoor pool was not heated upon arrival, despite the listing advertising a heated pool available from mid-April to mid-October.",vr:"Listing reviewed and confirmed it advertises a shared heated pool from mid-April; reception advised heating would not begin until May 15th, confirming the discrepancy.",fv:"N/A â€” the information was provided on the listing that the pool would not be heated during their stay."},
+  {cr:"Guest reported that the listing stated parking was free during summer but was charged â‚¬30 per week per vehicle upon contacting reception.",vr:"Listing confirmed to state parking is free during summer; partner confirmed internally that parking is now charged, validating the complaint as a listing discrepancy.",fv:"Conducted 5-step verification â€” fault unclear."},
+  {cr:"Guest reported that the partner advised bed linen costs â‚¬16 per bed, while the listing stated â‚¬11 for a smaller bed.",vr:"Checked the listing and confirmed this was advertised to the guest â€” complaint valid.",fv:"Conducted 5-step verification â€” fault unclear."},
+  {cr:"Guest reported the property was advertised as a 3-minute walk to the beach on Expedia, but the actual distance felt significantly further.",vr:"Internal listing reviewed and confirmed a 6-minute walk to the beach; discrepancy identified on Expedia but core listing deemed accurate.",fv:"Jetstream â€” Cirrus and the listing had different information."},
+  {cr:"Guest reported being informed via RAI that breakfast costs â‚¬12 per person, while the actual price upon arrival was â‚¬18 per person.",vr:"Checked the listing which clearly states breakfast at â‚¬18 per person, confirming the RAI communication incorrectly stated â‚¬12.",fv:"Jetstream fault â€” the information on Cirrus was different to the listing."},
+  {cr:"Guest reported ongoing construction noise, entrance blockages, and a closed hot tub throughout their stay.",vr:"Property team confirmed active construction in the courtyard and that the hot tub was temporarily closed; listing lacked a construction disclosure prior to the recent update.",fv:"Conducted 5-step verification and found a content update in the pipeline for this but it was not yet updated in Cirrus â€” Jetstream fault."},
+  {cr:"Guest reported the property was advertised with an ocean view but no ocean view was available upon arrival.",vr:"Listing reviewed internally and confirmed ocean view is explicitly mentioned; partner confirmed it is not guaranteed, validating the mismatch.",fv:"Conducted 5-step verification and found no updates â€” fault unclear."},
+  {cr:"Five confirmed listing integrity failures identified including a non-existent pool listed as an amenity, outdated photos, incorrect incidental hold, photo-to-room-type mismatch, and an incorrect map pin.",vr:"This was advertised to the guest â€” complaint is valid.",fv:"All five failures confirmed as Jetstream-owned; the pool issue was a repeat failure previously flagged twice without resolution."},
+  {cr:"Guest reported multiple issues including an unusable indoor pool, a closed outdoor pool, a dirty hot tub, and cleanliness issues throughout the unit.",vr:"Outdoor pool closure confirmed via guest photo evidence; amenities disclaimer present on listing but reported condition exceeded acceptable standards.",fv:"Conducted 5-step verification and found nothing â€” fault unclear."}
+];
+for(var i=0;i<ciSec2Ex.length;i++){
+  h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;">';
+  h+='<div style="background:#1e3a5c;color:#fff;font-size:11px;font-weight:700;padding:6px 12px;">Example '+(i+1)+'</div>';
+  h+='<div style="padding:10px 14px;background:#fff;display:flex;flex-direction:column;gap:6px;">';
+  h+='<div style="font-size:12px;color:#1a1a2e;"><span style="font-weight:700;color:#1e3a5c;">Complaint Reported: </span>'+ciSec2Ex[i].cr+'</div>';
+  h+='<div style="font-size:12px;color:#1a1a2e;"><span style="font-weight:700;color:#276749;">Guest Verification: </span>'+ciSec2Ex[i].vr+'</div>';
+  h+='<div style="font-size:12px;color:#1a1a2e;"><span style="font-weight:700;color:#9b2235;">Fault Verification: </span>'+(ciSec2Ex[i].fv||'')+'</div>';
+  h+='</div></div>';
+}
+h+='</div>';
+h+='</div>';
+h+='</div>';
+h+='</div></div>';
+h+='<div style="border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;">';
+h+='<button onclick="var b=document.getElementById(\'ci3-s3-body\');var a=document.getElementById(\'ci3-s3-arr\');var o=b.style.display!==\'none\';b.style.display=o?\'none\':\'block\';a.textContent=o?\'â–¶\':\'â–¼\';" style="width:100%;display:flex;align-items:center;gap:12px;padding:12px 16px;background:#fff;border:none;cursor:pointer;font-family:inherit;text-align:left;">';
+h+='<div style="background:#1e3a5c;color:#fff;border-radius:50%;width:24px;height:24px;min-width:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;">3</div>';
+h+='<span style="font-size:13px;font-weight:700;color:#1a1a2e;flex:1;"><strong>Section 3</strong> â€” Actions Taken <span style="font-weight:400;color:#718096;">â€” every action must include a date</span></span>';
+h+='<span id="ci3-s3-arr" style="font-size:13px;color:#718096;">â–¶</span>';
+h+='</button>';
+h+='<div id="ci3-s3-body" style="display:none;padding:14px 16px 16px;background:#f7fafc;border-top:1px solid #e2e8f0;">';
+var inclId='incl-'+Math.random().toString(36).substr(2,6);
+h+='<button onclick="var el=document.getElementById(\''+inclId+'\');var arr=this.querySelector(\'.incl-arrow\');var open=el.style.display!==\'none\';el.style.display=open?\'none\':\'block\';arr.style.transform=open?\'rotate(0deg)\':\'rotate(180deg)\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;background:#276749;color:#fff;border:none;border-radius:9px;padding:11px 16px;font-size:13px;font-weight:800;cursor:pointer;margin-bottom:8px;text-align:left;">'+
+  '<span>âœ… What TO include</span>'+
+  '<span class="incl-arr" style="font-size:16px;transition:transform 0.2s;display:inline-block;" id="'+inclId+'-arr'+'">â–¼</span>'+
+'</button>';
+h+='<div id="'+inclId+'" style="display:none;background:#f0fff4;border:1px solid #9ae6b4;border-radius:9px;padding:12px 14px;margin-bottom:14px;">';
+h+='<p style="font-size:12px;color:#276749;line-height:1.75;margin:0 0 10px 0;">Include anything that <strong>actually moved the case forward</strong> â€” real communications, real decisions, real outcomes. If something happened that affected the guest, the partner, or the resolution, it goes here.</p>';
+h+='<div style="display:flex;flex-direction:column;gap:6px;">';
+var incl=[['ðŸ“§','Partner contacted with a specific request','<em>e.g. Partner contacted regarding the reported cleanliness concerns and requested to arrange additional cleaning.</em>'],['ðŸ“‹','Follow-up communications with detail','<em>e.g. Follow-up email sent with additional details about spiders in the entryway and the guest killing three spiders.</em>'],['ðŸ“¸','Guest photos received and forwarded to the partner','<em>e.g. Guest provided additional photos â€” stained towel/bathmat, damaged dresser, unclean kitchen drawers. Photos forwarded to partner.</em>'],['ðŸ¤','Compensation offered, accepted, or declined','<em>e.g. 27/05: Offered guest 15% future stay discount as goodwill gesture.</em><br><em>e.g. 24/05: Guest declined the 15% discount â€” escalated to team lead for review.</em>'],['ðŸ“ž','Calls made with outcome noted','<em>e.g. 14/05: Called front desk â€” confirmed guest was correctly assigned to an oceanview room.</em>'],['ðŸ”º','Escalations â€” to TL, partner, or Airbnb','<em>e.g. 27/05: Guest escalated to Airbnb requesting 50% partial refund. Partner updated and asked to provide additional information.</em>'],['ðŸ”§','Partner confirmed repairs or actions taken on-site','<em>e.g. 05/16: Partner confirmed onsite team attended to reported issues and concerns resolved.</em>'],['ðŸ‘¤','Followed up with guest after a resolution attempt','<em>e.g. Followed up with guest to confirm resolution on their side.</em>'],['ðŸ’³','Refunds or compensation processed','<em>e.g. 21/05: Refund of â‚¬25 processed. Guest confirmed receipt.</em>']];
+for(var i=0;i<incl.length;i++){h+='<div style="display:flex;align-items:flex-start;gap:10px;padding:8px 10px;background:#fff;border:1px solid #c6f6d5;border-radius:6px;"><span style="font-size:15px;flex-shrink:0;margin-top:1px;">'+incl[i][0]+'</span><div><div style="font-size:12px;font-weight:700;color:#276749;margin-bottom:2px;">'+incl[i][1]+'</div><div style="font-size:11px;color:#4a5568;line-height:1.65;">'+incl[i][2]+'</div></div></div>';}
+h+='</div></div>';
+var exclId='excl-'+Math.random().toString(36).substr(2,6);
+h+='<button onclick="var el=document.getElementById(\''+exclId+'\');var open=el.style.display!==\'none\';el.style.display=open?\'none\':\'block\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;background:#9b2235;color:#fff;border:none;border-radius:9px;padding:11px 16px;font-size:13px;font-weight:800;cursor:pointer;margin-bottom:8px;text-align:left;">'+
+  '<span>ðŸš« What NOT to include</span>'+
+  '<span style="font-size:16px;transition:transform 0.2s;display:inline-block;">â–¼</span>'+
+'</button>';
+h+='<div id="'+exclId+'" style="display:none;background:#fff5f5;border:2px solid #feb2b2;border-radius:9px;padding:12px 14px;margin-bottom:14px;">';
+h+='<p style="font-size:12px;color:#742a2a;line-height:1.75;margin:0 0 10px 0;">These are <strong>admin tasks and status notes</strong> â€” they clutter the Actions Taken section and add no useful information about what actually happened. Leave these out.</p>';
+h+='<div style="display:flex;flex-direction:column;gap:6px;">';
+var excl=[['"Acknowledged guest complaint" or "Guest concerns acknowledged"',"Acknowledging a complaint is not an action â€” it\'s just opening the case. Skip it."],['"HubSpot ticket created and documented"',"This is an admin step. It doesn\'t tell anyone what you actually did."],['"Photos received and uploaded to HubSpot ticket"',"Uploading to HubSpot is filing, not an action. If photos were forwarded to the partner, that\'s worth noting."],['"Suggested compensation amount of â‚¬55 added"',"This is a field in the ticket â€” it\'s not an action you took."],['"Awaiting partner response" or "Pending partner response"',"These are status notes. Put them in the ticket status, not in Actions Taken."],['"Guest advised matter is being investigated"',"Vague and adds nothing. Note the actual communication you sent instead."],['"Partner contacted and awaiting response"',"Incomplete. Say what you contacted the partner about and what you requested."],['"Guest reported unresolved concerns; photos reviewed internally"',"This belongs in Verification, not Actions Taken."],['"5/23: Guest advised they booked alternate accommodation"',"A guest\'s action is not your action. Only note it if it changes what you then did."]];
+for(var i=0;i<excl.length;i++){h+='<div style="display:flex;align-items:flex-start;gap:10px;padding:8px 10px;background:#fff;border:1px solid #fed7d7;border-radius:6px;"><span style="font-size:15px;flex-shrink:0;margin-top:1px;">âŒ</span><div><div style="font-size:12px;font-weight:700;color:#9b2235;margin-bottom:2px;">'+excl[i][0]+'</div><div style="font-size:11px;color:#4a5568;line-height:1.65;">'+excl[i][1]+'</div></div></div>';}
+h+='</div></div>';
+var examplesId='examp-'+Math.random().toString(36).substr(2,6);
+h+='<button onclick="var el=document.getElementById(\''+examplesId+'\');var open=el.style.display!==\'none\';el.style.display=open?\'none\':\'block\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;background:#1e3a5c;color:#fff;border:none;border-radius:9px;padding:11px 16px;font-size:13px;font-weight:800;cursor:pointer;margin-bottom:8px;text-align:left;">';
+h+='<span>ðŸ“‹ Real Examples from Closed Tickets</span>';
+h+='<span style="font-size:16px;display:inline-block;">â–¼</span>';
+h+='</button>';
+h+='<div id="'+examplesId+'" style="display:none;">';
+
+h+='<div style="display:flex;flex-direction:column;gap:10px;">';
+h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;">';
+h+='<div style="background:#1e3a5c;color:#fff;font-size:12px;font-weight:700;padding:8px 14px;">âš¡ Power Outage â€” Claire Le Dimna</div>';
+h+='<div style="padding:10px 14px;background:#fff;display:flex;flex-direction:column;gap:4px;">';
+var ex1=['14/05: Advised guest to contact front desk immediately. Provided contact number and emergency number posted outside reception.','14/05: Guest confirmed reception was closed and voicemail was left. Guest\'s husband went to reception in person.','15/05: Guest confirmed they spent the night without electricity and heating.','15/05: Escalated issue to resort partner for review and goodwill consideration.','18/05: Partner confirmed they would contact the campsite and follow up.','20/05: Offered guest 20% future stay voucher.'];
+for(var i=0;i<ex1.length;i++){h+='<div style="font-size:12px;color:#1a1a2e;display:flex;align-items:flex-start;gap:8px;"><span style="color:#718096;margin-top:1px;">â€¢</span><span>'+ex1[i]+'</span></div>';}
+h+='</div></div>';
+h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;">';
+h+='<div style="background:#1e3a5c;color:#fff;font-size:12px;font-weight:700;padding:8px 14px;">ðŸ”§ Multiple Maintenance Issues â€” Kennetta Jones</div>';
+h+='<div style="padding:10px 14px;background:#fff;display:flex;flex-direction:column;gap:4px;">';
+var ex2=['23/05: Requested guest photos and advised guest to continue coordinating with front desk for immediate assistance.','23/05: Offered 15% future stay discount as goodwill gesture.','24/05: Guest declined the 15% discount â€” escalated to team lead for review.','27/05: Guest escalated to Airbnb requesting 50% partial refund. Partner updated and asked to provide additional information and confirm goodwill compensation position.'];
+for(var i=0;i<ex2.length;i++){h+='<div style="font-size:12px;color:#1a1a2e;display:flex;align-items:flex-start;gap:8px;"><span style="color:#718096;margin-top:1px;">â€¢</span><span>'+ex2[i]+'</span></div>';}
+h+='</div></div>';
+h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;">';
+h+='<div style="background:#1e3a5c;color:#fff;font-size:12px;font-weight:700;padding:8px 14px;">ðŸ§¹ Cleanliness / Spiders â€” Colette Spencer</div>';
+h+='<div style="padding:10px 14px;background:#fff;display:flex;flex-direction:column;gap:4px;">';
+var ex3=['Partner contacted regarding the reported cleanliness concerns and requested additional cleaning to be arranged.','Advised partner it was already near 9:00 PM local time, so same-night assistance may not be possible.','Follow-up email sent with additional details â€” spiders reported in entryway, guest confirmed killing three large spiders during stay.','Guest provided additional photos: stained towel/bathmat, damaged bedroom dresser, unclean kitchen drawers, debris near entrance, spider webs in bathroom fan. Photos forwarded to partner.'];
+for(var i=0;i<ex3.length;i++){h+='<div style="font-size:12px;color:#1a1a2e;display:flex;align-items:flex-start;gap:8px;"><span style="color:#718096;margin-top:1px;">â€¢</span><span>'+ex3[i]+'</span></div>';}
+h+='</div></div>';
+h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;">';
+h+='<div style="background:#1e3a5c;color:#fff;font-size:12px;font-weight:700;padding:8px 14px;">ðŸš¨ Unsafe Accommodation â€” Hilda Chahchah Luquet</div>';
+h+='<div style="padding:10px 14px;background:#fff;display:flex;flex-direction:column;gap:4px;">';
+var ex4=['Escalated maintenance concerns to the partner. Requested urgent repairs, especially for the exposed electrical outlet.','05/16: Partner confirmed onsite team attended to reported issues and concerns resolved.','Followed up with guest to confirm issues had been resolved on their side.','Guest reported additional issues and shared further photos. Informed onsite team and advised guest to visit reception directly for assistance.','05/20: Partner declined compensation. Offered guest 20% future stay discount.'];
+for(var i=0;i<ex4.length;i++){h+='<div style="font-size:12px;color:#1a1a2e;display:flex;align-items:flex-start;gap:8px;"><span style="color:#718096;margin-top:1px;">â€¢</span><span>'+ex4[i]+'</span></div>';}
+h+='</div></div>';
+h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;">';
+h+='<div style="background:#1e3a5c;color:#fff;font-size:12px;font-weight:700;padding:8px 14px;">ðŸ’³ Double Charge â€” Dylan Alexander</div>';
+h+='<div style="padding:10px 14px;background:#fff;display:flex;flex-direction:column;gap:4px;">';
+var ex5=['14/05: Called front desk directly regarding the charge discrepancy. Receptionist forwarded to Front Desk Manager, who was unavailable.','14/05: Detailed voicemail left for Front Desk Manager requesting callback.','14/05: Email sent to property partner requesting they refund guest $140.15 directly and charge our VCC instead.','Agent called partner directly and provided VCC details. Partner confirmed VCC charged and guest refund processed. Guest informed â€” case resolved.'];
+for(var i=0;i<ex5.length;i++){h+='<div style="font-size:12px;color:#1a1a2e;display:flex;align-items:flex-start;gap:8px;"><span style="color:#718096;margin-top:1px;">â€¢</span><span>'+ex5[i]+'</span></div>';}
+h+='</div></div>';
+h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;">';
+h+='<div style="background:#1e3a5c;color:#fff;font-size:12px;font-weight:700;padding:8px 14px;">ðŸŠ TV &amp; Dirty Pool â€” Stella Biabiany</div>';
+h+='<div style="padding:10px 14px;background:#fff;display:flex;flex-direction:column;gap:4px;">';
+var ex6=['24/05: Advised guest to check for replacement batteries in the room.','24/05: Guest confirmed no drawers or spare batteries available. Guest unable to wait until morning due to one-night stay.','24/05: Partner/property contacted requesting urgent review and compensation consideration due to impact on guest experience.','24/05: Guest provided photos and video of unsanitary pool. Shared with property team and requested 30 EUR goodwill as requested by the guest.'];
+for(var i=0;i<ex6.length;i++){h+='<div style="font-size:12px;color:#1a1a2e;display:flex;align-items:flex-start;gap:8px;"><span style="color:#718096;margin-top:1px;">â€¢</span><span>'+ex6[i]+'</span></div>';}
+h+='</div></div>';
+h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;">';
+h+='<div style="background:#1e3a5c;color:#fff;font-size:12px;font-weight:700;padding:8px 14px;">ðŸ›ï¸ No Linens on Arrival â€” Wilco Vletter</div>';
+h+='<div style="padding:10px 14px;background:#fff;display:flex;flex-direction:column;gap:4px;">';
+var ex7=['18/05: Reached out to partner to confirm linen situation.','19/05: Partner advised guest must collect linens from reception at extra charge. Requested clarification on exact charges.','20/05: Sent follow-up to partner reiterating listing states linens are included. Requested confirmation on whether guest purchased linens so correct compensation can be issued.','20/05: Followed up with guest to confirm whether they are still on-site and have received linens.','21/05: Guest confirmed they paid â‚¬25 for bedding. Requested receipt for reimbursement.','21/05: Amount confirmed against partner pricing. Refund of â‚¬25 issued to guest.'];
+for(var i=0;i<ex7.length;i++){h+='<div style="font-size:12px;color:#1a1a2e;display:flex;align-items:flex-start;gap:8px;"><span style="color:#718096;margin-top:1px;">â€¢</span><span>'+ex7[i]+'</span></div>';}
+h+='</div></div>';
+h+='</div>';
+h+='</div></div></div>';
+h+='</div>';
+h+='<div style="border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;">';
+h+='<button onclick="var b=document.getElementById(\'ci3-s4-body\');var a=document.getElementById(\'ci3-s4-arr\');var o=b.style.display!==\'none\';b.style.display=o?\'none\':\'block\';a.textContent=o?\'â–¶\':\'â–¼\';" style="width:100%;display:flex;align-items:center;gap:12px;padding:12px 16px;background:#fff;border:none;cursor:pointer;font-family:inherit;text-align:left;">';
+h+='<div style="background:#1e3a5c;color:#fff;border-radius:50%;width:24px;height:24px;min-width:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;">4</div>';
+h+='<span style="font-size:13px;font-weight:700;color:#1a1a2e;flex:1;"><strong>Section 4</strong> â€” Final Resolution <span style="font-weight:400;color:#718096;">â€” only once the case is resolved</span></span>';
+h+='<span id="ci3-s4-arr" style="font-size:13px;color:#718096;">â–¶</span>';
+h+='</button>';
+h+='<div id="ci3-s4-body" style="display:none;padding:14px 16px 16px;background:#f7fafc;border-top:1px solid #e2e8f0;">';
+h+='<div style="background:#f0fff4;border:1px solid #9ae6b4;border-radius:8px;padding:10px 14px;margin-bottom:10px;font-size:12px;color:#276749;">âœ… <strong>Only complete this section once the case is fully resolved.</strong></div>';
+h+='<div style="display:flex;flex-direction:column;gap:6px;">';
+h+='<div style="font-size:12px;color:#1a1a2e;padding:8px 12px;background:#fff;border:1px solid #e2e8f0;border-left:3px solid #276749;border-radius:6px;">ðŸ“‹ <strong>Outcome summary</strong> â€” what was the final resolution? Was the issue fixed?</div>';
+
+h+='</div></div></div>';
+h+='</div>';
+h+='</div>';
+h+='</div>';
+
+h+='</div>';
+h+='</div>';h+='<div id="ci-sec-ci-tab2" style="display:'+(activeTab==='ci-tab2'?'block':'none')+'">';
+h+='<h2 style="font-size:20px;font-weight:800;color:#1a1a2e;margin-bottom:18px;">Guest Complaint Review Stage</h2>';
+var ciMainSteps=[
+  ['ci-ms-5','ðŸ› ï¸','','Sort out the guest issue'],
+  ['ci-ms-6','ðŸ’°','','Compensate the guest'],
+  ['ci-ms-4','ðŸ¤','Partner fault?','Contact the partner'],
+  ['ci-ms-7','âž¡ï¸','Jetstream fault?','Move to relevant stage'],
+  ['ci-ms-8','â“','Fault unclear?','Move to relevant stage']
+];
+h+='<div style="display:flex;flex-direction:column;gap:8px;">';
+for(var cm=0;cm<ciMainSteps.length;cm++){
+  var cmid=ciMainSteps[cm][0];
+  h+='<div>';
+  h+='<button onclick="var b=document.getElementById(\''+cmid+'-body\');var a=document.getElementById(\''+cmid+'-arr\');var isOpen=b.style.display!==\'none\';b.style.display=isOpen?\'none\':\'block\';a.style.transform=isOpen?\'rotate(0deg)\':\'rotate(90deg)\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-radius:10px;border:1px solid #e2e8f0;cursor:pointer;background:#f7fafc;font-family:inherit;font-size:13px;font-weight:700;color:#1a1a2e;box-sizing:border-box;transition:background 0.15s;" onmouseover="this.style.background=\'#ebf4ff\';this.style.borderColor=\'#bee3f8\'" onmouseout="this.style.background=\'#f7fafc\';this.style.borderColor=\'#e2e8f0\'">';
+  h+='<div style="display:flex;align-items:center;gap:10px;"><span style="font-size:18px;">'+ciMainSteps[cm][1]+'</span><span>'+ciMainSteps[cm][2]+' â€” '+ciMainSteps[cm][3]+'</span></div>';
+  h+='<span id="'+cmid+'-arr" style="font-size:12px;color:#718096;transition:transform 0.3s ease;">â–¶</span>';
+  h+='</button>';
+  h+='<div id="'+cmid+'-body" style="display:none;border:1px solid #e2e8f0;border-top:none;border-radius:0 0 10px 10px;background:#fafcff;padding:16px 18px;">';
+  if(cm===0){
+    h+='<div style="font-size:13px;color:#1a1a2e;line-height:1.75;font-weight:700;">The first priority is always to resolve the guest\'s issue as quickly as possible. Focus on finding an immediate solution before discussing compensation.</div>';
+  }
+  if(cm===1){
+    h+='<div style="display:flex;flex-direction:column;gap:14px;">';
+    h+='<div style="font-size:13px;color:#0d47a1;background:#e3f2fd;border:1px solid #90caf9;border-radius:8px;padding:12px 14px;line-height:1.7;">ðŸ“Œ <strong>Key rule:</strong> The profit margin shown in Cirrus is the <strong>maximum amount you can refund without Team Lead review</strong> &#8212; or <strong>$100</strong> if the margin is smaller than $100. Always weigh the compensation against the margin before offering anything to the guest.</div>';
+    var ciSopSteps=[
+      ['1','ðŸ’¡','Decide on compensation amount','Based on the severity of the issue, the impact on the guest, and how quickly it was resolved, decide on a fair compensation amount.'],
+      ['2','ðŸ“Š','Check the profit margin in Cirrus','Open the booking in Cirrus and check the <strong>Profit</strong> and <strong>Margin</strong> fields. The profit amount is your guide.<ul style="margin-top:8px;padding-left:18px;line-height:1.9;"><li>If the compensation is <strong>within the profit margin</strong> â†’ the agent can handle it directly.</li><li>If the compensation is <strong>over the margin, but less than $100</strong> â†’ the agent can still handle it.</li><li>If the compensation is <strong>above the profit margin and $100 or more</strong> â†’ try offering the profit margin amount first, or escalate if the guest is not satisfied.</li></ul><div style="margin-top:14px;background:#f0f4ff;border:1.5px solid #90caf9;border-radius:10px;padding:16px 18px;"><div style="font-size:13px;font-weight:800;color:#1e3a5c;margin-bottom:12px;">ðŸ“‹ Refund Approval Guidelines</div><p style="font-size:13px;color:#2d3748;line-height:1.75;margin-bottom:10px;">The margin is generally the refund cap. We should always aim to keep refunds within the booking\'s margin whenever possible. However, we understand that some guest issues cannot reasonably be resolved within a very small profit margin. To provide flexibility, we allow an exception for low-margin bookings.</p><div style="font-size:12px;font-weight:800;color:#1e3a5c;margin:12px 0 6px;">Exception for Small-Margin Bookings (margin under $100)</div><ul style="padding-left:18px;line-height:1.9;font-size:13px;color:#2d3748;margin-bottom:8px;"><li>Agents may approve refunds of up to <strong>$100</strong>, even if this exceeds the booking\'s margin.</li><li>This flexibility exists because very small margins may not leave enough room to appropriately resolve a guest issue.</li></ul><div style="font-size:12px;color:#4a5568;line-height:1.9;margin-bottom:10px;"><em>Examples:</em><ul style="padding-left:18px;margin-top:4px;"><li>Margin = $20 â†’ Agent can refund up to <strong>$100</strong></li><li>Margin = $50 â†’ Agent can refund up to <strong>$100</strong></li><li>Margin = $80 â†’ Agent can refund up to <strong>$100</strong></li></ul></div><div style="font-size:12px;font-weight:800;color:#1e3a5c;margin:12px 0 6px;">Bookings with a Margin of $100 or More</div><ul style="padding-left:18px;line-height:1.9;font-size:13px;color:#2d3748;margin-bottom:8px;"><li>Agents can approve refunds up to the <strong>full margin amount</strong>.</li><li>Refunds can exceed $100 as long as they remain within the booking\'s margin.</li></ul><div style="font-size:12px;color:#4a5568;line-height:1.9;margin-bottom:10px;"><em>Examples:</em><ul style="padding-left:18px;margin-top:4px;"><li>Margin = $200 â†’ Agent can refund up to <strong>$200</strong></li><li>Margin = $500 â†’ Agent can refund up to <strong>$500</strong></li><li>Margin = $600 â†’ Agent can refund up to <strong>$600</strong></li></ul></div><div style="font-size:12px;font-weight:800;color:#c53030;margin:12px 0 6px;">ðŸ”´ When to Escalate to a Team Lead (TL)</div><p style="font-size:13px;color:#2d3748;line-height:1.75;margin-bottom:6px;">Escalate when:</p><ul style="padding-left:18px;line-height:1.9;font-size:13px;color:#2d3748;margin-bottom:8px;"><li>The requested refund is <strong>more than $100</strong> on a booking with a margin <strong>under $100</strong>.</li><li>The requested refund <strong>exceeds the booking\'s margin</strong> on a booking with a margin of <strong>$100 or more</strong>.</li></ul><div style="font-size:12px;color:#4a5568;line-height:1.9;margin-bottom:10px;"><em>Examples:</em><ul style="padding-left:18px;margin-top:4px;"><li>Margin = $50, requested refund = $120 â†’ <strong>Escalate to TL</strong></li><li>Margin = $80, requested refund = $150 â†’ <strong>Escalate to TL</strong></li><li>Margin = $200, requested refund = $250 â†’ <strong>Escalate to TL</strong></li><li>Margin = $500, requested refund = $600 â†’ <strong>Escalate to TL</strong></li></ul></div><div style="background:#fff3cd;border:1px solid #f6ad55;border-radius:8px;padding:12px 14px;font-size:13px;color:#744210;line-height:1.75;"><strong>âš¡ Simple Rule:</strong> Always try to stay within the booking\'s margin. If the margin is under $100, agents have flexibility to refund up to $100. If the margin is $100 or more, agents can refund up to the full margin amount. Any refund above these limits must be escalated to a Team Lead.</div></div>'],
+      ['3','âœ…','Guest accepts the amount','If the guest accepts:<ul style="margin-top:8px;padding-left:18px;line-height:1.9;"><li>Process the refund.</li><li>Add the total compensation amount to the <strong>Compensation field</strong> on the booking page â€” this reflects how much money is being taken off the booking in total and what Jetstream is covering.</li><li>If the partner is covering any portion, also enter that amount in the <strong>Compensation by Partner</strong> field.</li></ul>'],
+      ['4','âŒ','Guest declines the profit margin amount','<div style="font-size:13px;font-weight:800;color:#c53030;margin-bottom:10px;">ðŸ”´ When to Escalate to a Team Lead (TL)</div><p style="font-size:13px;color:#2d3748;line-height:1.75;margin-bottom:8px;">Escalate when:</p><ul style="padding-left:18px;line-height:1.9;font-size:13px;color:#2d3748;"><li>The requested refund is <strong>more than $100</strong> on a booking with a margin <strong>under $100</strong>.</li><li>The requested refund <strong>exceeds the booking\'s margin</strong> on a booking with a margin of <strong>$100 or more</strong>.</li></ul>']
+    ];
+    for(var ciss=0;ciss<ciSopSteps.length;ciss++){
+      var cssid='ci-sop-'+ciss;
+      h+='<div style="border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;">';
+      h+='<button onclick="var b=document.getElementById(\''+cssid+'\');var a=document.getElementById(\''+cssid+'-arr\');var isOpen=b.style.display!==\'none\';b.style.display=isOpen?\'none\':\'block\';a.style.transform=isOpen?\'rotate(0deg)\':\'rotate(90deg)\';" style="width:100%;display:flex;align-items:center;gap:10px;padding:14px 18px;border:none;cursor:pointer;background:#f7fafc;font-family:inherit;text-align:left;box-sizing:border-box;" onmouseover="this.style.background=\'#ebf4ff\'" onmouseout="this.style.background=\'#f7fafc\'">';
+      h+='<div style="background:#1e3a5c;color:#fff;border-radius:50%;width:26px;height:26px;min-width:26px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;">'+ciSopSteps[ciss][0]+'</div>';
+      h+='<span style="font-size:16px;">'+ciSopSteps[ciss][1]+'</span>';
+      h+='<span style="font-size:13px;font-weight:700;color:#1a1a2e;flex:1;">'+ciSopSteps[ciss][2]+'</span>';
+      h+='<span id="'+cssid+'-arr" style="font-size:11px;color:#718096;transition:transform 0.3s ease;">&#9658;</span>';
+      h+='</button>';
+      h+='<div id="'+cssid+'" style="display:none;padding:14px 18px 16px 54px;border-top:1px solid #e2e8f0;background:#fafcff;font-size:13px;color:#4a5568;line-height:1.75;">'+ciSopSteps[ciss][3]+'</div>';
+      h+='</div>';
+    }
+    h+='<div style="margin-top:6px;border:1.5px solid #68d391;border-radius:12px;overflow:hidden;">';
+    h+='<button onclick="var b=document.getElementById(\'ci-sop-ex\');var a=document.getElementById(\'ci-sop-ex-arr\');var isOpen=b.style.display!==\'none\';b.style.display=isOpen?\'none\':\'block\';a.style.transform=isOpen?\'rotate(0deg)\':\'rotate(90deg)\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:14px 22px;border:none;cursor:pointer;background:#f0fff4;font-family:inherit;box-sizing:border-box;" onmouseover="this.style.background=\'#dcffe4\'" onmouseout="this.style.background=\'#f0fff4\'">';
+    h+='<div style="font-size:14px;font-weight:800;color:#276749;display:flex;align-items:center;gap:8px;"><span style="font-size:18px;">&#128214;</span> Worked Example</div>';
+    h+='<span id="ci-sop-ex-arr" style="font-size:11px;color:#276749;transition:transform 0.3s ease;">&#9658;</span>';
+    h+='</button>';
+    h+='<div id="ci-sop-ex" style="display:none;background:#f0fff4;padding:20px 22px;border-top:1px solid #68d391;">';
+    h+='<div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:18px;">';
+    h+='<div style="width:100%;font-size:13px;color:#1a1a2e;line-height:1.75;background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:12px 16px;margin-bottom:4px;">ðŸ“Œ The <strong>Compensation field</strong> on the bookings page is where you add the total compensation amount being given to the guest. This comes out of <strong>Jetstream\'s pocket</strong> â€” unless you also add an amount to the <strong>Compensation by Partner</strong> field, in which case that portion is covered by the partner instead.</div>';
+    h+='<div style="flex:1;min-width:280px;background:#fff;border:1.5px solid #d1d5db;border-radius:8px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,0.08);">';
+    h+='<div style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #e2e8f0;">';
+    h+='<div style="padding:16px 20px;border-right:1px solid #e2e8f0;"><div style="font-size:12px;font-weight:700;color:#1a1a2e;margin-bottom:4px;">Average Nightly Cost</div><div style="font-size:13px;color:#4a5568;">18.18 <span style="font-size:10px;color:#a0aec0;font-weight:600;">EUR</span></div></div>';
+    h+='<div style="padding:16px 20px;"><div style="font-size:12px;font-weight:700;color:#1a1a2e;margin-bottom:4px;">Service Type</div><div style="font-size:13px;color:#4a5568;">Full Service</div></div>';
+    h+='</div>';
+    h+='<div style="padding:14px 20px;border-bottom:1px solid #e2e8f0;"><div style="font-size:12px;font-weight:700;color:#1a1a2e;margin-bottom:3px;">Profit</div><div style="font-size:13px;color:#4a5568;">45.78 <span style="font-size:10px;color:#a0aec0;font-weight:600;">EUR</span></div></div>';
+    h+='<div style="padding:14px 20px;border-bottom:1px solid #e2e8f0;"><div style="font-size:12px;font-weight:700;color:#1a1a2e;margin-bottom:3px;">Margin</div><div style="font-size:13px;color:#4a5568;">24.6%</div></div>';
+    h+='<div style="padding:14px 20px;"><div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;"><div style="font-size:12px;font-weight:700;color:#1a1a2e;">Compensation</div><div style="display:flex;align-items:center;gap:4px;"><span style="font-size:16px;color:#e91e8c;">âžœ</span><span style="font-size:11.5px;font-weight:700;color:#e91e8c;white-space:nowrap;">total amount being compensated</span></div></div><div style="display:flex;align-items:center;justify-content:space-between;gap:8px;"><div style="display:flex;align-items:center;gap:0;"><div style="background:#f7fafc;border:1px solid #d1d5db;border-right:none;border-radius:4px 0 0 4px;padding:6px 10px;font-size:12px;color:#718096;font-weight:600;">EUR</div><div style="border:1px solid #d1d5db;border-radius:0 4px 4px 0;padding:6px 14px;font-size:13px;color:#1a1a2e;background:#fff;min-width:180px;">0.00</div></div><div style="background:#38a169;color:#fff;border-radius:5px;padding:7px 14px;font-size:12px;font-weight:700;white-space:nowrap;">âœ” Save Compensation</div></div></div>';
+    h+='</div>';
+    h+='<div style="flex:1;min-width:280px;background:#fff;border:1.5px solid #d1d5db;border-radius:8px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,0.08);">';
+    h+='<div style="padding:10px 16px;border-bottom:1px solid #e2e8f0;font-size:11.5px;color:#2d3748;"><span style="font-weight:700;">Airbnb Confirmation Code:</span> HMYJQ4XSN4 &nbsp;&nbsp; <span style="font-weight:700;">Supplier Booking Ref:</span> 5614198</div>';
+    h+='<div style="display:flex;border-bottom:1px solid #e2e8f0;font-size:11.5px;">';
+    var ciPpTabs=['Guest','Booking','Guest Payment','Partner Payment','Activity','Documents'];
+    for(var cipt=0;cipt<ciPpTabs.length;cipt++){var ciIsActive=ciPpTabs[cipt]==='Partner Payment';h+='<div style="padding:8px 10px;font-weight:'+(ciIsActive?'700':'400')+';color:'+(ciIsActive?'#c05621':'#718096')+';border-bottom:'+(ciIsActive?'2px solid #c05621':'2px solid transparent')+';white-space:nowrap;cursor:default;">'+ciPpTabs[cipt]+'</div>';}
+    h+='</div>';
+    h+='<div style="background:#3182ce;color:#fff;font-size:13px;font-weight:700;padding:8px 16px;">Property Manager</div>';
+    h+='<div style="padding:14px 16px;display:flex;flex-direction:column;gap:12px;font-size:12.5px;">';
+    h+='<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;"><div><div style="font-size:12px;font-weight:700;color:#1a1a2e;margin-bottom:6px;">Cost (Pre-tax Payable)</div><div style="display:flex;"><div style="background:#f7fafc;border:1px solid #d1d5db;border-right:none;border-radius:4px 0 0 4px;padding:6px 8px;font-size:11.5px;color:#718096;font-weight:600;">EUR</div><div style="border:1px solid #d1d5db;border-radius:0 4px 4px 0;padding:6px 10px;font-size:12.5px;min-width:60px;">127.27</div></div></div><div><div style="font-size:12px;font-weight:700;color:#1a1a2e;margin-bottom:6px;">Payable Tax %</div><div style="border:1px solid #d1d5db;border-radius:4px;padding:6px 10px;font-size:12.5px;background:#f7fafc;color:#718096;">10.00</div></div></div>';
+    h+='<div><div style="font-size:12px;font-weight:700;color:#1a1a2e;margin-bottom:2px;">Tax Payable</div><div style="font-size:13px;color:#4a5568;">12.73 <span style="font-size:10px;color:#a0aec0;font-weight:600;">EUR</span></div></div>';
+    h+='<div><div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;"><span style="font-size:12px;font-weight:700;color:#1a1a2e;">Compensation by Partner</span><span style="font-size:16px;color:#e91e8c;">âžœ</span><span style="font-size:11.5px;font-weight:700;color:#e91e8c;white-space:nowrap;">amount that the partner is compensating</span></div><div style="display:flex;"><div style="background:#f7fafc;border:1px solid #d1d5db;border-right:none;border-radius:4px 0 0 4px;padding:6px 8px;font-size:11.5px;color:#718096;font-weight:600;">EUR</div><div style="border:1px solid #d1d5db;border-radius:0 4px 4px 0;padding:6px 10px;font-size:12.5px;min-width:180px;">0.00</div></div></div>';
+    h+='<div><div style="font-size:12px;font-weight:700;color:#1a1a2e;margin-bottom:2px;">Total Payable</div><div style="font-size:13px;color:#4a5568;">140.00 <span style="font-size:10px;color:#a0aec0;font-weight:600;">EUR</span></div></div>';
+    h+='<div style="display:flex;align-items:center;justify-content:space-between;"><label style="display:flex;align-items:center;gap:6px;font-size:12px;color:#4a5568;"><input type="checkbox" disabled> Cost confirmed by partner</label><div style="background:#38a169;color:#fff;border-radius:5px;padding:7px 14px;font-size:12px;font-weight:700;">âœ” Save Cost</div></div>';
+    h+='</div></div>';
+    h+='</div>';
+    var ciScenarios=[
+      ['âœ…','#f0fff4','#276749','#c6f6d5','Scenario 1 â€” Compensation within profit margin','You decide the compensation should be <strong>30 EUR</strong>. The profit margin shown in Cirrus is <strong>45.78 EUR</strong>. Since 30 EUR is below 45.78 EUR, you are within the profit margin â€” you can offer this to the guest and process the refund without TL review.'],
+      ['âš ï¸','#fffaf0','#744210','#fbd38d','Scenario 2 â€” Compensation above profit margin (but under $100)','You think the compensation should be <strong>60 EUR</strong>. The profit margin is <strong>45.78 EUR</strong>. Since 60 EUR exceeds the margin but the total is still under $100, <strong>no TL intervention is needed</strong>. Always try to offer the profit margin amount first â€” offer <strong>45.78 EUR</strong>. If the guest is still extremely unhappy, you can go up to a maximum of <strong>$100</strong> for this case without escalating.'],
+      ['ðŸ”´','#fff5f5','#c53030','#fed7d7','Scenario 3 â€” Guest refuses the $100 maximum','If the guest refuses the maximum compensation of <strong>$100</strong>, this is the limit of what an agent can offer. At this point, <strong>escalate the ticket to the TL / Manager stage</strong> â€” $100 is the highest amount we can approve without TL involvement. Clearly note how much has already been offered and what the guest is expecting.']
+    ];
+    h+='<div style="display:flex;flex-direction:column;gap:10px;">';
+    for(var cisc=0;cisc<ciScenarios.length;cisc++){
+      h+='<div style="background:'+ciScenarios[cisc][1]+';border:1px solid '+ciScenarios[cisc][3]+';border-radius:10px;padding:14px 16px;">';
+      h+='<div style="font-size:13px;font-weight:800;color:'+ciScenarios[cisc][2]+';margin-bottom:6px;display:flex;align-items:center;gap:7px;"><span>'+ciScenarios[cisc][0]+'</span>'+ciScenarios[cisc][4]+'</div>';
+      h+='<div style="font-size:13px;color:'+ciScenarios[cisc][2]+';line-height:1.75;">'+ciScenarios[cisc][5]+'</div>';
+      h+='</div>';
+    }
+    h+='</div>';
+    h+='</div>';
+    h+='</div>'; // end collapsible body
+    h+='</div>'; // end example section wrapper
+    h+='</div>';
+  }
+  if(cm===2){
+    h+='<div style="display:flex;flex-direction:column;gap:10px;">';
+    h+='<div style="background:#fff7ed;border:1px solid #f6ad55;border-radius:9px;padding:14px 16px;">';
+    h+='<div style="display:flex;align-items:flex-start;gap:10px;">';
+    h+='<span style="font-size:18px;line-height:1;">ðŸ“§</span>';
+    h+='<div style="font-size:13px;color:#744210;line-height:1.75;">Please contact the partner, informing them of the amount that was refunded to the guest and ask if they would be willing to cover the refunded amount.</div>';
+    h+='</div>';
+    h+='</div>';
+    h+='</div>';
+  }
+  if(cm===3){
+    h+='<div style="display:flex;flex-direction:column;gap:10px;">';
+    h+='<div style="background:#f0fff4;border:1px solid #68d391;border-radius:9px;padding:14px 16px;">';
+    h+='<div style="display:flex;align-items:flex-start;gap:10px;">';
+    h+='<span style="font-size:18px;line-height:1;">âž¡ï¸</span>';
+    h+='<div style="font-size:13px;color:#276749;line-height:1.75;">No need to email the partner here, as this is a Jetstream fault. No need to email the partner with the compensation amount. Please refer to the stages guide to determine the correct stage to move the ticket to.</div>';
+    h+='</div>';
+    h+='</div>';
+    h+='</div>';
+  }
+  if(cm===4){
+    h+='<div style="display:flex;flex-direction:column;gap:10px;">';
+    h+='<p style="font-size:13px;color:#718096;line-height:1.7;">Content coming soon.</p>';
+    h+='</div>';
+  }
+  h+='</div></div>';
+}
+h+='</div>';
+h+='</div>';
+h+='<div id="ci-sec-ci-tab3" style="display:'+(activeTab==='ci-tab3'?'block':'none')+'">';
+h+='<div style="font-size:15px;font-weight:800;color:#1e3a5c;margin-bottom:14px;display:flex;align-items:center;gap:8px;"><span style="font-size:18px;">ðŸ¤¸</span> Escalated TL / Manager Stage</div>';
+var ciTlSteps=[['ci-tl-0','âš ï¸','When to escalate to TL / Manager stage'],['ci-tl-1','ðŸ—‚ï¸','Ticket Owner Actions in This Stage'],['ci-tl-2','ðŸ”','Team Lead Action â€” Verify Ticket'],['ci-tl-3','ðŸ’°','Team Lead Action â€” Verify Compensation'],['ci-tl-4','âž¡ï¸','Team Lead â€” Move to Next Stage']];
+h+='<div style="display:flex;flex-direction:column;gap:8px;">';
+for(var ci=0;ci<ciTlSteps.length;ci++){
+  var cid=ciTlSteps[ci][0];
+  h+='<div>';
+  h+='<button onclick="var b=document.getElementById(\''+cid+'-body\');var a=document.getElementById(\''+cid+'-arr\');var o=b.style.display!==\'none\';b.style.display=o?\'none\':\'block\';a.style.transform=o?\'rotate(0deg)\':\'rotate(90deg)\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-radius:10px;border:1px solid #e2e8f0;cursor:pointer;background:#f7fafc;font-family:inherit;font-size:13px;font-weight:700;color:#1a1a2e;box-sizing:border-box;" onmouseover="this.style.background=\'#ebf4ff\'" onmouseout="this.style.background=\'#f7fafc\'">';
+  h+='<div style="display:flex;align-items:center;gap:10px;"><span style="font-size:18px;">'+ciTlSteps[ci][1]+'</span><span>'+ciTlSteps[ci][2]+'</span></div>';
+  h+='<span id="'+cid+'-arr" style="font-size:12px;color:#718096;transition:transform 0.3s ease;">â–¶</span>';
+  h+='</button>';
+  h+='<div id="'+cid+'-body" style="display:none;border:1px solid #e2e8f0;border-top:none;border-radius:0 0 10px 10px;background:#fafcff;padding:16px 18px;">';
+  if(cid==='ci-tl-0'){
+    h+='<p style="font-size:13px;color:#2d3748;line-height:1.75;margin-bottom:8px;">Escalate when:</p>';
+    h+='<ul style="font-size:13px;color:#1a1a2e;line-height:1.9;padding-left:20px;margin:0;">';
+    h+='<li>The requested refund is <strong>more than $100</strong> on a booking with a margin <strong>under $100</strong>.</li>';
+    h+='<li>The requested refund <strong>exceeds the booking\'s margin</strong> on a booking with a margin of <strong>$100 or more</strong>.</li>';
+    h+='</ul>';
+  } else if(cid==='ci-tl-1'){
+    h+='<p style="font-size:13px;color:#1a1a2e;line-height:1.7;">The ticket owner is still responsible for communicating with the guest and actioning any tasks that the TL assigns to them.</p>';
+  } else if(cid==='ci-tl-2'){
+    h+='<p style="font-size:13px;color:#1a1a2e;line-height:1.7;">Verify that the ticket has been actioned correctly.</p>';
+  } else if(cid==='ci-tl-3'){
+    h+='<div style="display:flex;flex-direction:column;gap:10px;">';
+    h+='<p style="font-size:13px;color:#4a5568;line-height:1.75;">The ticket has been escalated to this stage because the guest was unhappy with the refund that was capped at the margin amount.</p>';
+    h+='<div style="background:#ebf8ff;border:1px solid #90cdf4;border-radius:9px;padding:14px 16px;font-size:13px;color:#1a365d;line-height:1.75;">ðŸ’° As a Team Lead, you have a larger leeway to refund the guest â€” <strong>up to approximately $500, but never exceeding the booking total.</strong></div>';
+    h+='<div style="background:#fff5f5;border:1px solid #feb2b2;border-radius:9px;padding:14px 16px;font-size:13px;color:#742a2a;line-height:1.75;">ðŸ”´ If an amount higher than $500 is required, please escalate to <strong>Kirsten</strong> for assistance.</div>';
+    h+='</div>';
+  } else if(cid==='ci-tl-4'){
+    h+='<p style="font-size:13px;color:#4a5568;line-height:1.75;">Please click on the stages at the top to see which stage the ticket needs to be moved to.</p>';
+  }
+  h+='</div>';
+  h+='</div>';
+}
+h+='</div>';
+h+='</div>';
+h+='<div id="ci-sec-ci-tab4" style="display:'+(activeTab==='ci-tab4'?'block':'none')+'">';
+h+='<div style="margin-top:24px;padding-top:20px;border-top:2px solid #fed7d7;">';
+h+='<div style="font-size:15px;font-weight:800;color:#c53030;margin-bottom:14px;display:flex;align-items:center;gap:8px;"><span style="font-size:18px;">ðŸ”´</span> Pending Recovery â€” PM / AM</div>';
+h+='<div style="font-size:13px;color:#744210;background:#fef3c7;border:1px solid #f6e05e;border-radius:8px;padding:12px 14px;margin-bottom:12px;display:flex;align-items:flex-start;gap:8px;"><span style="font-size:15px;">âš ï¸</span><span><strong>Note:</strong> Please move to this stage only if the loss to Jetstream is larger than $100 due to a partner fault error.</span></div>';
+h+='<div style="font-size:13px;color:#744210;background:#fef3c7;border:1px solid #f6e05e;border-radius:8px;padding:12px 14px;margin-bottom:16px;display:flex;align-items:flex-start;gap:8px;"><span style="font-size:15px;">âš ï¸</span><span><strong>Note:</strong> Cases remain in this stage for a minimum of four weeks before aging and moving to Closed.</span></div>';
+h+='</div>';
+h+='</div>';
+h+='<div id="ci-sec-ci-tab6" style="display:'+(activeTab==='ci-tab6'?'block':'none')+'">';
+h+='<div style="margin-top:24px;padding-top:20px;border-top:2px solid #fed7d7;">';
+h+='<div style="font-size:15px;font-weight:800;color:#9b2235;margin-bottom:14px;display:flex;align-items:center;gap:8px;"><span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#9b2235;border-radius:4px;font-size:13px;color:#fff;">ðŸ“¦</span> Closed: Jetstream Loss</div>';
+h+='<p style="font-size:13px;color:#4a5568;line-height:1.75;">Tickets can be moved here for any Jetstream loss that is less than $100 or when a case above $100 has completed the Pending Recovery stage and the AM task is closed with recovery refused, waived, or written off.</p>';
+h+='<p style="font-size:13px;color:#4a5568;line-height:1.75;margin-top:8px;">An AM task is still created on partner-fault cases under $100 for visibility.</p>';
+h+='</div>';
+h+='</div>';
+h+='<div id="ci-sec-ci-tab7" style="display:'+(activeTab==='ci-tab7'?'block':'none')+'">';
+h+='<div style="margin-top:24px;padding-top:20px;border-top:2px solid #fed7d7;">';
+h+='<div style="font-size:15px;font-weight:800;color:#b83280;margin-bottom:14px;display:flex;align-items:center;gap:8px;"><span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#b83280;border-radius:4px;font-size:13px;color:#fff;">ðŸ“¦</span> Closed: Jetstream Win</div>';
+h+='<p style="font-size:13px;color:#4a5568;line-height:1.75;">Please move any tickets where Jetstream loss = 0.</p>';
+h+='</div>';
+h+='</div>';
+h+='</div></div>';
+return h;
+}
+
+function setCiTab(tab){
+  var tabs=['ci-tab1','ci-tab-ct','ci-tab-create','ci-tab2','ci-tab3','ci-tab4','ci-tab6','ci-tab7'];
+  for(var i=0;i<tabs.length;i++){var el=document.getElementById('ci-sec-'+tabs[i]);if(el)el.style.display=(tab===tabs[i])?'block':'none';}
+  var btns=document.querySelectorAll('[data-citab]');
+  for(var i=0;i<btns.length;i++){btns[i].classList.toggle('active',btns[i].getAttribute('data-citab')===tab);}
+  try{localStorage.setItem('jt-ci-tab',tab);}catch(e){}
+}
+
   </script>
 
 </body>
 </html>
+
