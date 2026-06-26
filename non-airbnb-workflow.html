@@ -791,10 +791,9 @@ for(var ci=0;ci<ciTlSteps.length;ci++){
   h+='</button>';
   h+='<div id="'+cid+'-body" style="display:none;border:1px solid #e2e8f0;border-top:none;border-radius:0 0 10px 10px;background:#fafcff;padding:16px 18px;">';
   if(cid==='ci-tl-0'){
-    h+='<p style="font-size:13px;color:#2d3748;line-height:1.75;margin-bottom:8px;">Escalate when:</p>';
     h+='<ul style="font-size:13px;color:#1a1a2e;line-height:1.9;padding-left:20px;margin:0;">';
-    h+='<li>The requested refund is <strong>more than $100</strong> on a booking with a margin <strong>under $100</strong>.</li>';
-    h+='<li>The requested refund <strong>exceeds the booking\'s margin</strong> on a booking with a margin of <strong>$100 or more</strong>.</li>';
+    h+='<li>When the partner has not responded for <strong>48 hours or more</strong>.</li>';
+    h+='<li>If the partner refused compensation and you think the guest deserves compensation.</li>';
     h+='</ul>';
   } else if(cid==='ci-tl-1'){
     h+='<p style="font-size:13px;color:#1a1a2e;line-height:1.7;">The ticket owner is still responsible for communicating with the guest and actioning any tasks that the TL assigns to them.</p>';
