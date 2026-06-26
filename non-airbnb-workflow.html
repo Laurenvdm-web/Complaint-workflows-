@@ -448,6 +448,7 @@
     }
   }
 
+
 function contentComplaintsPage(){
 var activeTab='ci-tab1';try{activeTab=localStorage.getItem('jt-ci-tab')||'ci-tab1';}catch(e){}
 var h='';
@@ -461,7 +462,7 @@ for(var i=0;i<ciTabs.length;i++){
   var ciIsRecovery=ciTabs[i][0]==='ci-tab4';
   var ciIsJsLoss=ciTabs[i][0]==='ci-tab6';
   var ciIsJsWin=ciTabs[i][0]==='ci-tab7';
-  var ciTabLabel=ciIsEscalate?'ðŸ¤¸ '+ciTabs[i][1]:ciIsReview?'ðŸŒ  '+ciTabs[i][1]:ciIsRecovery?'ðŸ› ï¸ '+ciTabs[i][1]:ciIsJsLoss?'ðŸ“¦ '+ciTabs[i][1]:ciIsJsWin?'ðŸ“¦ '+ciTabs[i][1]:ciTabs[i][1];
+  var ciTabLabel=ciIsEscalate?'🤸 '+ciTabs[i][1]:ciIsReview?'🌠 '+ciTabs[i][1]:ciIsRecovery?'🛠️ '+ciTabs[i][1]:ciIsJsLoss?'📦 '+ciTabs[i][1]:ciIsJsWin?'📦 '+ciTabs[i][1]:ciTabs[i][1];
   var ciTabStyle=ciIsEscalate?' style="color:#92400e !important;"':ciIsReview?' style="color:#276749 !important;"':ciIsRecovery?' style="color:#6b21a8 !important;"':ciIsJsLoss?' style="color:#9b2235 !important;"':ciIsJsWin?' style="color:#b83280 !important;"':'';
   h+='<button class="home-tab'+(activeTab===ciTabs[i][0]?' active':'')+'"'+ciTabStyle+' data-citab="'+ciTabs[i][0]+'" onclick="setCiTab(\''+ciTabs[i][0]+'\')">'+ciTabLabel+'</button>';
 }
@@ -470,7 +471,7 @@ h+='<div style="padding:24px 26px;">';
 h+='<div id="ci-sec-ci-tab1" style="display:'+(activeTab==='ci-tab1'?'block':'none')+'">';
 h+='<h2 style="font-size:20px;font-weight:800;color:#1a1a2e;margin-bottom:18px;">Overview</h2>';
 h+='<div style="background:#f7fafc;border:1px solid #e2e8f0;border-radius:12px;padding:18px 20px;margin-bottom:16px;">';
-h+='<div style="font-size:15px;font-weight:700;color:#1e3a5c;margin-bottom:10px;">ðŸ“‹ Content Issues Overview</div>';
+h+='<div style="font-size:15px;font-weight:700;color:#1e3a5c;margin-bottom:10px;">📋 Content Issues Overview</div>';
 h+='<p style="font-size:13px;color:#4a5568;line-height:1.8;margin-bottom:10px;">Content issues work a little differently from regular guest issues because the verification process is different. We\'ll cover the content issue verification process in detail throughout this training.</p>';
 h+='<p style="font-size:13px;color:#4a5568;line-height:1.8;">Other than the verification requirements, the process remains largely the same. Compensation guidelines, escalation rules, and resolution options all follow the same principles as regular guest issues. There are simply a few additional steps and considerations that need to be followed when handling content-related complaints.</p>';
 h+='</div>';
@@ -479,20 +480,20 @@ h+='<div id="ci-sec-ci-tab-ct" style="display:'+(activeTab==='ci-tab-ct'?'block'
 h+='<h2 style="font-size:20px;font-weight:800;color:#1a1a2e;margin-bottom:18px;">Complaint Types</h2>';
 h+='<p style="font-size:13px;color:#4a5568;line-height:1.8;margin-bottom:18px;">Content issue complaints fall under the following categories:</p>';
 h+='<div style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px;">';
-var ciTypes=[['ðŸŠ','Missing / Misleading Amenities','The listing advertises something that is inaccurate, unavailable, or has changed without the listing being updated.'],['ðŸ“','Mapping Issue','The property location pin or address on the listing is incorrect.'],['ðŸ“‹','Cancellation Policy Discrepancy','The cancellation policy shown on the listing does not match what the property enforces.'],['ðŸ”‘','Check-In Issue','Only applicable when the check-in problem is caused by incorrect content on the listing â€” for example, wrong check-in time, wrong access instructions, or wrong entry codes.']];
+var ciTypes=[['🏊','Missing / Misleading Amenities','The listing advertises something that is inaccurate, unavailable, or has changed without the listing being updated.'],['📍','Mapping Issue','The property location pin or address on the listing is incorrect.'],['📋','Cancellation Policy Discrepancy','The cancellation policy shown on the listing does not match what the property enforces.'],['🔑','Check-In Issue','Only applicable when the check-in problem is caused by incorrect content on the listing — for example, wrong check-in time, wrong access instructions, or wrong entry codes.']];
 for(var ct=0;ct<ciTypes.length;ct++){h+='<div style="display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:#fff;border:1px solid #e2e8f0;border-radius:10px;"><div style="font-size:20px;min-width:28px;">'+ciTypes[ct][0]+'</div><div><div style="font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:3px;">'+ciTypes[ct][1]+'</div><div style="font-size:12px;color:#4a5568;line-height:1.7;">'+ciTypes[ct][2]+'</div></div></div>';}
 h+='</div>';
 var ciExamplesId='ciex-'+Math.random().toString(36).substr(2,6);
 var ciExamplesArrId='ciex-arr-'+Math.random().toString(36).substr(2,6);
 h+='<button onclick="var el=document.getElementById(\''+ciExamplesId+'\');var arr=document.getElementById(\''+ciExamplesArrId+'\');var open=el.style.display!==\'none\';el.style.display=open?\'none\':\'block\';arr.style.transform=open?\'rotate(0deg)\':\'rotate(180deg)\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;background:#1e3a5c;color:#fff;border:none;border-radius:9px;padding:11px 16px;font-size:13px;font-weight:800;cursor:pointer;margin-bottom:8px;text-align:left;">';
-h+='<span>ðŸ“Œ Real Examples from Our Tickets</span>';
-h+='<span id="'+ciExamplesArrId+'" style="font-size:16px;display:inline-block;transition:transform 0.3s;">â–¼</span>';
+h+='<span>📌 Real Examples from Our Tickets</span>';
+h+='<span id="'+ciExamplesArrId+'" style="font-size:16px;display:inline-block;transition:transform 0.3s;">▼</span>';
 h+='</button>';
 h+='<div id="'+ciExamplesId+'" style="display:none;">';
 h+='<div style="background:#f7fafc;border:1px solid #e2e8f0;border-radius:0 0 10px 10px;padding:16px 18px;">';
 h+='<div style="display:flex;flex-direction:column;gap:8px;">';
-var ciExamples=['Pool listed as an amenity but had been closed for almost a year â€” listing was never updated.','Aquatic park and boat slip were unavailable during the guest\'s stay with no prior notice or listing disclaimer.','Listing advertised a heated shared pool from mid-April, but the property only started heating it from May 15th.','Listing stated parking was free in summer; partner had changed to â‚¬30/week without notifying Jetstream.','Guest instructions stated 12pm checkout; reception told the guest 11am on the day.','Listing stated linens were included; guest was charged â‚¬25 at the property on arrival.','RAI told the guest linens were a certain price, but the actual price was higher and listed correctly.','Listing showed one linen price per bed; partner confirmed the actual price was different with no bed size distinction.','RAI communicated the wrong breakfast price; the listing and property both charged a higher amount.','Listing explicitly described an ocean view; partner confirmed it is not guaranteed at the property.','Listing promoted a sun terrace and garden; on arrival it was a construction zone with debris and a taped-shut door.','Active construction caused noise and hot tub closure with no disclosure on the listing at time of booking.','Property had a full renovation but the listing still showed photos from over a decade earlier.','A photo from one room type was appearing on a different room type\'s listing, causing guests to select the wrong room.','Listing stated one incidental hold amount; the actual property authorization was a completely different figure.'];
-for(var ce=0;ce<ciExamples.length;ce++){h+='<div style="display:flex;align-items:flex-start;gap:10px;padding:10px 12px;background:#fff;border:1px solid #e2e8f0;border-radius:8px;font-size:12px;color:#4a5568;line-height:1.7;"><span style="color:#3a8a9e;font-weight:700;margin-top:1px;">â€¢</span><span>'+ciExamples[ce]+'</span></div>';}
+var ciExamples=['Pool listed as an amenity but had been closed for almost a year — listing was never updated.','Aquatic park and boat slip were unavailable during the guest\'s stay with no prior notice or listing disclaimer.','Listing advertised a heated shared pool from mid-April, but the property only started heating it from May 15th.','Listing stated parking was free in summer; partner had changed to €30/week without notifying Jetstream.','Guest instructions stated 12pm checkout; reception told the guest 11am on the day.','Listing stated linens were included; guest was charged €25 at the property on arrival.','RAI told the guest linens were a certain price, but the actual price was higher and listed correctly.','Listing showed one linen price per bed; partner confirmed the actual price was different with no bed size distinction.','RAI communicated the wrong breakfast price; the listing and property both charged a higher amount.','Listing explicitly described an ocean view; partner confirmed it is not guaranteed at the property.','Listing promoted a sun terrace and garden; on arrival it was a construction zone with debris and a taped-shut door.','Active construction caused noise and hot tub closure with no disclosure on the listing at time of booking.','Property had a full renovation but the listing still showed photos from over a decade earlier.','A photo from one room type was appearing on a different room type\'s listing, causing guests to select the wrong room.','Listing stated one incidental hold amount; the actual property authorization was a completely different figure.'];
+for(var ce=0;ce<ciExamples.length;ce++){h+='<div style="display:flex;align-items:flex-start;gap:10px;padding:10px 12px;background:#fff;border:1px solid #e2e8f0;border-radius:8px;font-size:12px;color:#4a5568;line-height:1.7;"><span style="color:#3a8a9e;font-weight:700;margin-top:1px;">•</span><span>'+ciExamples[ce]+'</span></div>';}
 h+='</div>';
 h+='</div>';
 h+='</div>';
@@ -502,30 +503,30 @@ h+='<div style="margin-top:4px;">';
 h+='<h2 style="font-size:20px;font-weight:800;color:#1a1a2e;margin-bottom:18px;">Creating the Ticket</h2>';
 h+='<div>';
 h+='<button onclick="var b=document.getElementById(\'ci-ver-body\');var a=document.getElementById(\'ci-ver-arr\');var isOpen=b.style.display!==\'none\';b.style.display=isOpen?\'none\':\'block\';a.style.transform=isOpen?\'rotate(0deg)\':\'rotate(90deg)\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-radius:10px;border:1px solid #e2e8f0;cursor:pointer;background:#f7fafc;font-family:inherit;font-size:13px;font-weight:700;color:#1a1a2e;box-sizing:border-box;transition:background 0.15s;" onmouseover="this.style.background=\'#ebf4ff\';this.style.borderColor=\'#bee3f8\'" onmouseout="this.style.background=\'#f7fafc\';this.style.borderColor=\'#e2e8f0\'">';
-h+='<div style="display:flex;align-items:center;gap:10px;"><span style="font-size:18px;">ðŸ”</span><span>Step 1 â€” Verification</span></div>';
-h+='<span id="ci-ver-arr" style="font-size:12px;color:#718096;transition:transform 0.3s ease;">â–¶</span>';
+h+='<div style="display:flex;align-items:center;gap:10px;"><span style="font-size:18px;">🔍</span><span>Step 1 — Verification</span></div>';
+h+='<span id="ci-ver-arr" style="font-size:12px;color:#718096;transition:transform 0.3s ease;">▶</span>';
 h+='</button>';
 h+='<div id="ci-ver-body" style="display:none;border:1px solid #e2e8f0;border-top:none;border-radius:0 0 10px 10px;background:#fafcff;padding:16px 18px;">';
 h+='<div style="background:#ebf4ff;border:1px solid #bee3f8;border-radius:8px;padding:12px 16px;margin-bottom:16px;">';
 h+='<p style="font-size:13px;color:#1e3a5c;line-height:1.75;margin:0;">Verification should not take longer than a few minutes. The aim is to do a quick check to see if we can <strong>determine fault</strong>. Work through the steps below in order and note what you find.</p>';
 h+='</div>';
 h+='<div style="display:flex;flex-direction:column;gap:10px;">';
-var ciVerSteps=[['1','Check the Listing','Does the amenity appear correctly on other listings for the same property, but not on this one? If yes â€” <strong style="color:#9b2235;">Jetstream fault.</strong> Our content is wrong on that specific listing.'],['2','Check Front','Search for any email from the partner confirming the amenity has changed. If the partner notified us and we haven\'t updated our listing yet â€” <strong style="color:#9b2235;">Jetstream fault.</strong>'],['3','Check HubSpot (Content Updates)','Has this exact issue been raised before on this property? If a content update ticket already exists and is pending â€” <strong style="color:#9b2235;">Jetstream fault.</strong>'],['4','Check All Guest Communications','Review the RAI, confirmation email, and any agent messages. Did B2C give the guest incorrect information that contradicts what the partner offers? If yes â€” <strong style="color:#9b2235;">Jetstream fault.</strong>'],['5','Check Slack','Look for any message about this property to see if we were informed of an amenity change. If we were told and didn\'t action it â€” <strong style="color:#9b2235;">Jetstream fault.</strong>']];
+var ciVerSteps=[['1','Check the Listing','Does the amenity appear correctly on other listings for the same property, but not on this one? If yes — <strong style="color:#9b2235;">Jetstream fault.</strong> Our content is wrong on that specific listing.'],['2','Check Front','Search for any email from the partner confirming the amenity has changed. If the partner notified us and we haven\'t updated our listing yet — <strong style="color:#9b2235;">Jetstream fault.</strong>'],['3','Check HubSpot (Content Updates)','Has this exact issue been raised before on this property? If a content update ticket already exists and is pending — <strong style="color:#9b2235;">Jetstream fault.</strong>'],['4','Check All Guest Communications','Review the RAI, confirmation email, and any agent messages. Did B2C give the guest incorrect information that contradicts what the partner offers? If yes — <strong style="color:#9b2235;">Jetstream fault.</strong>'],['5','Check Slack','Look for any message about this property to see if we were informed of an amenity change. If we were told and didn\'t action it — <strong style="color:#9b2235;">Jetstream fault.</strong>']];
 for(var vs=0;vs<ciVerSteps.length;vs++){h+='<div style="display:flex;align-items:flex-start;gap:12px;padding:13px 15px;background:#fff;border:1px solid #e2e8f0;border-radius:9px;"><div style="background:#3a8a9e;color:#fff;border-radius:50%;width:26px;height:26px;min-width:26px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;margin-top:1px;">'+ciVerSteps[vs][0]+'</div><div><div style="font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:3px;">'+ciVerSteps[vs][1]+'</div><div style="font-size:12px;color:#4a5568;line-height:1.7;">'+ciVerSteps[vs][2]+'</div></div></div>';}
 h+='</div>';
 h+='</div>';
 h+='</div>';
 h+='<div style="margin-top:8px;">';
 h+='<button onclick="var b=document.getElementById(\'ci-ms-2-body\');var a=document.getElementById(\'ci-ms-2-arr\');var isOpen=b.style.display!==\'none\';b.style.display=isOpen?\'none\':\'block\';a.style.transform=isOpen?\'rotate(0deg)\':\'rotate(90deg)\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-radius:10px;border:1px solid #e2e8f0;cursor:pointer;background:#f7fafc;font-family:inherit;font-size:13px;font-weight:700;color:#1a1a2e;box-sizing:border-box;transition:background 0.15s;" onmouseover="this.style.background=\'#ebf4ff\';this.style.borderColor=\'#bee3f8\'" onmouseout="this.style.background=\'#f7fafc\';this.style.borderColor=\'#e2e8f0\'">';
-h+='<div style="display:flex;align-items:center;gap:10px;"><span style="font-size:18px;">ðŸ“</span><span>Step 2 â€” Create the Ticket</span></div>';
-h+='<span id="ci-ms-2-arr" style="font-size:12px;color:#718096;transition:transform 0.3s ease;">â–¶</span>';
+h+='<div style="display:flex;align-items:center;gap:10px;"><span style="font-size:18px;">📝</span><span>Step 2 — Create the Ticket</span></div>';
+h+='<span id="ci-ms-2-arr" style="font-size:12px;color:#718096;transition:transform 0.3s ease;">▶</span>';
 h+='</button>';
 h+='<div id="ci-ms-2-body" style="display:none;border:1px solid #e2e8f0;border-top:none;border-radius:0 0 10px 10px;background:#fafcff;padding:16px 18px;">';
 h+='<div style="display:flex;flex-direction:column;gap:12px;">';
 h+='<div style="background:#f7fafc;border:1px solid #e2e8f0;border-radius:10px;padding:16px 18px;">';
-h+='<div style="font-size:13px;font-weight:700;color:#1e3a5c;margin-bottom:12px;">ðŸ“ Insert the Following Properties</div>';
+h+='<div style="font-size:13px;font-weight:700;color:#1e3a5c;margin-bottom:12px;">📝 Insert the Following Properties</div>';
 h+='<div style="display:flex;flex-direction:column;gap:8px;">';
-var ctProps=[['Ticket Name','Include the Cirrus booking ID, full guest name, and title of the issue'],['Pipeline','B2C: Guest Resolution &amp; Revenue Protection'],['Ticket Status','Choose the relevant option'],['Account Manager','Choose the relevant option'],['Cirrus URL','Paste the Cirrus booking URL here'],['Complaint Type','Choose the correct category from the list above'],['Suggested Compensation Amount','Use the guide to assist you in choosing what YOU think the correct compensation amount should be for this guest issue â€” B2C to action this']];
+var ctProps=[['Ticket Name','Include the Cirrus booking ID, full guest name, and title of the issue'],['Pipeline','B2C: Guest Resolution &amp; Revenue Protection'],['Ticket Status','Choose the relevant option'],['Account Manager','Choose the relevant option'],['Cirrus URL','Paste the Cirrus booking URL here'],['Complaint Type','Choose the correct category from the list above'],['Suggested Compensation Amount','Use the guide to assist you in choosing what YOU think the correct compensation amount should be for this guest issue — B2C to action this']];
 for(var cp=0;cp<ctProps.length;cp++){h+='<div style="display:flex;align-items:flex-start;gap:0;border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;font-size:12px;"><div style="background:#1e3a5c;color:#fff;padding:10px 14px;font-weight:700;min-width:180px;line-height:1.5;">'+ctProps[cp][0]+'</div><div style="padding:10px 14px;color:#4a5568;line-height:1.6;background:#fff;flex:1;">'+ctProps[cp][1]+'</div></div>';}
 h+='</div></div>';
 h+='</div>';
@@ -533,16 +534,16 @@ h+='</div>';
 h+='</div>';
 h+='<div style="margin-top:8px;">';
 h+='<button onclick="var b=document.getElementById(\'ci-ms-3-body\');var a=document.getElementById(\'ci-ms-3-arr\');var isOpen=b.style.display!==\'none\';b.style.display=isOpen?\'none\':\'block\';a.style.transform=isOpen?\'rotate(0deg)\':\'rotate(90deg)\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-radius:10px;border:1px solid #e2e8f0;cursor:pointer;background:#f7fafc;font-family:inherit;font-size:13px;font-weight:700;color:#1a1a2e;box-sizing:border-box;transition:background 0.15s;" onmouseover="this.style.background=\'#ebf4ff\';this.style.borderColor=\'#bee3f8\'" onmouseout="this.style.background=\'#f7fafc\';this.style.borderColor=\'#e2e8f0\'">';
-h+='<div style="display:flex;align-items:center;gap:10px;"><span style="font-size:18px;">ðŸ“‹</span><span>Step 3 â€” Create an Overview for the Ticket</span></div>';
-h+='<span id="ci-ms-3-arr" style="font-size:12px;color:#718096;transition:transform 0.3s ease;">â–¶</span>';
+h+='<div style="display:flex;align-items:center;gap:10px;"><span style="font-size:18px;">📋</span><span>Step 3 — Create an Overview for the Ticket</span></div>';
+h+='<span id="ci-ms-3-arr" style="font-size:12px;color:#718096;transition:transform 0.3s ease;">▶</span>';
 h+='</button>';
 h+='<div id="ci-ms-3-body" style="display:none;border:1px solid #e2e8f0;border-top:none;border-radius:0 0 10px 10px;background:#fafcff;padding:8px 18px;">';
 h+='<div style="display:flex;flex-direction:column;gap:8px;">';
 h+='<div style="border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;">';
-h+='<button onclick="var b=document.getElementById(\'ci3-s1-body\');var a=document.getElementById(\'ci3-s1-arr\');var o=b.style.display!==\'none\';b.style.display=o?\'none\':\'block\';a.textContent=o?\'â–¶\':\'â–¼\';" style="width:100%;display:flex;align-items:center;gap:12px;padding:12px 16px;background:#fff;border:none;cursor:pointer;font-family:inherit;text-align:left;">';
+h+='<button onclick="var b=document.getElementById(\'ci3-s1-body\');var a=document.getElementById(\'ci3-s1-arr\');var o=b.style.display!==\'none\';b.style.display=o?\'none\':\'block\';a.textContent=o?\'▶\':\'▼\';" style="width:100%;display:flex;align-items:center;gap:12px;padding:12px 16px;background:#fff;border:none;cursor:pointer;font-family:inherit;text-align:left;">';
 h+='<div style="background:#1e3a5c;color:#fff;border-radius:50%;width:24px;height:24px;min-width:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;">1</div>';
-h+='<span style="font-size:13px;font-weight:700;color:#1a1a2e;flex:1;"><strong>Section 1</strong> â€” Complaint Reported</span>';
-h+='<span id="ci3-s1-arr" style="font-size:13px;color:#718096;">â–¶</span>';
+h+='<span style="font-size:13px;font-weight:700;color:#1a1a2e;flex:1;"><strong>Section 1</strong> — Complaint Reported</span>';
+h+='<span id="ci3-s1-arr" style="font-size:13px;color:#718096;">▶</span>';
 h+='</button>';
 h+='<div id="ci3-s1-body" style="display:none;padding:14px 16px 16px;background:#f7fafc;border-top:1px solid #e2e8f0;">';
 h+='<div style="background:#ebf4ff;border:1px solid #bee3f8;border-radius:9px;padding:13px 16px;margin-bottom:14px;">';
@@ -557,22 +558,22 @@ h+='</ul>';
 h+='</div>';
 h+='<div style="border:1px solid #c7d9e8;border-radius:9px;overflow:hidden;margin-top:4px;">';
 h+='<button onclick="var p=document.getElementById(\'ci-s1-rte-panel\');var a=document.getElementById(\'ci-s1-rte-arrow\');var isOpen=p.style.display!==\'none\';p.style.display=isOpen?\'none\':\'block\';a.style.transform=isOpen?\'rotate(0deg)\':\'rotate(90deg)\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:#1e3a5c;border:none;cursor:pointer;font-family:inherit;" onmouseover="this.style.background=\'#162d48\'" onmouseout="this.style.background=\'#1e3a5c\'">';
-h+='<div style="display:flex;align-items:center;gap:8px;"><span style="font-size:14px;">ðŸ“‹</span><span style="font-size:13px;font-weight:700;color:#fff;">Real Ticket Examples</span><span style="font-size:11px;color:rgba(255,255,255,0.55);font-weight:400;">(16 examples)</span></div>';
-h+='<span id="ci-s1-rte-arrow" style="font-size:11px;color:rgba(255,255,255,0.65);transition:transform 0.25s;display:inline-block;">â–¶</span>';
+h+='<div style="display:flex;align-items:center;gap:8px;"><span style="font-size:14px;">📋</span><span style="font-size:13px;font-weight:700;color:#fff;">Real Ticket Examples</span><span style="font-size:11px;color:rgba(255,255,255,0.55);font-weight:400;">(16 examples)</span></div>';
+h+='<span id="ci-s1-rte-arrow" style="font-size:11px;color:rgba(255,255,255,0.65);transition:transform 0.25s;display:inline-block;">▶</span>';
 h+='</button>';
 h+='<div id="ci-s1-rte-panel" style="display:none;padding:12px 14px;background:#fafcff;">';
 h+='<div style="display:flex;flex-direction:column;gap:8px;">';
-var ciSec1Ex=["Guest reported that the aquatic park advertised on the listing was closed for maintenance with no prior notice or disclosure.","Guest reported a non-functioning refrigerator, inaccessible pool facilities, and Wi-Fi not working throughout their stay.","Guest reported that the patio and terrace, advertised as available, were unusable due to construction debris and a taped-shut patio door.","Guest reported that no towels or bed sheets were provided upon check-in, despite the listing advertising linens as included.","Guest reported that checkout instructions stated 12:00 PM but reception informed them checkout was 11:00 AM upon departure.","Guest was informed via confirmation message that linens and towels required an additional fee, despite the listing stating sheets and bath towels are included.","Guest reported the pool was unavailable upon arrival and declined to check in, requesting a full refund.","Guest reported the shared outdoor pool was not heated upon arrival, despite the listing advertising a heated pool available from mid-April to mid-October.","Guest reported that the listing stated parking was free during summer but was charged â‚¬30 per week per vehicle upon contacting reception.","Guest reported that the partner advised bed linen costs â‚¬16 per bed, while the listing stated â‚¬11 for a smaller bed.","Guest reported the property was advertised as a 3-minute walk to the beach on Expedia, but the actual distance felt significantly further.","Guest reported being informed via RAI that breakfast costs â‚¬12 per person, while the actual price upon arrival was â‚¬18 per person.","Guest reported ongoing construction noise, entrance blockages, and a closed hot tub throughout their stay.","Guest reported the property was advertised with an ocean view but no ocean view was available upon arrival.","Five confirmed listing integrity failures identified including a non-existent pool listed as an amenity, outdated photos, incorrect incidental hold, photo-to-room-type mismatch, and an incorrect map pin.","Guest reported multiple issues including an unusable indoor pool, a closed outdoor pool, a dirty hot tub, and cleanliness issues throughout the unit."];
+var ciSec1Ex=["Guest reported that the aquatic park advertised on the listing was closed for maintenance with no prior notice or disclosure.","Guest reported a non-functioning refrigerator, inaccessible pool facilities, and Wi-Fi not working throughout their stay.","Guest reported that the patio and terrace, advertised as available, were unusable due to construction debris and a taped-shut patio door.","Guest reported that no towels or bed sheets were provided upon check-in, despite the listing advertising linens as included.","Guest reported that checkout instructions stated 12:00 PM but reception informed them checkout was 11:00 AM upon departure.","Guest was informed via confirmation message that linens and towels required an additional fee, despite the listing stating sheets and bath towels are included.","Guest reported the pool was unavailable upon arrival and declined to check in, requesting a full refund.","Guest reported the shared outdoor pool was not heated upon arrival, despite the listing advertising a heated pool available from mid-April to mid-October.","Guest reported that the listing stated parking was free during summer but was charged €30 per week per vehicle upon contacting reception.","Guest reported that the partner advised bed linen costs €16 per bed, while the listing stated €11 for a smaller bed.","Guest reported the property was advertised as a 3-minute walk to the beach on Expedia, but the actual distance felt significantly further.","Guest reported being informed via RAI that breakfast costs €12 per person, while the actual price upon arrival was €18 per person.","Guest reported ongoing construction noise, entrance blockages, and a closed hot tub throughout their stay.","Guest reported the property was advertised with an ocean view but no ocean view was available upon arrival.","Five confirmed listing integrity failures identified including a non-existent pool listed as an amenity, outdated photos, incorrect incidental hold, photo-to-room-type mismatch, and an incorrect map pin.","Guest reported multiple issues including an unusable indoor pool, a closed outdoor pool, a dirty hot tub, and cleanliness issues throughout the unit."];
 for(var i=0;i<ciSec1Ex.length;i++){h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;"><div style="background:#1e3a5c;color:#fff;font-size:11px;font-weight:700;padding:6px 12px;">Example '+(i+1)+'</div><div style="padding:10px 14px;background:#fff;font-size:12px;color:#1a1a2e;line-height:1.75;"><span style="font-weight:700;color:#1e3a5c;">Complaint Reported: </span>'+ciSec1Ex[i]+'</div></div>';}
 h+='</div>';
 h+='</div>';
 h+='</div>';
 h+='</div></div>';
 h+='<div style="border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;">';
-h+='<button onclick="var b=document.getElementById(\'ci3-s2-body\');var a=document.getElementById(\'ci3-s2-arr\');var o=b.style.display!==\'none\';b.style.display=o?\'none\':\'block\';a.textContent=o?\'â–¶\':\'â–¼\';" style="width:100%;display:flex;align-items:center;gap:12px;padding:12px 16px;background:#fff;border:none;cursor:pointer;font-family:inherit;text-align:left;">';
+h+='<button onclick="var b=document.getElementById(\'ci3-s2-body\');var a=document.getElementById(\'ci3-s2-arr\');var o=b.style.display!==\'none\';b.style.display=o?\'none\':\'block\';a.textContent=o?\'▶\':\'▼\';" style="width:100%;display:flex;align-items:center;gap:12px;padding:12px 16px;background:#fff;border:none;cursor:pointer;font-family:inherit;text-align:left;">';
 h+='<div style="background:#1e3a5c;color:#fff;border-radius:50%;width:24px;height:24px;min-width:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;">2</div>';
-h+='<span style="font-size:13px;font-weight:700;color:#1a1a2e;flex:1;"><strong>Section 2</strong> â€” Verification</span>';
-h+='<span id="ci3-s2-arr" style="font-size:13px;color:#718096;">â–¶</span>';
+h+='<span style="font-size:13px;font-weight:700;color:#1a1a2e;flex:1;"><strong>Section 2</strong> — Verification</span>';
+h+='<span id="ci3-s2-arr" style="font-size:13px;color:#718096;">▶</span>';
 h+='</button>';
 h+='<div id="ci3-s2-body" style="display:none;padding:14px 16px 16px;background:#f7fafc;border-top:1px solid #e2e8f0;">';
 h+='<div style="background:#ebf4ff;border:1px solid #bee3f8;border-radius:10px;padding:14px 16px;margin-bottom:16px;">';
@@ -584,27 +585,27 @@ h+='<div style="display:flex;align-items:flex-start;gap:10px;"><div style="backg
 h+='</div></div>';
 h+='<div style="border:1px solid #c7d9e8;border-radius:9px;overflow:hidden;margin-top:4px;">';
 h+='<button onclick="var p=document.getElementById(\'ci-s2-rte-panel\');var a=document.getElementById(\'ci-s2-rte-arr\');var isOpen=p.style.display!==\'none\';p.style.display=isOpen?\'none\':\'block\';a.style.transform=isOpen?\'rotate(0deg)\':\'rotate(90deg)\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:#1e3a5c;border:none;cursor:pointer;font-family:inherit;" onmouseover="this.style.background=\'#162d48\'" onmouseout="this.style.background=\'#1e3a5c\'">';
-h+='<div style="display:flex;align-items:center;gap:8px;"><span style="font-size:14px;">ðŸ“‹</span><span style="font-size:13px;font-weight:700;color:#fff;">Real Ticket Examples</span><span style="font-size:11px;color:rgba(255,255,255,0.55);font-weight:400;">('+15+' examples)</span></div>';
-h+='<span id="ci-s2-rte-arr" style="font-size:11px;color:rgba(255,255,255,0.65);transition:transform 0.25s;display:inline-block;">â–¶</span>';
+h+='<div style="display:flex;align-items:center;gap:8px;"><span style="font-size:14px;">📋</span><span style="font-size:13px;font-weight:700;color:#fff;">Real Ticket Examples</span><span style="font-size:11px;color:rgba(255,255,255,0.55);font-weight:400;">('+15+' examples)</span></div>';
+h+='<span id="ci-s2-rte-arr" style="font-size:11px;color:rgba(255,255,255,0.65);transition:transform 0.25s;display:inline-block;">▶</span>';
 h+='</button>';
 h+='<div id="ci-s2-rte-panel" style="display:none;padding:12px 14px;background:#fafcff;">';
 h+='<div style="display:flex;flex-direction:column;gap:8px;">';
 var ciSec2Ex=[
   {cr:"Guest reported that the aquatic park advertised on the listing was closed for maintenance with no prior notice or disclosure.",vr:"Listing confirmed to contain no disclosure regarding aquatic park closures or boat slip unavailability at the time of booking.",fv:"Conducted 5-step fault verification but was unable to identify a responsible party. Fault: Unclear."},
   {cr:"Guest reported that the patio and terrace, advertised as available, were unusable due to construction debris and a taped-shut patio door.",vr:"Listing disclosed ongoing renovation but did not state the terrace was out of use, confirming the complaint as valid.",fv:"Conducted 5-step fault verification and found an email from the partner advising that the amenity was no longer available, but the listing was not updated. Fault: Jetstream."},
-  {cr:"Guest reported that no towels or bed sheets were provided upon check-in, despite the listing advertising linens as included.",vr:"Checked the listing and confirmed both bed linen and bath linen are listed as included, verifying the complaint as valid.",fv:"Conducted 5-step verification and nothing was found â€” fault unclear."},
+  {cr:"Guest reported that no towels or bed sheets were provided upon check-in, despite the listing advertising linens as included.",vr:"Checked the listing and confirmed both bed linen and bath linen are listed as included, verifying the complaint as valid.",fv:"Conducted 5-step verification and nothing was found — fault unclear."},
   {cr:"Guest reported that checkout instructions stated 12:00 PM but reception informed them checkout was 11:00 AM upon departure.",vr:"Verified internally that the listing displays checkout as 12:00 PM, confirming a discrepancy between the advertised time and the information provided on-site.",fv:"Conducted the 5-step verification and identified an email from the partner confirming the updated checkout time. Determined that the issue was due to a Jetstream fault."},
-  {cr:"Guest was informed via confirmation message that linens and towels required an additional fee, despite the listing stating sheets and bath towels are included.",vr:"Checked the listing and confirmed linens and towels are correctly advertised as included, identifying the discrepancy as a content and translation error.",fv:"No need for 5-step verification â€” this is a Jetstream fault due to the listing and RAI information being different."},
-  {cr:"Guest reported the pool was unavailable upon arrival and declined to check in, requesting a full refund.",vr:"Called the front desk, who confirmed the pool had been closed for nearly a year with no estimated reopening date. Checked the listing and confirmed the pool was advertised to the guest â€” complaint valid.",fv:"Conducted 5-step verification â€” fault unclear."},
-  {cr:"Guest reported the shared outdoor pool was not heated upon arrival, despite the listing advertising a heated pool available from mid-April to mid-October.",vr:"Listing reviewed and confirmed it advertises a shared heated pool from mid-April; reception advised heating would not begin until May 15th, confirming the discrepancy.",fv:"N/A â€” the information was provided on the listing that the pool would not be heated during their stay."},
-  {cr:"Guest reported that the listing stated parking was free during summer but was charged â‚¬30 per week per vehicle upon contacting reception.",vr:"Listing confirmed to state parking is free during summer; partner confirmed internally that parking is now charged, validating the complaint as a listing discrepancy.",fv:"Conducted 5-step verification â€” fault unclear."},
-  {cr:"Guest reported that the partner advised bed linen costs â‚¬16 per bed, while the listing stated â‚¬11 for a smaller bed.",vr:"Checked the listing and confirmed this was advertised to the guest â€” complaint valid.",fv:"Conducted 5-step verification â€” fault unclear."},
-  {cr:"Guest reported the property was advertised as a 3-minute walk to the beach on Expedia, but the actual distance felt significantly further.",vr:"Internal listing reviewed and confirmed a 6-minute walk to the beach; discrepancy identified on Expedia but core listing deemed accurate.",fv:"Jetstream â€” Cirrus and the listing had different information."},
-  {cr:"Guest reported being informed via RAI that breakfast costs â‚¬12 per person, while the actual price upon arrival was â‚¬18 per person.",vr:"Checked the listing which clearly states breakfast at â‚¬18 per person, confirming the RAI communication incorrectly stated â‚¬12.",fv:"Jetstream fault â€” the information on Cirrus was different to the listing."},
-  {cr:"Guest reported ongoing construction noise, entrance blockages, and a closed hot tub throughout their stay.",vr:"Property team confirmed active construction in the courtyard and that the hot tub was temporarily closed; listing lacked a construction disclosure prior to the recent update.",fv:"Conducted 5-step verification and found a content update in the pipeline for this but it was not yet updated in Cirrus â€” Jetstream fault."},
-  {cr:"Guest reported the property was advertised with an ocean view but no ocean view was available upon arrival.",vr:"Listing reviewed internally and confirmed ocean view is explicitly mentioned; partner confirmed it is not guaranteed, validating the mismatch.",fv:"Conducted 5-step verification and found no updates â€” fault unclear."},
-  {cr:"Five confirmed listing integrity failures identified including a non-existent pool listed as an amenity, outdated photos, incorrect incidental hold, photo-to-room-type mismatch, and an incorrect map pin.",vr:"This was advertised to the guest â€” complaint is valid.",fv:"All five failures confirmed as Jetstream-owned; the pool issue was a repeat failure previously flagged twice without resolution."},
-  {cr:"Guest reported multiple issues including an unusable indoor pool, a closed outdoor pool, a dirty hot tub, and cleanliness issues throughout the unit.",vr:"Outdoor pool closure confirmed via guest photo evidence; amenities disclaimer present on listing but reported condition exceeded acceptable standards.",fv:"Conducted 5-step verification and found nothing â€” fault unclear."}
+  {cr:"Guest was informed via confirmation message that linens and towels required an additional fee, despite the listing stating sheets and bath towels are included.",vr:"Checked the listing and confirmed linens and towels are correctly advertised as included, identifying the discrepancy as a content and translation error.",fv:"No need for 5-step verification — this is a Jetstream fault due to the listing and RAI information being different."},
+  {cr:"Guest reported the pool was unavailable upon arrival and declined to check in, requesting a full refund.",vr:"Called the front desk, who confirmed the pool had been closed for nearly a year with no estimated reopening date. Checked the listing and confirmed the pool was advertised to the guest — complaint valid.",fv:"Conducted 5-step verification — fault unclear."},
+  {cr:"Guest reported the shared outdoor pool was not heated upon arrival, despite the listing advertising a heated pool available from mid-April to mid-October.",vr:"Listing reviewed and confirmed it advertises a shared heated pool from mid-April; reception advised heating would not begin until May 15th, confirming the discrepancy.",fv:"N/A — the information was provided on the listing that the pool would not be heated during their stay."},
+  {cr:"Guest reported that the listing stated parking was free during summer but was charged €30 per week per vehicle upon contacting reception.",vr:"Listing confirmed to state parking is free during summer; partner confirmed internally that parking is now charged, validating the complaint as a listing discrepancy.",fv:"Conducted 5-step verification — fault unclear."},
+  {cr:"Guest reported that the partner advised bed linen costs €16 per bed, while the listing stated €11 for a smaller bed.",vr:"Checked the listing and confirmed this was advertised to the guest — complaint valid.",fv:"Conducted 5-step verification — fault unclear."},
+  {cr:"Guest reported the property was advertised as a 3-minute walk to the beach on Expedia, but the actual distance felt significantly further.",vr:"Internal listing reviewed and confirmed a 6-minute walk to the beach; discrepancy identified on Expedia but core listing deemed accurate.",fv:"Jetstream — Cirrus and the listing had different information."},
+  {cr:"Guest reported being informed via RAI that breakfast costs €12 per person, while the actual price upon arrival was €18 per person.",vr:"Checked the listing which clearly states breakfast at €18 per person, confirming the RAI communication incorrectly stated €12.",fv:"Jetstream fault — the information on Cirrus was different to the listing."},
+  {cr:"Guest reported ongoing construction noise, entrance blockages, and a closed hot tub throughout their stay.",vr:"Property team confirmed active construction in the courtyard and that the hot tub was temporarily closed; listing lacked a construction disclosure prior to the recent update.",fv:"Conducted 5-step verification and found a content update in the pipeline for this but it was not yet updated in Cirrus — Jetstream fault."},
+  {cr:"Guest reported the property was advertised with an ocean view but no ocean view was available upon arrival.",vr:"Listing reviewed internally and confirmed ocean view is explicitly mentioned; partner confirmed it is not guaranteed, validating the mismatch.",fv:"Conducted 5-step verification and found no updates — fault unclear."},
+  {cr:"Five confirmed listing integrity failures identified including a non-existent pool listed as an amenity, outdated photos, incorrect incidental hold, photo-to-room-type mismatch, and an incorrect map pin.",vr:"This was advertised to the guest — complaint is valid.",fv:"All five failures confirmed as Jetstream-owned; the pool issue was a repeat failure previously flagged twice without resolution."},
+  {cr:"Guest reported multiple issues including an unusable indoor pool, a closed outdoor pool, a dirty hot tub, and cleanliness issues throughout the unit.",vr:"Outdoor pool closure confirmed via guest photo evidence; amenities disclaimer present on listing but reported condition exceeded acceptable standards.",fv:"Conducted 5-step verification and found nothing — fault unclear."}
 ];
 for(var i=0;i<ciSec2Ex.length;i++){
   h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;">';
@@ -620,97 +621,97 @@ h+='</div>';
 h+='</div>';
 h+='</div></div>';
 h+='<div style="border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;">';
-h+='<button onclick="var b=document.getElementById(\'ci3-s3-body\');var a=document.getElementById(\'ci3-s3-arr\');var o=b.style.display!==\'none\';b.style.display=o?\'none\':\'block\';a.textContent=o?\'â–¶\':\'â–¼\';" style="width:100%;display:flex;align-items:center;gap:12px;padding:12px 16px;background:#fff;border:none;cursor:pointer;font-family:inherit;text-align:left;">';
+h+='<button onclick="var b=document.getElementById(\'ci3-s3-body\');var a=document.getElementById(\'ci3-s3-arr\');var o=b.style.display!==\'none\';b.style.display=o?\'none\':\'block\';a.textContent=o?\'▶\':\'▼\';" style="width:100%;display:flex;align-items:center;gap:12px;padding:12px 16px;background:#fff;border:none;cursor:pointer;font-family:inherit;text-align:left;">';
 h+='<div style="background:#1e3a5c;color:#fff;border-radius:50%;width:24px;height:24px;min-width:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;">3</div>';
-h+='<span style="font-size:13px;font-weight:700;color:#1a1a2e;flex:1;"><strong>Section 3</strong> â€” Actions Taken <span style="font-weight:400;color:#718096;">â€” every action must include a date</span></span>';
-h+='<span id="ci3-s3-arr" style="font-size:13px;color:#718096;">â–¶</span>';
+h+='<span style="font-size:13px;font-weight:700;color:#1a1a2e;flex:1;"><strong>Section 3</strong> — Actions Taken <span style="font-weight:400;color:#718096;">— every action must include a date</span></span>';
+h+='<span id="ci3-s3-arr" style="font-size:13px;color:#718096;">▶</span>';
 h+='</button>';
 h+='<div id="ci3-s3-body" style="display:none;padding:14px 16px 16px;background:#f7fafc;border-top:1px solid #e2e8f0;">';
 var inclId='incl-'+Math.random().toString(36).substr(2,6);
 h+='<button onclick="var el=document.getElementById(\''+inclId+'\');var arr=this.querySelector(\'.incl-arrow\');var open=el.style.display!==\'none\';el.style.display=open?\'none\':\'block\';arr.style.transform=open?\'rotate(0deg)\':\'rotate(180deg)\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;background:#276749;color:#fff;border:none;border-radius:9px;padding:11px 16px;font-size:13px;font-weight:800;cursor:pointer;margin-bottom:8px;text-align:left;">'+
-  '<span>âœ… What TO include</span>'+
-  '<span class="incl-arr" style="font-size:16px;transition:transform 0.2s;display:inline-block;" id="'+inclId+'-arr'+'">â–¼</span>'+
+  '<span>✅ What TO include</span>'+
+  '<span class="incl-arr" style="font-size:16px;transition:transform 0.2s;display:inline-block;" id="'+inclId+'-arr'+'">▼</span>'+
 '</button>';
 h+='<div id="'+inclId+'" style="display:none;background:#f0fff4;border:1px solid #9ae6b4;border-radius:9px;padding:12px 14px;margin-bottom:14px;">';
-h+='<p style="font-size:12px;color:#276749;line-height:1.75;margin:0 0 10px 0;">Include anything that <strong>actually moved the case forward</strong> â€” real communications, real decisions, real outcomes. If something happened that affected the guest, the partner, or the resolution, it goes here.</p>';
+h+='<p style="font-size:12px;color:#276749;line-height:1.75;margin:0 0 10px 0;">Include anything that <strong>actually moved the case forward</strong> — real communications, real decisions, real outcomes. If something happened that affected the guest, the partner, or the resolution, it goes here.</p>';
 h+='<div style="display:flex;flex-direction:column;gap:6px;">';
-var incl=[['ðŸ“§','Partner contacted with a specific request','<em>e.g. Partner contacted regarding the reported cleanliness concerns and requested to arrange additional cleaning.</em>'],['ðŸ“‹','Follow-up communications with detail','<em>e.g. Follow-up email sent with additional details about spiders in the entryway and the guest killing three spiders.</em>'],['ðŸ“¸','Guest photos received and forwarded to the partner','<em>e.g. Guest provided additional photos â€” stained towel/bathmat, damaged dresser, unclean kitchen drawers. Photos forwarded to partner.</em>'],['ðŸ¤','Compensation offered, accepted, or declined','<em>e.g. 27/05: Offered guest 15% future stay discount as goodwill gesture.</em><br><em>e.g. 24/05: Guest declined the 15% discount â€” escalated to team lead for review.</em>'],['ðŸ“ž','Calls made with outcome noted','<em>e.g. 14/05: Called front desk â€” confirmed guest was correctly assigned to an oceanview room.</em>'],['ðŸ”º','Escalations â€” to TL, partner, or Airbnb','<em>e.g. 27/05: Guest escalated to Airbnb requesting 50% partial refund. Partner updated and asked to provide additional information.</em>'],['ðŸ”§','Partner confirmed repairs or actions taken on-site','<em>e.g. 05/16: Partner confirmed onsite team attended to reported issues and concerns resolved.</em>'],['ðŸ‘¤','Followed up with guest after a resolution attempt','<em>e.g. Followed up with guest to confirm resolution on their side.</em>'],['ðŸ’³','Refunds or compensation processed','<em>e.g. 21/05: Refund of â‚¬25 processed. Guest confirmed receipt.</em>']];
+var incl=[['📧','Partner contacted with a specific request','<em>e.g. Partner contacted regarding the reported cleanliness concerns and requested to arrange additional cleaning.</em>'],['📋','Follow-up communications with detail','<em>e.g. Follow-up email sent with additional details about spiders in the entryway and the guest killing three spiders.</em>'],['📸','Guest photos received and forwarded to the partner','<em>e.g. Guest provided additional photos — stained towel/bathmat, damaged dresser, unclean kitchen drawers. Photos forwarded to partner.</em>'],['🤝','Compensation offered, accepted, or declined','<em>e.g. 27/05: Offered guest 15% future stay discount as goodwill gesture.</em><br><em>e.g. 24/05: Guest declined the 15% discount — escalated to team lead for review.</em>'],['📞','Calls made with outcome noted','<em>e.g. 14/05: Called front desk — confirmed guest was correctly assigned to an oceanview room.</em>'],['🔺','Escalations — to TL, partner, or Airbnb','<em>e.g. 27/05: Guest escalated to Airbnb requesting 50% partial refund. Partner updated and asked to provide additional information.</em>'],['🔧','Partner confirmed repairs or actions taken on-site','<em>e.g. 05/16: Partner confirmed onsite team attended to reported issues and concerns resolved.</em>'],['👤','Followed up with guest after a resolution attempt','<em>e.g. Followed up with guest to confirm resolution on their side.</em>'],['💳','Refunds or compensation processed','<em>e.g. 21/05: Refund of €25 processed. Guest confirmed receipt.</em>']];
 for(var i=0;i<incl.length;i++){h+='<div style="display:flex;align-items:flex-start;gap:10px;padding:8px 10px;background:#fff;border:1px solid #c6f6d5;border-radius:6px;"><span style="font-size:15px;flex-shrink:0;margin-top:1px;">'+incl[i][0]+'</span><div><div style="font-size:12px;font-weight:700;color:#276749;margin-bottom:2px;">'+incl[i][1]+'</div><div style="font-size:11px;color:#4a5568;line-height:1.65;">'+incl[i][2]+'</div></div></div>';}
 h+='</div></div>';
 var exclId='excl-'+Math.random().toString(36).substr(2,6);
 h+='<button onclick="var el=document.getElementById(\''+exclId+'\');var open=el.style.display!==\'none\';el.style.display=open?\'none\':\'block\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;background:#9b2235;color:#fff;border:none;border-radius:9px;padding:11px 16px;font-size:13px;font-weight:800;cursor:pointer;margin-bottom:8px;text-align:left;">'+
-  '<span>ðŸš« What NOT to include</span>'+
-  '<span style="font-size:16px;transition:transform 0.2s;display:inline-block;">â–¼</span>'+
+  '<span>🚫 What NOT to include</span>'+
+  '<span style="font-size:16px;transition:transform 0.2s;display:inline-block;">▼</span>'+
 '</button>';
 h+='<div id="'+exclId+'" style="display:none;background:#fff5f5;border:2px solid #feb2b2;border-radius:9px;padding:12px 14px;margin-bottom:14px;">';
-h+='<p style="font-size:12px;color:#742a2a;line-height:1.75;margin:0 0 10px 0;">These are <strong>admin tasks and status notes</strong> â€” they clutter the Actions Taken section and add no useful information about what actually happened. Leave these out.</p>';
+h+='<p style="font-size:12px;color:#742a2a;line-height:1.75;margin:0 0 10px 0;">These are <strong>admin tasks and status notes</strong> — they clutter the Actions Taken section and add no useful information about what actually happened. Leave these out.</p>';
 h+='<div style="display:flex;flex-direction:column;gap:6px;">';
-var excl=[['"Acknowledged guest complaint" or "Guest concerns acknowledged"',"Acknowledging a complaint is not an action â€” it\'s just opening the case. Skip it."],['"HubSpot ticket created and documented"',"This is an admin step. It doesn\'t tell anyone what you actually did."],['"Photos received and uploaded to HubSpot ticket"',"Uploading to HubSpot is filing, not an action. If photos were forwarded to the partner, that\'s worth noting."],['"Suggested compensation amount of â‚¬55 added"',"This is a field in the ticket â€” it\'s not an action you took."],['"Awaiting partner response" or "Pending partner response"',"These are status notes. Put them in the ticket status, not in Actions Taken."],['"Guest advised matter is being investigated"',"Vague and adds nothing. Note the actual communication you sent instead."],['"Partner contacted and awaiting response"',"Incomplete. Say what you contacted the partner about and what you requested."],['"Guest reported unresolved concerns; photos reviewed internally"',"This belongs in Verification, not Actions Taken."],['"5/23: Guest advised they booked alternate accommodation"',"A guest\'s action is not your action. Only note it if it changes what you then did."]];
-for(var i=0;i<excl.length;i++){h+='<div style="display:flex;align-items:flex-start;gap:10px;padding:8px 10px;background:#fff;border:1px solid #fed7d7;border-radius:6px;"><span style="font-size:15px;flex-shrink:0;margin-top:1px;">âŒ</span><div><div style="font-size:12px;font-weight:700;color:#9b2235;margin-bottom:2px;">'+excl[i][0]+'</div><div style="font-size:11px;color:#4a5568;line-height:1.65;">'+excl[i][1]+'</div></div></div>';}
+var excl=[['"Acknowledged guest complaint" or "Guest concerns acknowledged"',"Acknowledging a complaint is not an action — it\'s just opening the case. Skip it."],['"HubSpot ticket created and documented"',"This is an admin step. It doesn\'t tell anyone what you actually did."],['"Photos received and uploaded to HubSpot ticket"',"Uploading to HubSpot is filing, not an action. If photos were forwarded to the partner, that\'s worth noting."],['"Suggested compensation amount of €55 added"',"This is a field in the ticket — it\'s not an action you took."],['"Awaiting partner response" or "Pending partner response"',"These are status notes. Put them in the ticket status, not in Actions Taken."],['"Guest advised matter is being investigated"',"Vague and adds nothing. Note the actual communication you sent instead."],['"Partner contacted and awaiting response"',"Incomplete. Say what you contacted the partner about and what you requested."],['"Guest reported unresolved concerns; photos reviewed internally"',"This belongs in Verification, not Actions Taken."],['"5/23: Guest advised they booked alternate accommodation"',"A guest\'s action is not your action. Only note it if it changes what you then did."]];
+for(var i=0;i<excl.length;i++){h+='<div style="display:flex;align-items:flex-start;gap:10px;padding:8px 10px;background:#fff;border:1px solid #fed7d7;border-radius:6px;"><span style="font-size:15px;flex-shrink:0;margin-top:1px;">❌</span><div><div style="font-size:12px;font-weight:700;color:#9b2235;margin-bottom:2px;">'+excl[i][0]+'</div><div style="font-size:11px;color:#4a5568;line-height:1.65;">'+excl[i][1]+'</div></div></div>';}
 h+='</div></div>';
 var examplesId='examp-'+Math.random().toString(36).substr(2,6);
 h+='<button onclick="var el=document.getElementById(\''+examplesId+'\');var open=el.style.display!==\'none\';el.style.display=open?\'none\':\'block\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;background:#1e3a5c;color:#fff;border:none;border-radius:9px;padding:11px 16px;font-size:13px;font-weight:800;cursor:pointer;margin-bottom:8px;text-align:left;">';
-h+='<span>ðŸ“‹ Real Examples from Closed Tickets</span>';
-h+='<span style="font-size:16px;display:inline-block;">â–¼</span>';
+h+='<span>📋 Real Examples from Closed Tickets</span>';
+h+='<span style="font-size:16px;display:inline-block;">▼</span>';
 h+='</button>';
 h+='<div id="'+examplesId+'" style="display:none;">';
 
 h+='<div style="display:flex;flex-direction:column;gap:10px;">';
 h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;">';
-h+='<div style="background:#1e3a5c;color:#fff;font-size:12px;font-weight:700;padding:8px 14px;">âš¡ Power Outage â€” Claire Le Dimna</div>';
+h+='<div style="background:#1e3a5c;color:#fff;font-size:12px;font-weight:700;padding:8px 14px;">⚡ Power Outage — Claire Le Dimna</div>';
 h+='<div style="padding:10px 14px;background:#fff;display:flex;flex-direction:column;gap:4px;">';
 var ex1=['14/05: Advised guest to contact front desk immediately. Provided contact number and emergency number posted outside reception.','14/05: Guest confirmed reception was closed and voicemail was left. Guest\'s husband went to reception in person.','15/05: Guest confirmed they spent the night without electricity and heating.','15/05: Escalated issue to resort partner for review and goodwill consideration.','18/05: Partner confirmed they would contact the campsite and follow up.','20/05: Offered guest 20% future stay voucher.'];
-for(var i=0;i<ex1.length;i++){h+='<div style="font-size:12px;color:#1a1a2e;display:flex;align-items:flex-start;gap:8px;"><span style="color:#718096;margin-top:1px;">â€¢</span><span>'+ex1[i]+'</span></div>';}
+for(var i=0;i<ex1.length;i++){h+='<div style="font-size:12px;color:#1a1a2e;display:flex;align-items:flex-start;gap:8px;"><span style="color:#718096;margin-top:1px;">•</span><span>'+ex1[i]+'</span></div>';}
 h+='</div></div>';
 h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;">';
-h+='<div style="background:#1e3a5c;color:#fff;font-size:12px;font-weight:700;padding:8px 14px;">ðŸ”§ Multiple Maintenance Issues â€” Kennetta Jones</div>';
+h+='<div style="background:#1e3a5c;color:#fff;font-size:12px;font-weight:700;padding:8px 14px;">🔧 Multiple Maintenance Issues — Kennetta Jones</div>';
 h+='<div style="padding:10px 14px;background:#fff;display:flex;flex-direction:column;gap:4px;">';
-var ex2=['23/05: Requested guest photos and advised guest to continue coordinating with front desk for immediate assistance.','23/05: Offered 15% future stay discount as goodwill gesture.','24/05: Guest declined the 15% discount â€” escalated to team lead for review.','27/05: Guest escalated to Airbnb requesting 50% partial refund. Partner updated and asked to provide additional information and confirm goodwill compensation position.'];
-for(var i=0;i<ex2.length;i++){h+='<div style="font-size:12px;color:#1a1a2e;display:flex;align-items:flex-start;gap:8px;"><span style="color:#718096;margin-top:1px;">â€¢</span><span>'+ex2[i]+'</span></div>';}
+var ex2=['23/05: Requested guest photos and advised guest to continue coordinating with front desk for immediate assistance.','23/05: Offered 15% future stay discount as goodwill gesture.','24/05: Guest declined the 15% discount — escalated to team lead for review.','27/05: Guest escalated to Airbnb requesting 50% partial refund. Partner updated and asked to provide additional information and confirm goodwill compensation position.'];
+for(var i=0;i<ex2.length;i++){h+='<div style="font-size:12px;color:#1a1a2e;display:flex;align-items:flex-start;gap:8px;"><span style="color:#718096;margin-top:1px;">•</span><span>'+ex2[i]+'</span></div>';}
 h+='</div></div>';
 h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;">';
-h+='<div style="background:#1e3a5c;color:#fff;font-size:12px;font-weight:700;padding:8px 14px;">ðŸ§¹ Cleanliness / Spiders â€” Colette Spencer</div>';
+h+='<div style="background:#1e3a5c;color:#fff;font-size:12px;font-weight:700;padding:8px 14px;">🧹 Cleanliness / Spiders — Colette Spencer</div>';
 h+='<div style="padding:10px 14px;background:#fff;display:flex;flex-direction:column;gap:4px;">';
-var ex3=['Partner contacted regarding the reported cleanliness concerns and requested additional cleaning to be arranged.','Advised partner it was already near 9:00 PM local time, so same-night assistance may not be possible.','Follow-up email sent with additional details â€” spiders reported in entryway, guest confirmed killing three large spiders during stay.','Guest provided additional photos: stained towel/bathmat, damaged bedroom dresser, unclean kitchen drawers, debris near entrance, spider webs in bathroom fan. Photos forwarded to partner.'];
-for(var i=0;i<ex3.length;i++){h+='<div style="font-size:12px;color:#1a1a2e;display:flex;align-items:flex-start;gap:8px;"><span style="color:#718096;margin-top:1px;">â€¢</span><span>'+ex3[i]+'</span></div>';}
+var ex3=['Partner contacted regarding the reported cleanliness concerns and requested additional cleaning to be arranged.','Advised partner it was already near 9:00 PM local time, so same-night assistance may not be possible.','Follow-up email sent with additional details — spiders reported in entryway, guest confirmed killing three large spiders during stay.','Guest provided additional photos: stained towel/bathmat, damaged bedroom dresser, unclean kitchen drawers, debris near entrance, spider webs in bathroom fan. Photos forwarded to partner.'];
+for(var i=0;i<ex3.length;i++){h+='<div style="font-size:12px;color:#1a1a2e;display:flex;align-items:flex-start;gap:8px;"><span style="color:#718096;margin-top:1px;">•</span><span>'+ex3[i]+'</span></div>';}
 h+='</div></div>';
 h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;">';
-h+='<div style="background:#1e3a5c;color:#fff;font-size:12px;font-weight:700;padding:8px 14px;">ðŸš¨ Unsafe Accommodation â€” Hilda Chahchah Luquet</div>';
+h+='<div style="background:#1e3a5c;color:#fff;font-size:12px;font-weight:700;padding:8px 14px;">🚨 Unsafe Accommodation — Hilda Chahchah Luquet</div>';
 h+='<div style="padding:10px 14px;background:#fff;display:flex;flex-direction:column;gap:4px;">';
 var ex4=['Escalated maintenance concerns to the partner. Requested urgent repairs, especially for the exposed electrical outlet.','05/16: Partner confirmed onsite team attended to reported issues and concerns resolved.','Followed up with guest to confirm issues had been resolved on their side.','Guest reported additional issues and shared further photos. Informed onsite team and advised guest to visit reception directly for assistance.','05/20: Partner declined compensation. Offered guest 20% future stay discount.'];
-for(var i=0;i<ex4.length;i++){h+='<div style="font-size:12px;color:#1a1a2e;display:flex;align-items:flex-start;gap:8px;"><span style="color:#718096;margin-top:1px;">â€¢</span><span>'+ex4[i]+'</span></div>';}
+for(var i=0;i<ex4.length;i++){h+='<div style="font-size:12px;color:#1a1a2e;display:flex;align-items:flex-start;gap:8px;"><span style="color:#718096;margin-top:1px;">•</span><span>'+ex4[i]+'</span></div>';}
 h+='</div></div>';
 h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;">';
-h+='<div style="background:#1e3a5c;color:#fff;font-size:12px;font-weight:700;padding:8px 14px;">ðŸ’³ Double Charge â€” Dylan Alexander</div>';
+h+='<div style="background:#1e3a5c;color:#fff;font-size:12px;font-weight:700;padding:8px 14px;">💳 Double Charge — Dylan Alexander</div>';
 h+='<div style="padding:10px 14px;background:#fff;display:flex;flex-direction:column;gap:4px;">';
-var ex5=['14/05: Called front desk directly regarding the charge discrepancy. Receptionist forwarded to Front Desk Manager, who was unavailable.','14/05: Detailed voicemail left for Front Desk Manager requesting callback.','14/05: Email sent to property partner requesting they refund guest $140.15 directly and charge our VCC instead.','Agent called partner directly and provided VCC details. Partner confirmed VCC charged and guest refund processed. Guest informed â€” case resolved.'];
-for(var i=0;i<ex5.length;i++){h+='<div style="font-size:12px;color:#1a1a2e;display:flex;align-items:flex-start;gap:8px;"><span style="color:#718096;margin-top:1px;">â€¢</span><span>'+ex5[i]+'</span></div>';}
+var ex5=['14/05: Called front desk directly regarding the charge discrepancy. Receptionist forwarded to Front Desk Manager, who was unavailable.','14/05: Detailed voicemail left for Front Desk Manager requesting callback.','14/05: Email sent to property partner requesting they refund guest $140.15 directly and charge our VCC instead.','Agent called partner directly and provided VCC details. Partner confirmed VCC charged and guest refund processed. Guest informed — case resolved.'];
+for(var i=0;i<ex5.length;i++){h+='<div style="font-size:12px;color:#1a1a2e;display:flex;align-items:flex-start;gap:8px;"><span style="color:#718096;margin-top:1px;">•</span><span>'+ex5[i]+'</span></div>';}
 h+='</div></div>';
 h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;">';
-h+='<div style="background:#1e3a5c;color:#fff;font-size:12px;font-weight:700;padding:8px 14px;">ðŸŠ TV &amp; Dirty Pool â€” Stella Biabiany</div>';
+h+='<div style="background:#1e3a5c;color:#fff;font-size:12px;font-weight:700;padding:8px 14px;">🏊 TV &amp; Dirty Pool — Stella Biabiany</div>';
 h+='<div style="padding:10px 14px;background:#fff;display:flex;flex-direction:column;gap:4px;">';
 var ex6=['24/05: Advised guest to check for replacement batteries in the room.','24/05: Guest confirmed no drawers or spare batteries available. Guest unable to wait until morning due to one-night stay.','24/05: Partner/property contacted requesting urgent review and compensation consideration due to impact on guest experience.','24/05: Guest provided photos and video of unsanitary pool. Shared with property team and requested 30 EUR goodwill as requested by the guest.'];
-for(var i=0;i<ex6.length;i++){h+='<div style="font-size:12px;color:#1a1a2e;display:flex;align-items:flex-start;gap:8px;"><span style="color:#718096;margin-top:1px;">â€¢</span><span>'+ex6[i]+'</span></div>';}
+for(var i=0;i<ex6.length;i++){h+='<div style="font-size:12px;color:#1a1a2e;display:flex;align-items:flex-start;gap:8px;"><span style="color:#718096;margin-top:1px;">•</span><span>'+ex6[i]+'</span></div>';}
 h+='</div></div>';
 h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;">';
-h+='<div style="background:#1e3a5c;color:#fff;font-size:12px;font-weight:700;padding:8px 14px;">ðŸ›ï¸ No Linens on Arrival â€” Wilco Vletter</div>';
+h+='<div style="background:#1e3a5c;color:#fff;font-size:12px;font-weight:700;padding:8px 14px;">🛏️ No Linens on Arrival — Wilco Vletter</div>';
 h+='<div style="padding:10px 14px;background:#fff;display:flex;flex-direction:column;gap:4px;">';
-var ex7=['18/05: Reached out to partner to confirm linen situation.','19/05: Partner advised guest must collect linens from reception at extra charge. Requested clarification on exact charges.','20/05: Sent follow-up to partner reiterating listing states linens are included. Requested confirmation on whether guest purchased linens so correct compensation can be issued.','20/05: Followed up with guest to confirm whether they are still on-site and have received linens.','21/05: Guest confirmed they paid â‚¬25 for bedding. Requested receipt for reimbursement.','21/05: Amount confirmed against partner pricing. Refund of â‚¬25 issued to guest.'];
-for(var i=0;i<ex7.length;i++){h+='<div style="font-size:12px;color:#1a1a2e;display:flex;align-items:flex-start;gap:8px;"><span style="color:#718096;margin-top:1px;">â€¢</span><span>'+ex7[i]+'</span></div>';}
+var ex7=['18/05: Reached out to partner to confirm linen situation.','19/05: Partner advised guest must collect linens from reception at extra charge. Requested clarification on exact charges.','20/05: Sent follow-up to partner reiterating listing states linens are included. Requested confirmation on whether guest purchased linens so correct compensation can be issued.','20/05: Followed up with guest to confirm whether they are still on-site and have received linens.','21/05: Guest confirmed they paid €25 for bedding. Requested receipt for reimbursement.','21/05: Amount confirmed against partner pricing. Refund of €25 issued to guest.'];
+for(var i=0;i<ex7.length;i++){h+='<div style="font-size:12px;color:#1a1a2e;display:flex;align-items:flex-start;gap:8px;"><span style="color:#718096;margin-top:1px;">•</span><span>'+ex7[i]+'</span></div>';}
 h+='</div></div>';
 h+='</div>';
 h+='</div></div></div>';
 h+='</div>';
 h+='<div style="border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;">';
-h+='<button onclick="var b=document.getElementById(\'ci3-s4-body\');var a=document.getElementById(\'ci3-s4-arr\');var o=b.style.display!==\'none\';b.style.display=o?\'none\':\'block\';a.textContent=o?\'â–¶\':\'â–¼\';" style="width:100%;display:flex;align-items:center;gap:12px;padding:12px 16px;background:#fff;border:none;cursor:pointer;font-family:inherit;text-align:left;">';
+h+='<button onclick="var b=document.getElementById(\'ci3-s4-body\');var a=document.getElementById(\'ci3-s4-arr\');var o=b.style.display!==\'none\';b.style.display=o?\'none\':\'block\';a.textContent=o?\'▶\':\'▼\';" style="width:100%;display:flex;align-items:center;gap:12px;padding:12px 16px;background:#fff;border:none;cursor:pointer;font-family:inherit;text-align:left;">';
 h+='<div style="background:#1e3a5c;color:#fff;border-radius:50%;width:24px;height:24px;min-width:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;">4</div>';
-h+='<span style="font-size:13px;font-weight:700;color:#1a1a2e;flex:1;"><strong>Section 4</strong> â€” Final Resolution <span style="font-weight:400;color:#718096;">â€” only once the case is resolved</span></span>';
-h+='<span id="ci3-s4-arr" style="font-size:13px;color:#718096;">â–¶</span>';
+h+='<span style="font-size:13px;font-weight:700;color:#1a1a2e;flex:1;"><strong>Section 4</strong> — Final Resolution <span style="font-weight:400;color:#718096;">— only once the case is resolved</span></span>';
+h+='<span id="ci3-s4-arr" style="font-size:13px;color:#718096;">▶</span>';
 h+='</button>';
 h+='<div id="ci3-s4-body" style="display:none;padding:14px 16px 16px;background:#f7fafc;border-top:1px solid #e2e8f0;">';
-h+='<div style="background:#f0fff4;border:1px solid #9ae6b4;border-radius:8px;padding:10px 14px;margin-bottom:10px;font-size:12px;color:#276749;">âœ… <strong>Only complete this section once the case is fully resolved.</strong></div>';
+h+='<div style="background:#f0fff4;border:1px solid #9ae6b4;border-radius:8px;padding:10px 14px;margin-bottom:10px;font-size:12px;color:#276749;">✅ <strong>Only complete this section once the case is fully resolved.</strong></div>';
 h+='<div style="display:flex;flex-direction:column;gap:6px;">';
-h+='<div style="font-size:12px;color:#1a1a2e;padding:8px 12px;background:#fff;border:1px solid #e2e8f0;border-left:3px solid #276749;border-radius:6px;">ðŸ“‹ <strong>Outcome summary</strong> â€” what was the final resolution? Was the issue fixed?</div>';
+h+='<div style="font-size:12px;color:#1a1a2e;padding:8px 12px;background:#fff;border:1px solid #e2e8f0;border-left:3px solid #276749;border-radius:6px;">📋 <strong>Outcome summary</strong> — what was the final resolution? Was the issue fixed?</div>';
 
 h+='</div></div></div>';
 h+='</div>';
@@ -721,30 +722,30 @@ h+='</div>';
 h+='</div>';h+='<div id="ci-sec-ci-tab2" style="display:'+(activeTab==='ci-tab2'?'block':'none')+'">';
 h+='<h2 style="font-size:20px;font-weight:800;color:#1a1a2e;margin-bottom:18px;">Guest Complaint Review Stage</h2>';
 var ciMainSteps=[
-  ['ci-ms-5','ðŸ› ï¸','','Sort out the guest issue'],
-  [‘ci-ms-6’,’ðŸ’°’,’’,’Decide on compensation amount’],
-  ['ci-ms-4','ðŸ¤','Partner fault?','Contact the partner'],
-  ['ci-ms-7','âž¡ï¸','Jetstream fault?','Move to relevant stage'],
-  ['ci-ms-8','â“','Fault unclear?','Move to relevant stage']
+  ['ci-ms-5','🛠️','','Sort out the guest issue'],
+  ['ci-ms-6','💰','','Decide on compensation amount'],
+  ['ci-ms-4','🤝','Partner fault?','Contact the partner'],
+  ['ci-ms-7','➡️','Jetstream fault?','Move to relevant stage'],
+  ['ci-ms-8','❓','Fault unclear?','Move to relevant stage']
 ];
 h+='<div style="display:flex;flex-direction:column;gap:8px;">';
 for(var cm=0;cm<ciMainSteps.length;cm++){
   var cmid=ciMainSteps[cm][0];
   h+='<div>';
   h+='<button onclick="var b=document.getElementById(\''+cmid+'-body\');var a=document.getElementById(\''+cmid+'-arr\');var isOpen=b.style.display!==\'none\';b.style.display=isOpen?\'none\':\'block\';a.style.transform=isOpen?\'rotate(0deg)\':\'rotate(90deg)\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-radius:10px;border:1px solid #e2e8f0;cursor:pointer;background:#f7fafc;font-family:inherit;font-size:13px;font-weight:700;color:#1a1a2e;box-sizing:border-box;transition:background 0.15s;" onmouseover="this.style.background=\'#ebf4ff\';this.style.borderColor=\'#bee3f8\'" onmouseout="this.style.background=\'#f7fafc\';this.style.borderColor=\'#e2e8f0\'">';
-  h+='<div style="display:flex;align-items:center;gap:10px;"><span style="font-size:18px;">'+ciMainSteps[cm][1]+'</span><span>'+ciMainSteps[cm][2]+' â€” '+ciMainSteps[cm][3]+'</span></div>';
-  h+='<span id="'+cmid+'-arr" style="font-size:12px;color:#718096;transition:transform 0.3s ease;">â–¶</span>';
+  h+='<div style="display:flex;align-items:center;gap:10px;"><span style="font-size:18px;">'+ciMainSteps[cm][1]+'</span><span>'+ciMainSteps[cm][2]+' — '+ciMainSteps[cm][3]+'</span></div>';
+  h+='<span id="'+cmid+'-arr" style="font-size:12px;color:#718096;transition:transform 0.3s ease;">▶</span>';
   h+='</button>';
   h+='<div id="'+cmid+'-body" style="display:none;border:1px solid #e2e8f0;border-top:none;border-radius:0 0 10px 10px;background:#fafcff;padding:16px 18px;">';
   if(cm===0){
     h+='<div style="font-size:13px;color:#1a1a2e;line-height:1.75;font-weight:700;">The first priority is always to resolve the guest\'s issue as quickly as possible. Focus on finding an immediate solution before discussing compensation.</div>';
   }
   if(cm===1){
-    h+='<div style=”display:flex;flex-direction:column;gap:14px;”>';
-    h+='<div style=”background:#fff7ed;border:1px solid #f6ad55;border-radius:9px;padding:14px 16px;”>';
-    h+='<div style=”display:flex;align-items:flex-start;gap:10px;”>';
-    h+='<span style=”font-size:18px;line-height:1;”>📌</span>';
-    h+='<div style=”font-size:13px;color:#744210;line-height:1.75;”>Please decide on an amount that you think the guest should be compensated by using the Notion guide.</div>';
+    h+='<div style="display:flex;flex-direction:column;gap:14px;">';
+    h+='<div style="background:#fff7ed;border:1px solid #f6ad55;border-radius:9px;padding:14px 16px;">';
+    h+='<div style="display:flex;align-items:flex-start;gap:10px;">';
+    h+='<span style="font-size:18px;line-height:1;">📌</span>';
+    h+='<div style="font-size:13px;color:#744210;line-height:1.75;">Please decide on an amount that you think the guest should be compensated by using the Notion guide.</div>';
     h+='</div></div>';
     h+='</div>';
   }
@@ -752,7 +753,7 @@ for(var cm=0;cm<ciMainSteps.length;cm++){
     h+='<div style="display:flex;flex-direction:column;gap:10px;">';
     h+='<div style="background:#fff7ed;border:1px solid #f6ad55;border-radius:9px;padding:14px 16px;">';
     h+='<div style="display:flex;align-items:flex-start;gap:10px;">';
-    h+='<span style="font-size:18px;line-height:1;">ðŸ“§</span>';
+    h+='<span style="font-size:18px;line-height:1;">📧</span>';
     h+='<div style="font-size:13px;color:#744210;line-height:1.75;">Please contact the partner, informing them of the amount that was refunded to the guest and ask if they would be willing to cover the refunded amount.</div>';
     h+='</div>';
     h+='</div>';
@@ -762,7 +763,7 @@ for(var cm=0;cm<ciMainSteps.length;cm++){
     h+='<div style="display:flex;flex-direction:column;gap:10px;">';
     h+='<div style="background:#f0fff4;border:1px solid #68d391;border-radius:9px;padding:14px 16px;">';
     h+='<div style="display:flex;align-items:flex-start;gap:10px;">';
-    h+='<span style="font-size:18px;line-height:1;">âž¡ï¸</span>';
+    h+='<span style="font-size:18px;line-height:1;">➡️</span>';
     h+='<div style="font-size:13px;color:#276749;line-height:1.75;">No need to email the partner here, as this is a Jetstream fault. No need to email the partner with the compensation amount. Please refer to the stages guide to determine the correct stage to move the ticket to.</div>';
     h+='</div>';
     h+='</div>';
@@ -778,15 +779,15 @@ for(var cm=0;cm<ciMainSteps.length;cm++){
 h+='</div>';
 h+='</div>';
 h+='<div id="ci-sec-ci-tab3" style="display:'+(activeTab==='ci-tab3'?'block':'none')+'">';
-h+='<div style="font-size:15px;font-weight:800;color:#1e3a5c;margin-bottom:14px;display:flex;align-items:center;gap:8px;"><span style="font-size:18px;">ðŸ¤¸</span> Escalated TL / Manager Stage</div>';
-var ciTlSteps=[['ci-tl-0','âš ï¸','When to escalate to TL / Manager stage'],['ci-tl-1','ðŸ—‚ï¸','Ticket Owner Actions in This Stage'],['ci-tl-2','ðŸ”','Team Lead Action â€” Verify Ticket'],['ci-tl-3','ðŸ’°','Team Lead Action â€” Verify Compensation'],['ci-tl-4','âž¡ï¸','Team Lead â€” Move to Next Stage']];
+h+='<div style="font-size:15px;font-weight:800;color:#1e3a5c;margin-bottom:14px;display:flex;align-items:center;gap:8px;"><span style="font-size:18px;">🤸</span> Escalated TL / Manager Stage</div>';
+var ciTlSteps=[['ci-tl-0','⚠️','When to escalate to TL / Manager stage'],['ci-tl-1','🗂️','Ticket Owner Actions in This Stage'],['ci-tl-2','🔍','Team Lead Action — Verify Ticket'],['ci-tl-3','💰','Team Lead Action — Verify Compensation'],['ci-tl-4','➡️','Team Lead — Move to Next Stage']];
 h+='<div style="display:flex;flex-direction:column;gap:8px;">';
 for(var ci=0;ci<ciTlSteps.length;ci++){
   var cid=ciTlSteps[ci][0];
   h+='<div>';
   h+='<button onclick="var b=document.getElementById(\''+cid+'-body\');var a=document.getElementById(\''+cid+'-arr\');var o=b.style.display!==\'none\';b.style.display=o?\'none\':\'block\';a.style.transform=o?\'rotate(0deg)\':\'rotate(90deg)\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-radius:10px;border:1px solid #e2e8f0;cursor:pointer;background:#f7fafc;font-family:inherit;font-size:13px;font-weight:700;color:#1a1a2e;box-sizing:border-box;" onmouseover="this.style.background=\'#ebf4ff\'" onmouseout="this.style.background=\'#f7fafc\'">';
   h+='<div style="display:flex;align-items:center;gap:10px;"><span style="font-size:18px;">'+ciTlSteps[ci][1]+'</span><span>'+ciTlSteps[ci][2]+'</span></div>';
-  h+='<span id="'+cid+'-arr" style="font-size:12px;color:#718096;transition:transform 0.3s ease;">â–¶</span>';
+  h+='<span id="'+cid+'-arr" style="font-size:12px;color:#718096;transition:transform 0.3s ease;">▶</span>';
   h+='</button>';
   h+='<div id="'+cid+'-body" style="display:none;border:1px solid #e2e8f0;border-top:none;border-radius:0 0 10px 10px;background:#fafcff;padding:16px 18px;">';
   if(cid==='ci-tl-0'){
@@ -802,8 +803,8 @@ for(var ci=0;ci<ciTlSteps.length;ci++){
   } else if(cid==='ci-tl-3'){
     h+='<div style="display:flex;flex-direction:column;gap:10px;">';
     h+='<p style="font-size:13px;color:#4a5568;line-height:1.75;">The ticket has been escalated to this stage because the guest was unhappy with the refund that was capped at the margin amount.</p>';
-    h+='<div style="background:#ebf8ff;border:1px solid #90cdf4;border-radius:9px;padding:14px 16px;font-size:13px;color:#1a365d;line-height:1.75;">ðŸ’° As a Team Lead, you have a larger leeway to refund the guest â€” <strong>up to approximately $500, but never exceeding the booking total.</strong></div>';
-    h+='<div style="background:#fff5f5;border:1px solid #feb2b2;border-radius:9px;padding:14px 16px;font-size:13px;color:#742a2a;line-height:1.75;">ðŸ”´ If an amount higher than $500 is required, please escalate to <strong>Kirsten</strong> for assistance.</div>';
+    h+='<div style="background:#ebf8ff;border:1px solid #90cdf4;border-radius:9px;padding:14px 16px;font-size:13px;color:#1a365d;line-height:1.75;">💰 As a Team Lead, you have a larger leeway to refund the guest — <strong>up to approximately $500, but never exceeding the booking total.</strong></div>';
+    h+='<div style="background:#fff5f5;border:1px solid #feb2b2;border-radius:9px;padding:14px 16px;font-size:13px;color:#742a2a;line-height:1.75;">🔴 If an amount higher than $500 is required, please escalate to <strong>Kirsten</strong> for assistance.</div>';
     h+='</div>';
   } else if(cid==='ci-tl-4'){
     h+='<p style="font-size:13px;color:#4a5568;line-height:1.75;">Please click on the stages at the top to see which stage the ticket needs to be moved to.</p>';
@@ -815,27 +816,28 @@ h+='</div>';
 h+='</div>';
 h+='<div id="ci-sec-ci-tab4" style="display:'+(activeTab==='ci-tab4'?'block':'none')+'">';
 h+='<div style="margin-top:24px;padding-top:20px;border-top:2px solid #fed7d7;">';
-h+='<div style="font-size:15px;font-weight:800;color:#c53030;margin-bottom:14px;display:flex;align-items:center;gap:8px;"><span style="font-size:18px;">ðŸ”´</span> Pending Recovery â€” PM / AM</div>';
-h+='<div style="font-size:13px;color:#744210;background:#fef3c7;border:1px solid #f6e05e;border-radius:8px;padding:12px 14px;margin-bottom:12px;display:flex;align-items:flex-start;gap:8px;"><span style="font-size:15px;">âš ï¸</span><span><strong>Note:</strong> Please move to this stage only if the loss to Jetstream is larger than $100 due to a partner fault error.</span></div>';
-h+='<div style="font-size:13px;color:#744210;background:#fef3c7;border:1px solid #f6e05e;border-radius:8px;padding:12px 14px;margin-bottom:16px;display:flex;align-items:flex-start;gap:8px;"><span style="font-size:15px;">âš ï¸</span><span><strong>Note:</strong> Cases remain in this stage for a minimum of four weeks before aging and moving to Closed.</span></div>';
+h+='<div style="font-size:15px;font-weight:800;color:#c53030;margin-bottom:14px;display:flex;align-items:center;gap:8px;"><span style="font-size:18px;">🔴</span> Pending Recovery — PM / AM</div>';
+h+='<div style="font-size:13px;color:#744210;background:#fef3c7;border:1px solid #f6e05e;border-radius:8px;padding:12px 14px;margin-bottom:12px;display:flex;align-items:flex-start;gap:8px;"><span style="font-size:15px;">⚠️</span><span><strong>Note:</strong> Please move to this stage only if the loss to Jetstream is larger than $100 due to a partner fault error.</span></div>';
+h+='<div style="font-size:13px;color:#744210;background:#fef3c7;border:1px solid #f6e05e;border-radius:8px;padding:12px 14px;margin-bottom:16px;display:flex;align-items:flex-start;gap:8px;"><span style="font-size:15px;">⚠️</span><span><strong>Note:</strong> Cases remain in this stage for a minimum of four weeks before aging and moving to Closed.</span></div>';
 h+='</div>';
 h+='</div>';
 h+='<div id="ci-sec-ci-tab6" style="display:'+(activeTab==='ci-tab6'?'block':'none')+'">';
 h+='<div style="margin-top:24px;padding-top:20px;border-top:2px solid #fed7d7;">';
-h+='<div style="font-size:15px;font-weight:800;color:#9b2235;margin-bottom:14px;display:flex;align-items:center;gap:8px;"><span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#9b2235;border-radius:4px;font-size:13px;color:#fff;">ðŸ“¦</span> Closed: Jetstream Loss</div>';
+h+='<div style="font-size:15px;font-weight:800;color:#9b2235;margin-bottom:14px;display:flex;align-items:center;gap:8px;"><span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#9b2235;border-radius:4px;font-size:13px;color:#fff;">📦</span> Closed: Jetstream Loss</div>';
 h+='<p style="font-size:13px;color:#4a5568;line-height:1.75;">Tickets can be moved here for any Jetstream loss that is less than $100 or when a case above $100 has completed the Pending Recovery stage and the AM task is closed with recovery refused, waived, or written off.</p>';
 h+='<p style="font-size:13px;color:#4a5568;line-height:1.75;margin-top:8px;">An AM task is still created on partner-fault cases under $100 for visibility.</p>';
 h+='</div>';
 h+='</div>';
 h+='<div id="ci-sec-ci-tab7" style="display:'+(activeTab==='ci-tab7'?'block':'none')+'">';
 h+='<div style="margin-top:24px;padding-top:20px;border-top:2px solid #fed7d7;">';
-h+='<div style="font-size:15px;font-weight:800;color:#b83280;margin-bottom:14px;display:flex;align-items:center;gap:8px;"><span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#b83280;border-radius:4px;font-size:13px;color:#fff;">ðŸ“¦</span> Closed: Jetstream Win</div>';
+h+='<div style="font-size:15px;font-weight:800;color:#b83280;margin-bottom:14px;display:flex;align-items:center;gap:8px;"><span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#b83280;border-radius:4px;font-size:13px;color:#fff;">📦</span> Closed: Jetstream Win</div>';
 h+='<p style="font-size:13px;color:#4a5568;line-height:1.75;">Please move any tickets where Jetstream loss = 0.</p>';
 h+='</div>';
 h+='</div>';
 h+='</div></div>';
 return h;
 }
+
 
 function setCiTab(tab){
   var tabs=['ci-tab1','ci-tab-ct','ci-tab-create','ci-tab2','ci-tab3','ci-tab4','ci-tab6','ci-tab7'];
@@ -844,8 +846,7 @@ function setCiTab(tab){
   for(var i=0;i<btns.length;i++){btns[i].classList.toggle('active',btns[i].getAttribute('data-citab')===tab);}
   try{localStorage.setItem('jt-ci-tab',tab);}catch(e){}
 }
-
-  </script>
+</script>
 
 </body>
 </html>
