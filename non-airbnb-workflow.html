@@ -728,6 +728,101 @@ h+='</div>';
 
 h+='</div>';
 h+='</div>';h+='<div id="rc-sec-rc-tab2" style="display:'+(activeTab==='rc-tab2'?'block':'none')+'">';
+h+='<h2 style="font-size:20px;font-weight:800;color:#1a1a2e;margin-bottom:18px;">Guest Complaint Review Stage</h2>';
+var ciMainSteps=[
+  ['rc-ms-5','🛠️','','Sort out the guest issue'],
+  ['rc-ms-6','💰','','Decide on compensation amount'],
+  ['rc-ms-4','🤝','Partner fault?','Contact the partner'],
+  ['rc-ms-7','➡️','Jetstream fault?','Move to relevant stage'],
+  ['rc-ms-8','❓','Fault unclear?','Move to relevant stage']
+];
+h+='<div style="display:flex;flex-direction:column;gap:8px;">';
+for(var cm=0;cm<ciMainSteps.length;cm++){
+  var cmid=ciMainSteps[cm][0];
+  h+='<div>';
+  h+='<button onclick="var b=document.getElementById(\''+cmid+'-body\');var a=document.getElementById(\''+cmid+'-arr\');var isOpen=b.style.display!==\'none\';b.style.display=isOpen?\'none\':\'block\';a.style.transform=isOpen?\'rotate(0deg)\':\'rotate(90deg)\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-radius:10px;border:1px solid #e2e8f0;cursor:pointer;background:#f7fafc;font-family:inherit;font-size:13px;font-weight:700;color:#1a1a2e;box-sizing:border-box;transition:background 0.15s;" onmouseover="this.style.background=\'#ebf4ff\';this.style.borderColor=\'#bee3f8\'" onmouseout="this.style.background=\'#f7fafc\';this.style.borderColor=\'#e2e8f0\'">';
+  h+='<div style="display:flex;align-items:center;gap:10px;"><span style="font-size:18px;">'+ciMainSteps[cm][1]+'</span><span>'+ciMainSteps[cm][2]+' — '+ciMainSteps[cm][3]+'</span></div>';
+  h+='<span id="'+cmid+'-arr" style="font-size:12px;color:#718096;transition:transform 0.3s ease;">▶</span>';
+  h+='</button>';
+  h+='<div id="'+cmid+'-body" style="display:none;border:1px solid #e2e8f0;border-top:none;border-radius:0 0 10px 10px;background:#fafcff;padding:16px 18px;">';
+  if(cm===0){
+    h+='<div style="font-size:13px;color:#1a1a2e;line-height:1.75;font-weight:700;">The first priority is always to resolve the guest\'s issue as quickly as possible. Focus on finding an immediate solution before discussing compensation.</div>';
+  }
+  if(cm===1){
+    h+='<div style="display:flex;flex-direction:column;gap:14px;">';
+    h+='<div style="background:#fff7ed;border:1px solid #f6ad55;border-radius:9px;padding:14px 16px;">';
+    h+='<div style="display:flex;align-items:flex-start;gap:10px;">';
+    h+='<span style="font-size:18px;line-height:1;">📌</span>';
+    h+='<div style="font-size:13px;color:#744210;line-height:1.75;">Please decide on an amount that you think the guest should be compensated by using the Notion guide.</div>';
+    h+='</div></div>';
+    h+='</div>';
+  }
+  if(cm===2){
+    h+='<div style="display:flex;flex-direction:column;gap:10px;">';
+    h+='<div style="background:#fff7ed;border:1px solid #f6ad55;border-radius:9px;padding:14px 16px;">';
+    h+='<div style="display:flex;align-items:flex-start;gap:10px;">';
+    h+='<span style="font-size:18px;line-height:1;">📧</span>';
+    h+='<div style="font-size:13px;color:#744210;line-height:1.75;">Email the partner with the suggested compensation amount and the guest issue to ask if they are willing to cover it (do not compensate the guest yet) — we need to wait for approval.</div>';
+    h+='</div>';
+    h+='</div>';
+    h+='</div>';
+  }
+  if(cm===3){
+    h+='<div style="display:flex;flex-direction:column;gap:10px;">';
+    h+='<div style="background:#f0fff4;border:1px solid #68d391;border-radius:9px;padding:14px 16px;">';
+    h+='<div style="display:flex;align-items:flex-start;gap:10px;">';
+    h+='<span style="font-size:18px;line-height:1;">➡️</span>';
+    h+='<div style="font-size:13px;color:#276749;line-height:1.75;">No need to email the partner here, as this is a Jetstream fault. No need to email the partner with the compensation amount. Please refer to the stages guide to determine the correct stage to move the ticket to.</div>';
+    h+='</div>';
+    h+='</div>';
+    h+='</div>';
+  }
+  if(cm===4){
+    h+='<div style="display:flex;flex-direction:column;gap:10px;">';
+    h+='<p style="font-size:13px;color:#718096;line-height:1.7;">Content coming soon.</p>';
+    h+='</div>';
+  }
+  h+='</div></div>';
+}
+h+='</div>';
+h+='</div>';h+='<div id="rc-sec-rc-tab2" style="display:'+(activeTab==='rc-tab2'?'block':'none')+'">';
+
+h+='<div style="padding:24px;text-align:center;color:#e53e3e;font-size:15px;font-weight:700;">In progress — coming soon.</div>';
+
+h+='<div id="rc-sec-rc-tab3" style="display:'+(activeTab==='rc-tab3'?'block':'none')+'">';
+h+='<div style="font-size:15px;font-weight:800;color:#1e3a5c;margin-bottom:14px;display:flex;align-items:center;gap:8px;"><span style="font-size:18px;">🤸</span> Escalated TL / Manager Stage</div>';
+var ciTlSteps=[['rc-tl-0','⚠️','When to escalate to TL / Manager stage'],['rc-tl-1','🗂️','Ticket Owner Actions in This Stage'],['rc-tl-2','🔍','Team Lead Action — Verify Ticket'],['rc-tl-3','💰','Team Lead Action — Verify Compensation'],['rc-tl-4','➡️','Team Lead — Move to Next Stage']];
+h+='<div style="display:flex;flex-direction:column;gap:8px;">';
+for(var ci=0;ci<ciTlSteps.length;ci++){
+  var cid=ciTlSteps[ci][0];
+  h+='<div>';
+  h+='<button onclick="var b=document.getElementById(\''+cid+'-body\');var a=document.getElementById(\''+cid+'-arr\');var o=b.style.display!==\'none\';b.style.display=o?\'none\':\'block\';a.style.transform=o?\'rotate(0deg)\':\'rotate(90deg)\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-radius:10px;border:1px solid #e2e8f0;cursor:pointer;background:#f7fafc;font-family:inherit;font-size:13px;font-weight:700;color:#1a1a2e;box-sizing:border-box;" onmouseover="this.style.background=\'#ebf4ff\'" onmouseout="this.style.background=\'#f7fafc\'">';
+  h+='<div style="display:flex;align-items:center;gap:10px;"><span style="font-size:18px;">'+ciTlSteps[ci][1]+'</span><span>'+ciTlSteps[ci][2]+'</span></div>';
+  h+='<span id="'+cid+'-arr" style="font-size:12px;color:#718096;transition:transform 0.3s ease;">▶</span>';
+  h+='</button>';
+  h+='<div id="'+cid+'-body" style="display:none;border:1px solid #e2e8f0;border-top:none;border-radius:0 0 10px 10px;background:#fafcff;padding:16px 18px;">';
+  if(cid==='rc-tl-0'){
+    h+='<ul style="font-size:13px;color:#1a1a2e;line-height:1.9;padding-left:20px;margin:0;">';
+    h+='<li>When the partner has not responded for <strong>48 hours or more</strong>.</li>';
+    h+='<li>If the partner refused compensation and you think the guest deserves compensation.</li>';
+    h+='</ul>';
+  } else if(cid==='rc-tl-1'){
+    h+='<p style="font-size:13px;color:#1a1a2e;line-height:1.7;">The ticket owner is still responsible for communicating with the guest and actioning any tasks that the TL assigns to them.</p>';
+  } else if(cid==='rc-tl-2'){
+    h+='<p style="font-size:13px;color:#1a1a2e;line-height:1.7;">Verify that the ticket has been actioned correctly.</p>';
+  } else if(cid==='rc-tl-3'){
+    h+='<div style="display:flex;flex-direction:column;gap:10px;">';
+    h+='<div style="background:#ebf8ff;border:1px solid #90cdf4;border-radius:9px;padding:14px 16px;font-size:13px;color:#1a365d;line-height:1.75;">💰 Verify whether you think this case is extreme enough for Jetstream to lose funds over a partner fault issue. If so, the compensation must always stay within the profit margin.</div>';
+    h+='<div style="background:#fff5f5;border:1px solid #feb2b2;border-radius:9px;padding:14px 16px;font-size:13px;color:#742a2a;line-height:1.75;">🔴 If the compensation needs to be higher than the profit margin, escalate to <strong>Kirsten</strong>.</div>';
+    h+='</div>';
+  } else if(cid==='rc-tl-4'){
+    h+='<p style="font-size:13px;color:#4a5568;line-height:1.75;">Please click on the stages at the top to see which stage the ticket needs to be moved to.</p>';
+  }
+  h+='</div>';
+  h+='</div>';
+}
+h+='</div>';
+h+='</div>';h+='<div id="rc-sec-rc-tab2" style="display:'+(activeTab==='rc-tab2'?'block':'none')+'">';
 
 h+='<div style="padding:24px;text-align:center;color:#e53e3e;font-size:15px;font-weight:700;">In progress — coming soon.</div>';
 
