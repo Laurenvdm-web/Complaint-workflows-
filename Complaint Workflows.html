@@ -104,6 +104,7 @@
   <div class="tabs">
     <button class="tab-btn active" onclick="switchTab(&#39;content&#39;, this)">📋 Content Issues</button>
     <button class="tab-btn" onclick="switchTab(&#39;regular&#39;, this)">🛠️ Regular Complaints</button>
+    <button class="tab-btn" onclick="switchTab(&#39;nonairbnb&#39;, this)">🔖 Non Airbnb Workflow</button>
   </div>
 
   <div class="container">
@@ -406,7 +407,34 @@
       </div>
     </div>
 
-  
+    <!-- NON AIRBNB WORKFLOW TAB -->
+    <div id="tab-nonairbnb" class="tab-panel">
+      <div class="accordion">
+
+        <div>
+          <button class="acc-btn" onclick="toggleAcc(this)">
+            <div class="acc-left"><span class="acc-icon">📊</span><span>Workflow Diagram</span></div>
+            <span class="acc-arrow">▶</span>
+          </button>
+          <div class="acc-body">
+            <p style="color:#e53e3e;font-weight:700;font-size:15px;padding:20px;">In progress</p>
+          </div>
+        </div>
+
+        <div>
+          <button class="acc-btn" onclick="toggleAcc(this)">
+            <div class="acc-left"><span class="acc-icon">🎫</span><span>Ticket Stages and Explanations</span></div>
+            <span class="acc-arrow">▶</span>
+          </button>
+          <div class="acc-body">
+            <p style="color:#e53e3e;font-weight:700;font-size:15px;padding:20px;">In progress</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
 
   <script>
     function switchTab(tab, btn) {
