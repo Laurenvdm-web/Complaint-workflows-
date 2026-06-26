@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Non Airbnb Workflow</title>
@@ -33,7 +33,7 @@
       border-radius: 16px;
       padding: 24px;
       box-shadow: 0 4px 24px rgba(0,0,0,0.12);
-      max-width: 980px;
+      max-width: 1400px;
       margin: 0 auto;
     }
 
@@ -81,19 +81,19 @@
 </head>
 <body>
 
-  <div style="max-width: 980px; margin: 0 auto 16px auto;">
-    <a href="index.html" class="back-link">â† Back to Complaint Workflows</a>
+  <div style="max-width: 1400px; margin: 0 auto 16px auto;">
+    <a href="index.html" class="back-link">← Back to Complaint Workflows</a>
   </div>
 
   <h1>Non Airbnb Workflow</h1>
 
-  <div style="max-width: 980px; margin: 0 auto 20px auto; background: #2d2060; color: #fff; border-radius: 12px; padding: 16px 24px; box-shadow: 0 4px 20px rgba(45,32,96,0.4); font-size: 14px; font-weight: 600; text-align: center; letter-spacing: 0.2px;">
-    ðŸš§ &nbsp; This page is still being built â€” content coming soon.
+  <div style="max-width: 1400px; margin: 0 auto 20px auto; background: #2d2060; color: #fff; border-radius: 12px; padding: 16px 24px; box-shadow: 0 4px 20px rgba(45,32,96,0.4); font-size: 14px; font-weight: 600; text-align: center; letter-spacing: 0.2px;">
+    🚧 &nbsp; This page is still being built — content coming soon.
   </div>
 
   <div class="tabs">
-    <button class="tab-btn active" onclick="switchTab('content', this)">ðŸ“‹ Content Issues</button>
-    <button class="tab-btn" onclick="switchTab('regular', this)">ðŸ› ï¸ Regular Complaints</button>
+    <button class="tab-btn active" onclick="switchTab('content', this)">📋 Content Issues</button>
+    <button class="tab-btn" onclick="switchTab('regular', this)">🛠️ Regular Complaints</button>
   </div>
 
   <div class="container">
@@ -104,8 +104,8 @@
 
         <div>
           <button class="acc-btn" onclick="toggleAcc(this)">
-            <div class="acc-left"><span class="acc-icon">ðŸ“Š</span><span>Workflow Diagram</span></div>
-            <span class="acc-arrow">â–¶</span>
+            <div class="acc-left"><span class="acc-icon">📊</span><span>Workflow Diagram</span></div>
+            <span class="acc-arrow">▶</span>
           </button>
           <div class="acc-body">
             <svg viewBox="0 0 960 1030" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif">
@@ -118,7 +118,7 @@
 
               <!-- Title -->
               <text x="480" y="36" text-anchor="middle" font-size="19" font-weight="900" fill="#4a3080" letter-spacing="2">CONTENT ISSUE WORKFLOW</text>
-              <text x="480" y="56" text-anchor="middle" font-size="12" font-weight="700" fill="#777">AGENT  â†’  TL  â†’  AM</text>
+              <text x="480" y="56" text-anchor="middle" font-size="12" font-weight="700" fill="#777">AGENT  →  TL  →  AM</text>
 
               <!-- Agent Identifies Content Issue -->
               <rect x="330" y="68" width="300" height="40" rx="8" fill="#5b8dd9"/>
@@ -167,9 +167,9 @@
               <!-- Investigate prior communication -->
               <rect x="255" y="388" width="450" height="96" rx="8" fill="#f5e430" opacity="0.95"/>
               <text x="480" y="410" text-anchor="middle" font-size="13" font-weight="800" fill="#444">Investigate prior communication</text>
-              <text x="290" y="432" font-size="12" fill="#444">â€¢  Review Slack history</text>
-              <text x="290" y="452" font-size="12" fill="#444">â€¢  Check HubSpot history</text>
-              <text x="290" y="472" font-size="12" fill="#444">â€¢  Review partner email threads</text>
+              <text x="290" y="432" font-size="12" fill="#444">•  Review Slack history</text>
+              <text x="290" y="452" font-size="12" fill="#444">•  Check HubSpot history</text>
+              <text x="290" y="472" font-size="12" fill="#444">•  Review partner email threads</text>
 
               <!-- Three branch arrows from Investigate -->
               <line x1="255" y1="436" x2="160" y2="436" stroke="#555" stroke-width="2"/>
@@ -178,7 +178,7 @@
               <line x1="705" y1="436" x2="800" y2="436" stroke="#555" stroke-width="2"/>
               <line x1="800" y1="436" x2="800" y2="518" stroke="#555" stroke-width="2" marker-end="url(#arr)"/>
 
-              <!-- â”€â”€ LEFT BRANCH (cx=160) â”€â”€ -->
+              <!-- ── LEFT BRANCH (cx=160) ── -->
               <rect x="52" y="520" width="216" height="50" rx="8" fill="#e87c3e"/>
               <text x="160" y="541" text-anchor="middle" font-size="11.5" fill="#fff">Found information that</text>
               <text x="160" y="558" text-anchor="middle" font-size="11.5" font-weight="700" fill="#fff">clearly shows that</text>
@@ -201,7 +201,7 @@
               <line x1="160" y1="726" x2="160" y2="742" stroke="#555" stroke-width="2" marker-end="url(#arr)"/>
 
               <rect x="34" y="744" width="252" height="34" rx="8" fill="#f0a070"/>
-              <text x="160" y="766" text-anchor="middle" font-size="11.5" fill="#fff">If Partner Agrees â€” Refund Guest</text>
+              <text x="160" y="766" text-anchor="middle" font-size="11.5" fill="#fff">If Partner Agrees — Refund Guest</text>
 
               <line x1="160" y1="778" x2="160" y2="794" stroke="#555" stroke-width="2" marker-end="url(#arr)"/>
 
@@ -221,7 +221,7 @@
               <text x="160" y="944" text-anchor="middle" font-size="12" font-weight="800" fill="#fff">Guest Still Unhappy?</text>
               <text x="160" y="962" text-anchor="middle" font-size="12" font-weight="800" fill="#fff">Escalate to TL</text>
 
-              <!-- â”€â”€ MIDDLE BRANCH (cx=480) â”€â”€ -->
+              <!-- ── MIDDLE BRANCH (cx=480) ── -->
               <rect x="348" y="520" width="264" height="46" rx="8" fill="#6abf8a"/>
               <text x="480" y="540" text-anchor="middle" font-size="12" fill="#fff">Found information that shows</text>
               <text x="480" y="557" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Jetstream is at fault</text>
@@ -246,7 +246,7 @@
               <rect x="338" y="740" width="284" height="34" rx="8" fill="#2e7d52"/>
               <text x="480" y="762" text-anchor="middle" font-size="12" font-weight="800" fill="#fff">TL Moves Ticket to AM Stage</text>
 
-              <!-- â”€â”€ RIGHT BRANCH (cx=800) â”€â”€ -->
+              <!-- ── RIGHT BRANCH (cx=800) ── -->
               <rect x="648" y="520" width="304" height="52" rx="8" fill="#c8c8d8"/>
               <text x="800" y="542" text-anchor="middle" font-size="11.5" fill="#333">No partner communication found /</text>
               <text x="800" y="560" text-anchor="middle" font-size="11.5" fill="#333">not able to find this information</text>
@@ -274,17 +274,17 @@
               <!-- Key Rules -->
               <rect x="644" y="820" width="298" height="110" rx="10" fill="#d4c9f0"/>
               <text x="670" y="845" font-size="14" font-weight="800" fill="#3a1f7a">Key Rules</text>
-              <text x="662" y="868" font-size="12" fill="#3a1f7a">â—  No Refunds Before TL Approval</text>
-              <text x="662" y="890" font-size="12" fill="#3a1f7a">â—  Only TL / AM Decide Absorption</text>
-              <text x="662" y="912" font-size="12" fill="#3a1f7a">â—  Submit Content Updates</text>
+              <text x="662" y="868" font-size="12" fill="#3a1f7a">●  No Refunds Before TL Approval</text>
+              <text x="662" y="890" font-size="12" fill="#3a1f7a">●  Only TL / AM Decide Absorption</text>
+              <text x="662" y="912" font-size="12" fill="#3a1f7a">●  Submit Content Updates</text>
             </svg>
           </div>
         </div>
 
         <div>
           <button class="acc-btn" onclick="toggleAcc(this); renderCiStages(this)">
-            <div class="acc-left"><span class="acc-icon">ðŸŽ«</span><span>Ticket Stages and Explanations</span></div>
-            <span class="acc-arrow">â–¶</span>
+            <div class="acc-left"><span class="acc-icon">🎫</span><span>Ticket Stages and Explanations</span></div>
+            <span class="acc-arrow">▶</span>
           </button>
           <div class="acc-body" style="padding:0;">
             <div id="na-ci-inline-render"></div>
@@ -300,8 +300,8 @@
 
         <div>
           <button class="acc-btn" onclick="toggleAcc(this)">
-            <div class="acc-left"><span class="acc-icon">ðŸ“Š</span><span>Workflow Diagram</span></div>
-            <span class="acc-arrow">â–¶</span>
+            <div class="acc-left"><span class="acc-icon">📊</span><span>Workflow Diagram</span></div>
+            <span class="acc-arrow">▶</span>
           </button>
           <div class="acc-body">
             <svg viewBox="0 0 960 780" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif">
@@ -320,16 +320,16 @@
               <rect x="16" y="56" width="390" height="42" rx="10" fill="#5b8dd9"/>
               <rect x="16" y="82" width="390" height="16" fill="#5b8dd9"/>
               <text x="210" y="83" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">Agent Identifies Regular Issue</text>
-              <text x="42" y="116" font-size="11.5" fill="#2d3748">â€¢  Cleaning issues</text>
-              <text x="42" y="135" font-size="11.5" fill="#2d3748">â€¢  Maintenance issues</text>
-              <text x="42" y="154" font-size="11.5" fill="#2d3748">â€¢  Other Amenity issues</text>
-              <text x="58" y="168" font-size="10" fill="#718096">     (not missing â€” broken / unusable only)</text>
-              <text x="42" y="186" font-size="11.5" fill="#2d3748">â€¢  Noise issues</text>
-              <text x="42" y="205" font-size="11.5" fill="#2d3748">â€¢  Safety issue</text>
-              <text x="42" y="224" font-size="11.5" fill="#2d3748">â€¢  Bedding / comfort issue</text>
-              <text x="42" y="243" font-size="11.5" fill="#2d3748">â€¢  Bed bugs</text>
-              <text x="42" y="262" font-size="11.5" fill="#2d3748">â€¢  Utility outage</text>
-              <text x="42" y="281" font-size="11.5" fill="#2d3748">â€¢  Check-in issue</text>
+              <text x="42" y="116" font-size="11.5" fill="#2d3748">•  Cleaning issues</text>
+              <text x="42" y="135" font-size="11.5" fill="#2d3748">•  Maintenance issues</text>
+              <text x="42" y="154" font-size="11.5" fill="#2d3748">•  Other Amenity issues</text>
+              <text x="58" y="168" font-size="10" fill="#718096">     (not missing — broken / unusable only)</text>
+              <text x="42" y="186" font-size="11.5" fill="#2d3748">•  Noise issues</text>
+              <text x="42" y="205" font-size="11.5" fill="#2d3748">•  Safety issue</text>
+              <text x="42" y="224" font-size="11.5" fill="#2d3748">•  Bedding / comfort issue</text>
+              <text x="42" y="243" font-size="11.5" fill="#2d3748">•  Bed bugs</text>
+              <text x="42" y="262" font-size="11.5" fill="#2d3748">•  Utility outage</text>
+              <text x="42" y="281" font-size="11.5" fill="#2d3748">•  Check-in issue</text>
               <text x="58" y="295" font-size="10" fill="#718096">     (partner not answering calls / causing issue)</text>
 
               <!-- Arrow from left box to right box -->
@@ -381,7 +381,7 @@
               <!-- If Partner Agrees -->
               <rect x="100" y="532" width="340" height="46" rx="8" fill="#f9c6d0"/>
               <text x="270" y="551" text-anchor="middle" font-size="12" font-weight="700" fill="#8b1a3a">If Partner Agrees to Compensation</text>
-              <text x="270" y="569" text-anchor="middle" font-size="12" font-weight="700" fill="#8b1a3a">â€” Refund Guest</text>
+              <text x="270" y="569" text-anchor="middle" font-size="12" font-weight="700" fill="#8b1a3a">— Refund Guest</text>
 
               <!-- Partner Does Not Agree -->
               <rect x="520" y="532" width="340" height="46" rx="8" fill="#dde0e8"/>
@@ -412,8 +412,8 @@
 
         <div>
           <button class="acc-btn" onclick="toggleAcc(this); renderRcStages(this)">
-            <div class="acc-left"><span class="acc-icon">🎫</span><span>Ticket Stages and Explanations</span></div>
-            <span class="acc-arrow">▶</span>
+            <div class="acc-left"><span class="acc-icon"></span><span>Ticket Stages and Explanations</span></div>
+            <span class="acc-arrow"></span>
           </button>
           <div class="acc-body" style="padding:0;">
             <div id="na-rc-inline-render"></div>
