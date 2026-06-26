@@ -301,7 +301,109 @@
             <span class="acc-arrow">▶</span>
           </button>
           <div class="acc-body">
-            <p style="color:#e53e3e; font-weight:700; font-size:15px;">In progress</p>
+            <svg viewBox="0 0 960 780" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif">
+              <defs>
+                <marker id="arr2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                  <path d="M0,0 L0,6 L8,3 z" fill="#555"/>
+                </marker>
+              </defs>
+              <rect width="960" height="780" fill="#f0eefa" rx="16"/>
+
+              <!-- Title -->
+              <text x="480" y="36" text-anchor="middle" font-size="19" font-weight="900" fill="#4a3080" letter-spacing="2">REGULAR ISSUE WORKFLOW</text>
+
+              <!-- LEFT BOX: Agent Identifies Regular Issue -->
+              <rect x="16" y="56" width="390" height="268" rx="10" fill="#dde8f5"/>
+              <rect x="16" y="56" width="390" height="42" rx="10" fill="#5b8dd9"/>
+              <rect x="16" y="82" width="390" height="16" fill="#5b8dd9"/>
+              <text x="210" y="83" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">Agent Identifies Regular Issue</text>
+              <text x="42" y="116" font-size="11.5" fill="#2d3748">•  Cleaning issues</text>
+              <text x="42" y="135" font-size="11.5" fill="#2d3748">•  Maintenance issues</text>
+              <text x="42" y="154" font-size="11.5" fill="#2d3748">•  Other Amenity issues</text>
+              <text x="58" y="168" font-size="10" fill="#718096">     (not missing — broken / unusable only)</text>
+              <text x="42" y="186" font-size="11.5" fill="#2d3748">•  Noise issues</text>
+              <text x="42" y="205" font-size="11.5" fill="#2d3748">•  Safety issue</text>
+              <text x="42" y="224" font-size="11.5" fill="#2d3748">•  Bedding / comfort issue</text>
+              <text x="42" y="243" font-size="11.5" fill="#2d3748">•  Bed bugs</text>
+              <text x="42" y="262" font-size="11.5" fill="#2d3748">•  Utility outage</text>
+              <text x="42" y="281" font-size="11.5" fill="#2d3748">•  Check-in issue</text>
+              <text x="58" y="295" font-size="10" fill="#718096">     (partner not answering calls / causing issue)</text>
+
+              <!-- Arrow from left box to right box -->
+              <line x1="406" y1="190" x2="428" y2="190" stroke="#e87c3e" stroke-width="2.5" marker-end="url(#arr2)"/>
+
+              <!-- RIGHT BOX: Verify Guest Issue -->
+              <rect x="430" y="56" width="514" height="250" rx="10" fill="#fef0e6"/>
+              <rect x="430" y="56" width="514" height="42" rx="10" fill="#e87c3e"/>
+              <rect x="430" y="82" width="514" height="16" fill="#e87c3e"/>
+              <text x="687" y="83" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">Verify Guest Issue</text>
+              <text x="687" y="114" text-anchor="middle" font-size="12" fill="#6b4500">Before creating a HubSpot ticket, please follow these steps:</text>
+              <text x="454" y="142" font-size="12" fill="#2d3748">1.  Ask guest if they have reached out to the <tspan font-weight="700">front desk</tspan></text>
+              <text x="454" y="166" font-size="12" fill="#2d3748">2.  Ask guest for images of the issue if applicable</text>
+              <text x="454" y="190" font-size="12" fill="#2d3748">3.  Add a <tspan font-weight="700">blacklisted</tspan>-tag in Cirrus</text>
+              <text x="454" y="214" font-size="12" fill="#2d3748">4.  Add brief notes in Cirrus of issue and what</text>
+              <text x="472" y="230" font-size="12" fill="#2d3748">you have sent the guest so far</text>
+
+              <!-- Arrow from right box down to center -->
+              <line x1="687" y1="306" x2="687" y2="322" stroke="#555" stroke-width="2"/>
+              <line x1="687" y1="322" x2="480" y2="322" stroke="#555" stroke-width="2"/>
+              <line x1="480" y1="322" x2="480" y2="336" stroke="#555" stroke-width="2" marker-end="url(#arr2)"/>
+
+              <!-- Guest responded box -->
+              <rect x="100" y="338" width="760" height="46" rx="10" fill="#b84e1a"/>
+              <text x="480" y="357" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Guest responded saying that the front desk was unable to assist</text>
+              <text x="480" y="375" text-anchor="middle" font-size="12" fill="#ffe0cc">and with images (if applicable)</text>
+
+              <!-- Arrow down -->
+              <line x1="480" y1="384" x2="480" y2="400" stroke="#555" stroke-width="2" marker-end="url(#arr2)"/>
+
+              <!-- Create HubSpot Ticket -->
+              <rect x="280" y="402" width="400" height="38" rx="8" fill="#2e7d52"/>
+              <text x="480" y="426" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">Create HubSpot Ticket</text>
+
+              <!-- Arrow down -->
+              <line x1="480" y1="440" x2="480" y2="456" stroke="#555" stroke-width="2" marker-end="url(#arr2)"/>
+
+              <!-- Email Partner -->
+              <rect x="240" y="458" width="480" height="46" rx="8" fill="#5b8dd9"/>
+              <text x="480" y="477" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">Email Partner with Compensation Suggestion</text>
+              <text x="480" y="494" text-anchor="middle" font-size="11.5" fill="#d6e8ff">within the HubSpot ticket</text>
+
+              <!-- Arrow down then split -->
+              <line x1="480" y1="504" x2="480" y2="516" stroke="#555" stroke-width="2"/>
+              <line x1="270" y1="516" x2="690" y2="516" stroke="#555" stroke-width="2"/>
+              <line x1="270" y1="516" x2="270" y2="530" stroke="#555" stroke-width="2" marker-end="url(#arr2)"/>
+              <line x1="690" y1="516" x2="690" y2="530" stroke="#555" stroke-width="2" marker-end="url(#arr2)"/>
+
+              <!-- If Partner Agrees -->
+              <rect x="100" y="532" width="340" height="46" rx="8" fill="#f9c6d0"/>
+              <text x="270" y="551" text-anchor="middle" font-size="12" font-weight="700" fill="#8b1a3a">If Partner Agrees to Compensation</text>
+              <text x="270" y="569" text-anchor="middle" font-size="12" font-weight="700" fill="#8b1a3a">— Refund Guest</text>
+
+              <!-- Partner Does Not Agree -->
+              <rect x="520" y="532" width="340" height="46" rx="8" fill="#dde0e8"/>
+              <text x="690" y="551" text-anchor="middle" font-size="12" font-weight="600" fill="#333">Partner Does Not Agree</text>
+              <text x="690" y="569" text-anchor="middle" font-size="12" font-weight="600" fill="#333">/ Does Not Respond</text>
+
+              <!-- Arrows converging from both boxes -->
+              <line x1="270" y1="578" x2="270" y2="596" stroke="#555" stroke-width="2"/>
+              <line x1="270" y1="596" x2="480" y2="596" stroke="#555" stroke-width="2"/>
+              <line x1="690" y1="578" x2="690" y2="596" stroke="#555" stroke-width="2"/>
+              <line x1="690" y1="596" x2="480" y2="596" stroke="#555" stroke-width="2"/>
+              <line x1="480" y1="596" x2="480" y2="610" stroke="#555" stroke-width="2" marker-end="url(#arr2)"/>
+
+              <!-- Offer 20% Discount -->
+              <rect x="220" y="612" width="520" height="38" rx="8" fill="#e87c3e"/>
+              <text x="480" y="636" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">Offer a 20% Discount on a Future Stay</text>
+
+              <!-- Arrow down -->
+              <line x1="480" y1="650" x2="480" y2="666" stroke="#555" stroke-width="2" marker-end="url(#arr2)"/>
+
+              <!-- Guest Still Unhappy -->
+              <rect x="260" y="668" width="440" height="46" rx="8" fill="#b84e1a"/>
+              <text x="480" y="688" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">Guest Still Unhappy?</text>
+              <text x="480" y="706" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">Escalate to TL</text>
+            </svg>
           </div>
         </div>
 
