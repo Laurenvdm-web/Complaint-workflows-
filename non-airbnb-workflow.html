@@ -781,23 +781,26 @@ for(var cm=0;cm<ciMainSteps.length;cm++){
   if(cm===4){
     h+='<div style="display:flex;flex-direction:column;gap:10px;">';
     h+='<div style="background:#fff5f5;border:1px solid #feb2b2;border-radius:9px;padding:14px 16px;"><div style="font-size:13px;color:#c53030;font-weight:700;line-height:1.75;">❓ Does an AM task need to be created here to help us determine fault?</div></div>';
+    h+='</div>';
   }
   h+='</div></div>';
 }
 h+='</div>';
-h+='</div>';h+='<div id="rc-sec-rc-tab2" style="display:'+(activeTab==='rc-tab2'?'block':'none')+'">';
+h+='</div>';
 
+h+='<div id="rc-sec-rc-tab2" style="display:'+(activeTab==='rc-tab2'?'block':'none')+'">';
 h+='<div style="padding:24px;text-align:center;color:#e53e3e;font-size:15px;font-weight:700;">In progress — coming soon.</div>';
+h+='</div>';
 
 h+='<div id="rc-sec-rc-tab3" style="display:'+(activeTab==='rc-tab3'?'block':'none')+'">';
 h+='<div style="font-size:15px;font-weight:800;color:#1e3a5c;margin-bottom:14px;display:flex;align-items:center;gap:8px;"><span style="font-size:18px;">🤸</span> Escalated TL / Manager Stage</div>';
-var ciTlSteps=[['rc-tl-0','⚠️','When to escalate to TL / Manager stage'],['rc-tl-1','🗂️','Ticket Owner Actions in This Stage'],['rc-tl-2','🔍','Team Lead Action — Verify Ticket'],['rc-tl-3','💰','Team Lead Action — Verify Compensation'],['rc-tl-4','➡️','Team Lead — Move to Next Stage']];
+var rcTlSteps=[['rc-tl-0','⚠️','When to escalate to TL / Manager stage'],['rc-tl-1','🗂️','Ticket Owner Actions in This Stage'],['rc-tl-2','🔍','Team Lead Action — Verify Ticket'],['rc-tl-3','💰','Team Lead Action — Verify Compensation'],['rc-tl-4','➡️','Team Lead — Move to Next Stage']];
 h+='<div style="display:flex;flex-direction:column;gap:8px;">';
-for(var ci=0;ci<ciTlSteps.length;ci++){
-  var cid=ciTlSteps[ci][0];
+for(var ci=0;ci<rcTlSteps.length;ci++){
+  var cid=rcTlSteps[ci][0];
   h+='<div>';
   h+='<button onclick="var b=document.getElementById(\''+cid+'-body\');var a=document.getElementById(\''+cid+'-arr\');var o=b.style.display!==\'none\';b.style.display=o?\'none\':\'block\';a.style.transform=o?\'rotate(0deg)\':\'rotate(90deg)\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-radius:10px;border:1px solid #e2e8f0;cursor:pointer;background:#f7fafc;font-family:inherit;font-size:13px;font-weight:700;color:#1a1a2e;box-sizing:border-box;" onmouseover="this.style.background=\'#ebf4ff\'" onmouseout="this.style.background=\'#f7fafc\'">';
-  h+='<div style="display:flex;align-items:center;gap:10px;"><span style="font-size:18px;">'+ciTlSteps[ci][1]+'</span><span>'+ciTlSteps[ci][2]+'</span></div>';
+  h+='<div style="display:flex;align-items:center;gap:10px;"><span style="font-size:18px;">'+rcTlSteps[ci][1]+'</span><span>'+rcTlSteps[ci][2]+'</span></div>';
   h+='<span id="'+cid+'-arr" style="font-size:12px;color:#718096;transition:transform 0.3s ease;">▶</span>';
   h+='</button>';
   h+='<div id="'+cid+'-body" style="display:none;border:1px solid #e2e8f0;border-top:none;border-radius:0 0 10px 10px;background:#fafcff;padding:16px 18px;">';
@@ -822,13 +825,7 @@ for(var ci=0;ci<ciTlSteps.length;ci++){
   h+='</div>';
 }
 h+='</div>';
-h+='</div>';h+='<div id="rc-sec-rc-tab2" style="display:'+(activeTab==='rc-tab2'?'block':'none')+'">';
-
-h+='<div style="padding:24px;text-align:center;color:#e53e3e;font-size:15px;font-weight:700;">In progress — coming soon.</div>';
-
-h+='<div id="rc-sec-rc-tab3" style="display:'+(activeTab==='rc-tab3'?'block':'none')+'">';
-
-h+='<div style="padding:24px;text-align:center;color:#e53e3e;font-size:15px;font-weight:700;">In progress — coming soon.</div>';
+h+='</div>';
 
 h+='<div id="rc-sec-rc-tab4" style="display:'+(activeTab==='rc-tab4'?'block':'none')+'">';
 h+='<div style="margin-top:24px;padding-top:20px;border-top:2px solid #fed7d7;">';
@@ -837,6 +834,7 @@ h+='<div style="font-size:13px;color:#744210;background:#fef3c7;border:1px solid
 h+='<div style="font-size:13px;color:#744210;background:#fef3c7;border:1px solid #f6e05e;border-radius:8px;padding:12px 14px;margin-bottom:16px;display:flex;align-items:flex-start;gap:8px;"><span style="font-size:15px;">⚠️</span><span><strong>Note:</strong> Cases remain in this stage for a minimum of four weeks before aging and moving to Closed.</span></div>';
 h+='</div>';
 h+='</div>';
+
 h+='<div id="rc-sec-rc-tab6" style="display:'+(activeTab==='rc-tab6'?'block':'none')+'">';
 h+='<div style="margin-top:24px;padding-top:20px;border-top:2px solid #fed7d7;">';
 h+='<div style="font-size:15px;font-weight:800;color:#9b2235;margin-bottom:14px;display:flex;align-items:center;gap:8px;"><span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#9b2235;border-radius:4px;font-size:13px;color:#fff;">📦</span> Closed: Jetstream Loss</div>';
@@ -844,12 +842,14 @@ h+='<p style="font-size:13px;color:#4a5568;line-height:1.75;">Tickets can be mov
 h+='<p style="font-size:13px;color:#4a5568;line-height:1.75;margin-top:8px;">An AM task is still created on partner-fault cases under $100 for visibility.</p>';
 h+='</div>';
 h+='</div>';
+
 h+='<div id="rc-sec-rc-tab7" style="display:'+(activeTab==='rc-tab7'?'block':'none')+'">';
 h+='<div style="margin-top:24px;padding-top:20px;border-top:2px solid #fed7d7;">';
 h+='<div style="font-size:15px;font-weight:800;color:#b83280;margin-bottom:14px;display:flex;align-items:center;gap:8px;"><span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#b83280;border-radius:4px;font-size:13px;color:#fff;">📦</span> Closed: Jetstream Win</div>';
 h+='<p style="font-size:13px;color:#4a5568;line-height:1.75;">Please move any tickets where Jetstream loss = 0.</p>';
 h+='</div>';
 h+='</div>';
+
 h+='</div></div>';
 return h;
 }
@@ -1188,6 +1188,7 @@ for(var cm=0;cm<ciMainSteps.length;cm++){
   if(cm===4){
     h+='<div style="display:flex;flex-direction:column;gap:10px;">';
     h+='<div style="background:#fff5f5;border:1px solid #feb2b2;border-radius:9px;padding:14px 16px;"><div style="font-size:13px;color:#c53030;font-weight:700;line-height:1.75;">❓ Does an AM task need to be created here to help us determine fault?</div></div>';
+    h+='</div>';
   }
   h+='</div></div>';
 }
