@@ -1273,6 +1273,261 @@ function setCiTab(tab){
 }
 </script>
 
+<!-- ===== BEEP CHATBOT ===== -->
+<style>
+  #beep-btn {
+    position: fixed; bottom: 28px; right: 28px; z-index: 9999;
+    width: 60px; height: 60px; border-radius: 50%; border: none; cursor: pointer;
+    background: linear-gradient(135deg, #0e7c7b 0%, #2d2060 100%);
+    box-shadow: 0 4px 18px rgba(14,124,123,0.45);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px; transition: transform 0.2s, box-shadow 0.2s;
+  }
+  #beep-btn:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(14,124,123,0.55); }
+
+  #beep-panel {
+    position: fixed; bottom: 100px; right: 28px; z-index: 9998;
+    width: 360px; max-height: 520px;
+    background: #fff; border-radius: 16px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+    display: none; flex-direction: column; overflow: hidden;
+    font-family: system-ui, sans-serif;
+  }
+  #beep-panel.open { display: flex; }
+
+  #beep-header {
+    background: linear-gradient(135deg, #0e7c7b 0%, #2d2060 100%);
+    color: #fff; padding: 14px 16px 12px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  #beep-header .beep-avatar {
+    width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.15);
+    display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0;
+  }
+  #beep-header .beep-title { font-size: 14px; font-weight: 800; }
+  #beep-header .beep-sub { font-size: 11px; opacity: 0.75; margin-top: 1px; }
+  #beep-close {
+    margin-left: auto; background: none; border: none; color: #fff;
+    font-size: 20px; cursor: pointer; opacity: 0.7; padding: 0 0 0 8px; line-height: 1;
+  }
+  #beep-close:hover { opacity: 1; }
+
+  #beep-messages {
+    flex: 1; overflow-y: auto; padding: 14px 14px 8px; display: flex; flex-direction: column; gap: 10px;
+  }
+
+  .beep-msg { display: flex; flex-direction: column; max-width: 92%; }
+  .beep-msg.bot { align-self: flex-start; }
+  .beep-msg.user { align-self: flex-end; }
+
+  .beep-bubble {
+    padding: 10px 13px; border-radius: 12px; font-size: 12.5px; line-height: 1.65;
+  }
+  .beep-msg.bot .beep-bubble {
+    background: #f0eefa; color: #1a1a2e; border-bottom-left-radius: 3px;
+  }
+  .beep-msg.user .beep-bubble {
+    background: linear-gradient(135deg, #0e7c7b, #2d2060); color: #fff; border-bottom-right-radius: 3px;
+  }
+
+  #beep-suggestions {
+    padding: 6px 12px 10px; display: flex; flex-wrap: wrap; gap: 6px;
+  }
+  .beep-sug {
+    background: #f0eefa; border: 1px solid #d4c9f0; color: #2d2060;
+    font-size: 11px; font-weight: 700; border-radius: 20px; padding: 5px 11px;
+    cursor: pointer; font-family: inherit; transition: background 0.15s;
+    text-align: left;
+  }
+  .beep-sug:hover { background: #e0d8f8; }
+
+  #beep-input-row {
+    display: flex; gap: 8px; padding: 10px 12px 14px; border-top: 1px solid #f0f0f0;
+  }
+  #beep-input {
+    flex: 1; border: 1px solid #e2e8f0; border-radius: 20px; padding: 8px 14px;
+    font-size: 12.5px; font-family: inherit; outline: none;
+    transition: border-color 0.15s;
+  }
+  #beep-input:focus { border-color: #0e7c7b; }
+  #beep-send {
+    background: linear-gradient(135deg, #0e7c7b, #2d2060); color: #fff;
+    border: none; border-radius: 20px; padding: 8px 14px; font-size: 12px;
+    font-weight: 700; cursor: pointer; font-family: inherit;
+  }
+  #beep-send:hover { opacity: 0.9; }
+</style>
+
+<button id="beep-btn" onclick="beepToggle()" title="Ask Beep">🤖</button>
+
+<div id="beep-panel">
+  <div id="beep-header">
+    <div class="beep-avatar">🤖</div>
+    <div>
+      <div class="beep-title">Beep</div>
+      <div class="beep-sub">Non-Airbnb workflow assistant</div>
+    </div>
+    <button id="beep-close" onclick="beepToggle()">✕</button>
+  </div>
+  <div id="beep-messages"></div>
+  <div id="beep-suggestions"></div>
+  <div id="beep-input-row">
+    <input id="beep-input" type="text" placeholder="Ask a question…" onkeydown="if(event.key==='Enter')beepSend()">
+    <button id="beep-send" onclick="beepSend()">Send</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var opened = false;
+  var greeted = false;
+
+  var QA = [
+    {
+      keys: ['when','use','this','workflow','non urgent','non airbnb','which cases'],
+      q: 'When do I use this workflow?',
+      a: 'Use this process for lower-risk cases where we can afford to wait for a partner response and the risk of OTA penalty is low. We ask the partner to compensate the guest first and wait for their approval before escalating.'
+    },
+    {
+      keys: ['48 hour','48h','48hrs','wait','how long','partner respond','no response'],
+      q: 'What is the 48-hour rule?',
+      a: 'After emailing the partner with a compensation suggestion, wait up to 48 hours for a response. If the partner does not respond or refuses within that time, escalate to TL for review.'
+    },
+    {
+      keys: ['escalate','tl','team lead','when escalate','manager'],
+      q: 'When do I escalate to TL?',
+      a: 'Escalate to TL when:\n• Partner does not respond within 48 hours\n• Partner refuses to compensate\n• Guest is still unhappy after you have offered a 20% discount on a future stay'
+    },
+    {
+      keys: ['refund','can i refund','refund without','approval','absorb','absorption'],
+      q: 'Can I refund the guest myself?',
+      a: 'No. Key rules:\n• No refunds before TL approval\n• Only TL / AM decide whether Jetstream absorbs the cost\nDo not process any refund until you have TL sign-off.'
+    },
+    {
+      keys: ['compensation','offer','discount','20%','20 percent','what can i offer'],
+      q: 'What compensation can I offer?',
+      a: 'The standard fallback compensation is a 20% discount on a future stay. Offer this if the partner does not agree to compensate and the guest is still unhappy. Any cash refund requires TL / AM approval first.'
+    },
+    {
+      keys: ['content issue','content complaint','listing','listing issue','amenity','what is content'],
+      q: 'What counts as a content issue?',
+      a: 'Content issues are complaints where the listing itself was inaccurate:\n• Missing / misleading amenities\n• Mapping / address error\n• Cancellation policy discrepancy\n• Check-in issue caused by wrong listing info (wrong times, wrong access codes)'
+    },
+    {
+      keys: ['regular complaint','regular issue','what is regular','cleaning','maintenance','noise','safety','bedding','bed bug','utility','check-in'],
+      q: 'What are regular complaint types?',
+      a: 'Regular complaints include:\n• Cleaning issues\n• Maintenance issues\n• Broken / unusable amenities (not simply missing)\n• Noise issues\n• Safety issues\n• Bedding / comfort issues\n• Bed bugs\n• Utility outages\n• Check-in issues (partner not answering / causing issue)'
+    },
+    {
+      keys: ['fault','partner fault','jetstream fault','not sure','who is at fault','determine fault','whose fault'],
+      q: 'How do I determine fault?',
+      a: 'After investigating prior communication (Slack, HubSpot, partner emails), there are three outcomes:\n1. Partner Fault — clear evidence the partner is responsible → email partner with compensation suggestion\n2. Jetstream Fault — evidence points to us → move to TL review; agent refunds guest\n3. Not Sure — no clear evidence → email partner CC-ing the AM; if no response in 48 hrs, move to TL'
+    },
+    {
+      keys: ['investigate','prior communication','slack','hubspot','email history','history','research'],
+      q: 'What should I investigate for content issues?',
+      a: 'Before assigning fault, check:\n• Slack history\n• HubSpot history\n• Partner email threads\nThis helps determine whether the issue was communicated to Jetstream before, and who is responsible.'
+    },
+    {
+      keys: ['verify','verification','regular complaint verify','step','front desk','images','blacklist','cirrus notes'],
+      q: 'How do I verify a regular complaint?',
+      a: 'Before creating a HubSpot ticket for a regular complaint:\n1. Ask the guest if they reached out to the front desk\n2. Ask for images of the issue (if applicable)\n3. Add a blacklisted tag in Cirrus\n4. Add brief notes in Cirrus about the issue and what you have sent the guest\nOnly create the ticket once the guest confirms the front desk couldn\'t help (and you have images if applicable).'
+    },
+    {
+      keys: ['content update','submit content','update listing','fix listing'],
+      q: 'When do I submit a content update?',
+      a: 'Submit a content update if you are 100% sure you have the accurate information to replace the incorrect listing detail. Do not guess — only submit when you are certain.'
+    },
+    {
+      keys: ['ticket','hubspot ticket','create ticket','when create','stages'],
+      q: 'When do I create a HubSpot ticket?',
+      a: 'For content issues: create the ticket once the complaint is verified as valid. For regular complaints: create the ticket after the guest confirms the front desk could not help and you have images (if applicable).'
+    },
+    {
+      keys: ['am','account manager','am stage','pending recovery','closed','jetstream loss','jetstream win'],
+      q: 'What happens at the AM stage?',
+      a: 'After TL review:\n• Pending Recovery PM / AM — AM pursues recovery from the partner\n• Closed: Jetstream Loss — loss under $100, or recovery refused / waived / written off\n• Closed: Jetstream Win — Jetstream loss = $0'
+    },
+    {
+      keys: ['hello','hi','hey','help','what can you','who are you'],
+      q: null,
+      a: 'Hi! I\'m Beep, your Non-Airbnb workflow assistant. I can answer questions about this page — fault rules, escalation, compensation, content issues, ticket stages, and more. Try one of the suggestions below or type your question!'
+    }
+  ];
+
+  var SUGGESTIONS = [
+    'When do I use this workflow?',
+    'What is the 48-hour rule?',
+    'Can I refund the guest myself?',
+    'How do I determine fault?',
+    'What counts as a content issue?',
+    'How do I verify a regular complaint?'
+  ];
+
+  function findAnswer(text) {
+    var t = text.toLowerCase();
+    var best = null, bestScore = 0;
+    for (var i = 0; i < QA.length; i++) {
+      var score = 0;
+      for (var k = 0; k < QA[i].keys.length; k++) {
+        if (t.indexOf(QA[i].keys[k]) !== -1) score++;
+      }
+      if (score > bestScore) { bestScore = score; best = QA[i]; }
+    }
+    if (bestScore === 0) return "I'm not sure about that one. Try rephrasing, or click one of the suggested questions below!";
+    return best.a;
+  }
+
+  function addMsg(text, who) {
+    var msgs = document.getElementById('beep-messages');
+    var wrap = document.createElement('div');
+    wrap.className = 'beep-msg ' + who;
+    var bubble = document.createElement('div');
+    bubble.className = 'beep-bubble';
+    bubble.style.whiteSpace = 'pre-line';
+    bubble.textContent = text;
+    wrap.appendChild(bubble);
+    msgs.appendChild(wrap);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  function renderSuggestions() {
+    var el = document.getElementById('beep-suggestions');
+    el.innerHTML = '';
+    for (var i = 0; i < SUGGESTIONS.length; i++) {
+      (function(q){
+        var btn = document.createElement('button');
+        btn.className = 'beep-sug';
+        btn.textContent = q;
+        btn.onclick = function(){ addMsg(q, 'user'); addMsg(findAnswer(q), 'bot'); };
+        el.appendChild(btn);
+      })(SUGGESTIONS[i]);
+    }
+  }
+
+  window.beepToggle = function() {
+    var panel = document.getElementById('beep-panel');
+    opened = !opened;
+    panel.classList.toggle('open', opened);
+    if (opened && !greeted) {
+      greeted = true;
+      addMsg("Hi! I'm Beep 👋\nI can answer questions about the Non-Urgent / Non-Airbnb workflow. Try a suggestion or type your own question.", 'bot');
+      renderSuggestions();
+    }
+  };
+
+  window.beepSend = function() {
+    var input = document.getElementById('beep-input');
+    var text = input.value.trim();
+    if (!text) return;
+    input.value = '';
+    addMsg(text, 'user');
+    addMsg(findAnswer(text), 'bot');
+  };
+})();
+</script>
+<!-- ===== END BEEP ===== -->
+
 </body>
 </html>
 
