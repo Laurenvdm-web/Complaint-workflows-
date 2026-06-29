@@ -463,7 +463,7 @@ var activeTab='rc-tab1';try{activeTab=localStorage.getItem('jt-rc-tab')||'rc-tab
 var h='';
 h+='<div style="background:linear-gradient(135deg,#1a3c5e 0%,#1a5c6e 40%,#1a7a8a 75%,#1a9fad 100%);border-radius:14px;padding:0;margin-bottom:20px;position:relative;overflow:hidden;min-height:140px;display:flex;align-items:center;justify-content:center;"><div style="position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,0.04) 1px,transparent 1px);background-size:24px 24px;"></div><div style="position:relative;z-index:1;text-align:center;"><div style="font-size:28px;font-weight:800;color:#ffffff;letter-spacing:0.5px;text-shadow:0 2px 8px rgba(0,0,0,0.25);">Regular Complaints</div></div></div>';
 var ciTabs=[['rc-tab1','Overview'],['rc-tab-ct','Complaint Types'],['rc-tab-create','Creating the ticket'],['rc-tab2','Guest Complaint Review Stage'],['rc-tab3','Escalate to TL / Manager'],['rc-tab4','Pending Recovery PM / AM'],['rc-tab6','Closed: Jetstream Loss'],['rc-tab7','Closed: Jetstream Win']];
-h+='<div style="background:#fff;border-radius:12px;border:1px solid #e8ecf0;margin-bottom:20px;overflow:hidden;">';
+h+='<div style="background:#fff;border-radius:12px;border:1px solid #e8ecf0;margin-bottom:20px;">';
 h+='<div class="home-tab-bar">';
 for(var i=0;i<ciTabs.length;i++){
   var ciIsEscalate=ciTabs[i][0]==='rc-tab3';
@@ -870,7 +870,7 @@ var activeTab='ci-tab1';try{activeTab=localStorage.getItem('jt-ci-tab')||'ci-tab
 var h='';
 h+='<div style="background:linear-gradient(135deg,#2d3748 0%,#4a5568 40%,#718096 75%,#a0aec0 100%);border-radius:14px;padding:0;margin-bottom:20px;position:relative;overflow:hidden;min-height:140px;display:flex;align-items:center;justify-content:center;"><div style="position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,0.04) 1px,transparent 1px);background-size:24px 24px;"></div><div style="position:relative;z-index:1;text-align:center;"><div style="font-size:28px;font-weight:800;color:#ffffff;letter-spacing:0.5px;text-shadow:0 2px 8px rgba(0,0,0,0.25);">Content Issue Complaints</div></div></div>';
 var ciTabs=[['ci-tab1','Overview'],['ci-tab-ct','Complaint Types'],['ci-tab-create','Creating the ticket'],['ci-tab2','Guest Complaint Review Stage'],['ci-tab3','Escalate to TL / Manager'],['ci-tab4','Pending Recovery PM / AM'],['ci-tab6','Closed: Jetstream Loss'],['ci-tab7','Closed: Jetstream Win']];
-h+='<div style="background:#fff;border-radius:12px;border:1px solid #e8ecf0;margin-bottom:20px;overflow:hidden;">';
+h+='<div style="background:#fff;border-radius:12px;border:1px solid #e8ecf0;margin-bottom:20px;">';
 h+='<div class="home-tab-bar">';
 for(var i=0;i<ciTabs.length;i++){
   var ciIsEscalate=ciTabs[i][0]==='ci-tab3';
