@@ -1818,6 +1818,27 @@ function setCiTab(tab){
     } else if (match(ql, ['partially fixed', 'partial fix', 'fixed on site', 'still unhappy after fix'])) {
       beepSay("🔧 <strong>Issue partially fixed but guest still unhappy:</strong><br>Treat it as unresolved. Proceed with creating a HubSpot ticket and assess compensation based on the impact to the guest's stay.");
 
+    } else if (match(ql, ['200 cap', '$200', '200 limit', 'refund cap', 'maximum refund', 'refund limit', 'cap'])) {
+      beepSay("💰 <strong>$200 Refund Cap:</strong><br>Agents can never approve a refund above <strong>$200</strong>, regardless of the booking's profit margin. Even if the margin is $500, the agent cap is $200. Anything above $200 must go to TL.");
+
+    } else if (match(ql, ['without tl', 'no tl', 'agent approve', 'what can agent', 'agent limit', 'approve myself', 'can i approve'])) {
+      beepSay("✅ <strong>What can an agent approve without TL?</strong><br>• Margin under $100 → up to <strong>$100</strong><br>• Margin $100–$200 → up to the <strong>full margin</strong><br>• Margin over $200 → up to <strong>$200 maximum</strong><br>Never above $200 — that always needs TL.");
+
+    } else if (match(ql, ['margin under', 'small margin', 'low margin', 'margin is 20', 'margin is 50', 'margin is 80', 'margin 20', 'margin 50', 'margin 80', 'margin under 100'])) {
+      beepSay("💡 <strong>Margin under $100:</strong><br>Agents can refund up to <strong>$100</strong> even if it exceeds the margin. This flexibility covers cases where the margin is too small to fairly resolve the issue. Above $100 → escalate to TL.");
+
+    } else if (match(ql, ['margin 300', 'margin 500', 'margin 400', 'margin over 200', 'high margin', 'margin is 300', 'margin is 500', 'margin is 400'])) {
+      beepSay("🔴 <strong>Margin over $200:</strong><br>Even with a high margin, the agent cap is <strong>$200</strong>. Offer up to $200 maximum. If the guest refuses, escalate to TL and note what was offered.");
+
+    } else if (match(ql, ['enter compensation', 'cirrus field', 'compensation field', 'where do i enter', 'save compensation', 'add compensation', 'cirrus compensation'])) {
+      beepSay("📋 <strong>Entering Compensation in Cirrus:</strong><br>Go to the booking page and enter the total amount in the <strong>Compensation</strong> field. If the partner is covering any portion, also enter that in the <strong>Compensation by Partner</strong> field.");
+
+    } else if (match(ql, ['compensation by partner', 'difference between', 'jetstream pocket', 'partner cover', 'who pays', 'partner paying', 'partner portion'])) {
+      beepSay("💳 <strong>Compensation vs Compensation by Partner:</strong><br><strong>Compensation</strong> = total amount the guest receives — comes out of Jetstream's pocket.<br><strong>Compensation by Partner</strong> = the portion the partner agreed to cover, which offsets Jetstream's cost.");
+
+    } else if (match(ql, ['partner agreed', 'partner approved', 'partner said yes', 'partner accept', 'partner will compensate'])) {
+      beepSay("✅ <strong>Partner agreed to compensate:</strong><br>1. Process the refund.<br>2. Enter the total in the <strong>Compensation</strong> field in Cirrus.<br>3. Enter the partner's portion in <strong>Compensation by Partner</strong>.<br>4. Move the ticket to the appropriate closed stage.");
+
     } else if (match(ql, ['hi', 'hello', 'hey', 'hiya', 'howdy'])) {
       beepSay("Hey there! 👋 I'm Beep, your complaint workflow assistant. What can I help you with?", [
         "Content issues", "Regular complaints", "Compensation rules", "Fault types", "Closing a ticket"
