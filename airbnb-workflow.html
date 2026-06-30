@@ -1756,7 +1756,7 @@ function setCiTab(tab){
       beepSay("🚨 <strong>Compensation without Partner approval:</strong><br>Yes — this is a major policy update for Airbnb bookings. In extreme cases you can compensate guests directly under our T&amp;Cs without waiting for the Partner.");
 
     } else if (match(ql, ['how much', 'amount', 'offer a guest', 'what can i offer'])) {
-      beepSay("💰 <strong>How much can I offer?</strong><br>Compensation must be within our profit margin and must not be excessive.");
+      beepSay("💰 <strong>How much can I offer?</strong><br>Compensation must be within the profit margin and never above <strong>$200</strong> — that is the absolute agent cap.<br>• Margin under $100 → up to <strong>$100</strong><br>• Margin $100–$200 → up to the <strong>full margin</strong><br>• Margin over $200 → up to <strong>$200 maximum</strong><br>Anything above $200 must go to TL.");
 
     } else if (match(ql, ['when do i not', 'not compensate', 'don\'t compensate', 'no compensation'])) {
       beepSay("🚫 <strong>When NOT to compensate:</strong><br>If the complaint is not valid after verification, no ticket or compensation is needed.");
@@ -1795,7 +1795,7 @@ function setCiTab(tab){
       beepSay("📋 <strong>Content Issue Workflow:</strong><br>1. Identify the issue and verify listing accuracy.<br>2. If invalid → no ticket needed.<br>3. If valid → create a HubSpot ticket and submit a content update (only if 100% sure of accurate info).<br>4. Run the 5-step fault verification.<br>5. Offer compensation within margin based on fault, then escalate to TL if guest is still unhappy.");
 
     } else if (match(ql, ['compensat', 'refund', 'money', 'reimburse', 'credit'])) {
-      beepSay("💰 <strong>Compensation Rules (Airbnb only):</strong><br>• 🚨 <strong>Major update:</strong> No longer need Partner approval before compensating.<br>• In extreme cases, compensate directly under our T&amp;Cs.<br>• Must be within profit margin — not excessive.<br>• Loss under $100 → <em>Jetstream Loss</em>.<br>• Loss $100+ → <em>Pending Recovery</em> (AM recovers from partner).");
+      beepSay("💰 <strong>Compensation Rules (Airbnb only):</strong><br>• 🚨 <strong>Major update:</strong> No longer need Partner approval before compensating.<br>• In extreme cases, compensate directly under our T&amp;Cs.<br>• Must be within profit margin and never above <strong>$200</strong> — agent cap is $200 regardless of margin.<br>• Loss under $100 → <em>Jetstream Loss</em>.<br>• Loss $100+ → <em>Pending Recovery</em> (AM recovers from partner).");
 
     } else if (match(ql, ['fault type', 'types of fault', 'partner fault', 'who is responsible'])) {
       beepSay("⚖️ <strong>Fault Types:</strong><br>🟠 <strong>Partner Fault</strong> — Partner provided incorrect/changed info. Offer refund within margin, email partner with compensation suggestion.<br>🟢 <strong>Jetstream Fault</strong> — We had the info but didn't update the listing. Offer compensation within margin, refund if guest agrees.<br>🟣 <strong>Not Sure</strong> — No clear evidence. Offer compensation within margin as goodwill.");
@@ -1807,13 +1807,13 @@ function setCiTab(tab){
       beepSay("🗂️ <strong>Do I always need a HubSpot ticket?</strong><br>No — only if the complaint is valid after verification. If the complaint is not valid, no ticket or compensation is needed.");
 
     } else if (match(ql, ['refuses', 'rejected', 'doesn\'t want', 'not happy with offer', 'guest refuses'])) {
-      beepSay("😤 <strong>Guest refuses the compensation offer:</strong><br>If the guest is still unhappy after the offer, move the ticket to the TL stage. Do not offer more than the maximum within margin at agent level.");
+      beepSay("😤 <strong>Guest refuses the compensation offer:</strong><br>If the guest refuses, move the ticket to the TL stage. The agent cap is <strong>$200</strong> — do not offer more than that or more than the profit margin, whichever is lower.");
 
     } else if (match(ql, ['asks for more', 'wants more', 'more than we can', 'too much', 'excessive request'])) {
-      beepSay("💬 <strong>Guest asks for more than we can offer:</strong><br>Offer the maximum compensation within our profit margin. If the guest is still unhappy after that, escalate to the TL stage — do not exceed the margin at agent level.");
+      beepSay("💬 <strong>Guest asks for more than we can offer:</strong><br>Offer the maximum you can approve — up to the profit margin, never above <strong>$200</strong>. If the guest is still unhappy, escalate to TL. Note what was offered and what the guest is expecting.");
 
     } else if (match(ql, ['full refund', 'refund the full', 'refund everything', 'full amount'])) {
-      beepSay("💰 <strong>Can I offer a full refund?</strong><br>Only if it falls within our profit margin and is not excessive. You cannot offer a full refund that exceeds the margin — escalate to TL if the guest is pushing for more.");
+      beepSay("💰 <strong>Can I offer a full refund?</strong><br>Only if it falls within the profit margin and is <strong>$200 or under</strong>. You cannot offer a full refund that exceeds the margin or the $200 agent cap — escalate to TL if the guest is pushing for more.");
 
     } else if (match(ql, ['partially fixed', 'partial fix', 'fixed on site', 'still unhappy after fix'])) {
       beepSay("🔧 <strong>Issue partially fixed but guest still unhappy:</strong><br>Treat it as unresolved. Proceed with creating a HubSpot ticket and assess compensation based on the impact to the guest's stay.");
