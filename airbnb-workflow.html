@@ -138,9 +138,9 @@
                 <li>If the content error is a Jetstream fault.</li>
               </ol>
             </div>
-            <svg viewBox="0 0 920 1110" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif">
+            <svg viewBox="0 0 920 1240" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif">
               <defs><marker id="a1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#555"></path></marker></defs>
-              <rect width="920" height="1110" fill="#f0eefa" rx="16"></rect>
+              <rect width="920" height="1240" fill="#f0eefa" rx="16"></rect>
               <text x="460" y="36" text-anchor="middle" font-size="16" font-weight="800" fill="#2d2060">CONTENT ISSUE WORKFLOW</text>
               <text x="460" y="52" text-anchor="middle" font-size="11" fill="#6b5eae">AGENT → TL → AM</text>
               <rect x="310" y="64" width="300" height="36" rx="8" fill="#5b8ef0"></rect>
@@ -194,10 +194,13 @@
               <rect x="182" y="716" width="236" height="46" rx="8" fill="#fff" stroke="#ccc" stroke-width="1.5"></rect>
               <text x="300" y="734" text-anchor="middle" font-size="10.5" fill="#2d2060">Offer guest compensation within margin</text>
               <text x="300" y="750" text-anchor="middle" font-size="10.5" fill="#2d2060">— refund if guest agrees</text>
-              <line x1="300" y1="762" x2="300" y2="780" stroke="#555" stroke-width="1.5" marker-end="url(#a1)"></line>
-              <rect x="188" y="780" width="224" height="44" rx="8" fill="#e05a5a"></rect>
-              <text x="300" y="798" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">Guest Still Unhappy?</text>
-              <text x="300" y="814" text-anchor="middle" font-size="11" fill="#fff">Move to TL Stage</text>
+              <line x1="300" y1="762" x2="300" y2="778" stroke="#555" stroke-width="1.5" marker-end="url(#a1)"></line>
+              <rect x="182" y="778" width="236" height="34" rx="8" fill="#d0e8d8" stroke="#3baa6e" stroke-width="1.5"></rect>
+              <text x="300" y="799" text-anchor="middle" font-size="10.5" fill="#1a5c1a">Update Compensation Fields in HubSpot</text>
+              <line x1="300" y1="812" x2="300" y2="828" stroke="#555" stroke-width="1.5" marker-end="url(#a1)"></line>
+              <rect x="188" y="828" width="224" height="44" rx="8" fill="#e05a5a"></rect>
+              <text x="300" y="846" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">Guest Still Unhappy?</text>
+              <text x="300" y="862" text-anchor="middle" font-size="11" fill="#fff">Move to TL Stage</text>
               <rect x="518" y="602" width="204" height="54" rx="8" fill="#ede8ff" stroke="#9b8fd4" stroke-width="1.5"></rect>
               <text x="620" y="620" text-anchor="middle" font-size="10.5" fill="#3d2a7a">No partner communication</text>
               <text x="620" y="634" text-anchor="middle" font-size="10.5" fill="#3d2a7a">found / not able to find</text>
@@ -209,38 +212,46 @@
               <rect x="494" y="726" width="252" height="46" rx="8" fill="#fff" stroke="#ccc" stroke-width="1.5"></rect>
               <text x="620" y="744" text-anchor="middle" font-size="10.5" fill="#2d2060">Offer guest compensation within margin</text>
               <text x="620" y="760" text-anchor="middle" font-size="10.5" fill="#2d2060">— refund if guest agrees</text>
-              <line x1="620" y1="772" x2="620" y2="790" stroke="#555" stroke-width="1.5" marker-end="url(#a1)"></line>
-              <rect x="498" y="790" width="244" height="44" rx="8" fill="#e05a5a"></rect>
-              <text x="620" y="808" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">Guest Still Unhappy?</text>
-              <text x="620" y="824" text-anchor="middle" font-size="11" fill="#fff">Move to TL Stage</text>
-              <rect x="32" y="860" width="856" height="226" rx="12" fill="#fff" stroke="#c0bcd8" stroke-width="2"></rect>
-              <rect x="32" y="860" width="856" height="38" rx="12" fill="#2d2060"></rect>
-              <rect x="32" y="880" width="856" height="18" fill="#2d2060"></rect>
-              <text x="460" y="884" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">Closing Logic</text>
-              <rect x="48" y="910" width="258" height="158" rx="10" fill="#fff5f5" stroke="#fc8181" stroke-width="1.5"></rect>
-              <rect x="48" y="910" width="258" height="36" rx="10" fill="#c53030"></rect>
-              <rect x="48" y="928" width="258" height="18" fill="#c53030"></rect>
-              <text x="177" y="932" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">📦 Closed: Jetstream Loss</text>
-              <text x="177" y="962" text-anchor="middle" font-size="10.5" font-weight="700" fill="#742a2a">When to use:</text>
-              <text x="177" y="978" text-anchor="middle" font-size="10" fill="#742a2a">Jetstream covered the compensation</text>
-              <text x="177" y="992" text-anchor="middle" font-size="10" fill="#742a2a">and the total loss is less than $100.</text>
-              <text x="177" y="1016" text-anchor="middle" font-size="10" fill="#742a2a">Partner did not recover the cost.</text>
-              <rect x="331" y="910" width="258" height="158" rx="10" fill="#f5f3ff" stroke="#9b8fd4" stroke-width="1.5"></rect>
-              <rect x="331" y="910" width="258" height="36" rx="10" fill="#6b21a8"></rect>
-              <rect x="331" y="928" width="258" height="18" fill="#6b21a8"></rect>
-              <text x="460" y="932" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">📦 Closed: Pending Recovery</text>
-              <text x="460" y="962" text-anchor="middle" font-size="10.5" font-weight="700" fill="#4a1d96">When to use:</text>
-              <text x="460" y="978" text-anchor="middle" font-size="10" fill="#4a1d96">Jetstream covered the compensation</text>
-              <text x="460" y="992" text-anchor="middle" font-size="10" fill="#4a1d96">and the total loss is $100 or more.</text>
-              <text x="460" y="1008" text-anchor="middle" font-size="10" fill="#4a1d96">AM will attempt to recover from the partner.</text>
-              <rect x="614" y="910" width="258" height="158" rx="10" fill="#fff0f9" stroke="#f9a8d4" stroke-width="1.5"></rect>
-              <rect x="614" y="910" width="258" height="36" rx="10" fill="#b83280"></rect>
-              <rect x="614" y="928" width="258" height="18" fill="#b83280"></rect>
-              <text x="743" y="932" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">📦 Closed: Jetstream Win</text>
-              <text x="743" y="962" text-anchor="middle" font-size="10.5" font-weight="700" fill="#831843">When to use:</text>
-              <text x="743" y="978" text-anchor="middle" font-size="10" fill="#831843">Partner recovered compensation</text>
-              <text x="743" y="992" text-anchor="middle" font-size="10" fill="#831843">completely, OR no compensation</text>
-              <text x="743" y="1006" text-anchor="middle" font-size="10" fill="#831843">was required. Jetstream cost = $0.</text>
+              <line x1="620" y1="772" x2="620" y2="788" stroke="#555" stroke-width="1.5" marker-end="url(#a1)"></line>
+              <rect x="484" y="788" width="272" height="46" rx="8" fill="#ede8ff" stroke="#9b8fd4" stroke-width="1.5"></rect>
+              <text x="620" y="806" text-anchor="middle" font-size="10.5" font-weight="700" fill="#3d2a7a">Email AM + Partner</text>
+              <text x="620" y="822" text-anchor="middle" font-size="9.5" fill="#3d2a7a">Request Clarification on Content &amp; Fault</text>
+              <line x1="620" y1="834" x2="620" y2="850" stroke="#555" stroke-width="1.5" marker-end="url(#a1)"></line>
+              <rect x="474" y="850" width="292" height="46" rx="8" fill="#d0e8d8" stroke="#3baa6e" stroke-width="1.5"></rect>
+              <text x="620" y="868" text-anchor="middle" font-size="9.5" fill="#1a5c1a">If Content Confirmed Wrong → Create Content Update Ticket</text>
+              <text x="620" y="884" text-anchor="middle" font-size="9.5" fill="#1a5c1a">If Partner Fault Confirmed → Chase Partner for Compensation</text>
+              <line x1="620" y1="896" x2="620" y2="912" stroke="#555" stroke-width="1.5" marker-end="url(#a1)"></line>
+              <rect x="498" y="912" width="244" height="44" rx="8" fill="#e05a5a"></rect>
+              <text x="620" y="930" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">Guest Still Unhappy?</text>
+              <text x="620" y="946" text-anchor="middle" font-size="11" fill="#fff">Move to TL Stage</text>
+              <rect x="32" y="990" width="856" height="226" rx="12" fill="#fff" stroke="#c0bcd8" stroke-width="2"></rect>
+              <rect x="32" y="990" width="856" height="38" rx="12" fill="#2d2060"></rect>
+              <rect x="32" y="1010" width="856" height="18" fill="#2d2060"></rect>
+              <text x="460" y="1014" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">Closing Logic</text>
+              <rect x="48" y="1040" width="258" height="158" rx="10" fill="#fff5f5" stroke="#fc8181" stroke-width="1.5"></rect>
+              <rect x="48" y="1040" width="258" height="36" rx="10" fill="#c53030"></rect>
+              <rect x="48" y="1058" width="258" height="18" fill="#c53030"></rect>
+              <text x="177" y="1062" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">📦 Closed: Jetstream Loss</text>
+              <text x="177" y="1092" text-anchor="middle" font-size="10.5" font-weight="700" fill="#742a2a">When to use:</text>
+              <text x="177" y="1108" text-anchor="middle" font-size="10" fill="#742a2a">Jetstream covered the compensation</text>
+              <text x="177" y="1122" text-anchor="middle" font-size="10" fill="#742a2a">and the total loss is less than $100.</text>
+              <text x="177" y="1146" text-anchor="middle" font-size="10" fill="#742a2a">Partner did not recover the cost.</text>
+              <rect x="331" y="1040" width="258" height="158" rx="10" fill="#f5f3ff" stroke="#9b8fd4" stroke-width="1.5"></rect>
+              <rect x="331" y="1040" width="258" height="36" rx="10" fill="#6b21a8"></rect>
+              <rect x="331" y="1058" width="258" height="18" fill="#6b21a8"></rect>
+              <text x="460" y="1062" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">📦 Closed: Pending Recovery</text>
+              <text x="460" y="1092" text-anchor="middle" font-size="10.5" font-weight="700" fill="#4a1d96">When to use:</text>
+              <text x="460" y="1108" text-anchor="middle" font-size="10" fill="#4a1d96">Jetstream covered the compensation</text>
+              <text x="460" y="1122" text-anchor="middle" font-size="10" fill="#4a1d96">and the total loss is $100 or more.</text>
+              <text x="460" y="1138" text-anchor="middle" font-size="10" fill="#4a1d96">AM will attempt to recover from the partner.</text>
+              <rect x="614" y="1040" width="258" height="158" rx="10" fill="#fff0f9" stroke="#f9a8d4" stroke-width="1.5"></rect>
+              <rect x="614" y="1040" width="258" height="36" rx="10" fill="#b83280"></rect>
+              <rect x="614" y="1058" width="258" height="18" fill="#b83280"></rect>
+              <text x="743" y="1062" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">📦 Closed: Jetstream Win</text>
+              <text x="743" y="1092" text-anchor="middle" font-size="10.5" font-weight="700" fill="#831843">When to use:</text>
+              <text x="743" y="1108" text-anchor="middle" font-size="10" fill="#831843">Partner recovered compensation</text>
+              <text x="743" y="1122" text-anchor="middle" font-size="10" fill="#831843">completely, OR no compensation</text>
+              <text x="743" y="1136" text-anchor="middle" font-size="10" fill="#831843">was required. Jetstream cost = $0.</text>
             </svg>
           </div>
         </div>
