@@ -3,7 +3,7 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Airbnb / Urgent Cases — Complaint Workflows</title>
+  <title>Big Risk Cases & Content Errors — Complaint Workflows</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { background: #e8e4f5; font-family: system-ui, sans-serif; min-height: 100vh; padding: 24px; }
@@ -92,26 +92,26 @@
     <a href="index.html" style="display: inline-flex; align-items: center; gap: 6px; color: #6b5eae; font-size: 13px; font-weight: 700; text-decoration: none;">← Back to Complaint Workflows</a>
   </div>
 
-  <h1>Airbnb / Urgent Cases</h1>
+  <h1>Big Risk Cases & Content Errors</h1>
 
   <div style="max-width: 1400px; margin: 0 auto 20px auto; background: #2d2060; color: #fff; border-radius: 12px; padding: 28px 28px 24px 28px; box-shadow: 0 4px 20px rgba(45,32,96,0.4);">
     <div style="display: flex; align-items: flex-start; gap: 18px; margin-bottom: 18px;">
       <span style="font-size: 38px; line-height: 1;">🚨</span>
       <div>
-        <div style="font-size: 22px; font-weight: 900; letter-spacing: -0.3px; line-height: 1.2;">Urgent / Airbnb Cases</div>
+        <div style="font-size: 22px; font-weight: 900; letter-spacing: -0.3px; line-height: 1.2;">Big Risk Cases & Content Errors</div>
         <div style="font-size: 13px; opacity: 0.75; margin-top: 3px;">Complaint Workflow</div>
       </div>
     </div>
     <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.2); margin: 0 0 18px 0;">
     <div style="font-size: 14px; line-height: 1.8;">
-      <strong>When to use this:</strong> Use this process when a case is very urgent — most commonly Airbnb bookings. Because Airbnb will refund the guest regardless, we risk getting delisted and penalised for unresolved guest issues.<br><br>
-      This process involves <strong>refunding the guest before getting partner approval.</strong> We do this because partners often respond slowly, which leads to upset guests, negative reviews, and unnecessary stress on the team. Acting fast protects both the guest experience and our platform standing.
+      <strong>When to use this:</strong> Use this process for high-risk cases — most commonly Airbnb bookings, where the OTA will refund the guest regardless and we risk being delisted or penalised for unresolved issues.<br><br>
+      This workflow covers the two situations where we <strong>refund the guest without waiting for approval</strong>: <strong>Content Errors</strong> (Jetstream fault or unsure fault) always refund right away within profit margin, and <strong>Big Risk Cases</strong> (Partner fault, but urgent enough that a TL approves compensating the guest first) refund right away once TL-approved.
     </div>
   </div>
 
   <div class="tabs">
-    <button class="tab-btn active" onclick="switchTab(&#39;content&#39;, this)">📋 Content Issues</button>
-    <button class="tab-btn" onclick="switchTab(&#39;regular&#39;, this)">🛠️ Regular Complaints</button>
+    <button class="tab-btn active" onclick="switchTab(&#39;content&#39;, this)">📋 Content Errors<br><span style="font-size:10.5px;font-weight:600;opacity:0.7;">Jetstream fault / unsure fault</span></button>
+    <button class="tab-btn" onclick="switchTab(&#39;regular&#39;, this)">🛠️ Big Risk Cases<br><span style="font-size:10.5px;font-weight:600;opacity:0.7;">Partner fault — needs TL approval</span></button>
   </div>
 
   <div class="container">
@@ -272,7 +272,7 @@
             <svg viewBox="0 0 920 856" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif">
               <defs><marker id="a2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#555"></path></marker></defs>
               <rect width="920" height="856" fill="#f0eefa" rx="16"></rect>
-              <text x="460" y="36" text-anchor="middle" font-size="16" font-weight="800" fill="#2d2060">REGULAR COMPLAINTS WORKFLOW</text>
+              <text x="460" y="36" text-anchor="middle" font-size="16" font-weight="800" fill="#2d2060">BIG RISK CASES WORKFLOW</text>
               <text x="460" y="52" text-anchor="middle" font-size="11" fill="#6b5eae">AGENT → TL → AM</text>
               <rect x="310" y="64" width="300" height="36" rx="8" fill="#5b8ef0"></rect>
               <text x="460" y="87" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Agent Identifies Regular Issue</text>
@@ -298,17 +298,30 @@
               <rect x="157" y="372" width="196" height="44" rx="8" fill="#e8853a"></rect>
               <text x="255" y="390" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">Found info clearly showing</text>
               <text x="255" y="406" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">Partner Fault</text>
-              <line x1="255" y1="416" x2="255" y2="434" stroke="#555" stroke-width="1.5" marker-end="url(#a2)"></line>
-              <rect x="133" y="434" width="244" height="90" rx="8" fill="#f4a96e" stroke="#c96a00" stroke-width="1.5"></rect>
-              <text x="255" y="456" text-anchor="middle" font-size="11" font-weight="700" fill="#5a2800">Offer Refund to Guest</text>
-              <text x="255" y="472" text-anchor="middle" font-size="11" font-weight="700" fill="#5a2800">within Profit Margin</text>
-              <line x1="149" y1="482" x2="361" y2="482" stroke="#c96a00" stroke-width="0.8"></line>
-              <text x="255" y="498" text-anchor="middle" font-size="11" fill="#5a2800">Email Partner with</text>
-              <text x="255" y="514" text-anchor="middle" font-size="11" fill="#5a2800">Compensation Suggestion</text>
-              <line x1="255" y1="524" x2="255" y2="542" stroke="#555" stroke-width="1.5" marker-end="url(#a2)"></line>
-              <rect x="147" y="542" width="216" height="44" rx="8" fill="#e05a5a"></rect>
-              <text x="255" y="560" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">Guest Still Unhappy?</text>
-              <text x="255" y="576" text-anchor="middle" font-size="11" fill="#fff">Move to TL Stage</text>
+              <line x1="255" y1="416" x2="255" y2="430" stroke="#555" stroke-width="1.5" marker-end="url(#a2)"></line>
+              <rect x="90" y="430" width="330" height="48" rx="8" fill="#fff7ed" stroke="#f6ad55" stroke-width="1.5"></rect>
+              <text x="255" y="448" text-anchor="middle" font-size="10" font-weight="800" fill="#92400e">Extreme Case?</text>
+              <text x="255" y="464" text-anchor="middle" font-size="9" fill="#92400e">(OTA already refunded guest / guest escalating daily)</text>
+              <line x1="170" y1="478" x2="170" y2="494" stroke="#555" stroke-width="1.5" marker-end="url(#a2)"></line>
+              <line x1="340" y1="478" x2="340" y2="494" stroke="#555" stroke-width="1.5" marker-end="url(#a2)"></line>
+              <text x="150" y="488" text-anchor="middle" font-size="8" font-weight="800" fill="#276749">YES</text>
+              <text x="362" y="488" text-anchor="middle" font-size="8" font-weight="800" fill="#742a2a">NO</text>
+              <rect x="95" y="494" width="150" height="70" rx="8" fill="#f4a96e" stroke="#c96a00" stroke-width="1.5"></rect>
+              <text x="170" y="512" text-anchor="middle" font-size="9.5" font-weight="800" fill="#5a2800">TL-Approved:</text>
+              <text x="170" y="527" text-anchor="middle" font-size="9.5" font-weight="800" fill="#5a2800">Refund Guest Now</text>
+              <text x="170" y="541" text-anchor="middle" font-size="8.5" fill="#5a2800">(within Profit Margin)</text>
+              <text x="170" y="556" text-anchor="middle" font-size="8.5" fill="#5a2800">Notify partner after</text>
+              <line x1="170" y1="564" x2="170" y2="580" stroke="#555" stroke-width="1.5" marker-end="url(#a2)"></line>
+              <rect x="100" y="580" width="140" height="28" rx="8" fill="#fff" stroke="#ccc" stroke-width="1.5"></rect>
+              <text x="170" y="598" text-anchor="middle" font-size="9.5" fill="#2d2060">Case Closed</text>
+              <rect x="265" y="494" width="150" height="44" rx="8" fill="#f4a96e" stroke="#c96a00" stroke-width="1.5"></rect>
+              <text x="340" y="511" text-anchor="middle" font-size="9.5" font-weight="800" fill="#5a2800">Email Partner —</text>
+              <text x="340" y="527" text-anchor="middle" font-size="9.5" font-weight="800" fill="#5a2800">Wait for Approval</text>
+              <line x1="340" y1="538" x2="340" y2="554" stroke="#555" stroke-width="1.5" marker-end="url(#a2)"></line>
+              <rect x="255" y="554" width="170" height="56" rx="8" fill="#fff" stroke="#ccc" stroke-width="1.5"></rect>
+              <text x="340" y="570" text-anchor="middle" font-size="8.5" font-weight="800" fill="#276749">✅ Agrees → Refund Guest</text>
+              <text x="340" y="583" text-anchor="middle" font-size="8.5" fill="#276749">(within Profit Margin)</text>
+              <text x="340" y="598" text-anchor="middle" font-size="8.5" font-weight="800" fill="#9b2235">❌ Refuses / Silent 48h → TL</text>
               <rect x="567" y="372" width="196" height="44" rx="8" fill="#e8f4e8" stroke="#3baa6e" stroke-width="1.5"></rect>
               <text x="665" y="390" text-anchor="middle" font-size="10.5" fill="#1a5c1a">Found info showing</text>
               <text x="665" y="404" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1a5c1a">Jetstream is at fault</text>
@@ -510,15 +523,15 @@ h+='<div style="padding:24px 26px;">';
 
 // ── TAB 1: OVERVIEW ──────────────────────────────────────────────────────────
 h+='<div id="rc-sec-rc-tab1" style="display:'+(activeTab==='rc-tab1'?'block':'none')+'">';
-h+='<h2 style="font-size:20px;font-weight:800;color:#1a1a2e;margin-bottom:18px;">Regular Issues Sequence</h2>';
+h+='<h2 style="font-size:20px;font-weight:800;color:#1a1a2e;margin-bottom:18px;">Extreme Cases Sequence</h2>';
 
 
 
 h+='<h2 style="font-size:20px;font-weight:800;color:#1a1a2e;margin-bottom:18px;">Overview</h2>';
 h+='<div style="background:#f7fafc;border:1px solid #e2e8f0;border-radius:12px;padding:18px 20px;margin-bottom:16px;">';
-h+='<div style="font-size:15px;font-weight:700;color:#1e3a5c;margin-bottom:10px;">⚠️ What Are Regular Complaints?</div>';
-h+='<p style="font-size:13px;color:#4a5568;line-height:1.8;margin-bottom:10px;">Regular complaints are <strong>physical, in-stay issues</strong> that a guest experiences at the property — things that can actually be seen, fixed, or photographed on-site. They are different from Content Issues, which are about what was advertised vs. what was actually in the listing.</p>';
-h+='<p style="font-size:13px;color:#4a5568;line-height:1.8;">Examples include cleanliness problems (dirty unit, stained furniture, unclean pool, mold, cobwebs), pest issues, maintenance failures (WiFi down, broken TV, broken amenities), pool or outdoor area issues, and housekeeping disturbances.</p>';
+h+='<div style="font-size:15px;font-weight:700;color:#1e3a5c;margin-bottom:10px;">⚠️ When Do We Use This Method?</div>';
+h+='<p style="font-size:13px;color:#4a5568;line-height:1.8;margin-bottom:10px;">We use this method in the following cases:</p>';
+h+='<ul style="font-size:13px;color:#4a5568;line-height:1.8;margin:0 0 10px 22px;padding:0;"><li>OTA is involved and has already asked us to refund the guest</li><li>Guest is extremely upset and is threatening us daily</li><li>(More to follow)</li></ul>';
 h+='</div>';
 h+='<div style="background:#f7fafc;border:1px solid #e2e8f0;border-radius:12px;padding:18px 20px;margin-bottom:16px;">';
 h+='<div style="font-size:15px;font-weight:700;color:#1e3a5c;margin-bottom:14px;">🔄 The Pipeline — 4 Stages</div>';
