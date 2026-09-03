@@ -571,11 +571,9 @@ h+='</button>';
 h+='<div id="rc-ms-2-body" style="display:none;border:1px solid #e2e8f0;border-top:none;border-radius:0 0 10px 10px;background:#fafcff;padding:16px 18px;">';
 h+='<div style="display:flex;flex-direction:column;gap:12px;">';
 h+='<div style="background:#f7fafc;border:1px solid #e2e8f0;border-radius:10px;padding:16px 18px;">';
-h+='<div style="font-size:13px;font-weight:700;color:#1e3a5c;margin-bottom:12px;">📝 Insert the Following Properties</div>';
-h+='<div style="display:flex;flex-direction:column;gap:8px;">';
-var ctProps=[['Ticket Name','Include the Cirrus booking ID, full guest name, and title of the issue'],['Pipeline','B2C: Guest Resolution &amp; Revenue Protection'],['Ticket Status','Choose the relevant option'],['Account Manager','Choose the relevant option'],['Cirrus URL','Paste the Cirrus booking URL here'],['Complaint Type','Choose the correct category from the list above'],['Suggested Compensation Amount','Use the guide to assist you in choosing what YOU think the correct compensation amount should be for this guest issue — B2C to action this'],['Total Compensation Amount','How much is the total compensation to the guest'],['Jetstream Compensation','Enter the final amount absorbed by Jetstream for this case. Reflects actual financial impact — not suggested or pending. Required before closing when Compensation Responsibility = Jetstream Absorbed. Leave blank if Jetstream did not incur financial impact.'],['Partner Compensation Amount','Portion of the guest compensation amount that has been absorbed by the partner']];
-for(var cp=0;cp<ctProps.length;cp++){h+='<div style="display:flex;align-items:flex-start;gap:0;border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;font-size:12px;"><div style="background:#1e3a5c;color:#fff;padding:10px 14px;font-weight:700;min-width:180px;line-height:1.5;">'+ctProps[cp][0]+'</div><div style="padding:10px 14px;color:#4a5568;line-height:1.6;background:#fff;flex:1;">'+ctProps[cp][1]+'</div></div>';}
-h+='</div></div>';
+h+='<div style="font-size:13px;font-weight:700;color:#1e3a5c;margin-bottom:8px;">📝 How to Submit</div>';
+h+='<div style="font-size:13px;color:#4a5568;line-height:1.7;">Please submit the ticket on the <strong>#b2c-guest-resolution-revenue-protection-pipeline</strong> Slack channel — the AI scrape creates the ticket and provides next steps.</div>';
+h+='</div>';
 h+='</div>';
 h+='</div>';
 h+='</div>';
@@ -586,6 +584,7 @@ h+='<span id="rc-ms-3-arr" style="font-size:12px;color:#718096;transition:transf
 h+='</button>';
 h+='<div id="rc-ms-3-body" style="display:none;border:1px solid #e2e8f0;border-top:none;border-radius:0 0 10px 10px;background:#fafcff;padding:8px 18px;">';
 h+='<div style="display:flex;flex-direction:column;gap:8px;">';
+h+='<div style="background:#eff6ff;border:1px solid #90cdf4;border-radius:8px;padding:10px 14px;font-size:12px;color:#1a365d;line-height:1.6;">🤖 This step is now done automatically by AI via the Slack pipeline — good to know for reference, but you don\'t need to fill this in manually.</div>';
 h+='<div style="border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;">';
 h+='<button onclick="var b=document.getElementById(\'ci3-s1-body\');var a=document.getElementById(\'ci3-s1-arr\');var o=b.style.display!==\'none\';b.style.display=o?\'none\':\'block\';a.textContent=o?\'▶\':\'▼\';" style="width:100%;display:flex;align-items:center;gap:12px;padding:12px 16px;background:#fff;border:none;cursor:pointer;font-family:inherit;text-align:left;">';
 h+='<div style="background:#1e3a5c;color:#fff;border-radius:50%;width:24px;height:24px;min-width:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;">1</div>';
@@ -982,11 +981,9 @@ h+='</button>';
 h+='<div id="ci-ms-2-body" style="display:none;border:1px solid #e2e8f0;border-top:none;border-radius:0 0 10px 10px;background:#fafcff;padding:16px 18px;">';
 h+='<div style="display:flex;flex-direction:column;gap:12px;">';
 h+='<div style="background:#f7fafc;border:1px solid #e2e8f0;border-radius:10px;padding:16px 18px;">';
-h+='<div style="font-size:13px;font-weight:700;color:#1e3a5c;margin-bottom:12px;">📝 Insert the Following Properties</div>';
-h+='<div style="display:flex;flex-direction:column;gap:8px;">';
-var ctProps=[['Ticket Name','Include the Cirrus booking ID, full guest name, and title of the issue'],['Pipeline','B2C: Guest Resolution &amp; Revenue Protection'],['Ticket Status','Choose the relevant option'],['Account Manager','Choose the relevant option'],['Cirrus URL','Paste the Cirrus booking URL here'],['Complaint Type','Choose the correct category from the list above'],['Suggested Compensation Amount','Use the guide to assist you in choosing what YOU think the correct compensation amount should be for this guest issue — B2C to action this'],['Total Compensation Amount','How much is the total compensation to the guest'],['Jetstream Compensation','Enter the final amount absorbed by Jetstream for this case. Reflects actual financial impact — not suggested or pending. Required before closing when Compensation Responsibility = Jetstream Absorbed. Leave blank if Jetstream did not incur financial impact.'],['Partner Compensation Amount','Portion of the guest compensation amount that has been absorbed by the partner']];
-for(var cp=0;cp<ctProps.length;cp++){h+='<div style="display:flex;align-items:flex-start;gap:0;border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;font-size:12px;"><div style="background:#1e3a5c;color:#fff;padding:10px 14px;font-weight:700;min-width:180px;line-height:1.5;">'+ctProps[cp][0]+'</div><div style="padding:10px 14px;color:#4a5568;line-height:1.6;background:#fff;flex:1;">'+ctProps[cp][1]+'</div></div>';}
-h+='</div></div>';
+h+='<div style="font-size:13px;font-weight:700;color:#1e3a5c;margin-bottom:8px;">📝 How to Submit</div>';
+h+='<div style="font-size:13px;color:#4a5568;line-height:1.7;">Please submit the ticket on the <strong>#b2c-guest-resolution-revenue-protection-pipeline</strong> Slack channel — the AI scrape creates the ticket and provides next steps.</div>';
+h+='</div>';
 h+='</div>';
 h+='</div>';
 h+='</div>';
@@ -997,6 +994,7 @@ h+='<span id="ci-ms-3-arr" style="font-size:12px;color:#718096;transition:transf
 h+='</button>';
 h+='<div id="ci-ms-3-body" style="display:none;border:1px solid #e2e8f0;border-top:none;border-radius:0 0 10px 10px;background:#fafcff;padding:8px 18px;">';
 h+='<div style="display:flex;flex-direction:column;gap:8px;">';
+h+='<div style="background:#eff6ff;border:1px solid #90cdf4;border-radius:8px;padding:10px 14px;font-size:12px;color:#1a365d;line-height:1.6;">🤖 This step is now done automatically by AI via the Slack pipeline — good to know for reference, but you don\'t need to fill this in manually.</div>';
 h+='<div style="border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;">';
 h+='<button onclick="var b=document.getElementById(\'ci3-s1-body\');var a=document.getElementById(\'ci3-s1-arr\');var o=b.style.display!==\'none\';b.style.display=o?\'none\':\'block\';a.textContent=o?\'▶\':\'▼\';" style="width:100%;display:flex;align-items:center;gap:12px;padding:12px 16px;background:#fff;border:none;cursor:pointer;font-family:inherit;text-align:left;">';
 h+='<div style="background:#1e3a5c;color:#fff;border-radius:50%;width:24px;height:24px;min-width:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;">1</div>';
