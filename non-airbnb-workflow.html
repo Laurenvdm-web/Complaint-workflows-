@@ -411,6 +411,15 @@
             <span class="acc-arrow">▶</span>
           </button>
           <div class="acc-body">
+            <div style="max-width:900px;margin:0 auto 16px auto;background:#fef2f2;border:1.5px solid #e07a9c;border-radius:10px;padding:16px 20px;">
+              <div style="font-size:13px;font-weight:800;color:#7a1a3c;margin-bottom:10px;">📌 NB — Reasons for Double Charges</div>
+              <div style="font-size:12.5px;color:#7a1a3c;line-height:1.8;margin-bottom:8px;">Before resolving, work out which of these three actually happened — the fix is different for each:</div>
+              <div style="display:flex;flex-direction:column;gap:8px;">
+                <div style="background:#fff;border:1px solid #f3c6d3;border-radius:8px;padding:10px 12px;"><strong style="color:#7a1a3c;">1. Fee was disclosed, guest just missed it.</strong> <span style="color:#4a5568;">The fee was correctly configured in Cirrus and shown to the guest as "Pay at Property" at booking. Not a valid complaint — deny the refund.</span></div>
+                <div style="background:#fff;border:1px solid #f3c6d3;border-radius:8px;padding:10px 12px;"><strong style="color:#7a1a3c;">2. Content error — fee missing in Cirrus.</strong> <span style="color:#4a5568;">The fee wasn't configured, so the guest never saw it at booking, but the property charged their standard on-site fee anyway. Jetstream fault — we absorb and fix the listing.</span></div>
+                <div style="background:#fff;border:1px solid #f3c6d3;border-radius:8px;padding:10px 12px;"><strong style="color:#7a1a3c;">3. Fee already included in the rate, charged again anyway.</strong> <span style="color:#4a5568;">No offline fee is configured because it's meant to be included in the nightly rate, but the partner charges it again on-site. This is the true double charge — partner fault, partner refunds.</span></div>
+              </div>
+            </div>
             <div style="max-width:900px;margin:0 auto 16px auto;background:#fff7ed;border:1.5px solid #f6ad55;border-radius:10px;padding:16px 20px;">
               <div style="font-size:13px;font-weight:800;color:#92400e;margin-bottom:8px;">📌 NB — Applies Regardless of Platform</div>
               <div style="font-size:12.5px;color:#744210;line-height:1.8;">Double-charge cases can happen on Airbnb bookings too — this flow still applies. The fix (verify, redirect payment, chase the partner) doesn't change by platform, so there's no separate Airbnb version of this flow.</div>
@@ -1050,6 +1059,14 @@ h+='<div id="dc-ver-body" style="display:none;border:1px solid #e2e8f0;border-to
 h+='<div style="background:#ebf4ff;border:1px solid #bee3f8;border-radius:8px;padding:12px 16px;margin-bottom:16px;">';
 h+='<p style="font-size:13px;color:#1e3a5c;line-height:1.75;margin:0;">Verification should not take longer than a few minutes. Ask the guest for proof of the on-site charge (receipt or photo) first, then work through the steps for the relevant complaint type below.</p>';
 h+='</div>';
+h+='<div style="background:#f0fff4;border:1.5px solid #68d391;border-radius:9px;padding:14px 16px;margin-bottom:16px;">';
+h+='<div style="font-size:13px;font-weight:800;color:#276749;margin-bottom:10px;">🔍 Where to Check if a Fee Is Set Up</div>';
+h+='<div style="display:flex;flex-direction:column;gap:8px;">';
+h+='<div style="background:#fff;border:1px solid #c6f6d5;border-radius:8px;padding:9px 12px;font-size:12.5px;color:#1a1a2e;line-height:1.7;"><strong style="color:#276749;">1. On the property in Cirrus</strong> — open the property, stay on the <strong>Main</strong> tab, and look for <strong>"Partner Offline Fee."</strong> 0.00 or blank = nothing configured. Fastest option if you\'re already on the property.</div>';
+h+='<div style="background:#fff;border:1px solid #c6f6d5;border-radius:8px;padding:9px 12px;font-size:12.5px;color:#1a1a2e;line-height:1.7;"><strong style="color:#276749;">2. On the specific booking</strong> — open the booking and check its fee/pricing breakdown for a "Partner Offline Fee" line.</div>';
+h+='<div style="background:#fff;border:1px solid #c6f6d5;border-radius:8px;padding:9px 12px;font-size:12.5px;color:#1a1a2e;line-height:1.7;"><strong style="color:#276749;">3. Across many properties at once</strong> — the <a href="https://app.powerbi.com/links/MptnYHtUVU?ctid=45c2f208-b605-45f2-af72-c6d8c0cfed75&pbi_source=linkShare" target="_blank" style="color:#276749;">Power BI Offline Fee Report</a>, search the property name to see instantly whether a fee exists and the amount.</div>';
+h+='</div>';
+h+='</div>';
 h+='<div style="font-size:13px;font-weight:800;color:#1a1a2e;margin-bottom:8px;">💳 If Double Charged for the Booking</div>';
 h+='<div style="display:flex;flex-direction:column;gap:10px;margin-bottom:16px;">';
 var dcVerBooking=[['1','Check OTA / Jetstream Payment Confirmation','Confirm the stay was already paid in full — via Airbnb, Booking.com, Vrbo, or directly through Jetstream.'],['2','Check the Booking Record','Confirm whether our VCC was meant to cover the on-site charge for this stay.'],['3','Contact the Property','Ask why the guest was charged directly — no VCC on file, a same-day booking that hadn\'t synced, or a system change on their end are the most common reasons.']];
@@ -1057,7 +1074,7 @@ for(var vb=0;vb<dcVerBooking.length;vb++){h+='<div style="display:flex;align-ite
 h+='</div>';
 h+='<div style="font-size:13px;font-weight:800;color:#1a1a2e;margin-bottom:8px;">🧾 If Double Charged for Tax / Resort Fee</div>';
 h+='<div style="display:flex;flex-direction:column;gap:10px;">';
-var dcVerTax=[['1','Check the Pricing Breakdown','Confirm whether the tax or fee was already included in the amount paid via the OTA at booking.'],['2','Check the Listing','Confirm whether the fee was correctly disclosed to the guest — if it wasn\'t listed at all, this is a Jetstream-fault content issue rather than a straight double charge.'],['3','Check for Repeat Charges','If the guest has multiple bookings at the same property, check whether the same fee was charged more than once across them.']];
+var dcVerTax=[['1','Check Whether an Offline Fee Is Configured','Use the "Where to Check" options above — if nothing is configured, the fee is either supposed to be included in the nightly rate, or (for variable local taxes like taxe de séjour) disclosed as text in the Home Truth instead of a fixed Cirrus fee.'],['2','Check the Listing','Confirm whether the fee was correctly disclosed to the guest — if it wasn\'t listed at all, this is a Jetstream-fault content issue rather than a straight double charge.'],['3','Check for Repeat Charges','If the guest has multiple bookings at the same property, check whether the same fee was charged more than once across them.']];
 for(var vt=0;vt<dcVerTax.length;vt++){h+='<div style="display:flex;align-items:flex-start;gap:12px;padding:13px 15px;background:#fff;border:1px solid #e2e8f0;border-radius:9px;"><div style="background:#d9738a;color:#fff;border-radius:50%;width:26px;height:26px;min-width:26px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;margin-top:1px;">'+dcVerTax[vt][0]+'</div><div><div style="font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:3px;">'+dcVerTax[vt][1]+'</div><div style="font-size:12px;color:#4a5568;line-height:1.7;">'+dcVerTax[vt][2]+'</div></div></div>';}
 h+='</div>';
 h+='</div>';
