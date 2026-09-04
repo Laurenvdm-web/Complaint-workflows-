@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Non Airbnb Workflow</title>
+  <title>Non Urgent Workflow</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { background: #e8e4f5; font-family: system-ui, sans-serif; min-height: 100vh; padding: 24px; overflow-x: hidden; }
@@ -86,13 +86,13 @@
     <a href="index.html" class="back-link">← Back to Complaint Workflows</a>
   </div>
 
-  <h1>Non Urgent / Non Airbnb Cases</h1>
+  <h1>Non Urgent</h1>
 
   <div style="max-width: 1400px; margin: 0 auto 20px auto; background: linear-gradient(135deg, #0e7c7b 0%, #1a5276 100%); color: #fff; border-radius: 12px; padding: 28px 28px 24px 28px; box-shadow: 0 4px 20px rgba(14,124,123,0.4);">
     <div style="display: flex; align-items: flex-start; gap: 18px; margin-bottom: 18px;">
       <span style="font-size: 38px; line-height: 1;">🏷️</span>
       <div>
-        <div style="font-size: 22px; font-weight: 900; letter-spacing: -0.3px; line-height: 1.2;">Non Urgent / Non Airbnb Cases</div>
+        <div style="font-size: 22px; font-weight: 900; letter-spacing: -0.3px; line-height: 1.2;">Non Urgent</div>
         <div style="font-size: 13px; opacity: 0.75; margin-top: 3px;">Complaint Workflow</div>
       </div>
     </div>
@@ -106,6 +106,7 @@
   <div class="tabs">
     <button class="tab-btn active" onclick="switchTab('content', this)">📋 Content Issues</button>
     <button class="tab-btn" onclick="switchTab('regular', this)">🛠️ Regular Complaints</button>
+    <button class="tab-btn" onclick="switchTab('double', this)">💳 Double Charged Issue</button>
   </div>
 
   <div class="container">
@@ -400,6 +401,140 @@
       </div>
     </div>
 
+    <!-- DOUBLE CHARGED ISSUE TAB -->
+    <div id="tab-double" class="tab-panel">
+      <div class="accordion">
+
+        <div>
+          <button class="acc-btn" onclick="toggleAcc(this)">
+            <div class="acc-left"><span class="acc-icon">📊</span><span>Workflow Diagram</span></div>
+            <span class="acc-arrow">▶</span>
+          </button>
+          <div class="acc-body">
+            <div style="max-width:900px;margin:0 auto 16px auto;background:#fff7ed;border:1.5px solid #f6ad55;border-radius:10px;padding:16px 20px;">
+              <div style="font-size:13px;font-weight:800;color:#92400e;margin-bottom:8px;">📌 NB — Applies Regardless of Platform</div>
+              <div style="font-size:12.5px;color:#744210;line-height:1.8;">Double-charge cases can happen on Airbnb bookings too — this flow still applies. The fix (verify, redirect payment, chase the partner) doesn't change by platform, so there's no separate Airbnb version of this flow.</div>
+            </div>
+            <svg viewBox="0 0 960 860" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif">
+              <defs>
+                <marker id="arr3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                  <path d="M0,0 L0,6 L8,3 z" fill="#555"/>
+                </marker>
+              </defs>
+              <rect width="960" height="860" fill="#f0eefa" rx="16"/>
+
+              <text x="480" y="36" text-anchor="middle" font-size="19" font-weight="900" fill="#4a3080" letter-spacing="2">DOUBLE CHARGE WORKFLOW</text>
+
+              <!-- Two entry boxes -->
+              <rect x="30" y="56" width="420" height="72" rx="10" fill="#dde8f5"/>
+              <rect x="30" y="56" width="420" height="34" rx="10" fill="#5b8dd9"/>
+              <rect x="30" y="74" width="420" height="16" fill="#5b8dd9"/>
+              <text x="240" y="78" text-anchor="middle" font-size="12.5" font-weight="800" fill="#fff">💳 Double Charged for the Booking</text>
+              <text x="240" y="110" text-anchor="middle" font-size="11" fill="#2d3748">Guest already paid via OTA / Jetstream,</text>
+              <text x="240" y="124" text-anchor="middle" font-size="11" fill="#2d3748">charged again on-site</text>
+
+              <rect x="510" y="56" width="420" height="72" rx="10" fill="#fde8ea"/>
+              <rect x="510" y="56" width="420" height="34" rx="10" fill="#d9738a"/>
+              <rect x="510" y="74" width="420" height="16" fill="#d9738a"/>
+              <text x="720" y="78" text-anchor="middle" font-size="12.5" font-weight="800" fill="#fff">🧾 Double Charged for Tax / Resort Fee</text>
+              <text x="720" y="110" text-anchor="middle" font-size="11" fill="#2d3748">Tax/fee already included in OTA payment,</text>
+              <text x="720" y="124" text-anchor="middle" font-size="11" fill="#2d3748">charged again on-site</text>
+
+              <!-- Converge -->
+              <line x1="240" y1="128" x2="240" y2="146" stroke="#555" stroke-width="2"/>
+              <line x1="720" y1="128" x2="720" y2="146" stroke="#555" stroke-width="2"/>
+              <line x1="240" y1="146" x2="720" y2="146" stroke="#555" stroke-width="2"/>
+              <line x1="480" y1="146" x2="480" y2="162" stroke="#555" stroke-width="2" marker-end="url(#arr3)"/>
+
+              <!-- Verify box -->
+              <rect x="130" y="164" width="700" height="96" rx="10" fill="#fef0e6"/>
+              <rect x="130" y="164" width="700" height="34" rx="10" fill="#e87c3e"/>
+              <rect x="130" y="182" width="700" height="16" fill="#e87c3e"/>
+              <text x="480" y="187" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">🔍 Verify Against the Payment Record</text>
+              <text x="480" y="216" text-anchor="middle" font-size="11.5" fill="#6b4500">Booking: check OTA/Jetstream confirmation shows the stay was paid in full</text>
+              <text x="480" y="234" text-anchor="middle" font-size="11.5" fill="#6b4500">Tax/Fee: check the pricing breakdown shows the tax/fee was already included</text>
+              <text x="480" y="252" text-anchor="middle" font-size="11.5" fill="#6b4500">Ask the guest for proof of the on-site charge (receipt / photo) either way</text>
+
+              <line x1="480" y1="260" x2="480" y2="276" stroke="#555" stroke-width="2" marker-end="url(#arr3)"/>
+
+              <!-- Complaint confirmed valid -->
+              <rect x="230" y="278" width="500" height="40" rx="8" fill="#b84e1a"/>
+              <text x="480" y="303" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">Complaint Valid — Guest Was Double Charged</text>
+
+              <line x1="480" y1="318" x2="480" y2="334" stroke="#555" stroke-width="2" marker-end="url(#arr3)"/>
+
+              <!-- Submit ticket -->
+              <rect x="130" y="336" width="700" height="46" rx="8" fill="#2e7d52"/>
+              <text x="480" y="354" text-anchor="middle" font-size="12" font-weight="800" fill="#fff">Submit a HubSpot Ticket via Slack</text>
+              <text x="480" y="371" text-anchor="middle" font-size="9.5" fill="#e8f5ee">Post in #b2c-guest-resolution-revenue-protection-pipeline — AI scrape creates the ticket &amp; provides next steps</text>
+
+              <line x1="480" y1="382" x2="480" y2="398" stroke="#555" stroke-width="2" marker-end="url(#arr3)"/>
+
+              <!-- Contact property split -->
+              <rect x="130" y="400" width="700" height="40" rx="8" fill="#5b8dd9"/>
+              <text x="480" y="425" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">Contact the Property to Resolve the Charge</text>
+
+              <line x1="480" y1="440" x2="480" y2="452" stroke="#555" stroke-width="2"/>
+              <line x1="260" y1="452" x2="700" y2="452" stroke="#555" stroke-width="2"/>
+              <line x1="260" y1="452" x2="260" y2="466" stroke="#555" stroke-width="2" marker-end="url(#arr3)"/>
+              <line x1="700" y1="452" x2="700" y2="466" stroke="#555" stroke-width="2" marker-end="url(#arr3)"/>
+
+              <!-- Option A -->
+              <rect x="80" y="468" width="360" height="70" rx="8" fill="#f9c6d0"/>
+              <text x="260" y="491" text-anchor="middle" font-size="12" font-weight="700" fill="#8b1a3a">Property refunds guest directly</text>
+              <text x="260" y="509" text-anchor="middle" font-size="11" fill="#8b1a3a">and takes payment via our VCC</text>
+              <text x="260" y="526" text-anchor="middle" font-size="10.5" fill="#8b1a3a">instead — done in one step</text>
+
+              <!-- Option B -->
+              <rect x="520" y="468" width="360" height="70" rx="8" fill="#dde0e8"/>
+              <text x="700" y="491" text-anchor="middle" font-size="12" font-weight="600" fill="#333">Property won't act quickly —</text>
+              <text x="700" y="509" text-anchor="middle" font-size="12" font-weight="600" fill="#333">Jetstream refunds the guest</text>
+              <text x="700" y="526" text-anchor="middle" font-size="10.5" fill="#333">directly first</text>
+
+              <line x1="700" y1="538" x2="700" y2="554" stroke="#555" stroke-width="2" marker-end="url(#arr3)"/>
+
+              <!-- Chase partner (only from option B) -->
+              <rect x="520" y="556" width="360" height="46" rx="8" fill="#c05621"/>
+              <text x="700" y="575" text-anchor="middle" font-size="11.5" font-weight="700" fill="#fff">Chase the Partner for Reimbursement</text>
+              <text x="700" y="591" text-anchor="middle" font-size="10" fill="#ffe8d6">Follow up until confirmed — don't let it go stale</text>
+
+              <!-- Converge both paths down to root cause -->
+              <line x1="260" y1="538" x2="260" y2="620" stroke="#555" stroke-width="2"/>
+              <line x1="700" y1="602" x2="700" y2="620" stroke="#555" stroke-width="2"/>
+              <line x1="260" y1="620" x2="700" y2="620" stroke="#555" stroke-width="2"/>
+              <line x1="480" y1="620" x2="480" y2="636" stroke="#555" stroke-width="2" marker-end="url(#arr3)"/>
+
+              <!-- Fix root cause -->
+              <rect x="130" y="638" width="700" height="76" rx="10" fill="#e6f4f1"/>
+              <rect x="130" y="638" width="700" height="34" rx="10" fill="#0e7c7b"/>
+              <rect x="130" y="656" width="700" height="16" fill="#0e7c7b"/>
+              <text x="480" y="661" text-anchor="middle" font-size="12.5" font-weight="800" fill="#fff">🔧 Fix the Root Cause</text>
+              <text x="480" y="690" text-anchor="middle" font-size="11" fill="#1a5c4a">Booking: confirm the partner has our current VCC details on file</text>
+              <text x="480" y="706" text-anchor="middle" font-size="11" fill="#1a5c4a">Tax/Fee: submit a content update, or ask the partner to disable automatic on-site tax collection</text>
+
+              <line x1="480" y1="714" x2="480" y2="730" stroke="#555" stroke-width="2" marker-end="url(#arr3)"/>
+
+              <!-- Close -->
+              <rect x="260" y="732" width="440" height="46" rx="8" fill="#2e7d52"/>
+              <text x="480" y="751" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">Guest Refunded &amp; Confirmed —</text>
+              <text x="480" y="768" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">Move Ticket to Closed</text>
+            </svg>
+          </div>
+        </div>
+
+        <div>
+          <button class="acc-btn" onclick="toggleAcc(this); renderDcStages(this)">
+            <div class="acc-left"><span class="acc-icon">🗂️</span><span>Ticket Stages and Explanations</span></div>
+            <span class="acc-arrow">▶</span>
+          </button>
+          <div class="acc-body" style="padding:0;">
+            <div id="na-dc-inline-render"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 
   <script>
@@ -431,6 +566,15 @@ function renderRcStages(btn) {
     if (el && el.innerHTML.trim() === '') {
       body.style.padding = '0';
       el.innerHTML = regularComplaintsPage();
+    }
+  }
+
+function renderDcStages(btn) {
+    var body = btn.nextElementSibling;
+    var el = document.getElementById('na-dc-inline-render');
+    if (el && el.innerHTML.trim() === '') {
+      body.style.padding = '0';
+      el.innerHTML = doubleChargePage();
     }
   }
 
@@ -840,6 +984,188 @@ function setRcTab(tab){
   var btns=document.querySelectorAll('[data-rctab]');
   for(var i=0;i<btns.length;i++){btns[i].classList.toggle('active',btns[i].getAttribute('data-rctab')===tab);}
   try{localStorage.setItem('jt-rc-tab',tab);}catch(e){}
+}
+
+function doubleChargePage(){
+var activeTab='dc-tab1';try{activeTab=localStorage.getItem('jt-dc-tab')||'dc-tab1';}catch(e){}
+var h='';
+h+='<div style="background:linear-gradient(135deg,#7a1a3c 0%,#a8305c 40%,#c94f7c 75%,#e07a9c 100%);border-radius:14px;padding:0;margin-bottom:20px;position:relative;overflow:hidden;min-height:140px;display:flex;align-items:center;justify-content:center;"><div style="position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,0.04) 1px,transparent 1px);background-size:24px 24px;"></div><div style="position:relative;z-index:1;text-align:center;"><div style="font-size:28px;font-weight:800;color:#ffffff;letter-spacing:0.5px;text-shadow:0 2px 8px rgba(0,0,0,0.25);">Double Charged Issue</div></div></div>';
+var dcTabs=[['dc-tab1','Overview'],['dc-tab-ct','Complaint Types'],['dc-tab-create','Creating the ticket'],['dc-tab2','Guest Complaint Review Stage'],['dc-tab3','Escalate to TL / Manager'],['dc-tab4','Pending Recovery PM / AM'],['dc-tab6','Closed: Jetstream Loss'],['dc-tab7','Closed: Jetstream Win']];
+h+='<div style="background:#fff;border-radius:12px;border:1px solid #e8ecf0;margin-bottom:20px;">';
+h+='<div style="display:flex;flex-wrap:wrap;border-bottom:1px solid #e8ecf0;padding:0 4px;width:100%;box-sizing:border-box;">';
+for(var i=0;i<dcTabs.length;i++){
+  var dcIsEscalate=dcTabs[i][0]==='dc-tab3';
+  var dcIsReview=dcTabs[i][0]==='dc-tab2';
+  var dcIsRecovery=dcTabs[i][0]==='dc-tab4';
+  var dcIsJsLoss=dcTabs[i][0]==='dc-tab6';
+  var dcIsJsWin=dcTabs[i][0]==='dc-tab7';
+  var dcTabLabel=dcIsEscalate?'🤸 '+dcTabs[i][1]:dcIsReview?'🌠 '+dcTabs[i][1]:dcIsRecovery?'🛠️ '+dcTabs[i][1]:dcIsJsLoss?'📦 '+dcTabs[i][1]:dcIsJsWin?'📦 '+dcTabs[i][1]:dcTabs[i][1];
+  var dcTabStyle=dcIsEscalate?' style="color:#92400e !important;"':dcIsReview?' style="color:#276749 !important;"':dcIsRecovery?' style="color:#6b21a8 !important;"':dcIsJsLoss?' style="color:#9b2235 !important;"':dcIsJsWin?' style="color:#b83280 !important;"':'';
+  h+='<button class="home-tab'+(activeTab===dcTabs[i][0]?' active':'')+'"'+dcTabStyle+' data-dctab="'+dcTabs[i][0]+'" onclick="setDcTab(\''+dcTabs[i][0]+'\')">'+dcTabLabel+'</button>';
+}
+h+='</div>';
+h+='<div style="padding:24px 26px;">';
+
+h+='<div id="dc-sec-dc-tab1" style="display:'+(activeTab==='dc-tab1'?'block':'none')+'">';
+h+='<h2 style="font-size:20px;font-weight:800;color:#1a1a2e;margin-bottom:18px;">Overview</h2>';
+h+='<div style="background:#f7fafc;border:1px solid #e2e8f0;border-radius:12px;padding:18px 20px;margin-bottom:16px;">';
+h+='<div style="font-size:15px;font-weight:700;color:#1e3a5c;margin-bottom:10px;">💳 Double Charged Issue Overview</div>';
+h+='<p style="font-size:13px;color:#4a5568;line-height:1.8;margin-bottom:10px;">Double-charge complaints work a little differently because the verification is about matching a charge against a payment record, not assessing a property condition or amenity. You are checking whether the guest genuinely paid twice — once through the OTA / Jetstream, and again on-site.</p>';
+h+='<p style="font-size:13px;color:#4a5568;line-height:1.8;">This applies regardless of platform — Airbnb, Booking.com, Vrbo, or a direct booking can all end up double charged. Once verified, the resolution follows the same principles as other complaints: fix the guest first, then recover from whoever is responsible.</p>';
+h+='</div>';
+h+='</div>';
+
+h+='<div id="dc-sec-dc-tab-ct" style="display:'+(activeTab==='dc-tab-ct'?'block':'none')+'">';
+h+='<h2 style="font-size:20px;font-weight:800;color:#1a1a2e;margin-bottom:18px;">Complaint Types</h2>';
+h+='<p style="font-size:13px;color:#4a5568;line-height:1.8;margin-bottom:18px;">Double-charge complaints fall under two categories:</p>';
+h+='<div style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px;">';
+var dcTypes=[['💳','Double Charged for the Booking','The guest already paid in full through the OTA (Airbnb, Booking.com, Vrbo) or via Jetstream, and the property charges them again directly on-site or at check-in — often because the property never received our VCC details, or a same-day booking hadn\'t synced yet.'],['🧾','Double Charged for Tax / Resort Fee','A tourist tax, city tax, or resort fee that was already included and paid through the OTA at booking is charged again on-site, or the same fee is charged twice across separate reservations.']];
+for(var dt=0;dt<dcTypes.length;dt++){h+='<div style="display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:#fff;border:1px solid #e2e8f0;border-radius:10px;"><div style="font-size:20px;min-width:28px;">'+dcTypes[dt][0]+'</div><div><div style="font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:3px;">'+dcTypes[dt][1]+'</div><div style="font-size:12px;color:#4a5568;line-height:1.7;">'+dcTypes[dt][2]+'</div></div></div>';}
+h+='</div>';
+var dcExamplesId='dcex-'+Math.random().toString(36).substr(2,6);
+var dcExamplesArrId='dcex-arr-'+Math.random().toString(36).substr(2,6);
+h+='<button onclick="var el=document.getElementById(\''+dcExamplesId+'\');var arr=document.getElementById(\''+dcExamplesArrId+'\');var open=el.style.display!==\'none\';el.style.display=open?\'none\':\'block\';arr.style.transform=open?\'rotate(0deg)\':\'rotate(180deg)\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;background:#7a1a3c;color:#fff;border:none;border-radius:9px;padding:11px 16px;font-size:13px;font-weight:800;cursor:pointer;margin-bottom:8px;text-align:left;">';
+h+='<span>📌 Real Examples from Our Tickets</span>';
+h+='<span id="'+dcExamplesArrId+'" style="font-size:16px;display:inline-block;transition:transform 0.3s;">▼</span>';
+h+='</button>';
+h+='<div id="'+dcExamplesId+'" style="display:none;">';
+h+='<div style="background:#f7fafc;border:1px solid #e2e8f0;border-radius:0 0 10px 10px;padding:16px 18px;">';
+h+='<div style="display:flex;flex-direction:column;gap:8px;">';
+var dcExamples=['Guest paid in full via Airbnb, but front desk attempted to charge again — property had switched management systems and lost the VCC record on file.','Hotel charged the guest $140.15 at check-in claiming the stay wasn\'t prepaid; guest had an Airbnb receipt proving it was.','Same-day Airbnb booking — front desk hadn\'t received our VCC details yet, so charged the guest directly on top of the OTA payment.','Tourist tax already paid via Booking.com was charged again on-site; guest refunded €65, partner asked to disable automatic on-site tax collection.','A resort fee that was never listed on the Jetstream listing was charged across two separate reservations for the same guest ($177.84 each).'];
+for(var de=0;de<dcExamples.length;de++){h+='<div style="display:flex;align-items:flex-start;gap:10px;padding:10px 12px;background:#fff;border:1px solid #e2e8f0;border-radius:8px;font-size:12px;color:#4a5568;line-height:1.7;"><span style="color:#a8305c;font-weight:700;margin-top:1px;">•</span><span>'+dcExamples[de]+'</span></div>';}
+h+='</div>';
+h+='</div>';
+h+='</div>';
+h+='</div>';
+
+h+='<div id="dc-sec-dc-tab-create" style="display:'+(activeTab==='dc-tab-create'?'block':'none')+'">';
+h+='<div style="margin-top:4px;">';
+h+='<h2 style="font-size:20px;font-weight:800;color:#1a1a2e;margin-bottom:18px;">Creating the Ticket</h2>';
+h+='<div>';
+h+='<button onclick="var b=document.getElementById(\'dc-ver-body\');var a=document.getElementById(\'dc-ver-arr\');var isOpen=b.style.display!==\'none\';b.style.display=isOpen?\'none\':\'block\';a.style.transform=isOpen?\'rotate(0deg)\':\'rotate(90deg)\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-radius:10px;border:1px solid #e2e8f0;cursor:pointer;background:#f7fafc;font-family:inherit;font-size:13px;font-weight:700;color:#1a1a2e;box-sizing:border-box;transition:background 0.15s;" onmouseover="this.style.background=\'#ebf4ff\';this.style.borderColor=\'#bee3f8\'" onmouseout="this.style.background=\'#f7fafc\';this.style.borderColor=\'#e2e8f0\'">';
+h+='<div style="display:flex;align-items:center;gap:10px;"><span style="font-size:18px;">🔍</span><span>Step 1 — Verification</span></div>';
+h+='<span id="dc-ver-arr" style="font-size:12px;color:#718096;transition:transform 0.3s ease;">▶</span>';
+h+='</button>';
+h+='<div id="dc-ver-body" style="display:none;border:1px solid #e2e8f0;border-top:none;border-radius:0 0 10px 10px;background:#fafcff;padding:16px 18px;">';
+h+='<div style="background:#ebf4ff;border:1px solid #bee3f8;border-radius:8px;padding:12px 16px;margin-bottom:16px;">';
+h+='<p style="font-size:13px;color:#1e3a5c;line-height:1.75;margin:0;">Verification should not take longer than a few minutes. Ask the guest for proof of the on-site charge (receipt or photo) first, then work through the steps for the relevant complaint type below.</p>';
+h+='</div>';
+h+='<div style="font-size:13px;font-weight:800;color:#1a1a2e;margin-bottom:8px;">💳 If Double Charged for the Booking</div>';
+h+='<div style="display:flex;flex-direction:column;gap:10px;margin-bottom:16px;">';
+var dcVerBooking=[['1','Check OTA / Jetstream Payment Confirmation','Confirm the stay was already paid in full — via Airbnb, Booking.com, Vrbo, or directly through Jetstream.'],['2','Check the Booking Record','Confirm whether our VCC was meant to cover the on-site charge for this stay.'],['3','Contact the Property','Ask why the guest was charged directly — no VCC on file, a same-day booking that hadn\'t synced, or a system change on their end are the most common reasons.']];
+for(var vb=0;vb<dcVerBooking.length;vb++){h+='<div style="display:flex;align-items:flex-start;gap:12px;padding:13px 15px;background:#fff;border:1px solid #e2e8f0;border-radius:9px;"><div style="background:#5b8dd9;color:#fff;border-radius:50%;width:26px;height:26px;min-width:26px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;margin-top:1px;">'+dcVerBooking[vb][0]+'</div><div><div style="font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:3px;">'+dcVerBooking[vb][1]+'</div><div style="font-size:12px;color:#4a5568;line-height:1.7;">'+dcVerBooking[vb][2]+'</div></div></div>';}
+h+='</div>';
+h+='<div style="font-size:13px;font-weight:800;color:#1a1a2e;margin-bottom:8px;">🧾 If Double Charged for Tax / Resort Fee</div>';
+h+='<div style="display:flex;flex-direction:column;gap:10px;">';
+var dcVerTax=[['1','Check the Pricing Breakdown','Confirm whether the tax or fee was already included in the amount paid via the OTA at booking.'],['2','Check the Listing','Confirm whether the fee was correctly disclosed to the guest — if it wasn\'t listed at all, this is a Jetstream-fault content issue rather than a straight double charge.'],['3','Check for Repeat Charges','If the guest has multiple bookings at the same property, check whether the same fee was charged more than once across them.']];
+for(var vt=0;vt<dcVerTax.length;vt++){h+='<div style="display:flex;align-items:flex-start;gap:12px;padding:13px 15px;background:#fff;border:1px solid #e2e8f0;border-radius:9px;"><div style="background:#d9738a;color:#fff;border-radius:50%;width:26px;height:26px;min-width:26px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;margin-top:1px;">'+dcVerTax[vt][0]+'</div><div><div style="font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:3px;">'+dcVerTax[vt][1]+'</div><div style="font-size:12px;color:#4a5568;line-height:1.7;">'+dcVerTax[vt][2]+'</div></div></div>';}
+h+='</div>';
+h+='</div>';
+h+='</div>';
+h+='<div style="margin-top:8px;">';
+h+='<button onclick="var b=document.getElementById(\'dc-ms-2-body\');var a=document.getElementById(\'dc-ms-2-arr\');var isOpen=b.style.display!==\'none\';b.style.display=isOpen?\'none\':\'block\';a.style.transform=isOpen?\'rotate(0deg)\':\'rotate(90deg)\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-radius:10px;border:1px solid #e2e8f0;cursor:pointer;background:#f7fafc;font-family:inherit;font-size:13px;font-weight:700;color:#1a1a2e;box-sizing:border-box;transition:background 0.15s;" onmouseover="this.style.background=\'#ebf4ff\';this.style.borderColor=\'#bee3f8\'" onmouseout="this.style.background=\'#f7fafc\';this.style.borderColor=\'#e2e8f0\'">';
+h+='<div style="display:flex;align-items:center;gap:10px;"><span style="font-size:18px;">📝</span><span>Step 2 — Create the Ticket</span></div>';
+h+='<span id="dc-ms-2-arr" style="font-size:12px;color:#718096;transition:transform 0.3s ease;">▶</span>';
+h+='</button>';
+h+='<div id="dc-ms-2-body" style="display:none;border:1px solid #e2e8f0;border-top:none;border-radius:0 0 10px 10px;background:#fafcff;padding:16px 18px;">';
+h+='<div style="display:flex;flex-direction:column;gap:12px;">';
+h+='<div style="background:#f7fafc;border:1px solid #e2e8f0;border-radius:10px;padding:16px 18px;">';
+h+='<div style="font-size:13px;font-weight:700;color:#1e3a5c;margin-bottom:8px;">📝 How to Submit</div>';
+h+='<div style="font-size:13px;color:#4a5568;line-height:1.7;">Please submit the ticket on the <strong>#b2c-guest-resolution-revenue-protection-pipeline</strong> Slack channel — the AI scrape creates the ticket and provides next steps.</div>';
+h+='</div>';
+h+='</div>';
+h+='</div>';
+h+='</div>';
+h+='<div style="margin-top:8px;">';
+h+='<button onclick="var b=document.getElementById(\'dc-ms-3-body\');var a=document.getElementById(\'dc-ms-3-arr\');var isOpen=b.style.display!==\'none\';b.style.display=isOpen?\'none\':\'block\';a.style.transform=isOpen?\'rotate(0deg)\':\'rotate(90deg)\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-radius:10px;border:1px solid #e2e8f0;cursor:pointer;background:#f7fafc;font-family:inherit;font-size:13px;font-weight:700;color:#1a1a2e;box-sizing:border-box;transition:background 0.15s;" onmouseover="this.style.background=\'#ebf4ff\';this.style.borderColor=\'#bee3f8\'" onmouseout="this.style.background=\'#f7fafc\';this.style.borderColor=\'#e2e8f0\'">';
+h+='<div style="display:flex;align-items:center;gap:10px;"><span style="font-size:18px;">📋</span><span>Step 3 — Create an Overview for the Ticket</span></div>';
+h+='<span id="dc-ms-3-arr" style="font-size:12px;color:#718096;transition:transform 0.3s ease;">▶</span>';
+h+='</button>';
+h+='<div id="dc-ms-3-body" style="display:none;border:1px solid #e2e8f0;border-top:none;border-radius:0 0 10px 10px;background:#fafcff;padding:8px 18px;">';
+h+='<div style="display:flex;flex-direction:column;gap:8px;">';
+h+='<div style="background:#eff6ff;border:1px solid #90cdf4;border-radius:8px;padding:10px 14px;font-size:12px;color:#1a365d;line-height:1.6;">🤖 This step is now done automatically by AI via the Slack pipeline — good to know for reference, but you don\'t need to fill this in manually.</div>';
+h+='<div style="border:1px solid #c7d9e8;border-radius:9px;overflow:hidden;margin-top:4px;">';
+h+='<button onclick="var p=document.getElementById(\'dc-rte-panel\');var a=document.getElementById(\'dc-rte-arr\');var isOpen=p.style.display!==\'none\';p.style.display=isOpen?\'none\':\'block\';a.style.transform=isOpen?\'rotate(0deg)\':\'rotate(90deg)\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:#7a1a3c;border:none;cursor:pointer;font-family:inherit;" onmouseover="this.style.background=\'#5e1430\'" onmouseout="this.style.background=\'#7a1a3c\'">';
+h+='<div style="display:flex;align-items:center;gap:8px;"><span style="font-size:14px;">📋</span><span style="font-size:13px;font-weight:700;color:#fff;">Real Ticket Examples</span><span style="font-size:11px;color:rgba(255,255,255,0.55);font-weight:400;">(5 examples)</span></div>';
+h+='<span id="dc-rte-arr" style="font-size:11px;color:rgba(255,255,255,0.65);transition:transform 0.25s;display:inline-block;">▶</span>';
+h+='</button>';
+h+='<div id="dc-rte-panel" style="display:none;padding:12px 14px;background:#fafcff;">';
+h+='<div style="display:flex;flex-direction:column;gap:8px;">';
+var dcSecEx=[
+  {cr:"Guest stated the hotel charged him an additional $140.15 at check-in, claiming the stay hadn't been prepaid — guest had an Airbnb receipt showing it was.",vr:"Internal review confirmed the reservation should have been covered through our VCC. Complaint valid.",ac:"Contacted the front desk directly; left a voicemail for the Front Desk Manager. Emailed the partner requesting they refund the guest directly and charge our VCC instead. Agent called partner and provided VCC details.",res:"Partner confirmed VCC charged and guest refund processed. Guest informed — case resolved."},
+  {cr:"Guest reported the on-site team was attempting to charge them again despite their Airbnb reservation being fully prepaid before arrival.",vr:"Confirmed with the guest that full payment had already been completed prior to arrival via Airbnb.",ac:"Advised the property the guest should not be charged directly since the reservation was prepaid, and instructed them to charge our VCC instead. Followed up by email, then called the front desk for confirmation.",res:"Partner confirmed the guest would not be double charged and that payment had been processed using our VCC. Written confirmation obtained from the General Manager for the record."},
+  {cr:"Guest's same-day Airbnb booking was charged directly by the front desk, who had not yet received our VCC details for the stay.",vr:"Confirmed the guest had already paid in full through Airbnb at the time of booking.",ac:"Emailed the front desk manager, who confirmed the guest's card had been refunded and that they were waiting on our VCC payment details.",res:"VCC details resent to the property management team for this and other affected reservations. Guest informed they would be refunded, including parking fees per the Airbnb listing."},
+  {cr:"Guest reported being charged tourist tax on-site despite already paying it through Booking.com.",vr:"Checked the booking confirmation and pricing breakdown — tourist tax was already included in the amount paid via Booking.com, with no indication an additional on-site payment was required.",ac:"Refunded the guest €65 to cover the duplicate tourist tax charge. Reached out to the property partner to notify them and request reimbursement.",res:"Guest refunded and case closed on the guest side. Partner requested to disable automatic on-site tax collection going forward; AM task created to follow up on partner reimbursement."},
+  {cr:"Guest reported being charged twice for resort fees across two separate reservations.",vr:"Confirmed the resort fee was not advertised or listed on our listing — despite the property's standard setup of collecting it on-site — and that Airbnb had told the guest the total was all-inclusive.",ac:"Conducted a three-way call with the resort; resort required an email to the manager to authorize a refund. Requested and received the guest's screenshots of both charges ($177.84 x2 = $355.68).",res:"Refunded the guest $177.84 for each of the two bookings through Airbnb. Content update submitted to add the resort fee back to the listing to prevent future issues."}
+];
+for(var de2=0;de2<dcSecEx.length;de2++){
+  h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;">';
+  h+='<div style="background:#7a1a3c;color:#fff;font-size:11px;font-weight:700;padding:6px 12px;">Example '+(de2+1)+'</div>';
+  h+='<div style="padding:10px 14px;background:#fff;display:flex;flex-direction:column;gap:6px;">';
+  h+='<div style="font-size:12px;color:#1a1a2e;"><span style="font-weight:700;color:#1e3a5c;">Complaint Reported: </span>'+dcSecEx[de2].cr+'</div>';
+  h+='<div style="font-size:12px;color:#1a1a2e;"><span style="font-weight:700;color:#276749;">Verification: </span>'+dcSecEx[de2].vr+'</div>';
+  h+='<div style="font-size:12px;color:#1a1a2e;"><span style="font-weight:700;color:#c05621;">Actions Taken: </span>'+dcSecEx[de2].ac+'</div>';
+  h+='<div style="font-size:12px;color:#1a1a2e;"><span style="font-weight:700;color:#9b2235;">Resolution: </span>'+dcSecEx[de2].res+'</div>';
+  h+='</div></div>';
+}
+h+='</div>';
+h+='</div>';
+h+='</div>';
+h+='</div>';
+h+='</div>';
+h+='</div>';
+h+='</div>';
+
+h+='<div id="dc-sec-dc-tab2" style="display:'+(activeTab==='dc-tab2'?'block':'none')+'">';
+h+='<h2 style="font-size:20px;font-weight:800;color:#1a1a2e;margin-bottom:18px;">Guest Complaint Review Stage</h2>';
+h+='<div style="display:flex;flex-direction:column;gap:8px;">';
+h+='<div style="padding:13px 15px;background:#fff;border:1px solid #e2e8f0;border-radius:9px;font-size:13px;color:#1a1a2e;line-height:1.75;"><strong>🛠️ Sort out the guest issue first.</strong> If the property will refund the guest directly and take payment via our VCC instead, that resolves it in one step — no waiting on partner approval since the guest is only being made whole, not compensated extra.</div>';
+h+='<div style="padding:13px 15px;background:#fff;border:1px solid #e2e8f0;border-radius:9px;font-size:13px;color:#1a1a2e;line-height:1.75;"><strong>💰 If the property won\'t act quickly,</strong> refund the guest directly ourselves so they aren\'t left out of pocket, then chase the partner for reimbursement afterwards — this is a recovery case, not a compensation-approval case, since the guest is only being refunded money they are indisputably owed.</div>';
+h+='<div style="padding:13px 15px;background:#fff;border:1px solid #e2e8f0;border-radius:9px;font-size:13px;color:#1a1a2e;line-height:1.75;"><strong>🔧 Always fix the root cause</strong> — resend VCC details to the property, or submit a content update / ask the partner to disable automatic on-site tax collection — so the same guest, or the next one, isn\'t charged twice again.</div>';
+h+='</div>';
+h+='</div>';
+
+h+='<div id="dc-sec-dc-tab3" style="display:'+(activeTab==='dc-tab3'?'block':'none')+'">';
+h+='<div style="font-size:15px;font-weight:800;color:#1e3a5c;margin-bottom:14px;display:flex;align-items:center;gap:8px;"><span style="font-size:18px;">🤸</span> Escalated TL / Manager Stage</div>';
+h+='<ul style="font-size:13px;color:#1a1a2e;line-height:1.9;padding-left:20px;margin:0 0 14px 0;">';
+h+='<li>The partner is refusing to reimburse Jetstream after we\'ve already refunded the guest.</li>';
+h+='<li>The property is disputing that a double charge occurred, and the guest is escalating (e.g. threatening a chargeback on Airbnb).</li>';
+h+='</ul>';
+h+='<div style="background:#ebf8ff;border:1px solid #90cdf4;border-radius:9px;padding:14px 16px;font-size:13px;color:#1a365d;line-height:1.75;">💰 The guest should always be made whole — a confirmed double charge is not a case where we wait on partner approval before refunding. Escalation here is about recovering the money from the partner, not about whether to help the guest.</div>';
+h+='</div>';
+
+h+='<div id="dc-sec-dc-tab4" style="display:'+(activeTab==='dc-tab4'?'block':'none')+'">';
+h+='<div style="margin-top:24px;padding-top:20px;border-top:2px solid #fed7d7;">';
+h+='<div style="font-size:15px;font-weight:800;color:#c53030;margin-bottom:14px;display:flex;align-items:center;gap:8px;"><span style="font-size:18px;">🔴</span> Pending Recovery — PM / AM</div>';
+h+='<div style="font-size:13px;color:#744210;background:#fef3c7;border:1px solid #f6e05e;border-radius:8px;padding:12px 14px;margin-bottom:12px;display:flex;align-items:flex-start;gap:8px;"><span style="font-size:15px;">⚠️</span><span><strong>Note:</strong> Move here once we\'ve refunded the guest ourselves and are still waiting on the partner to reimburse Jetstream.</span></div>';
+h+='<div style="font-size:13px;color:#744210;background:#fef3c7;border:1px solid #f6e05e;border-radius:8px;padding:12px 14px;margin-bottom:16px;display:flex;align-items:flex-start;gap:8px;"><span style="font-size:15px;">⚠️</span><span><strong>Note:</strong> Cases remain in this stage for a minimum of four weeks before aging and moving to Closed.</span></div>';
+h+='</div>';
+h+='</div>';
+
+h+='<div id="dc-sec-dc-tab6" style="display:'+(activeTab==='dc-tab6'?'block':'none')+'">';
+h+='<div style="margin-top:24px;padding-top:20px;border-top:2px solid #fed7d7;">';
+h+='<div style="font-size:15px;font-weight:800;color:#9b2235;margin-bottom:14px;display:flex;align-items:center;gap:8px;"><span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#9b2235;border-radius:4px;font-size:13px;color:#fff;">📦</span> Closed: Jetstream Loss</div>';
+h+='<p style="font-size:13px;color:#4a5568;line-height:1.75;">Move here if the partner never reimburses Jetstream for a guest refund we already processed, and recovery is refused, waived, or written off.</p>';
+h+='</div>';
+h+='</div>';
+
+h+='<div id="dc-sec-dc-tab7" style="display:'+(activeTab==='dc-tab7'?'block':'none')+'">';
+h+='<div style="margin-top:24px;padding-top:20px;border-top:2px solid #fed7d7;">';
+h+='<div style="font-size:15px;font-weight:800;color:#b83280;margin-bottom:14px;display:flex;align-items:center;gap:8px;"><span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#b83280;border-radius:4px;font-size:13px;color:#fff;">📦</span> Closed: Jetstream Win</div>';
+h+='<p style="font-size:13px;color:#4a5568;line-height:1.75;">Move here when the property fixes the charge directly (refunds the guest and takes payment via our VCC), or the partner fully reimburses Jetstream — meaning Jetstream loss = 0.</p>';
+h+='</div>';
+h+='</div>';
+
+h+='</div></div>';
+return h;
+}
+
+function setDcTab(tab){
+  var tabs=['dc-tab1','dc-tab-ct','dc-tab-create','dc-tab2','dc-tab3','dc-tab4','dc-tab6','dc-tab7'];
+  for(var i=0;i<tabs.length;i++){var el=document.getElementById('dc-sec-'+tabs[i]);if(el)el.style.display=(tab===tabs[i])?'block':'none';}
+  var btns=document.querySelectorAll('[data-dctab]');
+  for(var i=0;i<btns.length;i++){btns[i].classList.toggle('active',btns[i].getAttribute('data-dctab')===tab);}
+  try{localStorage.setItem('jt-dc-tab',tab);}catch(e){}
 }
 
 
@@ -1336,7 +1662,7 @@ function setCiTab(tab){
     <div class="beep-avatar">🤖</div>
     <div>
       <div class="beep-title">Beep</div>
-      <div class="beep-sub">Non-Airbnb workflow assistant</div>
+      <div class="beep-sub">Non-Urgent workflow assistant</div>
     </div>
     <button id="beep-close" onclick="beepToggle()">✕</button>
   </div>
@@ -1420,6 +1746,11 @@ function setCiTab(tab){
       a: 'After TL review:\n• Pending Recovery PM / AM — AM pursues recovery from the partner\n• Closed: Jetstream Loss — loss under $100, or recovery refused / waived / written off\n• Closed: Jetstream Win — Jetstream loss = $0'
     },
     {
+      keys: ['double charge','double charged','charged twice','tax charged','resort fee','duplicate charge','vcc'],
+      q: 'What do I do about a double charge?',
+      a: 'Use the Double Charged Issue tab. First verify: for a booking double charge, check the OTA/Jetstream confirmation shows the stay was already paid; for a tax/resort fee double charge, check the pricing breakdown shows it was already included. Once confirmed, get the property to refund the guest directly and take payment via our VCC instead — or if they won\'t act quickly, refund the guest ourselves first and chase the partner for reimbursement after. Always fix the root cause too (resend VCC details, or a content update / ask the partner to disable automatic on-site tax collection) so it doesn\'t happen again. This applies on Airbnb bookings too — there\'s no separate Airbnb version of this flow.'
+    },
+    {
       keys: ['hello','hi','hey','help','what can you','who are you'],
       q: null,
       a: 'Hi! I\'m Beep, your Non-Airbnb workflow assistant. I can answer questions about this page — fault rules, escalation, compensation, content issues, ticket stages, and more. Try one of the suggestions below or type your question!'
@@ -1432,7 +1763,8 @@ function setCiTab(tab){
     'Can I refund the guest myself?',
     'How do I determine fault?',
     'What counts as a content issue?',
-    'How do I verify a regular complaint?'
+    'How do I verify a regular complaint?',
+    'What do I do about a double charge?'
   ];
 
   function findAnswer(text) {
@@ -1482,7 +1814,7 @@ function setCiTab(tab){
     panel.classList.toggle('open', opened);
     if (opened && !greeted) {
       greeted = true;
-      addMsg("Hi! I'm Beep 👋\nI can answer questions about the Non-Urgent / Non-Airbnb workflow. Try a suggestion or type your own question.", 'bot');
+      addMsg("Hi! I'm Beep 👋\nI can answer questions about the Non-Urgent workflow. Try a suggestion or type your own question.", 'bot');
       renderSuggestions();
     }
   };
