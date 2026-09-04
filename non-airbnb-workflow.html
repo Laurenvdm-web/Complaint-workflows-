@@ -178,15 +178,23 @@
               <!-- Arrow down -->
               <line x1="480" y1="390" x2="480" y2="408" stroke="#555" stroke-width="2" marker-end="url(#arr)"/>
 
-              <!-- Investigate prior communication -->
-              <rect x="255" y="410" width="450" height="96" rx="8" fill="#f5e430" opacity="0.95"/>
-              <text x="480" y="432" text-anchor="middle" font-size="13" font-weight="800" fill="#444">Investigate prior communication</text>
-              <text x="290" y="454" font-size="12" fill="#444">•  Review Slack history</text>
-              <text x="290" y="474" font-size="12" fill="#444">•  Check HubSpot history</text>
-              <text x="290" y="494" font-size="12" fill="#444">•  Review partner email threads</text>
+              <!-- Step 2 — Fault Verification (5 Steps) -->
+              <rect x="240" y="410" width="480" height="196" rx="8" fill="#fef9c3" stroke="#d4b800" stroke-width="1.5"/>
+              <text x="480" y="428" text-anchor="middle" font-size="12" font-weight="800" fill="#6b4c00">Step 2 — Fault Verification (5 Steps)</text>
+              <text x="252" y="446" font-size="10.5" font-weight="700" fill="#6b4c00">1. Check the Listing</text>
+              <text x="252" y="458" font-size="9.5" fill="#6b4c00">Does amenity appear on other listings for this property but not this one? → Jetstream fault.</text>
+              <text x="252" y="476" font-size="10.5" font-weight="700" fill="#6b4c00">2. Check Front</text>
+              <text x="252" y="488" font-size="9.5" fill="#6b4c00">Any partner email confirming amenity changed but listing not updated? → Jetstream fault.</text>
+              <text x="252" y="506" font-size="10.5" font-weight="700" fill="#6b4c00">3. Check HubSpot (Content Updates)</text>
+              <text x="252" y="518" font-size="9.5" fill="#6b4c00">Issue already raised as a pending content update for this property? → Jetstream fault.</text>
+              <text x="252" y="536" font-size="10.5" font-weight="700" fill="#6b4c00">4. Check Guest Communications</text>
+              <text x="252" y="548" font-size="9.5" fill="#6b4c00">Did RAI, confirmation email, or B2C give incorrect info contradicting partner? → Jetstream fault.</text>
+              <text x="252" y="566" font-size="10.5" font-weight="700" fill="#6b4c00">5. Check Slack</text>
+              <text x="252" y="578" font-size="9.5" fill="#6b4c00">Any message about this property's amenity change that we knew about but didn't action? → Jetstream fault.</text>
+              <text x="480" y="596" text-anchor="middle" font-size="9" font-weight="700" font-style="italic" fill="#8a6d00">🤖 AI now does this — always double-check it's correct, this is still in staging</text>
 
-              <!-- Single arrow from Investigate to Partner Fault -->
-              <line x1="480" y1="506" x2="480" y2="628" stroke="#555" stroke-width="2" marker-end="url(#arr)"/>
+              <!-- Single arrow from Fault Verification to Partner Fault -->
+              <line x1="480" y1="606" x2="480" y2="628" stroke="#555" stroke-width="2" marker-end="url(#arr)"/>
 
               <!-- ── PARTNER FAULT BRANCH (cx=480) ── -->
               <rect x="372" y="630" width="216" height="50" rx="8" fill="#e87c3e"/>
