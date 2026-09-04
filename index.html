@@ -84,6 +84,55 @@
     .home-tab{padding:10px 16px;border:none;border-bottom:2px solid transparent;background:none;cursor:pointer;font-size:13px;font-weight:600;color:#718096;font-family:inherit;transition:all 0.15s;white-space:nowrap;}
     .home-tab:hover{color:#1a1a2e;background:rgba(0,0,0,0.03);}
     .home-tab.active{color:#1e3a5c;border-bottom-color:#4aacb8;}
+
+    .notices-card { background: #fff; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.12); overflow: hidden; max-width: 700px; margin: 36px auto 0 auto; }
+    .notices-header {
+      background: linear-gradient(135deg, #ffe3e8 0%, #ffd0da 100%);
+      color: #9b2235;
+      font-size: 15px;
+      font-weight: 800;
+      padding: 16px 20px;
+      letter-spacing: -0.2px;
+    }
+    .notices-body { padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+
+    .notice-acc-btn {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid #fde2e6;
+      cursor: pointer;
+      background: #fff7f8;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      color: #1a1a2e;
+      transition: background 0.15s, border-color 0.15s;
+      text-align: left;
+    }
+    .notice-acc-btn:hover { background: #ffeef1; border-color: #fbc7ce; }
+    .notice-acc-btn.open { background: #ffeef1; border-color: #f9a8b4; border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+    .notice-acc-left { display: flex; align-items: center; gap: 8px; }
+    .notice-acc-icon { font-size: 15px; }
+    .notice-acc-arrow { font-size: 12px; color: #b23a4c; transition: transform 0.3s ease; }
+    .notice-acc-btn.open .notice-acc-arrow { transform: rotate(90deg); }
+
+    .notice-acc-body {
+      display: grid;
+      grid-template-rows: 0fr;
+      overflow: hidden;
+      transition: grid-template-rows 0.3s ease;
+      border: 1px solid #fde2e6;
+      border-top: none;
+      border-radius: 0 0 10px 10px;
+      background: #fffafb;
+    }
+    .notice-acc-body.open { grid-template-rows: 1fr; }
+    .notice-acc-body-inner { overflow: hidden; padding: 0 14px; }
+    .notice-acc-body.open .notice-acc-body-inner { padding: 14px; }
   </style>
 </head>
 <body>
@@ -137,6 +186,31 @@
       </a>
     </div>
 
+  </div>
+
+  <div class="notices-card">
+    <div class="notices-header">📌 Important Notices</div>
+    <div class="notices-body">
+
+      <div class="notice-acc">
+        <button class="notice-acc-btn open" onclick="toggleNotice(this)">
+          <span class="notice-acc-left"><span class="notice-acc-icon">🚫</span><span>Never Ask These Property Managers for Guest Compensation</span></span>
+          <span class="notice-acc-arrow">▶</span>
+        </button>
+        <div class="notice-acc-body open">
+          <div class="notice-acc-body-inner">
+            <p style="font-size:13px;color:#4a5568;line-height:1.75;margin-bottom:10px;">The following property managers do not allow us to request guest compensation. Please follow their specific policies instead.</p>
+            <ul style="font-size:13px;color:#1a1a2e;line-height:1.9;padding-left:20px;margin:0;">
+              <li>Staycating</li>
+              <li>Ze-camping</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- To add another notice: copy the .notice-acc block above and swap the icon, title, and body content. Every .notice-acc-btn uses toggleNotice(this), which keeps only one panel open at a time. -->
+
+    </div>
   </div>
 
   <div class="container" style="display:none;">
@@ -468,6 +542,17 @@
           const el = document.getElementById('rc-inline-render');
           if (el && el.innerHTML.trim() === '') el.innerHTML = regularComplaintsPage();
         }
+      }
+    }
+
+    function toggleNotice(btn) {
+      const body = btn.nextElementSibling;
+      const isOpen = body.classList.contains('open');
+      document.querySelectorAll('.notice-acc-body.open').forEach(b => b.classList.remove('open'));
+      document.querySelectorAll('.notice-acc-btn.open').forEach(b => b.classList.remove('open'));
+      if (!isOpen) {
+        body.classList.add('open');
+        btn.classList.add('open');
       }
     }
 
