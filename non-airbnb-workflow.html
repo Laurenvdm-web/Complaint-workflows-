@@ -107,6 +107,7 @@
     <button class="tab-btn active" onclick="switchTab('content', this)">📋 Content Issues</button>
     <button class="tab-btn" onclick="switchTab('regular', this)">🛠️ Regular Complaints</button>
     <button class="tab-btn" onclick="switchTab('double', this)">💳 Double Charged Issue</button>
+    <button class="tab-btn" onclick="switchTab('unit', this)">🏠 Unit Not Available</button>
   </div>
 
   <div class="container">
@@ -538,6 +539,102 @@
           </button>
           <div class="acc-body" style="padding:0;">
             <div id="na-dc-inline-render"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- UNIT NOT AVAILABLE TAB -->
+    <div id="tab-unit" class="tab-panel">
+      <style>
+        .un .box{border-radius:12px;padding:12px 16px;text-align:center}
+        .un .un-start{background:#7a1a3c;color:#fff;font-weight:700;font-size:15px}
+        .un .un-q{background:#e87c3e;color:#fff;font-weight:700;font-size:14.5px}
+        .un .un-sub{font-weight:400;font-size:12.5px;display:block;margin-top:2px}
+        .un .un-arrow{text-align:center;color:#888;font-size:18px;line-height:1.1;margin:5px 0}
+        .un .un-two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+        .un .un-opt{border-radius:12px;padding:12px 14px;border:1px solid transparent}
+        .un .un-opt h4{margin:0 0 6px;font-size:13.5px;color:#1a1a2e}
+        .un .un-opt p{margin:0 0 5px;font-size:12.5px;color:#1a1a2e;line-height:1.6}
+        .un .un-green{background:#e3f4ea;border-color:#9ad3b2}
+        .un .un-amber{background:#fff3dc;border-color:#f0cf8a}
+        .un .un-red{background:#fde8ea;border-color:#f0a6b3}
+        .un .un-plat{border-radius:8px;background:#fff;border:1px solid rgba(0,0,0,.12);padding:6px 9px;margin-top:6px;font-size:12px;color:#1a1a2e}
+        .un .un-plat b{display:block;font-size:12px}
+        .un .un-urgent{border-radius:8px;background:#b83232;color:#fff;padding:7px 10px;margin:6px 0;font-size:12.5px;font-weight:600}
+        .un .un-done{background:#2e7d52;color:#fff;font-weight:700}
+        .un .un-tag{display:inline-block;border-radius:10px;font-size:10.5px;font-weight:700;padding:1px 8px;background:rgba(0,0,0,.12);margin-bottom:6px;color:#1a1a2e}
+        @media(max-width:700px){.un .un-two{grid-template-columns:1fr}}
+      </style>
+      <div class="accordion">
+
+        <div>
+          <button class="acc-btn" onclick="toggleAcc(this)">
+            <div class="acc-left"><span class="acc-icon">📊</span><span>Workflow Diagram</span></div>
+            <span class="acc-arrow">▶</span>
+          </button>
+          <div class="acc-body">
+            <div class="un">
+
+              <div class="box un-start">1. The unit is not available<span class="un-sub">The partner cannot honour the booking</span></div>
+              <div class="un-arrow">▼</div>
+
+              <div class="box un-q">2. How long until check-in?<span class="un-sub">Goal: never let it get to less than 24 hours before arrival without the reservation cancelled</span></div>
+              <div class="un-arrow">▼</div>
+
+              <div class="un-two">
+                <div class="un-opt un-green">
+                  <span class="un-tag">48 HOURS OR MORE</span>
+                  <h4>Ask the guest to cancel</h4>
+                  <p>First ask the partner for an alternative unit, with a same-day deadline.</p>
+                  <p>If there is none, ask the guest to cancel on the booking platform and tell them they get a full refund.</p>
+                </div>
+                <div class="un-opt un-amber">
+                  <span class="un-tag">24 TO 48 HOURS</span>
+                  <h4>Ask the guest to cancel first, and watch the clock</h4>
+                  <p>Ask the guest to cancel on the booking platform and tell them they get a full refund.</p>
+                  <div class="un-urgent">Add the URGENT tag and a handover task so the platform is contacted at least 24 hours before arrival</div>
+                  <p>If the guest hasn't cancelled, contact the platform with the partner's written confirmation and ask for a cancellation with no host penalty.</p>
+                  <div class="un-plat"><b>Airbnb</b>Support host-cancels and waives the penalty.</div>
+                  <div class="un-plat"><b>Booking.com</b>Support first. Watch for a relocation fee.</div>
+                  <div class="un-plat"><b>Vrbo</b>Guest cancels. No host fee seen in past cases.</div>
+                  <p style="margin-top:6px"><strong>If it is tight, close the case before logging off.</strong></p>
+                </div>
+                <div class="un-opt un-amber">
+                  <span class="un-tag">UNDER 24 HOURS</span>
+                  <h4>Should not happen, but if it does: urgent</h4>
+                  <p>Inform the guest and contact the booking platform to cancel the booking.</p>
+                </div>
+                <div class="un-opt un-red">
+                  <span class="un-tag">ON SITE</span>
+                  <h4>Guest is at the door or inside</h4>
+                  <p>Phone the front desk to ask if they have an alternative at the accommodation for the guest.</p>
+                </div>
+              </div>
+              <div class="un-arrow">▼</div>
+
+              <div class="box un-q">3. Guest is looked after first, money is sorted after</div>
+              <div class="un-arrow">▼</div>
+              <div class="un-two">
+                <div class="un-opt un-red">
+                  <h4>Partner at fault</h4>
+                  <p>Guest refunded through the platform. Claw the money back from the partner afterwards: any host penalty, price difference, replacement accommodation, or the VCC. Add the AP tag.</p>
+                </div>
+                <div class="un-opt un-amber">
+                  <h4>Jetstream at fault</h4>
+                  <p>Our calendar, sync or listing failed (for example the reservation never reached the partner). Jetstream absorbs the cost.</p>
+                </div>
+              </div>
+              <div class="un-arrow">▼</div>
+
+              <div class="box un-q">4. Afterwards</div>
+              <div class="un-arrow">▼</div>
+              <div class="un-opt un-green"><h4>Same partner again?</h4><p>Repeat partners get flagged for review and recovery.</p></div>
+              <div class="un-arrow">▼</div>
+              <div class="box un-done">Guest is confirmed in a unit, or fully refunded, before arrival</div>
+
+            </div>
           </div>
         </div>
 
