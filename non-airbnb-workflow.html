@@ -109,6 +109,7 @@
     <button class="tab-btn" onclick="switchTab('double', this)">💳 Double Charged Issue</button>
     <button class="tab-btn" onclick="switchTab('unit', this)">🏠 Unit Not Available</button>
     <button class="tab-btn" onclick="switchTab('deposit', this)">🔒 Deposits</button>
+    <button class="tab-btn" onclick="switchTab('soon', this)">🚧 Coming Soon</button>
   </div>
 
   <div class="container">
@@ -711,6 +712,31 @@
           </div>
         </div>
 
+      </div>
+    </div>
+
+    <!-- COMING SOON TAB -->
+    <div id="tab-soon" class="tab-panel">
+      <style>
+        .soon-intro{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:14px 18px;margin-bottom:14px;font-size:13px;color:#4a5568;line-height:1.7}
+        .soon-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+        .soon-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:14px 16px}
+        .soon-card .soon-top{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+        .soon-card .soon-ic{font-size:20px}
+        .soon-card h4{margin:0;font-size:14px;color:#1a1a2e}
+        .soon-card p{margin:0;font-size:12.5px;color:#4a5568;line-height:1.7}
+        .soon-badge{display:inline-block;margin-top:8px;background:#fff3dc;border:1px solid #f0cf8a;color:#744210;border-radius:10px;font-size:10.5px;font-weight:700;padding:1px 9px}
+        @media(max-width:700px){.soon-grid{grid-template-columns:1fr}}
+      </style>
+      <div class="soon-intro"><strong>Topics we still need to build.</strong> Each of these needs its own process, different from the other tabs. They will be added here one at a time as the workflows are agreed.</div>
+      <div class="soon-grid">
+        <div class="soon-card"><div class="soon-top"><span class="soon-ic">🚫</span><h4>Cancellation and free-cancellation requests</h4></div><p>The guest asks for a cancellation or a refund outside the policy, or a free cancellation was approved without the partner's agreement.</p><span class="soon-badge">Coming soon</span></div>
+        <div class="soon-card"><div class="soon-top"><span class="soon-ic">⚖️</span><h4>Chargebacks, threats and reviews</h4></div><p>The guest threatens a chargeback, a bad review or legal action, or offers to remove a review in return for money.</p><span class="soon-badge">Coming soon</span></div>
+        <div class="soon-card"><div class="soon-top"><span class="soon-ic">🏚️</span><h4>Guest misconduct and damage</h4></div><p>The partner reports a party, a mess, damage, or a card that could not be charged for the deposit.</p><span class="soon-badge">Coming soon</span></div>
+        <div class="soon-card"><div class="soon-top"><span class="soon-ic">♿</span><h4>Accessibility, service animals and discrimination</h4></div><p>A partner refuses a service animal or an accessibility need. Legal risk, so it needs the TL early.</p><span class="soon-badge">Coming soon</span></div>
+        <div class="soon-card"><div class="soon-top"><span class="soon-ic">🐾</span><h4>Pets and occupancy refusals</h4></div><p>A guest is turned away or charged extra over a pet or the number of guests.</p><span class="soon-badge">Coming soon</span></div>
+        <div class="soon-card"><div class="soon-top"><span class="soon-ic">🔑</span><h4>Refused check-in over a deposit</h4></div><p>The guest could not pay the deposit and the property refused the keys. Whether the deposit was listed decides the outcome.</p><span class="soon-badge">Coming soon</span></div>
+        <div class="soon-card"><div class="soon-top"><span class="soon-ic">💲</span><h4>Deposit higher than listed, or not in the booking</h4></div><p>The property charged a different deposit from the listing, or the deposit does not appear in the guest's booking or receipt.</p><span class="soon-badge">Coming soon</span></div>
       </div>
     </div>
 
