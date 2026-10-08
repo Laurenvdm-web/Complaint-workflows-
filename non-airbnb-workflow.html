@@ -815,7 +815,7 @@ h+='<div id="rc-sec-rc-tab-ct" style="display:'+(activeTab==='rc-tab-ct'?'block'
 h+='<h2 style="font-size:20px;font-weight:800;color:#1a1a2e;margin-bottom:18px;">Complaint Types</h2>';
 h+='<p style="font-size:13px;color:#4a5568;line-height:1.8;margin-bottom:18px;">Regular complaints fall under the following categories:</p>';
 h+='<div style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px;">';
-var ciTypes=[['🧹','Cleaning issues','The unit was not clean on arrival, or was not cleaned properly during the stay. Dirt, dust, hair, insects, stained linen or bedding.'],['🔧','Maintenance issues','Something in the unit is damaged or broken and needs repair, for example plumbing, doors, windows, or a shower that does not work properly.'],['📺','Other amenity issues','The amenity is listed correctly but is broken or unusable (for example a TV, fridge, AC or hot tub that does not work). If the amenity is missing altogether, it is a Content Issue instead.'],['🔊','Noise issues','Unexpected noise from construction, neighbours, the property or other guests that affected the guest\'s stay.'],['🚨','Safety issues','Anything that puts the guest at risk, for example a gas smell, a fallen fixture, a broken lock or an unsafe area. These need TL attention early.'],['🛏️','Bedding / comfort issues','The beds, pillows, mattress or room set-up are uncomfortable, damaged, or not what the guest booked.'],['🐛','Bed bugs','The guest reports bed bugs or other pests. Evidence matters here, and the property should be asked to inspect.'],['💡','Utility outages','Water, hot water, power, heating, AC or internet is out during the stay.'],['🔑','Check-in issues','The guest cannot get in smoothly on arrival, for example no one at reception, the unit is not ready, or the access method does not work. If wrong content on the listing caused it, it is a Content Issue instead.']];
+var ciTypes=[["🧹","Cleaning Issues","Unclean unit, dirty linens, uncleaned pool, leftover mess from previous guests"],["🔧","Maintenance Issues","Broken appliances, structural faults, items in disrepair"],["⚡","Other Amenity Issues","Broken or unusable amenities only — not missing amenities (missing amenities fall under content issues)"],["🔊","Noise Issues","Disturbances caused by the property, other guests, or partner negligence"],["🚨","Safety Issues","Any concern that puts the guest's safety at risk on-site"],["🛏️","Bedding / Comfort Issues","Uncomfortable, damaged, or inadequate bedding provided on-site"],["🐛","Bed Bugs","Confirmed or suspected bed bug presence in the unit"],["💡","Utility Outage","Loss of electricity, water, heating, or other essential utilities"],["🚪","Check-in Issues","Only where the partner failed to answer calls or directly caused the check-in issue"]];
 for(var ct=0;ct<ciTypes.length;ct++){h+='<div style="display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:#fff;border:1px solid #e2e8f0;border-radius:10px;"><div style="font-size:20px;min-width:28px;">'+ciTypes[ct][0]+'</div><div><div style="font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:3px;">'+ciTypes[ct][1]+'</div><div style="font-size:12px;color:#4a5568;line-height:1.7;">'+ciTypes[ct][2]+'</div></div></div>';}
 h+='</div>';
 var ciExamplesId='ciex-'+Math.random().toString(36).substr(2,6);
@@ -842,12 +842,23 @@ h+='<div style="display:flex;align-items:center;gap:10px;"><span style="font-siz
 h+='<span id="rc-ver-arr" style="font-size:12px;color:#718096;transition:transform 0.3s ease;">▶</span>';
 h+='</button>';
 h+='<div id="rc-ver-body" style="display:none;border:1px solid #e2e8f0;border-top:none;border-radius:0 0 10px 10px;background:#fafcff;padding:16px 18px;">';
-h+='<div style="background:#ebf4ff;border:1px solid #bee3f8;border-radius:8px;padding:12px 16px;margin-bottom:16px;">';
-h+='<p style="font-size:13px;color:#1e3a5c;line-height:1.75;margin:0;">Verification should not take longer than a few minutes. The aim is to do a quick check to see if we can <strong>determine fault</strong>. Work through the steps below in order and note what you find.</p>';
-h+='</div>';
 h+='<div style="display:flex;flex-direction:column;gap:10px;">';
-var ciVerSteps=[["1","Get the evidence","Ask the guest for photos, a video, a receipt or screenshots. Photos are the best proof for cleaning, maintenance, pest and bed bug complaints. Without evidence we cannot confirm what happened."],["2","Check the listing","Does the listing say anything that contradicts what the guest found? If the listing is wrong (for example the amenity is missing, or the description is inaccurate) this is a Content Issue, not a regular complaint. <strong style=\"color:#9b2235;\">Jetstream fault.</strong>"],["3","Check with the property","Call or email the front desk. Ask what they found and whether the guest reported the problem on site during the stay. Ask the guest to report it to reception straight away, so the property can fix it while the guest is still there."],["4","Check for earlier warnings","Look in Cirrus notes, Front, Slack and HubSpot for a known problem at this property (construction, an outage, repairs) or earlier complaints. If the partner told us beforehand and the guest was not warned, <strong style=\"color:#9b2235;\">Jetstream fault.</strong>"],["5","Check the partner rating","Look at the partner rating dashboard before offering any compensation. Compensation stays within the profit ceiling and is asked of the partner first."]];
-for(var vs=0;vs<ciVerSteps.length;vs++){h+='<div style="display:flex;align-items:flex-start;gap:12px;padding:13px 15px;background:#fff;border:1px solid #e2e8f0;border-radius:9px;"><div style="background:#3a8a9e;color:#fff;border-radius:50%;width:26px;height:26px;min-width:26px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;margin-top:1px;">'+ciVerSteps[vs][0]+'</div><div><div style="font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:3px;">'+ciVerSteps[vs][1]+'</div><div style="font-size:12px;color:#4a5568;line-height:1.7;">'+ciVerSteps[vs][2]+'</div></div></div>';}
+h+='<div style="display:flex;align-items:flex-start;gap:12px;padding:13px 15px;background:#fff;border:1px solid #e2e8f0;border-radius:9px;">';
+h+='<div style="background:#3a8a9e;color:#fff;border-radius:50%;width:26px;height:26px;min-width:26px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;margin-top:1px;">1</div>';
+h+='<div><div style="font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:3px;">Ask the guest if they have reported this to the front desk</div><div style="font-size:12px;color:#4a5568;line-height:1.7;">At the same time, ask for images of the issue — <strong>only if the issue is able to be photographed.</strong></div></div>';
+h+='</div>';
+h+='<div style="display:flex;align-items:flex-start;gap:12px;padding:13px 15px;background:#fff;border:1px solid #e2e8f0;border-radius:9px;">';
+h+='<div style="background:#3a8a9e;color:#fff;border-radius:50%;width:26px;height:26px;min-width:26px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;margin-top:1px;">2</div>';
+h+='<div><div style="font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:3px;">Do not create a HubSpot ticket yet</div><div style="font-size:12px;color:#4a5568;line-height:1.7;">No ticket should be created until the guest has responded about the front desk and/or photos.</div></div>';
+h+='</div>';
+h+='<div style="display:flex;align-items:flex-start;gap:12px;padding:13px 15px;background:#fff;border:1px solid #e2e8f0;border-radius:9px;">';
+h+='<div style="background:#3a8a9e;color:#fff;border-radius:50%;width:26px;height:26px;min-width:26px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;margin-top:1px;">3</div>';
+h+='<div><div style="font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:3px;">Write clear notes in Cirrus</div><div style="font-size:12px;color:#4a5568;line-height:1.7;">Add detailed notes in Cirrus documenting the issue and add a <strong>Guest Blacklisted tag</strong> to the booking.</div></div>';
+h+='</div>';
+h+='<div style="display:flex;align-items:flex-start;gap:12px;padding:13px 15px;background:#ebf4ff;border:1px solid #bee3f8;border-radius:9px;">';
+h+='<div style="background:#2b6cb0;color:#fff;border-radius:50%;width:26px;height:26px;min-width:26px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;margin-top:1px;">4</div>';
+h+='<div><div style="font-size:13px;font-weight:700;color:#1e3a5c;margin-bottom:3px;">Who creates the HubSpot ticket?</div><div style="font-size:12px;color:#2b6cb0;line-height:1.7;font-weight:600;">The agent who receives the images or the response that the front desk was unable to assist is the one responsible for creating the HubSpot ticket — not the agent who originally asked.</div></div>';
+h+='</div>';
 h+='</div>';
 h+='</div>';
 h+='</div>';
@@ -881,26 +892,76 @@ h+='<span id="rc3-s1-arr" style="font-size:13px;color:#718096;">▶</span>';
 h+='</button>';
 h+='<div id="rc3-s1-body" style="display:none;padding:14px 16px 16px;background:#f7fafc;border-top:1px solid #e2e8f0;">';
 h+='<div style="background:#ebf4ff;border:1px solid #bee3f8;border-radius:9px;padding:13px 16px;margin-bottom:14px;">';
-h+='<p style="font-size:13px;color:#1e3a5c;line-height:1.75;margin:0 0 6px 0;">For Regular Complaints, the <strong>Complaint Reported</strong> field should be a brief 1 to 2 sentence summary of what the guest says went wrong during the stay, and when they found it (for example on arrival or part way through the stay).</p>';
+h+='<p style="font-size:13px;color:#1e3a5c;line-height:1.75;margin:0 0 6px 0;">For Regular Complaints, the <strong>Complaint Reported</strong> field should be a brief 1 to 2 sentence summary of the issue reported by the guest, specifically describing the problem they experienced during their stay.</p>';
 h+='<p style="font-size:13px;color:#1e3a5c;font-weight:700;margin:10px 0 6px 0;">Examples:</p>';
 h+='<ul style="font-size:13px;color:#1e3a5c;line-height:1.75;margin:0;padding-left:18px;">';
-h+='<li>Guest reported ants and three roaches near the front door.</li>';
-h+='<li>Guest reported the toilet was not working for about two days.</li>';
-h+='<li>Guest reported a gas smell in the unit on arrival.</li>';
-h+='<li>Guest reported the air conditioning was not working during a heatwave.</li>';
+h+='<li>Sticky kitchen counters with crumbs and food stains</li>';
+h+='<li>Dirty dishes left inside the dishwasher</li>';
+h+='<li>Hair on the bathroom floor and inside the shower</li>';
+h+='<li>Unclean toilet</li>';
+h+='<li>Stained and unpleasant-smelling bedsheets</li>';
+h+='<li>Dust buildup on furniture and ceiling fans</li>';
 h+='</ul>';
 h+='</div>';
-h+='<div style="border:1px solid #c7d9e8;border-radius:9px;overflow:hidden;margin-top:4px;">';
-h+='<button onclick="var p=document.getElementById(\'rc-s1-rte-panel\');var a=document.getElementById(\'rc-s1-rte-arrow\');var isOpen=p.style.display!==\'none\';p.style.display=isOpen?\'none\':\'block\';a.style.transform=isOpen?\'rotate(0deg)\':\'rotate(90deg)\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:#1e3a5c;border:none;cursor:pointer;font-family:inherit;" onmouseover="this.style.background=\'#162d48\'" onmouseout="this.style.background=\'#1e3a5c\'">';
-h+='<div style="display:flex;align-items:center;gap:8px;"><span style="font-size:14px;">📋</span><span style="font-size:13px;font-weight:700;color:#fff;">Real Ticket Examples</span><span style="font-size:11px;color:rgba(255,255,255,0.55);font-weight:400;">(16 examples)</span></div>';
-h+='<span id="rc-s1-rte-arrow" style="font-size:11px;color:rgba(255,255,255,0.65);transition:transform 0.25s;display:inline-block;">▶</span>';
-h+='</button>';
-h+='<div id="rc-s1-rte-panel" style="display:none;padding:12px 14px;background:#fafcff;">';
-h+='<div style="display:flex;flex-direction:column;gap:8px;">';
-var ciSec1Ex=["Guest reported cobwebs, dust and dirt around the lamps and door tracks, insects inside the apartment, and disposable bedding instead of the expected linen.","Guest reported the toilet was not working for about two days and the shower only produced scalding water. No room change was offered.","Guest reported the fridge was not working shortly after check-in, and that reception was unattended with no working phone number.","Guest reported the air conditioning was not working during their stay.","Guest reported that roof construction would start at 8am and affect their stay.","Guest reported the unit smelled of gas on arrival. There was no unit to move to and the guest left without checking in.","Guest reported the kitchen extractor hood cover detached and fell onto a member of their party.","Guest booked a room with a large double bed but received two single beds for the first night.","Guest raised bed bugs on the day of checkout.","Guest reported cold showers throughout the stay caused by a propane leak.","Guest reported an elevator outage lasting about 48 hours, affecting a family member with limited mobility.","Guest reported possible mould, a musty odour and bugs in the unit.","Guest reported ants, roaches, a gap at the bottom of the pool door and a fallen tree branch.","Guest reported spending the night without electricity or heating, with reception closed and only a voicemail available.","Guest reported a missing lightbulb, hair in the bathtub and sink, a fridge that did not cool properly and a leaking showerhead.","Guest reported a stained sofa and dirty walls in the unit."];
-for(var i=0;i<ciSec1Ex.length;i++){h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;"><div style="background:#1e3a5c;color:#fff;font-size:11px;font-weight:700;padding:6px 12px;">Example '+(i+1)+'</div><div style="padding:10px 14px;background:#fff;font-size:12px;color:#1a1a2e;line-height:1.75;"><span style="font-weight:700;color:#1e3a5c;">Complaint Reported: </span>'+ciSec1Ex[i]+'</div></div>';}
+h+='<button onclick="var b=document.getElementById(\'rc-s1-examples\');var a=document.getElementById(\'rc-s1-arr\');var o=b.style.display!==\'none\';b.style.display=o?\'none\':\'block\';a.textContent=o?\'▼ More examples\':\'▲ Hide examples\';" id="rc-s1-arr" style="display:inline-flex;align-items:center;gap:6px;margin-bottom:10px;padding:8px 14px;background:#f0f4ff;border:1px solid #c3d3f0;border-radius:8px;cursor:pointer;font-family:inherit;font-size:13px;font-weight:700;color:#1e3a5c;">▼ More examples</button>';
+h+='<div id="rc-s1-examples" style="display:none;"><div style="display:flex;flex-direction:column;gap:10px;">';
+h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;">';
+h+='<div style="background:#1e3a5c;color:#fff;font-size:12px;font-weight:700;padding:8px 14px;">🧹 Example — Cleaning Issue</div>';
+h+='<div style="padding:10px 14px;background:#fff;font-size:12px;color:#4a5568;line-height:1.7;">Bullet point format works well here:</div>';
+h+='<div style="padding:0 14px 12px;background:#fff;display:flex;flex-direction:column;gap:4px;">';
+var s1items=[['Sticky kitchen counters with crumbs and food stains'],['Dirty dishes left inside the dishwasher'],['Hair on the bathroom floor and inside the shower'],['Unclean toilet'],['Stained and unpleasant-smelling bedsheets'],['Dust buildup on furniture and ceiling fans']];
+for(var i=0;i<s1items.length;i++){h+='<div style="font-size:12px;color:#1a1a2e;display:flex;align-items:flex-start;gap:8px;"><span style="color:#718096;margin-top:1px;">•</span><span>'+s1items[i][0]+'</span></div>';}
+h+='</div></div>';
+h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;">';
+h+='<div style="background:#1e3a5c;color:#fff;font-size:12px;font-weight:700;padding:8px 14px;">🔧 Example — Broken Amenity</div>';
+h+='<div style="padding:10px 14px;background:#fff;font-size:12px;color:#4a5568;line-height:1.7;">Name the amenity with a brief description of the issue:</div>';
+h+='<div style="padding:0 14px 12px;background:#fff;"><div style="font-size:12px;color:#1a1a2e;display:flex;align-items:flex-start;gap:8px;"><span style="color:#718096;margin-top:1px;">•</span><span>Microwave not working — guest stated that when attempting to turn it on, nothing happens</span></div></div>';
 h+='</div>';
-h+='</div>';
+h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;">';
+h+='<div style="background:#1e3a5c;color:#fff;font-size:12px;font-weight:700;padding:8px 14px;">🔊 Example — Noise Complaint</div>';
+h+='<div style="padding:10px 14px;background:#fff;font-size:12px;color:#4a5568;line-height:1.7;">Include what happened and how it affected the guest so we understand the severity:</div>';
+h+='<div style="padding:0 14px 12px;background:#fff;display:flex;flex-direction:column;gap:4px;">';
+var s1noise=[['Guest reported loud music and shouting coming from a nearby unit late at night'],['Guest stated they were unable to sleep properly due to the noise'],['Front desk was contacted but the noise continued afterward']];
+for(var i=0;i<s1noise.length;i++){h+='<div style="font-size:12px;color:#1a1a2e;display:flex;align-items:flex-start;gap:8px;"><span style="color:#718096;margin-top:1px;">•</span><span>'+s1noise[i][0]+'</span></div>';}
+h+='</div></div>';
+h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;">';
+h+='<div style="background:#1e3a5c;color:#fff;font-size:12px;font-weight:700;padding:8px 14px;">📶 Example — WiFi Issue</div>';
+h+='<div style="padding:10px 14px 12px;background:#fff;display:flex;flex-direction:column;gap:4px;">';
+var s1wifi=[['Guest reported that the WiFi was not working throughout the stay'],['Unable to connect multiple devices to the network'],['Guest stated this impacted their ability to work remotely']];
+for(var i=0;i<s1wifi.length;i++){h+='<div style="font-size:12px;color:#1a1a2e;display:flex;align-items:flex-start;gap:8px;"><span style="color:#718096;margin-top:1px;">•</span><span>'+s1wifi[i][0]+'</span></div>';}
+h+='</div></div>';
+h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;">';
+h+='<div style="background:#1e3a5c;color:#fff;font-size:12px;font-weight:700;padding:8px 14px;">🚿 Example — Water Supply Issue</div>';
+h+='<div style="padding:10px 14px 12px;background:#fff;display:flex;flex-direction:column;gap:4px;">';
+var s1water=[['Guest advised there was no hot water in the unit'],['Water pressure in the shower was extremely low'],['Guest was unable to have a hot shower throughout entire stay']];
+for(var i=0;i<s1water.length;i++){h+='<div style="font-size:12px;color:#1a1a2e;display:flex;align-items:flex-start;gap:8px;"><span style="color:#718096;margin-top:1px;">•</span><span>'+s1water[i][0]+'</span></div>';}
+h+='</div></div>';
+h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;">';
+h+='<div style="background:#1e3a5c;color:#fff;font-size:12px;font-weight:700;padding:8px 14px;">🫙 Example — Appliance Issue</div>';
+h+='<div style="padding:10px 14px 12px;background:#fff;display:flex;flex-direction:column;gap:4px;">';
+var s1app=[['Washing machine not functioning properly'],['Guest stated the machine stops mid-cycle and clothing remains wet']];
+for(var i=0;i<s1app.length;i++){h+='<div style="font-size:12px;color:#1a1a2e;display:flex;align-items:flex-start;gap:8px;"><span style="color:#718096;margin-top:1px;">•</span><span>'+s1app[i][0]+'</span></div>';}
+h+='</div></div>';
+h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;">';
+h+='<div style="background:#1e3a5c;color:#fff;font-size:12px;font-weight:700;padding:8px 14px;">🚗 Example — Parking Issue</div>';
+h+='<div style="padding:10px 14px 12px;background:#fff;display:flex;flex-direction:column;gap:4px;">';
+var s1park=[['Guest advised that the allocated parking bay was occupied upon arrival'],['Unable to access the secure parking included with the booking'],['Guest had to park elsewhere at an additional cost']];
+for(var i=0;i<s1park.length;i++){h+='<div style="font-size:12px;color:#1a1a2e;display:flex;align-items:flex-start;gap:8px;"><span style="color:#718096;margin-top:1px;">•</span><span>'+s1park[i][0]+'</span></div>';}
+h+='</div></div>';
+h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;">';
+h+='<div style="background:#1e3a5c;color:#fff;font-size:12px;font-weight:700;padding:8px 14px;">⚡ Example — Power Issue</div>';
+h+='<div style="padding:10px 14px 12px;background:#fff;display:flex;flex-direction:column;gap:4px;">';
+var s1pwr=[['Guest experienced repeated power outages in the unit'],['Certain lights and plugs were not working properly']];
+for(var i=0;i<s1pwr.length;i++){h+='<div style="font-size:12px;color:#1a1a2e;display:flex;align-items:flex-start;gap:8px;"><span style="color:#718096;margin-top:1px;">•</span><span>'+s1pwr[i][0]+'</span></div>';}
+h+='</div></div>';
+h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;">';
+h+='<div style="background:#1e3a5c;color:#fff;font-size:12px;font-weight:700;padding:8px 14px;">🚪 Example — Check-In Issue</div>';
+h+='<div style="padding:10px 14px;background:#fff;font-size:12px;color:#4a5568;line-height:1.7;">Always state how long the guest had to wait:</div>';
+h+='<div style="padding:0 14px 12px;background:#fff;display:flex;flex-direction:column;gap:4px;">';
+var s1ci=[['Guest experienced delays during the check-in process'],['They were unable to enter for 2 hours <span style="color:#e53e3e;font-weight:700;">(always state how long they had to wait)</span>'],['Unit was not ready upon arrival despite the confirmed check-in time']];
+for(var i=0;i<s1ci.length;i++){h+='<div style="font-size:12px;color:#1a1a2e;display:flex;align-items:flex-start;gap:8px;"><span style="color:#718096;margin-top:1px;">•</span><span>'+s1ci[i][0]+'</span></div>';}
+h+='</div></div>';
+h+='</div></div>';
 h+='</div>';
 h+='</div></div>';
 h+='<div style="border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;">';
@@ -910,34 +971,97 @@ h+='<span style="font-size:13px;font-weight:700;color:#1a1a2e;flex:1;"><strong>S
 h+='<span id="rc3-s2-arr" style="font-size:13px;color:#718096;">▶</span>';
 h+='</button>';
 h+='<div id="rc3-s2-body" style="display:none;padding:14px 16px 16px;background:#f7fafc;border-top:1px solid #e2e8f0;">';
-h+='<div style="background:#ebf4ff;border:1px solid #bee3f8;border-radius:10px;padding:14px 16px;margin-bottom:16px;">';
-h+='<div style="font-size:13px;font-weight:800;color:#1e3a5c;margin-bottom:8px;">Regular Complaint Verification</div>';
-h+='<p style="font-size:13px;color:#1e3a5c;line-height:1.75;margin:0 0 10px 0;">To ensure a fair and consistent assessment, the verification process should be divided into two parts:</p>';
-h+='<div style="display:flex;flex-direction:column;gap:8px;">';
-h+='<div style="display:flex;align-items:flex-start;gap:10px;"><div style="background:#1e3a5c;color:#fff;border-radius:50%;width:22px;height:22px;min-width:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;margin-top:1px;">1</div><div style="font-size:13px;color:#1e3a5c;line-height:1.7;"><strong>Guest Verification:</strong> Confirm the problem is real. Review the guest evidence (photos, video, receipts) and confirm with the property where possible.</div></div>';
-h+='<div style="display:flex;align-items:flex-start;gap:10px;"><div style="background:#1e3a5c;color:#fff;border-radius:50%;width:22px;height:22px;min-width:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;margin-top:1px;">2</div><div style="font-size:13px;color:#1e3a5c;line-height:1.7;"><strong>Fault Determination:</strong> If the issue is valid, determine who is responsible: the partner (condition, repairs, cleaning), Jetstream (the listing or our information was wrong), or unclear.</div></div>';
-h+='</div></div>';
-h+='<div style="border:1px solid #c7d9e8;border-radius:9px;overflow:hidden;margin-top:4px;">';
-h+='<button onclick="var p=document.getElementById(\'rc-s2-rte-panel\');var a=document.getElementById(\'rc-s2-rte-arr\');var isOpen=p.style.display!==\'none\';p.style.display=isOpen?\'none\':\'block\';a.style.transform=isOpen?\'rotate(0deg)\':\'rotate(90deg)\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:#1e3a5c;border:none;cursor:pointer;font-family:inherit;" onmouseover="this.style.background=\'#162d48\'" onmouseout="this.style.background=\'#1e3a5c\'">';
-h+='<div style="display:flex;align-items:center;gap:8px;"><span style="font-size:14px;">📋</span><span style="font-size:13px;font-weight:700;color:#fff;">Real Ticket Examples</span><span style="font-size:11px;color:rgba(255,255,255,0.55);font-weight:400;">('+14+' examples)</span></div>';
-h+='<span id="rc-s2-rte-arr" style="font-size:11px;color:rgba(255,255,255,0.65);transition:transform 0.25s;display:inline-block;">▶</span>';
+h+='<div style="background:#ebf4ff;border:1px solid #bee3f8;border-radius:9px;padding:13px 16px;margin-bottom:12px;">';
+h+='<p style="font-size:13px;color:#1e3a5c;line-height:1.75;margin:0 0 8px 0;">For verification, especially with regular issues, we may not always be able to fully verify the complaint internally. In many cases, the only verification available may be the guest\'s images — and sometimes there may not even be images available at all, for example with issues such as <strong>parking complaints, noise complaints, or intermittent problems.</strong></p>';
+h+='<p style="font-size:13px;color:#1e3a5c;line-height:1.75;margin:0 0 8px 0;">The main thing we want agents to check is whether the issue can be <strong>verified against the listing or internal information where possible.</strong> For example, if the complaint relates to a broken amenity, first check whether that amenity is still advertised on the listing — sometimes amenities are no longer advertised because they are already known to be broken or unavailable.</p>';
+h+='<p style="font-size:13px;color:#1e3a5c;line-height:1.75;margin:0;">If guest images are available, simply note that the guest provided images for verification. <strong>There is no need for long explanations in the verification section — short, clear notes are perfectly fine.</strong></p>';
+h+='</div>';
+h+='<div style="background:#f0fff4;border:1px solid #9ae6b4;border-radius:9px;padding:13px 16px;margin-bottom:14px;">';
+h+='<p style="font-size:13px;color:#276749;font-weight:700;margin:0 0 6px 0;">What is the purpose of verification?</p>';
+h+='<p style="font-size:13px;color:#276749;line-height:1.75;margin:0;">The purpose of verification is simply to show that you <strong>checked before you acted.</strong> It doesn\'t need to be a formal investigation — it just needs to demonstrate that the complaint wasn\'t taken at face value and forwarded without any thought.</p>';
+h+='</div>';
+h+='<div style="font-size:13px;font-weight:800;color:#1e3a5c;margin-bottom:10px;">The 3 situations you will face</div>';
+h+='<div style="display:flex;flex-direction:column;gap:10px;margin-bottom:16px;">';
+h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;">';
+h+='<button onclick="var b=document.getElementById(\'ver-1-body\');var a=document.getElementById(\'ver-1-arr\');var o=b.style.display!==\'none\';b.style.display=o?\'none\':\'block\';a.style.transform=o?\'rotate(0deg)\':\'rotate(90deg)\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:#276749;border:none;cursor:pointer;font-family:inherit;">';
+h+='<div style="display:flex;align-items:center;gap:8px;"><span style="background:rgba(255,255,255,0.25);border-radius:50%;width:20px;height:20px;min-width:20px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fff;">1</span><span style="font-size:13px;font-weight:700;color:#fff;">You can verify it</span></div>';
+h+='<span id="ver-1-arr" style="color:#fff;font-size:11px;transition:transform 0.3s ease;">▶</span>';
 h+='</button>';
-h+='<div id="rc-s2-rte-panel" style="display:none;padding:12px 14px;background:#fafcff;">';
-h+='<div style="display:flex;flex-direction:column;gap:8px;">';
-var ciSec2Ex=[{"cr":"Guest reported cobwebs, dust, insects, dirt in the door tracks and disposable bedding in the apartment.","vr":"Guest photos reviewed and support the complaint. The listing states towels, bed linen and end-of-stay cleaning are included.","fv":"Partner fault. The partner said the guest arrived late and never reported the issues at reception and took no further action, so Jetstream paid a 50 EUR goodwill refund."},{"cr":"Guest reported the toilet was not working for about two days and the shower only produced scalding water.","vr":"Guest reported to the front desk several times. Maintenance tried a plunger but the problem remained and no room change was offered.","fv":"Partner fault. Partner refunded our VCC after waiving fees for the stay."},{"cr":"Guest reported the fridge was not working and food spoiled.","vr":"The partner's technician inspected it and found it working, and said it was overloaded. The guest did not return to reception during the stay.","fv":"Unclear. The partner declined compensation."},{"cr":"Guest reported there was no air conditioning during their stay.","vr":"Front desk confirmed the AC is installed but not working because of a temporary fault.","fv":"Partner fault. First marked otherwise, then corrected once the front desk confirmed the fault."},{"cr":"Guest reported the unit smelled of gas on arrival and left without checking in.","vr":"Front desk confirmed they did not check the guest in and did not charge them.","fv":"Partner fault. Partner confirmed the VCC was charged by accident and refunded it."},{"cr":"Guest received two single beds instead of the large double bed they booked, for the first night.","vr":"Partner confirmed the wrong room was assigned on the first night and corrected on the second. The listing says double or twin is subject to availability.","fv":"Partner fault. The listing was correct."},{"cr":"Guest reported a 48 hour elevator outage affecting a family member with limited mobility.","vr":"Partner confirmed the outage before check-in. Cirrus notes show it was still unresolved days later. The listing advertised elevator access.","fv":"Partner fault."},{"cr":"Guest reported possible mould, a musty odour and bugs.","vr":"Guest photos and videos reviewed. The insects were confirmed not to be cockroaches. The property offered a spray treatment.","fv":"Partner fault. One night was refunded and the partner net cost was charged back."},{"cr":"Guest reported cold showers caused by a propane leak, two weeks after checkout.","vr":"Booking confirmed in Cirrus. The on-site manager had verbally offered the guest a one-night refund.","fv":"Partner fault. The partner covered its net share and Jetstream covered the fee difference."},{"cr":"Guest called to say roof construction would start at 8am.","vr":"No internal notes about construction were found. The property confirmed roof work starting at 8am.","fv":"Not applicable. A content update was created because we had no warning."},{"cr":"Guest raised bed bugs only on the day of checkout.","vr":"An inspection found no evidence to support the claim.","fv":"Not valid. Fault: not applicable."},{"cr":"Guest reported ants, roaches and a gap at the bottom of the pool door.","vr":"Guest asked to send photos by email. The guest left the property in good condition.","fv":"Partner fault."},{"cr":"Guest reported spending the night without electricity or heating.","vr":"Guest confirmed reception was closed and a voicemail was left. The guest spent the night without electricity and heating.","fv":"Escalated to the partner for goodwill. The campsite was asked to follow up."},{"cr":"Guest reported a missing lightbulb, hair in the bath, a poorly cooling fridge and a leaking showerhead.","vr":"Guest photos reviewed and support the complaint. On-site team later confirmed the fridge was working.","fv":"Partner fault."}];
-for(var i=0;i<ciSec2Ex.length;i++){
-  h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;">';
-  h+='<div style="background:#1e3a5c;color:#fff;font-size:11px;font-weight:700;padding:6px 12px;">Example '+(i+1)+'</div>';
-  h+='<div style="padding:10px 14px;background:#fff;display:flex;flex-direction:column;gap:6px;">';
-  h+='<div style="font-size:12px;color:#1a1a2e;"><span style="font-weight:700;color:#1e3a5c;">Complaint Reported: </span>'+ciSec2Ex[i].cr+'</div>';
-  h+='<div style="font-size:12px;color:#1a1a2e;"><span style="font-weight:700;color:#276749;">Guest Verification: </span>'+ciSec2Ex[i].vr+'</div>';
-  h+='<div style="font-size:12px;color:#1a1a2e;"><span style="font-weight:700;color:#9b2235;">Fault Verification: </span>'+(ciSec2Ex[i].fv||'')+'</div>';
-  h+='</div></div>';
-}
+h+='<div id="ver-1-body" style="display:none;padding:13px 16px;background:#fff;font-size:12px;color:#1a1a2e;line-height:1.75;border-top:1px solid #e2e8f0;">Guest sent photos and you reviewed them and they support the complaint. Or you checked the listing and the amenity that is broken is indeed advertised, which confirms the guest had a reasonable expectation. <strong>Write what you checked and what it showed.</strong></div>';
+h+='</div>';
+h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;">';
+h+='<button onclick="var b=document.getElementById(\'ver-2-body\');var a=document.getElementById(\'ver-2-arr\');var o=b.style.display!==\'none\';b.style.display=o?\'none\':\'block\';a.style.transform=o?\'rotate(0deg)\':\'rotate(90deg)\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:#2b6cb0;border:none;cursor:pointer;font-family:inherit;">';
+h+='<div style="display:flex;align-items:center;gap:8px;"><span style="background:rgba(255,255,255,0.25);border-radius:50%;width:20px;height:20px;min-width:20px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fff;">2</span><span style="font-size:13px;font-weight:700;color:#fff;">You can partially verify it</span></div>';
+h+='<span id="ver-2-arr" style="color:#fff;font-size:11px;transition:transform 0.3s ease;">▶</span>';
+h+='</button>';
+h+='<div id="ver-2-body" style="display:none;padding:13px 16px;background:#fff;font-size:12px;color:#1a1a2e;line-height:1.75;border-top:1px solid #e2e8f0;">You couldn\'t confirm the issue yourself, but the partner or on-site team acknowledged it. For example, maintenance confirmed the AC was broken, or the front desk confirmed the pool was under repair. That acknowledgement counts as verification. <strong>Write who confirmed it.</strong></div>';
+h+='</div>';
+h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;">';
+h+='<button onclick="var b=document.getElementById(\'ver-3-body\');var a=document.getElementById(\'ver-3-arr\');var o=b.style.display!==\'none\';b.style.display=o?\'none\':\'block\';a.style.transform=o?\'rotate(0deg)\':\'rotate(90deg)\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:#744210;border:none;cursor:pointer;font-family:inherit;">';
+h+='<div style="display:flex;align-items:center;gap:8px;"><span style="background:rgba(255,255,255,0.25);border-radius:50%;width:20px;height:20px;min-width:20px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fff;">3</span><span style="font-size:13px;font-weight:700;color:#fff;">You cannot verify it</span></div>';
+h+='<span id="ver-3-arr" style="color:#fff;font-size:11px;transition:transform 0.3s ease;">▶</span>';
+h+='</button>';
+h+='<div id="ver-3-body" style="display:none;padding:13px 16px;background:#fff;font-size:12px;color:#1a1a2e;line-height:1.75;border-top:1px solid #e2e8f0;">Noise complaints, parking disputes, intermittent issues, or anything reported without photos. In these cases, simply write the type of complaint and note that internal verification is not possible. That\'s enough — the point is that you\'ve <strong>acknowledged the limitation</strong>, not that you failed to verify.</div>';
 h+='</div>';
 h+='</div>';
-h+='</div>';
+h+='<button onclick="var b=document.getElementById(\'rc-s2-examples\');var a=document.getElementById(\'rc-s2-arr\');var o=b.style.display!==\'none\';b.style.display=o?\'none\':\'block\';a.textContent=o?\'▼ More examples\':\'▲ Hide examples\';" id="rc-s2-arr" style="display:inline-flex;align-items:center;gap:6px;margin-top:14px;margin-bottom:10px;padding:8px 14px;background:#f0f4ff;border:1px solid #c3d3f0;border-radius:8px;cursor:pointer;font-family:inherit;font-size:13px;font-weight:700;color:#1e3a5c;">▼ More examples</button>';
+h+='<div id="rc-s2-examples" style="display:none;"><div style="display:flex;flex-direction:column;gap:10px;">';
+h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;">';
+h+='<div style="background:#1e3a5c;color:#fff;font-size:12px;font-weight:700;padding:8px 14px;">🧹 Cleaning Issues</div>';
+h+='<div style="padding:10px 14px;background:#fff;display:flex;flex-direction:column;gap:5px;">';
+var vClean=['Guest provided images showing the reported cleanliness concerns.','Guest photos support the complaint that the property condition was not suitable upon arrival.','Images received from guest appear consistent with the reported issues.'];
+for(var i=0;i<vClean.length;i++){h+='<div style="font-size:12px;color:#1a1a2e;display:flex;align-items:flex-start;gap:8px;"><span style="color:#718096;margin-top:1px;">•</span><span>'+vClean[i]+'</span></div>';}
 h+='</div></div>';
+h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;">';
+h+='<div style="background:#1e3a5c;color:#fff;font-size:12px;font-weight:700;padding:8px 14px;">🔧 Broken Amenity / Appliance Issues</div>';
+h+='<div style="padding:10px 14px;background:#fff;display:flex;flex-direction:column;gap:5px;">';
+var vAmen=['Checked the listing and confirmed the microwave is still advertised as an amenity.','Listing reviewed and confirmed that the washing machine is included in the advertised amenities.','Partner confirmed the AC unit was not functioning and repairs were arranged.','Maintenance team acknowledged the appliance issue and advised that repairs were pending.'];
+for(var i=0;i<vAmen.length;i++){h+='<div style="font-size:12px;color:#1a1a2e;display:flex;align-items:flex-start;gap:8px;"><span style="color:#718096;margin-top:1px;">•</span><span>'+vAmen[i]+'</span></div>';}
+h+='</div></div>';
+h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;">';
+h+='<div style="background:#2d6a4f;color:#fff;font-size:12px;font-weight:700;padding:8px 14px;">📋 Real Case Examples</div>';
+h+='<div style="padding:10px 14px;background:#fff;display:flex;flex-direction:column;gap:10px;">';
+h+='<div style="padding:10px 12px;background:#f7fafc;border:1px solid #e2e8f0;border-left:3px solid #276749;border-radius:6px;"><div style="font-size:12px;font-weight:700;color:#1a1a2e;margin-bottom:4px;">Property Not Cleaned &amp; AC Not Working</div><div style="font-size:12px;color:#4a5568;line-height:1.75;">Vernon initially confirmed that cleaners had attended the property and marked it as cleaned in the system, supported by GPS tracking data. However, no before/after photos were provided. Guest photos indicated poor property condition and supported the complaint that the unit was not suitable for occupancy, including non-functioning AC.</div></div>';
+h+='<div style="padding:10px 12px;background:#f7fafc;border:1px solid #e2e8f0;border-left:3px solid #276749;border-radius:6px;"><div style="font-size:12px;font-weight:700;color:#1a1a2e;margin-bottom:4px;">Dirty Hot Tub / Water Smell / Freezer Issue</div><div style="font-size:12px;color:#4a5568;line-height:1.75;">Partner (Vernon) confirmed that the property\'s well water has high iron content and advised that build-up in the hot tub occurs naturally over time.</div></div>';
+h+='</div></div>';
+h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;">';
+h+='<div style="background:#1e3a5c;color:#fff;font-size:12px;font-weight:700;padding:8px 14px;">🔊 Noise Complaints</div>';
+h+='<div style="padding:10px 14px;background:#fff;display:flex;flex-direction:column;gap:5px;">';
+var vNoise=['Guest reported repeated noise disturbances during the stay. Internal verification not possible.','Noise complaint could not be independently verified internally.'];
+for(var i=0;i<vNoise.length;i++){h+='<div style="font-size:12px;color:#1a1a2e;display:flex;align-items:flex-start;gap:8px;"><span style="color:#718096;margin-top:1px;">•</span><span>'+vNoise[i]+'</span></div>';}
+h+='</div></div>';
+h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;">';
+h+='<div style="background:#1e3a5c;color:#fff;font-size:12px;font-weight:700;padding:8px 14px;">🅿️ Parking Issues</div>';
+h+='<div style="padding:10px 14px;background:#fff;display:flex;flex-direction:column;gap:5px;">';
+var vPark=['Guest advised that the allocated parking bay was occupied upon arrival. No internal verification available.','Parking complaint reported directly by guest; unable to independently verify.'];
+for(var i=0;i<vPark.length;i++){h+='<div style="font-size:12px;color:#1a1a2e;display:flex;align-items:flex-start;gap:8px;"><span style="color:#718096;margin-top:1px;">•</span><span>'+vPark[i]+'</span></div>';}
+h+='</div></div>';
+h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;">';
+h+='<div style="background:#1e3a5c;color:#fff;font-size:12px;font-weight:700;padding:8px 14px;">📶 WiFi Issues</div>';
+h+='<div style="padding:10px 14px;background:#fff;display:flex;flex-direction:column;gap:5px;">';
+var vWifi=['Guest reported intermittent WiFi connectivity issues during the stay.','No additional internal verification available for the reported WiFi concerns.'];
+for(var i=0;i<vWifi.length;i++){h+='<div style="font-size:12px;color:#1a1a2e;display:flex;align-items:flex-start;gap:8px;"><span style="color:#718096;margin-top:1px;">•</span><span>'+vWifi[i]+'</span></div>';}
+h+='</div></div>';
+h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;">';
+h+='<div style="background:#1e3a5c;color:#fff;font-size:12px;font-weight:700;padding:8px 14px;">🐛 Cockroach / Pest Complaints</div>';
+h+='<div style="padding:10px 14px;background:#fff;display:flex;flex-direction:column;gap:5px;">';
+var vPest=['Reviewed reservation records and communication history. No previous pest complaints or maintenance escalations found during the stay.','Guest provided images/videos for documentation purposes.'];
+for(var i=0;i<vPest.length;i++){h+='<div style="font-size:12px;color:#1a1a2e;display:flex;align-items:flex-start;gap:8px;"><span style="color:#718096;margin-top:1px;">•</span><span>'+vPest[i]+'</span></div>';}
+h+='</div></div>';
+h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;">';
+h+='<div style="background:#1e3a5c;color:#fff;font-size:12px;font-weight:700;padding:8px 14px;">🏨 Front Desk / Partner Confirmation</div>';
+h+='<div style="padding:10px 14px;background:#fff;display:flex;flex-direction:column;gap:5px;">';
+var vFront=['Front desk confirmed the maintenance issue had been reported during the stay.','Partner acknowledged the reported issue and advised that the matter was being investigated.','Guest confirmed attempts were made to contact the property for assistance.'];
+for(var i=0;i<vFront.length;i++){h+='<div style="font-size:12px;color:#1a1a2e;display:flex;align-items:flex-start;gap:8px;"><span style="color:#718096;margin-top:1px;">•</span><span>'+vFront[i]+'</span></div>';}
+h+='</div></div>';
+h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;">';
+h+='<div style="background:#718096;color:#fff;font-size:12px;font-weight:700;padding:8px 14px;">⚠️ When Verification Is Limited</div>';
+h+='<div style="padding:10px 14px;background:#fff;display:flex;flex-direction:column;gap:5px;">';
+var vLim=['Guest reported the issue directly; no additional verification available.','Complaint acknowledged based on guest report and supporting communication history.','Internal verification not possible for the reported concern.'];
+for(var i=0;i<vLim.length;i++){h+='<div style="font-size:12px;color:#1a1a2e;display:flex;align-items:flex-start;gap:8px;"><span style="color:#718096;margin-top:1px;">•</span><span>'+vLim[i]+'</span></div>';}
+h+='</div></div>';
+h+='</div></div>';
+h+='</div>';
 h+='<div style="border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;">';
 h+='<button onclick="var b=document.getElementById(\'rc3-s3-body\');var a=document.getElementById(\'rc3-s3-arr\');var o=b.style.display!==\'none\';b.style.display=o?\'none\':\'block\';a.textContent=o?\'▶\':\'▼\';" style="width:100%;display:flex;align-items:center;gap:12px;padding:12px 16px;background:#fff;border:none;cursor:pointer;font-family:inherit;text-align:left;">';
 h+='<div style="background:#1e3a5c;color:#fff;border-radius:50%;width:24px;height:24px;min-width:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;">3</div>';
@@ -945,6 +1069,7 @@ h+='<span style="font-size:13px;font-weight:700;color:#1a1a2e;flex:1;"><strong>S
 h+='<span id="rc3-s3-arr" style="font-size:13px;color:#718096;">▶</span>';
 h+='</button>';
 h+='<div id="rc3-s3-body" style="display:none;padding:14px 16px 16px;background:#f7fafc;border-top:1px solid #e2e8f0;">';
+h+='<div style="background:#fffbeb;border:1px solid #f6e05e;border-radius:8px;padding:10px 14px;margin-bottom:14px;font-size:12px;color:#744210;">⚠️ <strong>Every entry must have a date.</strong> Format: DD/MM/YYYY — Action taken. The Actions Taken section is a log of what you actually did to move the case forward — not a list of admin tasks or status updates.</div>';
 var inclId='incl-'+Math.random().toString(36).substr(2,6);
 h+='<button onclick="var el=document.getElementById(\''+inclId+'\');var arr=this.querySelector(\'.incl-arrow\');var open=el.style.display!==\'none\';el.style.display=open?\'none\':\'block\';arr.style.transform=open?\'rotate(0deg)\':\'rotate(180deg)\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;background:#276749;color:#fff;border:none;border-radius:9px;padding:11px 16px;font-size:13px;font-weight:800;cursor:pointer;margin-bottom:8px;text-align:left;">'+
   '<span>✅ What TO include</span>'+
@@ -1020,7 +1145,7 @@ h+='</div></div>';
 h+='</div>';
 h+='</div></div></div>';
 h+='</div>';
-h+='<div style="border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;margin-top:8px;">';
+h+='<div style="border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;">';
 h+='<button onclick="var b=document.getElementById(\'rc3-s4-body\');var a=document.getElementById(\'rc3-s4-arr\');var o=b.style.display!==\'none\';b.style.display=o?\'none\':\'block\';a.textContent=o?\'▶\':\'▼\';" style="width:100%;display:flex;align-items:center;gap:12px;padding:12px 16px;background:#fff;border:none;cursor:pointer;font-family:inherit;text-align:left;">';
 h+='<div style="background:#1e3a5c;color:#fff;border-radius:50%;width:24px;height:24px;min-width:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;">4</div>';
 h+='<span style="font-size:13px;font-weight:700;color:#1a1a2e;flex:1;"><strong>Section 4</strong> — Final Resolution <span style="font-weight:400;color:#718096;">— only once the case is resolved</span></span>';
@@ -1034,10 +1159,13 @@ h+='<div style="font-size:12px;color:#1a1a2e;padding:8px 12px;background:#fff;bo
 h+='</div></div></div>';
 h+='</div>';
 h+='</div>';
-h+='</div>';
+h+='</div></div>';
 
 h+='</div>';
-h+='</div>';h+='<div id="rc-sec-rc-tab2" style="display:'+(activeTab==='rc-tab2'?'block':'none')+'">';
+h+='</div>';
+
+// ── TABS 2–5: COMING SOON ────────────────────────────────────────────────────
+h+='<div id="rc-sec-rc-tab2" style="display:'+(activeTab==='rc-tab2'?'block':'none')+'">';
 h+='<h2 style="font-size:20px;font-weight:800;color:#1a1a2e;margin-bottom:18px;">Guest Complaint Review Stage</h2>';
 var ciMainSteps=[
   ['rc-ms-5','🛠️','','Sort out the guest issue'],
