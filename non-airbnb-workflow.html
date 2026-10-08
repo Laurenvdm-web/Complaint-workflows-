@@ -837,11 +837,11 @@ h+='<div id="rc-sec-rc-tab-create" style="display:'+(activeTab==='rc-tab-create'
 h+='<div style="margin-top:4px;">';
 h+='<h2 style="font-size:20px;font-weight:800;color:#1a1a2e;margin-bottom:18px;">Creating the Ticket</h2>';
 h+='<div>';
-h+='<button onclick="var b=document.getElementById(\'ci-ver-body\');var a=document.getElementById(\'ci-ver-arr\');var isOpen=b.style.display!==\'none\';b.style.display=isOpen?\'none\':\'block\';a.style.transform=isOpen?\'rotate(0deg)\':\'rotate(90deg)\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-radius:10px;border:1px solid #e2e8f0;cursor:pointer;background:#f7fafc;font-family:inherit;font-size:13px;font-weight:700;color:#1a1a2e;box-sizing:border-box;transition:background 0.15s;" onmouseover="this.style.background=\'#ebf4ff\';this.style.borderColor=\'#bee3f8\'" onmouseout="this.style.background=\'#f7fafc\';this.style.borderColor=\'#e2e8f0\'">';
+h+='<button onclick="var b=document.getElementById(\'rc-ver-body\');var a=document.getElementById(\'rc-ver-arr\');var isOpen=b.style.display!==\'none\';b.style.display=isOpen?\'none\':\'block\';a.style.transform=isOpen?\'rotate(0deg)\':\'rotate(90deg)\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-radius:10px;border:1px solid #e2e8f0;cursor:pointer;background:#f7fafc;font-family:inherit;font-size:13px;font-weight:700;color:#1a1a2e;box-sizing:border-box;transition:background 0.15s;" onmouseover="this.style.background=\'#ebf4ff\';this.style.borderColor=\'#bee3f8\'" onmouseout="this.style.background=\'#f7fafc\';this.style.borderColor=\'#e2e8f0\'">';
 h+='<div style="display:flex;align-items:center;gap:10px;"><span style="font-size:18px;">🔍</span><span>Step 1 — Verification</span></div>';
-h+='<span id="ci-ver-arr" style="font-size:12px;color:#718096;transition:transform 0.3s ease;">▶</span>';
+h+='<span id="rc-ver-arr" style="font-size:12px;color:#718096;transition:transform 0.3s ease;">▶</span>';
 h+='</button>';
-h+='<div id="ci-ver-body" style="display:none;border:1px solid #e2e8f0;border-top:none;border-radius:0 0 10px 10px;background:#fafcff;padding:16px 18px;">';
+h+='<div id="rc-ver-body" style="display:none;border:1px solid #e2e8f0;border-top:none;border-radius:0 0 10px 10px;background:#fafcff;padding:16px 18px;">';
 h+='<div style="background:#ebf4ff;border:1px solid #bee3f8;border-radius:8px;padding:12px 16px;margin-bottom:16px;">';
 h+='<p style="font-size:13px;color:#1e3a5c;line-height:1.75;margin:0;">Verification should not take longer than a few minutes. The aim is to do a quick check to see if we can <strong>determine fault</strong>. Work through the steps below in order and note what you find.</p>';
 h+='</div>';
@@ -874,12 +874,12 @@ h+='<div id="rc-ms-3-body" style="display:none;border:1px solid #e2e8f0;border-t
 h+='<div style="display:flex;flex-direction:column;gap:8px;">';
 h+='<div style="background:#eff6ff;border:1px solid #90cdf4;border-radius:8px;padding:10px 14px;font-size:12px;color:#1a365d;line-height:1.6;">🤖 This step is now done automatically by AI via the Slack pipeline — good to know for reference, but you don\'t need to fill this in manually.</div>';
 h+='<div style="border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;">';
-h+='<button onclick="var b=document.getElementById(\'ci3-s1-body\');var a=document.getElementById(\'ci3-s1-arr\');var o=b.style.display!==\'none\';b.style.display=o?\'none\':\'block\';a.textContent=o?\'▶\':\'▼\';" style="width:100%;display:flex;align-items:center;gap:12px;padding:12px 16px;background:#fff;border:none;cursor:pointer;font-family:inherit;text-align:left;">';
+h+='<button onclick="var b=document.getElementById(\'rc3-s1-body\');var a=document.getElementById(\'rc3-s1-arr\');var o=b.style.display!==\'none\';b.style.display=o?\'none\':\'block\';a.textContent=o?\'▶\':\'▼\';" style="width:100%;display:flex;align-items:center;gap:12px;padding:12px 16px;background:#fff;border:none;cursor:pointer;font-family:inherit;text-align:left;">';
 h+='<div style="background:#1e3a5c;color:#fff;border-radius:50%;width:24px;height:24px;min-width:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;">1</div>';
 h+='<span style="font-size:13px;font-weight:700;color:#1a1a2e;flex:1;"><strong>Section 1</strong> — Complaint Reported</span>';
-h+='<span id="ci3-s1-arr" style="font-size:13px;color:#718096;">▶</span>';
+h+='<span id="rc3-s1-arr" style="font-size:13px;color:#718096;">▶</span>';
 h+='</button>';
-h+='<div id="ci3-s1-body" style="display:none;padding:14px 16px 16px;background:#f7fafc;border-top:1px solid #e2e8f0;">';
+h+='<div id="rc3-s1-body" style="display:none;padding:14px 16px 16px;background:#f7fafc;border-top:1px solid #e2e8f0;">';
 h+='<div style="background:#ebf4ff;border:1px solid #bee3f8;border-radius:9px;padding:13px 16px;margin-bottom:14px;">';
 h+='<p style="font-size:13px;color:#1e3a5c;line-height:1.75;margin:0 0 6px 0;">For Regular Complaints, the <strong>Complaint Reported</strong> field should be a brief 1 to 2 sentence summary of what the guest says went wrong during the stay, and when they found it (for example on arrival or part way through the stay).</p>';
 h+='<p style="font-size:13px;color:#1e3a5c;font-weight:700;margin:10px 0 6px 0;">Examples:</p>';
@@ -891,11 +891,11 @@ h+='<li>Guest reported the air conditioning was not working during a heatwave.</
 h+='</ul>';
 h+='</div>';
 h+='<div style="border:1px solid #c7d9e8;border-radius:9px;overflow:hidden;margin-top:4px;">';
-h+='<button onclick="var p=document.getElementById(\'ci-s1-rte-panel\');var a=document.getElementById(\'ci-s1-rte-arrow\');var isOpen=p.style.display!==\'none\';p.style.display=isOpen?\'none\':\'block\';a.style.transform=isOpen?\'rotate(0deg)\':\'rotate(90deg)\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:#1e3a5c;border:none;cursor:pointer;font-family:inherit;" onmouseover="this.style.background=\'#162d48\'" onmouseout="this.style.background=\'#1e3a5c\'">';
+h+='<button onclick="var p=document.getElementById(\'rc-s1-rte-panel\');var a=document.getElementById(\'rc-s1-rte-arrow\');var isOpen=p.style.display!==\'none\';p.style.display=isOpen?\'none\':\'block\';a.style.transform=isOpen?\'rotate(0deg)\':\'rotate(90deg)\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:#1e3a5c;border:none;cursor:pointer;font-family:inherit;" onmouseover="this.style.background=\'#162d48\'" onmouseout="this.style.background=\'#1e3a5c\'">';
 h+='<div style="display:flex;align-items:center;gap:8px;"><span style="font-size:14px;">📋</span><span style="font-size:13px;font-weight:700;color:#fff;">Real Ticket Examples</span><span style="font-size:11px;color:rgba(255,255,255,0.55);font-weight:400;">(16 examples)</span></div>';
-h+='<span id="ci-s1-rte-arrow" style="font-size:11px;color:rgba(255,255,255,0.65);transition:transform 0.25s;display:inline-block;">▶</span>';
+h+='<span id="rc-s1-rte-arrow" style="font-size:11px;color:rgba(255,255,255,0.65);transition:transform 0.25s;display:inline-block;">▶</span>';
 h+='</button>';
-h+='<div id="ci-s1-rte-panel" style="display:none;padding:12px 14px;background:#fafcff;">';
+h+='<div id="rc-s1-rte-panel" style="display:none;padding:12px 14px;background:#fafcff;">';
 h+='<div style="display:flex;flex-direction:column;gap:8px;">';
 var ciSec1Ex=["Guest reported cobwebs, dust and dirt around the lamps and door tracks, insects inside the apartment, and disposable bedding instead of the expected linen.","Guest reported the toilet was not working for about two days and the shower only produced scalding water. No room change was offered.","Guest reported the fridge was not working shortly after check-in, and that reception was unattended with no working phone number.","Guest reported the air conditioning was not working during their stay.","Guest reported that roof construction would start at 8am and affect their stay.","Guest reported the unit smelled of gas on arrival. There was no unit to move to and the guest left without checking in.","Guest reported the kitchen extractor hood cover detached and fell onto a member of their party.","Guest booked a room with a large double bed but received two single beds for the first night.","Guest raised bed bugs on the day of checkout.","Guest reported cold showers throughout the stay caused by a propane leak.","Guest reported an elevator outage lasting about 48 hours, affecting a family member with limited mobility.","Guest reported possible mould, a musty odour and bugs in the unit.","Guest reported ants, roaches, a gap at the bottom of the pool door and a fallen tree branch.","Guest reported spending the night without electricity or heating, with reception closed and only a voicemail available.","Guest reported a missing lightbulb, hair in the bathtub and sink, a fridge that did not cool properly and a leaking showerhead.","Guest reported a stained sofa and dirty walls in the unit."];
 for(var i=0;i<ciSec1Ex.length;i++){h+='<div style="border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;"><div style="background:#1e3a5c;color:#fff;font-size:11px;font-weight:700;padding:6px 12px;">Example '+(i+1)+'</div><div style="padding:10px 14px;background:#fff;font-size:12px;color:#1a1a2e;line-height:1.75;"><span style="font-weight:700;color:#1e3a5c;">Complaint Reported: </span>'+ciSec1Ex[i]+'</div></div>';}
@@ -904,12 +904,12 @@ h+='</div>';
 h+='</div>';
 h+='</div></div>';
 h+='<div style="border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;">';
-h+='<button onclick="var b=document.getElementById(\'ci3-s2-body\');var a=document.getElementById(\'ci3-s2-arr\');var o=b.style.display!==\'none\';b.style.display=o?\'none\':\'block\';a.textContent=o?\'▶\':\'▼\';" style="width:100%;display:flex;align-items:center;gap:12px;padding:12px 16px;background:#fff;border:none;cursor:pointer;font-family:inherit;text-align:left;">';
+h+='<button onclick="var b=document.getElementById(\'rc3-s2-body\');var a=document.getElementById(\'rc3-s2-arr\');var o=b.style.display!==\'none\';b.style.display=o?\'none\':\'block\';a.textContent=o?\'▶\':\'▼\';" style="width:100%;display:flex;align-items:center;gap:12px;padding:12px 16px;background:#fff;border:none;cursor:pointer;font-family:inherit;text-align:left;">';
 h+='<div style="background:#1e3a5c;color:#fff;border-radius:50%;width:24px;height:24px;min-width:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;">2</div>';
 h+='<span style="font-size:13px;font-weight:700;color:#1a1a2e;flex:1;"><strong>Section 2</strong> — Verification</span>';
-h+='<span id="ci3-s2-arr" style="font-size:13px;color:#718096;">▶</span>';
+h+='<span id="rc3-s2-arr" style="font-size:13px;color:#718096;">▶</span>';
 h+='</button>';
-h+='<div id="ci3-s2-body" style="display:none;padding:14px 16px 16px;background:#f7fafc;border-top:1px solid #e2e8f0;">';
+h+='<div id="rc3-s2-body" style="display:none;padding:14px 16px 16px;background:#f7fafc;border-top:1px solid #e2e8f0;">';
 h+='<div style="background:#ebf4ff;border:1px solid #bee3f8;border-radius:10px;padding:14px 16px;margin-bottom:16px;">';
 h+='<div style="font-size:13px;font-weight:800;color:#1e3a5c;margin-bottom:8px;">Regular Complaint Verification</div>';
 h+='<p style="font-size:13px;color:#1e3a5c;line-height:1.75;margin:0 0 10px 0;">To ensure a fair and consistent assessment, the verification process should be divided into two parts:</p>';
@@ -918,11 +918,11 @@ h+='<div style="display:flex;align-items:flex-start;gap:10px;"><div style="backg
 h+='<div style="display:flex;align-items:flex-start;gap:10px;"><div style="background:#1e3a5c;color:#fff;border-radius:50%;width:22px;height:22px;min-width:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;margin-top:1px;">2</div><div style="font-size:13px;color:#1e3a5c;line-height:1.7;"><strong>Fault Determination:</strong> If the issue is valid, determine who is responsible: the partner (condition, repairs, cleaning), Jetstream (the listing or our information was wrong), or unclear.</div></div>';
 h+='</div></div>';
 h+='<div style="border:1px solid #c7d9e8;border-radius:9px;overflow:hidden;margin-top:4px;">';
-h+='<button onclick="var p=document.getElementById(\'ci-s2-rte-panel\');var a=document.getElementById(\'ci-s2-rte-arr\');var isOpen=p.style.display!==\'none\';p.style.display=isOpen?\'none\':\'block\';a.style.transform=isOpen?\'rotate(0deg)\':\'rotate(90deg)\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:#1e3a5c;border:none;cursor:pointer;font-family:inherit;" onmouseover="this.style.background=\'#162d48\'" onmouseout="this.style.background=\'#1e3a5c\'">';
+h+='<button onclick="var p=document.getElementById(\'rc-s2-rte-panel\');var a=document.getElementById(\'rc-s2-rte-arr\');var isOpen=p.style.display!==\'none\';p.style.display=isOpen?\'none\':\'block\';a.style.transform=isOpen?\'rotate(0deg)\':\'rotate(90deg)\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:#1e3a5c;border:none;cursor:pointer;font-family:inherit;" onmouseover="this.style.background=\'#162d48\'" onmouseout="this.style.background=\'#1e3a5c\'">';
 h+='<div style="display:flex;align-items:center;gap:8px;"><span style="font-size:14px;">📋</span><span style="font-size:13px;font-weight:700;color:#fff;">Real Ticket Examples</span><span style="font-size:11px;color:rgba(255,255,255,0.55);font-weight:400;">('+14+' examples)</span></div>';
-h+='<span id="ci-s2-rte-arr" style="font-size:11px;color:rgba(255,255,255,0.65);transition:transform 0.25s;display:inline-block;">▶</span>';
+h+='<span id="rc-s2-rte-arr" style="font-size:11px;color:rgba(255,255,255,0.65);transition:transform 0.25s;display:inline-block;">▶</span>';
 h+='</button>';
-h+='<div id="ci-s2-rte-panel" style="display:none;padding:12px 14px;background:#fafcff;">';
+h+='<div id="rc-s2-rte-panel" style="display:none;padding:12px 14px;background:#fafcff;">';
 h+='<div style="display:flex;flex-direction:column;gap:8px;">';
 var ciSec2Ex=[{"cr":"Guest reported cobwebs, dust, insects, dirt in the door tracks and disposable bedding in the apartment.","vr":"Guest photos reviewed and support the complaint. The listing states towels, bed linen and end-of-stay cleaning are included.","fv":"Partner fault. The partner said the guest arrived late and never reported the issues at reception and took no further action, so Jetstream paid a 50 EUR goodwill refund."},{"cr":"Guest reported the toilet was not working for about two days and the shower only produced scalding water.","vr":"Guest reported to the front desk several times. Maintenance tried a plunger but the problem remained and no room change was offered.","fv":"Partner fault. Partner refunded our VCC after waiving fees for the stay."},{"cr":"Guest reported the fridge was not working and food spoiled.","vr":"The partner's technician inspected it and found it working, and said it was overloaded. The guest did not return to reception during the stay.","fv":"Unclear. The partner declined compensation."},{"cr":"Guest reported there was no air conditioning during their stay.","vr":"Front desk confirmed the AC is installed but not working because of a temporary fault.","fv":"Partner fault. First marked otherwise, then corrected once the front desk confirmed the fault."},{"cr":"Guest reported the unit smelled of gas on arrival and left without checking in.","vr":"Front desk confirmed they did not check the guest in and did not charge them.","fv":"Partner fault. Partner confirmed the VCC was charged by accident and refunded it."},{"cr":"Guest received two single beds instead of the large double bed they booked, for the first night.","vr":"Partner confirmed the wrong room was assigned on the first night and corrected on the second. The listing says double or twin is subject to availability.","fv":"Partner fault. The listing was correct."},{"cr":"Guest reported a 48 hour elevator outage affecting a family member with limited mobility.","vr":"Partner confirmed the outage before check-in. Cirrus notes show it was still unresolved days later. The listing advertised elevator access.","fv":"Partner fault."},{"cr":"Guest reported possible mould, a musty odour and bugs.","vr":"Guest photos and videos reviewed. The insects were confirmed not to be cockroaches. The property offered a spray treatment.","fv":"Partner fault. One night was refunded and the partner net cost was charged back."},{"cr":"Guest reported cold showers caused by a propane leak, two weeks after checkout.","vr":"Booking confirmed in Cirrus. The on-site manager had verbally offered the guest a one-night refund.","fv":"Partner fault. The partner covered its net share and Jetstream covered the fee difference."},{"cr":"Guest called to say roof construction would start at 8am.","vr":"No internal notes about construction were found. The property confirmed roof work starting at 8am.","fv":"Not applicable. A content update was created because we had no warning."},{"cr":"Guest raised bed bugs only on the day of checkout.","vr":"An inspection found no evidence to support the claim.","fv":"Not valid. Fault: not applicable."},{"cr":"Guest reported ants, roaches and a gap at the bottom of the pool door.","vr":"Guest asked to send photos by email. The guest left the property in good condition.","fv":"Partner fault."},{"cr":"Guest reported spending the night without electricity or heating.","vr":"Guest confirmed reception was closed and a voicemail was left. The guest spent the night without electricity and heating.","fv":"Escalated to the partner for goodwill. The campsite was asked to follow up."},{"cr":"Guest reported a missing lightbulb, hair in the bath, a poorly cooling fridge and a leaking showerhead.","vr":"Guest photos reviewed and support the complaint. On-site team later confirmed the fridge was working.","fv":"Partner fault."}];
 for(var i=0;i<ciSec2Ex.length;i++){
@@ -939,12 +939,12 @@ h+='</div>';
 h+='</div>';
 h+='</div></div>';
 h+='<div style="border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;">';
-h+='<button onclick="var b=document.getElementById(\'ci3-s3-body\');var a=document.getElementById(\'ci3-s3-arr\');var o=b.style.display!==\'none\';b.style.display=o?\'none\':\'block\';a.textContent=o?\'▶\':\'▼\';" style="width:100%;display:flex;align-items:center;gap:12px;padding:12px 16px;background:#fff;border:none;cursor:pointer;font-family:inherit;text-align:left;">';
+h+='<button onclick="var b=document.getElementById(\'rc3-s3-body\');var a=document.getElementById(\'rc3-s3-arr\');var o=b.style.display!==\'none\';b.style.display=o?\'none\':\'block\';a.textContent=o?\'▶\':\'▼\';" style="width:100%;display:flex;align-items:center;gap:12px;padding:12px 16px;background:#fff;border:none;cursor:pointer;font-family:inherit;text-align:left;">';
 h+='<div style="background:#1e3a5c;color:#fff;border-radius:50%;width:24px;height:24px;min-width:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;">3</div>';
 h+='<span style="font-size:13px;font-weight:700;color:#1a1a2e;flex:1;"><strong>Section 3</strong> — Actions Taken <span style="font-weight:400;color:#718096;">— every action must include a date</span></span>';
-h+='<span id="ci3-s3-arr" style="font-size:13px;color:#718096;">▶</span>';
+h+='<span id="rc3-s3-arr" style="font-size:13px;color:#718096;">▶</span>';
 h+='</button>';
-h+='<div id="ci3-s3-body" style="display:none;padding:14px 16px 16px;background:#f7fafc;border-top:1px solid #e2e8f0;">';
+h+='<div id="rc3-s3-body" style="display:none;padding:14px 16px 16px;background:#f7fafc;border-top:1px solid #e2e8f0;">';
 var inclId='incl-'+Math.random().toString(36).substr(2,6);
 h+='<button onclick="var el=document.getElementById(\''+inclId+'\');var arr=this.querySelector(\'.incl-arrow\');var open=el.style.display!==\'none\';el.style.display=open?\'none\':\'block\';arr.style.transform=open?\'rotate(0deg)\':\'rotate(180deg)\';" style="width:100%;display:flex;align-items:center;justify-content:space-between;background:#276749;color:#fff;border:none;border-radius:9px;padding:11px 16px;font-size:13px;font-weight:800;cursor:pointer;margin-bottom:8px;text-align:left;">'+
   '<span>✅ What TO include</span>'+
@@ -1020,13 +1020,13 @@ h+='</div></div>';
 h+='</div>';
 h+='</div></div></div>';
 h+='</div>';
-h+='<div style="border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;">';
-h+='<button onclick="var b=document.getElementById(\'ci3-s4-body\');var a=document.getElementById(\'ci3-s4-arr\');var o=b.style.display!==\'none\';b.style.display=o?\'none\':\'block\';a.textContent=o?\'▶\':\'▼\';" style="width:100%;display:flex;align-items:center;gap:12px;padding:12px 16px;background:#fff;border:none;cursor:pointer;font-family:inherit;text-align:left;">';
+h+='<div style="border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;margin-top:8px;">';
+h+='<button onclick="var b=document.getElementById(\'rc3-s4-body\');var a=document.getElementById(\'rc3-s4-arr\');var o=b.style.display!==\'none\';b.style.display=o?\'none\':\'block\';a.textContent=o?\'▶\':\'▼\';" style="width:100%;display:flex;align-items:center;gap:12px;padding:12px 16px;background:#fff;border:none;cursor:pointer;font-family:inherit;text-align:left;">';
 h+='<div style="background:#1e3a5c;color:#fff;border-radius:50%;width:24px;height:24px;min-width:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;">4</div>';
 h+='<span style="font-size:13px;font-weight:700;color:#1a1a2e;flex:1;"><strong>Section 4</strong> — Final Resolution <span style="font-weight:400;color:#718096;">— only once the case is resolved</span></span>';
-h+='<span id="ci3-s4-arr" style="font-size:13px;color:#718096;">▶</span>';
+h+='<span id="rc3-s4-arr" style="font-size:13px;color:#718096;">▶</span>';
 h+='</button>';
-h+='<div id="ci3-s4-body" style="display:none;padding:14px 16px 16px;background:#f7fafc;border-top:1px solid #e2e8f0;">';
+h+='<div id="rc3-s4-body" style="display:none;padding:14px 16px 16px;background:#f7fafc;border-top:1px solid #e2e8f0;">';
 h+='<div style="background:#f0fff4;border:1px solid #9ae6b4;border-radius:8px;padding:10px 14px;margin-bottom:10px;font-size:12px;color:#276749;">✅ <strong>Only complete this section once the case is fully resolved.</strong></div>';
 h+='<div style="display:flex;flex-direction:column;gap:6px;">';
 h+='<div style="font-size:12px;color:#1a1a2e;padding:8px 12px;background:#fff;border:1px solid #e2e8f0;border-left:3px solid #276749;border-radius:6px;">📋 <strong>Outcome summary</strong> — what was the final resolution? Was the issue fixed?</div>';
@@ -1099,10 +1099,6 @@ for(var cm=0;cm<ciMainSteps.length;cm++){
   h+='</div></div>';
 }
 h+='</div>';
-h+='</div>';
-
-h+='<div id="rc-sec-rc-tab2" style="display:'+(activeTab==='rc-tab2'?'block':'none')+'">';
-h+='<div style="padding:24px;text-align:center;color:#e53e3e;font-size:15px;font-weight:700;">In progress — coming soon.</div>';
 h+='</div>';
 
 h+='<div id="rc-sec-rc-tab3" style="display:'+(activeTab==='rc-tab3'?'block':'none')+'">';
