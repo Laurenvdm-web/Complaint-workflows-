@@ -320,7 +320,7 @@
               <rect x="430" y="56" width="514" height="42" rx="10" fill="#e87c3e"/>
               <rect x="430" y="82" width="514" height="16" fill="#e87c3e"/>
               <text x="687" y="83" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">Verify Guest Issue</text>
-              <text x="687" y="114" text-anchor="middle" font-size="12" fill="#6b4500">Before creating a HubSpot ticket, please follow these steps:</text>
+              <text x="687" y="114" text-anchor="middle" font-size="12" fill="#6b4500">Follow these steps, and create the ticket straight away:</text>
               <text x="454" y="142" font-size="12" fill="#2d3748">1.  Ask guest if they have reached out to the <tspan font-weight="700">front desk</tspan></text>
               <text x="454" y="166" font-size="12" fill="#2d3748">2.  Ask guest for images of the issue if applicable</text>
               <text x="454" y="190" font-size="12" fill="#2d3748">3.  Add a <tspan font-weight="700">blacklisted</tspan>-tag in Cirrus</text>
@@ -334,8 +334,8 @@
 
               <!-- Guest responded box -->
               <rect x="100" y="338" width="760" height="46" rx="10" fill="#b84e1a"/>
-              <text x="480" y="357" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Guest responded saying that the front desk was unable to assist</text>
-              <text x="480" y="375" text-anchor="middle" font-size="12" fill="#ffe0cc">and with images (if applicable)</text>
+              <text x="480" y="357" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">No need to wait for the guest to reply about the front desk or send photos</text>
+              <text x="480" y="375" text-anchor="middle" font-size="12" fill="#ffe0cc">Their response and any images are added to the ticket as follow-ups</text>
 
               <!-- Arrow down -->
               <line x1="480" y1="384" x2="480" y2="400" stroke="#555" stroke-width="2" marker-end="url(#arr2)"/>
@@ -2137,7 +2137,7 @@ function setCiTab(tab){
     {
       keys: ['verify','verification','regular complaint verify','step','front desk','images','blacklist','cirrus notes'],
       q: 'How do I verify a regular complaint?',
-      a: 'Before creating a HubSpot ticket for a regular complaint:\n1. Ask the guest if they reached out to the front desk\n2. Ask for images of the issue (if applicable)\n3. Add a blacklisted tag in Cirrus\n4. Add brief notes in Cirrus about the issue and what you have sent the guest\nOnly create the ticket once the guest confirms the front desk couldn\'t help (and you have images if applicable).'
+      a: 'Before creating a HubSpot ticket for a regular complaint:\n1. Ask the guest if they reached out to the front desk\n2. Ask for images of the issue (if applicable)\n3. Add a blacklisted tag in Cirrus\n4. Add brief notes in Cirrus about the issue and what you have sent the guest\nYou do not need to wait for the guest to reply about the front desk or send photos. Create the ticket straight away, then add their response and any photos to the same ticket as follow-ups.'
     },
     {
       keys: ['content update','submit content','update listing','fix listing'],
@@ -2147,7 +2147,7 @@ function setCiTab(tab){
     {
       keys: ['ticket','hubspot ticket','create ticket','when create','stages'],
       q: 'When do I create a HubSpot ticket?',
-      a: 'For content issues: create the ticket once the complaint is verified as valid. For regular complaints: create the ticket after the guest confirms the front desk could not help and you have images (if applicable).'
+      a: 'For content issues: create the ticket once the complaint is verified as valid. For regular complaints: create the ticket straight away, without waiting for the guest to reply about the front desk or send photos. Add their response and any photos to the ticket as follow-ups.'
     },
     {
       keys: ['am','account manager','am stage','pending recovery','closed','jetstream loss','jetstream win'],
